@@ -1,0 +1,97 @@
+default_view:
+  view: yes
+  entities:
+  - group.all_scripts
+  - group.all_automations
+  - group.teknisk
+  - group.garasje
+  - group.stue
+  - group.kjokken
+  - group.kontor
+  - group.bad
+  - group.sov
+  - group.gang
+  
+alarmer:
+  name: Alarmer
+  entities:
+  - sensor.sensor_bad_beveglse
+  - sensor.sensor_bad_alarm_level
+  - sensor.sensor_bad_alarm_type
+  - sensor.downlights_bad_alarm_level
+  - sensor.downlights_bad_alarm_level_2
+  - sensor.downlights_bad_alarm_level_3
+  - sensor.downlights_bad_alarm_type
+  - sensor.downlights_bad_alarm_type_2
+  - sensor.downlights_bad_alarm_type_3
+  - sensor.downlights_kjkken_alarm_level
+  - sensor.downlights_kjkken_alarm_type
+  - sensor.varmtvannsbereder_alarm_level
+  - sensor.varmtvannsbereder_alarm_type
+  view: false
+
+div:
+  view: true
+  name: Diverse
+  entities:
+  - group.alarmer
+  - group.strom
+  - group.miljo
+
+miljo:
+  name: "Milj\xF8"
+  entities:
+  - sun.sun
+  - sensor.vret_symbol
+  - sensor.vret_temperature
+  - sensor.vret_wind_speed
+  - sensor.vret_humidity
+  - sensor.vret_pressure
+strom:
+  name: "Str\xF8mforbruk"
+  entities:
+  - sensor.downlights_bad_effekt
+  - sensor.downlights_bad_forbruk
+  - sensor.varmekabel_bad_forbruk
+  - sensor.varmekabel_gang_forbruk
+  - sensor.downlights_kjkken_effekt
+  - sensor.downlights_kjkken_forbruk
+  - sensor.varmtvannsbereder_effekt
+  - sensor.varmtvannsbereder_forbruk
+bad:
+  name: Bad
+  entities:
+  - light.downlights_bad_niva
+  - sensor.sensor_bad_luminans
+  - sensor.sensor_bad_temperatur
+  - climate.varmekabel_bad_varme
+  view: false
+kjokken:
+  name: "Kj\xF8kken"
+  entities:
+  - light.downlights_kjkken_niva
+stue:
+  name: Stue
+  entities:
+  - climate.varmepumpe_stue_cooling_1
+  - climate.varmepumpe_stue_heating_1
+  - sensor.varmepumpe_stue_temperature
+gang:
+  name: Gang
+  entities:
+  - climate.varmekabel_gang_varme
+sov:
+  name: Soverom
+  entities:
+kontor:
+  name: Kontor
+  entities:
+garasje:
+  name: Garasje
+  entities:
+
+teknisk:
+  name: Teknisk
+  entities:
+  - switch.varmtvannsbereder_bryter
+  - device_tracker.lg_nexus_5x

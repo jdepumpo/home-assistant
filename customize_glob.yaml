@@ -1,0 +1,8 @@
+"*_alarm_*":
+  icon: mdi:alarm-bell
+"*_effekt":
+  icon: mdi:flash
+"*_forbruk":
+  icon: mdi:flash
+"switch.*":
+  icon: mdi:power

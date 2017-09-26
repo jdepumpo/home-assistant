@@ -1,0 +1,70 @@
+- id: lys_bad_paa
+  alias: "Downlights Bad På"
+  trigger:
+    - platform: state
+      entity_id: sensor.sensor_bad_beveglse
+      from: '0'
+      to: '8'
+    - platform: state
+      entity_id: sensor.sensor_bad_beveglse
+      from: '254'
+      to: '8'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.sensor_bad_luminans
+    below: 150
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.downlights_bad_niva
+        brightness: 100
+    - service: notify.notifikasjoner
+      data:
+        title: 'Home Assistant'
+        message: 'Bevegelse på badet'
+- id: lys_bad_dim
+  alias: "Downlights Bad Dim"
+  trigger:
+    platform: state
+    entity_id: sensor.sensor_bad_beveglse
+    from: '8'
+    to: '0'
+    for:
+      minutes: 5
+  condition:
+    condition: state
+    entity_id: light.downlights_bad_niva
+    state: 'on'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.downlights_bad_niva
+      brightness: 40
+
+- id: lys_bad_av
+  alias: "Downlights Bad Av"
+  trigger:
+    platform: state
+    entity_id: sensor.sensor_bad_beveglse
+    from: '8'
+    to: '0'
+    for:
+      minutes: 20
+#  condition:
+#    condition: state
+#    entity_id: light.downlights_bad_niva
+#    state: 'on'
+  action:
+    service: light.turn_off
+    entity_id: light.downlights_bad_niva
+
+- id: oppdatering
+  alias: 'Oppdatering notifikasjon'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.notifikasjoner
+    data:
+      title: 'Home Assistant'
+      message: 'En ny versjon er tilgjengelig'

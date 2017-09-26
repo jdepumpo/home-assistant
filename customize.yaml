@@ -1,0 +1,25 @@
+sun.sun:
+  friendly_name: Sola
+sensor.vret_humidity:
+  friendly_name: Luftfuktighet
+  icon: mdi:water-percent
+sensor.vret_pressure:
+  friendly_name: Trykk
+  icon: mdi:gauge
+sensor.vret_symbol:
+  friendly_name: Værstatus
+sensor.vret_temperature:
+  friendly_name: Temperatur
+sensor.vret_wind_speed:
+  friendly_name: Vindhastighet
+  icon: mdi:weather-windy
+group.all_devices:
+  hidden: false
+  friendly_name: Enheter
+group.all_automations:
+  hidden: false
+  friendly_name: Automasjoner
+group.all_scripts:
+  hidden: false
+  control: hidden
+  friendly_name: Skript
