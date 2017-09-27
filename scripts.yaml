@@ -32,6 +32,6 @@ hjem:
 #    - service: climate.set_temperature
 #      entity_id: climate.varmepumpe_stue_heating_1
 #      data:
-#        temperature: 16
+#        temperature: 24
     - service: switch.turn_on
       entity_id: switch.varmtvannsbereder_bryter
