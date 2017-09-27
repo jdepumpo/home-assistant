@@ -1,5 +1,5 @@
 - id: lys_bad_paa
-  alias: "Downlights Bad På"
+  alias: 'Downlights Bad På'
   trigger:
     - platform: state
       entity_id: sensor.sensor_bad_beveglse
@@ -18,12 +18,8 @@
       data:
         entity_id: light.downlights_bad_niva
         brightness: 100
-    - service: notify.notifikasjoner
-      data:
-        title: 'Home Assistant'
-        message: 'Bevegelse på badet'
 - id: lys_bad_dim
-  alias: "Downlights Bad Dim"
+  alias: 'Downlights Bad Dim'
   trigger:
     platform: state
     entity_id: sensor.sensor_bad_beveglse
@@ -42,7 +38,7 @@
       brightness: 40
 
 - id: lys_bad_av
-  alias: "Downlights Bad Av"
+  alias: 'Downlights Bad Av'
   trigger:
     platform: state
     entity_id: sensor.sensor_bad_beveglse
