@@ -59,7 +59,6 @@ sun:
 sensor:
   - platform: yr
     name: Været
-    forecast: 24
     monitored_conditions:
       - temperature
       - symbol
@@ -99,4 +98,3 @@ notify:
 # Text to speech
 # tts:
 #   platform: google
-
