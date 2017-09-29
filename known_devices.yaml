@@ -1,35 +1,40 @@
-sun.sun:
-  friendly_name: Sola
-
-sensor.vret_humidity:
-  friendly_name: Luftfuktighet
-  icon: mdi:water-percent
-sensor.vret_pressure:
-  friendly_name: Trykk
-  icon: mdi:gauge
-sensor.vret_symbol:
-  friendly_name: Værstatus
-sensor.vret_temperature:
-  friendly_name: Temperatur
-sensor.vret_wind_speed:
-  friendly_name: Vindhastighet
-  icon: mdi:weather-windy
-
-group.all_automations:
-  hidden: false
-  friendly_name: Automasjoner
-group.all_devices:
-  hidden: false
-  friendly_name: Enheter
-group.all_lights:
-  friendly_name: Lys
-group.all_locks:
-  friendly_name: Låser
-group.all_remotes:
-  friendly_name: Fjernkontrollere
-group.all_scripts:
-  hidden: false
-  control: hidden
-  friendly_name: Skript
-group.all_switches:
-  friendly_name: Brytere
+lg_nexus_5x:
+  hide_if_away: false
+  icon: mdi:cellphone
+  mac: 78:F8:82:9F:3A:2D
+  name: LG Nexus 5X
+  picture:
+  track: true
+  vendor: LG Electronics
+polar_m600:
+  hide_if_away: false
+  icon: mdi:watch
+  mac: 00:22:D0:C1:5D:C9
+  name: Polar M600
+  picture:
+  track: false
+  vendor: Polar
+lgsmarttv:
+  hide_if_away: false
+  icon: mdi:television
+  mac: 10:08:C1:B6:B4:92
+  name: LGSmartTV
+  picture:
+  track: false
+  vendor: LG Electronics
+acerswift3:
+  hide_if_away: false
+  icon: mdi:laptop
+  mac: 94:E9:79:EB:55:8F
+  name: AcerSwift3
+  picture:
+  track: false
+  vendor: Liteon Technology Corporation
+chromecast:
+  hide_if_away: false
+  icon: mdi:cast
+  mac: F4:F5:D8:E2:BB:6E
+  name: Chromecast
+  picture:
+  track: false
+  vendor: Google, Inc.
