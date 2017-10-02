@@ -18,6 +18,7 @@
       data:
         entity_id: light.downlights_bad_niva
         brightness: 100
+
 - id: lys_bad_dim
   alias: 'Downlights Bad Dim'
   trigger:
@@ -60,7 +61,7 @@
     platform: state
     entity_id: updater.updater
   action:
-    service: notify.notifikasjoner
+    service: notify.notify
     data:
       title: 'Home Assistant'
       message: 'En ny versjon er tilgjengelig'
