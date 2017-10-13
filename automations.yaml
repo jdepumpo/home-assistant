@@ -3,11 +3,6 @@
   trigger:
     - platform: state
       entity_id: sensor.sensor_bad_beveglse
-      from: '0'
-      to: '8'
-    - platform: state
-      entity_id: sensor.sensor_bad_beveglse
-      from: '254'
       to: '8'
   condition:
     condition: numeric_state
@@ -24,7 +19,6 @@
   trigger:
     platform: state
     entity_id: sensor.sensor_bad_beveglse
-    from: '8'
     to: '0'
     for:
       minutes: 5
@@ -43,14 +37,9 @@
   trigger:
     platform: state
     entity_id: sensor.sensor_bad_beveglse
-    from: '8'
     to: '0'
     for:
       minutes: 20
-#  condition:
-#    condition: state
-#    entity_id: light.downlights_bad_niva
-#    state: 'on'
   action:
     service: light.turn_off
     entity_id: light.downlights_bad_niva
