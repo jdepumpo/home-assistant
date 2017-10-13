@@ -14,13 +14,13 @@ homeassistant:
   customize_domain: !include customize_domain.yaml
   customize_glob: !include customize_glob.yaml
 
-# Show links to resources in log and frontend
-# introduction:
-
 automation: !include automations.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
+
+# Show links to resources in log and frontend
+# introduction:
 
 # Enables support for tracking state changes over time.
 # history:
@@ -29,7 +29,7 @@ script: !include scripts.yaml
 # logbook:
 
 # recorder:
-#   purge_days: 2
+#   purge_interval: 2
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -86,8 +86,13 @@ notify:
 # media_player:
 #   - platform: cast
 
-# Home Assistant embedded MQTT broker (aka MQ Telemetry Transport)
-# mqtt:
+# Mosquitto MQTT broker
+mqtt:
+  broker: 192.168.1.2
+  port: 1883
+  client_id: home-assistant
+  username: !secret mqtt_username
+  password: !secret mqtt_password
     
 # ifttt:
 #   key: !secret ifttt_key
