@@ -88,8 +88,8 @@ notify:
 
 # Mosquitto MQTT broker
 mqtt:
-  broker: 192.168.1.2
-  port: 1883
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
   client_id: home-assistant
   username: !secret mqtt_username
   password: !secret mqtt_password
