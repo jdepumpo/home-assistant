@@ -1,97 +1,66 @@
-default_view:
-  view: yes
-  entities:
-  - group.all_scripts
-  - group.all_automations
-  - group.teknisk
-  - group.garasje
-  - group.stue
-  - group.kjokken
-  - group.kontor
-  - group.bad
-  - group.sov
-  - group.gang
-  
-alarmer:
-  name: Alarmer
-  entities:
-  - sensor.sensor_bad_beveglse
-  - sensor.sensor_bad_alarm_level
-  - sensor.sensor_bad_alarm_type
-  - sensor.downlights_bad_alarm_level
-  - sensor.downlights_bad_alarm_level_2
-  - sensor.downlights_bad_alarm_level_3
-  - sensor.downlights_bad_alarm_type
-  - sensor.downlights_bad_alarm_type_2
-  - sensor.downlights_bad_alarm_type_3
-  - sensor.downlights_kjkken_alarm_level
-  - sensor.downlights_kjkken_alarm_type
-  - sensor.varmtvannsbereder_alarm_level
-  - sensor.varmtvannsbereder_alarm_type
-  view: false
-
-div:
-  view: true
-  name: Diverse
-  entities:
-  - group.alarmer
-  - group.strom
-  - group.miljo
+#default_view:
+#  view: yes
+#  entities:
+#  - group.all_scripts
+#  - group.all_automations
+#  - group.teknisk
+#  - group.garasje
+#  - group.stue
+#  - group.kjokken
+#  - group.kontor
+#  - group.bad
+#  - group.sov
+#  - group.gang
 
 miljo:
-  name: "Milj\xF8"
+  name: 'Miljø'
   entities:
   - sun.sun
-  - sensor.vret_symbol
-  - sensor.vret_temperature
-  - sensor.vret_wind_speed
-  - sensor.vret_humidity
-  - sensor.vret_pressure
-strom:
-  name: "Str\xF8mforbruk"
-  entities:
-  - sensor.downlights_bad_effekt
-  - sensor.downlights_bad_forbruk
-  - sensor.varmekabel_bad_forbruk
-  - sensor.varmekabel_gang_forbruk
-  - sensor.downlights_kjkken_effekt
-  - sensor.downlights_kjkken_forbruk
-  - sensor.varmtvannsbereder_effekt
-  - sensor.varmtvannsbereder_forbruk
+  - sensor.yr_symbol
+  - sensor.yr_temperature
+  - sensor.yr_wind_speed
+  - sensor.yr_humidity
+  - sensor.yr_pressure
 bad:
   name: Bad
   entities:
-  - light.downlights_bad_niva
-  - sensor.sensor_bad_luminans
-  - sensor.sensor_bad_temperatur
-  - climate.varmekabel_bad_varme
+  - light.qubino_zmnhdd1_flush_dimmer_level
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
   view: false
 kjokken:
-  name: "Kj\xF8kken"
+  name: 'Kjøkken'
   entities:
-  - light.downlights_kjkken_niva
+  - light.fibaro_system_fgd212_dimmer_2_level
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
 stue:
   name: Stue
   entities:
-  - climate.varmepumpe_stue_cooling_1
-  - climate.varmepumpe_stue_heating_1
-  - sensor.varmepumpe_stue_temperature
+  - climate.remotec_zxt120eu_cooling_1
+  - climate.remotec_zxt120eu_heating_1
 gang:
   name: Gang
   entities:
-  - climate.varmekabel_gang_varme
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
 sov:
   name: Soverom
   entities:
 kontor:
   name: Kontor
   entities:
+  - zwave.aeotec_zw090_zstick_gen5_eu
 garasje:
   name: Garasje
   entities:
-
+utelys:
+  name: 'Utendørs belysning'
+  entities:
+  - switch.sonoff_1
 teknisk:
   name: Teknisk
   entities:
-  - switch.varmtvannsbereder_bryter
   - device_tracker.lg_nexus_5x
