@@ -1,24 +1,24 @@
 - id: lys_bad_paa
-  alias: 'Downlights Bad På'
+  alias: 'Taklys bad på v/beveglse'
   trigger:
     - platform: state
-      entity_id: sensor.sensor_bad_beveglse
+      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
       to: '8'
   condition:
     condition: numeric_state
-    entity_id: sensor.sensor_bad_luminans
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
     below: 150
   action:
     - service: light.turn_on
       data:
-        entity_id: light.downlights_bad_niva
+        entity_id: light.qubino_zmnhdd1_flush_dimmer_level
         brightness: 100
 
 - id: lys_bad_dim
-  alias: 'Downlights Bad Dim'
+  alias: 'Taklys bad dim'
   trigger:
     platform: state
-    entity_id: sensor.sensor_bad_beveglse
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
     to: '0'
     for:
       minutes: 5
@@ -29,20 +29,38 @@
   action:
     service: light.turn_on
     data:
-      entity_id: light.downlights_bad_niva
+      entity_id: light.qubino_zmnhdd1_flush_dimmer_level
       brightness: 40
 
 - id: lys_bad_av
-  alias: 'Downlights Bad Av'
+  alias: 'Taklys bad av'
   trigger:
     platform: state
-    entity_id: sensor.sensor_bad_beveglse
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
     to: '0'
     for:
       minutes: 20
   action:
     service: light.turn_off
-    entity_id: light.downlights_bad_niva
+    entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+
+- id: utelys_paa
+  alias: 'Utelys på v/solnedgang'
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.utelys
+
+- id: utelys_av
+  alias: 'Utelys av v/soloppgang'
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.utelys
 
 - id: oppdatering
   alias: 'Oppdatering notifikasjon'
