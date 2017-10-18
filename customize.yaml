@@ -1,25 +1,79 @@
-sun.sun:
-  friendly_name: Sola
-sensor.vret_humidity:
-  friendly_name: Luftfuktighet
-  icon: mdi:water-percent
-sensor.vret_pressure:
-  friendly_name: Trykk
-  icon: mdi:gauge
-sensor.vret_symbol:
-  friendly_name: Værstatus
-sensor.vret_temperature:
-  friendly_name: Temperatur
-sensor.vret_wind_speed:
-  friendly_name: Vindhastighet
-  icon: mdi:weather-windy
-group.all_devices:
-  hidden: false
-  friendly_name: Enheter
+climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat:
+  friendly_name: 'Varmekabel bad'
+climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2:
+  friendly_name: 'Varmekabel gang og kjøkken'
+
 group.all_automations:
   hidden: false
-  friendly_name: Automasjoner
+  control: hidden
+  friendly_name: 'Automasjoner'
+group.all_devices:
+  hidden: false
+  control: hidden
+  friendly_name: 'Enheter'
+group.all_lights:
+  hidden: false
+  friendly_name: 'Belysning'
 group.all_scripts:
   hidden: false
   control: hidden
-  friendly_name: Skript
+  friendly_name: 'Skript'
+group.all_switches:
+  hidden: false
+  control: hidden
+  friendly_name: 'Brytere'
+
+light.fibaro_system_fgd212_dimmer_2_level:
+  friendly_name: 'Taklys kjøkken'
+light.qubino_zmnhdd1_flush_dimmer_level:
+  friendly_name: 'Taklys bad'
+
+sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  friendly_name: 'Bevegelse bad'
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  friendly_name: 'Luminans bad'
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  friendly_name: 'Romtemperatur bad'
+sensor.thermofloor_as_heatit_thermostat_tf_021_temperature:
+  friendly_name: 'Gulvføler bad'
+sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2:
+  friendly_name: 'Gulvføler gang'
+sensor.yr_humidity:
+  friendly_name: 'Luftfuktighet'
+  icon: mdi:water-percent
+sensor.yr_pressure:
+  friendly_name: 'Trykk'
+  icon: mdi:gauge
+sensor.yr_symbol:
+  friendly_name: 'Værstatus'
+sensor.yr_temperature:
+  friendly_name: 'Temperatur'
+sensor.yr_wind_speed:
+  friendly_name: 'Vindhastighet'
+  icon: mdi:weather-windy
+
+sun.sun:
+  friendly_name: 'Sola'
+
+switch.sonoff_1:
+  friendly_name: 'Dekkslys veranda nord'
+switch.sonoff_2:
+  friendly_name: 'Sonoff 2'
+switch.sonoff_3:
+  friendly_name: 'Sonoff 3'
+
+
+#zwave.aeotec_zw090_zstick_gen5_eu:
+#  friendly_name: 'Aeotec ZW090 Gen5: Z-Wave radio'
+#zwave.fibaro_system_fgd212_dimmer_2:
+#  friendly_name: 'Fibaro FGD2112: Taklys kjøkken'
+#zwave.fibaro_system_fgms001zw5_motion_sensor:
+#  friendly_name: 'Fibaro FGMS001-ZW5: Multisensor bad'
+#zwave.qubino_zmnhdd1_flush_dimmer:
+#  friendly_name: 'Qubino ZMNHDD1: Taklys bad'
+#zwave.remotec_zxt120eu:
+#  friendly_name: 'Remotec ZXT-120: Varmepumpe kontroller'
+#zwave.thermofloor_as_heatit_thermostat_tf_021:
+#  friendly_name: 'ThermoFloor TF 021: Varmekabel bad'
+#zwave.thermofloor_as_heatit_thermostat_tf_021_2:
+#  friendly_name: 'ThermoFloor TF 021: Varmekabel gang og kjøkken'
