@@ -1,14 +1,9 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Hjem
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret ha_lat
   longitude: !secret ha_long
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 58
-  # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Oslo
   customize: !include customize.yaml
   customize_domain: !include customize_domain.yaml
@@ -18,6 +13,7 @@ automation: !include automations.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
+switch: !include switches.yaml
 
 # Show links to resources in log and frontend
 # introduction:
@@ -52,13 +48,10 @@ http:
   ssl_certificate: /etc/letsencrypt/live/hulkhaugen.duckdns.org/fullchain.pem
   ssl_key: /etc/letsencrypt/live/hulkhaugen.duckdns.org/privkey.pem
 
-# Track the sun
 sun:
 
-# Weather Prediction
 sensor:
   - platform: yr
-    name: Været
     monitored_conditions:
       - temperature
       - symbol
