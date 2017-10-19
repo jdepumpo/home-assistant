@@ -22,18 +22,34 @@ group.all_switches:
   hidden: false
   control: hidden
   friendly_name: 'Brytere'
+group.bad:
+  control: hidden
 
 light.fibaro_system_fgd212_dimmer_2_level:
   friendly_name: 'Taklys kjøkken'
+light.fibaro_system_fgd212_dimmer_2_level_2:
+  hidden: true
 light.qubino_zmnhdd1_flush_dimmer_level:
   friendly_name: 'Taklys bad'
 
+sensor.cpu_use:
+  friendly_name: 'CPU aktivitet'
+sensor.disk_free_root:
+  friendly_name: 'SD ledig plass /root'
+sensor.disk_use_root:
+  friendly_name: 'SD brukt plass /root'
 sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
   friendly_name: 'Bevegelse bad'
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
   friendly_name: 'Luminans bad'
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: 'Romtemperatur bad'
+sensor.ipv4_address_eth0:
+  friendly_name: 'IPv4 eth0 adresse'
+sensor.last_boot:
+  friendly_name: 'Siste omstart'
+sensor.ram_use:
+  friendly_name: 'Minnebruk'
 sensor.thermofloor_as_heatit_thermostat_tf_021_temperature:
   friendly_name: 'Gulvføler bad'
 sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2:
@@ -55,25 +71,22 @@ sensor.yr_wind_speed:
 sun.sun:
   friendly_name: 'Sola'
 
-switch.sonoff_1:
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  friendly_name: 'Varmtvannsbereder'
+switch.qubino_zmnhdd1_flush_dimmer_switch:
+  hidden: true
+switch.sonoff_basic_1:
   friendly_name: 'Dekkslys veranda nord'
-switch.sonoff_2:
-  friendly_name: 'Sonoff 2'
-switch.sonoff_3:
-  friendly_name: 'Sonoff 3'
-
-
-#zwave.aeotec_zw090_zstick_gen5_eu:
-#  friendly_name: 'Aeotec ZW090 Gen5: Z-Wave radio'
-#zwave.fibaro_system_fgd212_dimmer_2:
-#  friendly_name: 'Fibaro FGD2112: Taklys kjøkken'
-#zwave.fibaro_system_fgms001zw5_motion_sensor:
-#  friendly_name: 'Fibaro FGMS001-ZW5: Multisensor bad'
-#zwave.qubino_zmnhdd1_flush_dimmer:
-#  friendly_name: 'Qubino ZMNHDD1: Taklys bad'
-#zwave.remotec_zxt120eu:
-#  friendly_name: 'Remotec ZXT-120: Varmepumpe kontroller'
-#zwave.thermofloor_as_heatit_thermostat_tf_021:
-#  friendly_name: 'ThermoFloor TF 021: Varmekabel bad'
-#zwave.thermofloor_as_heatit_thermostat_tf_021_2:
-#  friendly_name: 'ThermoFloor TF 021: Varmekabel gang og kjøkken'
+  icon: mdi:lightbulb
+switch.sonoff_basic_2:
+  friendly_name: 'Gulvlampe m/bord stue'
+  icon: mdi:lightbulb
+switch.sonoff_basic_3:
+  friendly_name: 'Speillys bad'
+  icon: mdi:lightbulb
+switch.sonoff_s20_1:
+  friendly_name: 'Bordlampe gang'
+  icon: mdi:lightbulb
+switch.sonoff_s20_2:
+  friendly_name: 'Bordlampe spisestue'
+  icon: mdi:lightbulb
