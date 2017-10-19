@@ -1,0 +1,36 @@
+- platform: yr
+  monitored_conditions:
+    - temperature
+    - symbol
+    - windSpeed
+    - pressure
+    - humidity
+
+- platform: template
+  sensors:
+    sensor_batteri_bad:
+      friendly_name: 'Multisensor batteri bad'
+      value_template:
+        '{% if states.zwave.fibaro_system_fgms001zw5_motion_sensor %}
+          {{ states.zwave.fibaro_system_fgms001zw5_motion_sensor.attributes.battery_level }}
+        {% else %}
+          Ikke tilgjengelig
+        {% endif %}'
+      unit_of_measurement: '%'
+
+
+- platform: command_line
+  name: 'CPU temperatur'
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /root
+    - type: disk_free
+      arg: /root
+    - type: memory_use_percent
+    - type: processor_use
+    - type: last_boot
