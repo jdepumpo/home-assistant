@@ -1,5 +1,5 @@
 - id: lys_bad_paa
-  alias: 'Taklys bad på v/beveglse'
+  alias: 'Belysning bad på v/beveglse'
   trigger:
     - platform: state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
@@ -13,9 +13,11 @@
       data:
         entity_id: light.qubino_zmnhdd1_flush_dimmer_level
         brightness: 100
+    - service: homeassistant.turn_on
+      entity_id: switch.sonoff_basic_3
 
-- id: lys_bad_dim
-  alias: 'Taklys bad dim'
+- id: taklys_bad_dim
+  alias: 'Taklys bad dim 5 min'
   trigger:
     platform: state
     entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
@@ -24,16 +26,28 @@
       minutes: 5
   condition:
     condition: state
-    entity_id: light.downlights_bad_niva
+    entity_id: light.qubino_zmnhdd1_flush_dimmer_level
     state: 'on'
   action:
-    service: light.turn_on
-    data:
-      entity_id: light.qubino_zmnhdd1_flush_dimmer_level
-      brightness: 40
+    - service: light.turn_on
+      data:
+        entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+        brightness: 40
+
+- id: speillys_bad_av
+  alias: 'Speillys bad av 5 min'
+  trigger:
+    platform: state
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    to: '0'
+    for:
+      minutes: 5
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.sonoff_basic_3
 
 - id: lys_bad_av
-  alias: 'Taklys bad av'
+  alias: 'Taklys bad av 20 min'
   trigger:
     platform: state
     entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
@@ -44,14 +58,17 @@
     service: light.turn_off
     entity_id: light.qubino_zmnhdd1_flush_dimmer_level
 
-- id: utelys_paa
-  alias: 'Utelys på v/solnedgang'
+- id: utelys_stemning_paa
+  alias: 'Ute- og stemningslys på v/solnedgang'
   trigger:
     platform: sun
     event: sunset
+    offset: '-00:30:00'
   action:
-    service: homeassistant.turn_on
-    entity_id: group.utelys
+    - service: homeassistant.turn_on
+      entity_id: group.utelys
+    - service: homeassistant.turn_on
+      entity_id: group.stemning
 
 - id: utelys_av
   alias: 'Utelys av v/soloppgang'
@@ -61,6 +78,15 @@
   action:
     service: homeassistant.turn_off
     entity_id: group.utelys
+
+- id: stemning_av
+  alias: 'Stemningslys av 01:30'
+  trigger:
+    platform: time
+    at: '01:30:00'
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.stemning
 
 - id: oppdatering
   alias: 'Oppdatering notifikasjon'
