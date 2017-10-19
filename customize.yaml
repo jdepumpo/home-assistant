@@ -36,8 +36,10 @@ sensor.cpu_use:
   friendly_name: 'CPU aktivitet'
 sensor.disk_free_root:
   friendly_name: 'SD ledig plass /root'
+  icon: mdi:micro-sd
 sensor.disk_use_root:
   friendly_name: 'SD brukt plass /root'
+  icon: mdi:micro-sd
 sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
   friendly_name: 'Bevegelse bad'
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
