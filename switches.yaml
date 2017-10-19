@@ -1,23 +1,111 @@
 - platform: mqtt
-  name: "Sonoff 1"
-  command_topic: "cmnd/sonoff1/power"
-  state_topic: "stat/sonoff1/POWER"
+  name: "Sonoff Basic 1"
+  command_topic: "cmnd/sonoff_basic_1/power"
+  state_topic: "stat/sonoff_basic_1/POWER"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
 - platform: mqtt
-  name: "Sonoff 2"
-  command_topic: "cmnd/sonoff2/power"
-  state_topic: "stat/sonoff2/POWER"
+  name: "Sonoff Basic 2"
+  command_topic: "cmnd/sonoff_basic_2/power"
+  state_topic: "stat/sonoff_basic_2/POWER"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
 - platform: mqtt
-  name: "Sonoff 3"
-  command_topic: "cmnd/sonoff3/power"
-  state_topic: "stat/sonoff3/POWER"
+  name: "Sonoff Basic 3"
+  command_topic: "cmnd/sonoff_basic_3/power"
+  state_topic: "stat/sonoff_basic_3/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff Basic 4"
+  command_topic: "cmnd/sonoff_basic_4/power"
+  state_topic: "stat/sonoff_basic_4/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff Basic 5"
+  command_topic: "cmnd/sonoff_basic_5/power"
+  state_topic: "stat/sonoff_basic_5/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff Basic 6"
+  command_topic: "cmnd/sonoff_basic_6/power"
+  state_topic: "stat/sonoff_basic_6/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff Basic 7"
+  command_topic: "cmnd/sonoff_basic_7/power"
+  state_topic: "stat/sonoff_basic_7/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff Basic 8"
+  command_topic: "cmnd/sonoff_basic_8/power"
+  state_topic: "stat/sonoff_basic_8/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff S20 1"
+  command_topic: "cmnd/sonoff_s20_1/power"
+  state_topic: "stat/sonoff_s20_1/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff S20 2"
+  command_topic: "cmnd/sonoff_s20_2/power"
+  state_topic: "stat/sonoff_s20_2/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff S20 3"
+  command_topic: "cmnd/sonoff_s20_3/power"
+  state_topic: "stat/sonoff_s20_3/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff S20 4"
+  command_topic: "cmnd/sonoff_s20_4/power"
+  state_topic: "stat/sonoff_s20_4/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff S20 5"
+  command_topic: "cmnd/sonoff_s20_5/power"
+  state_topic: "stat/sonoff_s20_5/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Sonoff S20 6"
+  command_topic: "cmnd/sonoff_s20_6/power"
+  state_topic: "stat/sonoff_s20_6/POWER"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
