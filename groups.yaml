@@ -1,16 +1,96 @@
-#default_view:
-#  view: yes
-#  entities:
-#  - group.all_scripts
-#  - group.all_automations
-#  - group.teknisk
-#  - group.garasje
-#  - group.stue
-#  - group.kjokken
-#  - group.kontor
-#  - group.bad
-#  - group.sov
-#  - group.gang
+default_view:
+  view: true
+  entities:
+  - group.all_scripts
+  - group.bad
+  - group.gang
+  - group.garasje
+  - group.kjokken
+  - group.kontor
+  - group.sov
+  - group.stue
+  - group.teknisk
+
+avansert:
+  name: 'Avansert'
+  view: true
+  entities:
+  - group.all_automations
+  - group.all_devices
+  - group.all_lights
+  - group.all_switches
+  - group.miljo
+  - group.stemning
+
+diagnose:
+  name: 'Diagnose'
+  view: true
+  entities:
+  - group.alarm
+  - group.rpi
+  - group.sensor
+  - group.strom  
+  - group.zwave
+
+rpi:
+  name: 'Raspberry Pi 2'
+  entities:
+  - sensor.cpu_use
+  - sensor.cpu_temperatur
+  - sensor.ram_use
+  - sensor.disk_free_root
+  - sensor.disk_use_root
+  - sensor.ipv4_address_eth0
+  - sensor.last_boot
+
+sensor:
+  name: 'Sensorer'
+  entities:
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+  - sensor.sensor_batteri_bad
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
+  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
+
+alarm:
+  name: 'Alarmer'
+  entities:
+  - sensor.fibaro_system_fgd212_dimmer_2_alarm_level
+  - sensor.fibaro_system_fgd212_dimmer_2_alarm_type
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type
+  - sensor.qubino_zmnhdd1_flush_dimmer_alarm_level
+  - sensor.qubino_zmnhdd1_flush_dimmer_alarm_type
+
+bad:
+  name: 'Bad'
+  entities:
+  - switch.sonoff_basic_3
+  - light.qubino_zmnhdd1_flush_dimmer_level
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+  view: false
+
+gang:
+  name: 'Gang'
+  entities:
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+
+garasje:
+  name: 'Garasje'
+  entities:
+
+kjokken:
+  name: 'Kjøkken'
+  entities:
+  - light.fibaro_system_fgd212_dimmer_2_level
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+
+kontor:
+  name: 'Kontor'
+  entities:
 
 miljo:
   name: 'Miljø'
@@ -21,46 +101,58 @@ miljo:
   - sensor.yr_wind_speed
   - sensor.yr_humidity
   - sensor.yr_pressure
-bad:
-  name: Bad
+
+sov:
+  name: 'Soverom'
   entities:
-  - light.qubino_zmnhdd1_flush_dimmer_level
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
-  view: false
-kjokken:
-  name: 'Kjøkken'
+
+stemning:
+  name: 'Stemningsbelysning'
   entities:
-  - light.fibaro_system_fgd212_dimmer_2_level
-  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+  - switch.sonoff_basic_2
+
+strom:
+  name: 'Strømforbruk'
+  entities:
+  - sensor.fibaro_system_fgd212_dimmer_2_energy
+  - sensor.fibaro_system_fgd212_dimmer_2_power
+  - sensor.fibaro_system_fgd212_dimmer_2_power_2
+  - sensor.fibaro_system_fgd212_dimmer_2_power_management
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management
+  - sensor.qubino_zmnhdd1_flush_dimmer_energy
+  - sensor.qubino_zmnhdd1_flush_dimmer_power
+  - sensor.qubino_zmnhdd1_flush_dimmer_power_management
+  - sensor.thermofloor_as_heatit_thermostat_tf_021_energy
+
 stue:
-  name: Stue
+  name: 'Stue'
   entities:
+  - switch.sonoff_basic_2
   - climate.remotec_zxt120eu_cooling_1
   - climate.remotec_zxt120eu_heating_1
-gang:
-  name: Gang
-  entities:
-  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
-  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
-sov:
-  name: Soverom
-  entities:
-kontor:
-  name: Kontor
-  entities:
-  - zwave.aeotec_zw090_zstick_gen5_eu
-garasje:
-  name: Garasje
-  entities:
-utelys:
-  name: 'Utendørs belysning'
-  entities:
-  - switch.sonoff_1
+
 teknisk:
-  name: Teknisk
+  name: 'Teknisk'
   entities:
   - device_tracker.lg_nexus_5x
+  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+
+utelys:
+  name: 'Utendørsbelysning'
+  entities:
+  - switch.sonoff_basic_1
+
+zwave:
+  name: 'Z-Wave'
+  entities:
+  - zwave.aeotec_zw090_zstick_gen5_eu
+  - zwave.fibaro_system_fgd212_dimmer_2
+  - zwave.fibaro_system_fgms001zw5_motion_sensor
+  - zwave.fibaro_system_fgwpef_wall_plug_gen5
+  - zwave.qubino_zmnhdd1_flush_dimmer
+  - zwave.remotec_zxt120eu
+  - zwave.thermofloor_as_heatit_thermostat_tf_021
+  - zwave.thermofloor_as_heatit_thermostat_tf_021_2
