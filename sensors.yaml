@@ -8,7 +8,7 @@
 
 - platform: template
   sensors:
-    sensor_batteri_bad:
+    fibaro_battery_bad:
       friendly_name: 'Multisensor batteri bad'
       value_template:
         '{% if states.zwave.fibaro_system_fgms001zw5_motion_sensor %}
