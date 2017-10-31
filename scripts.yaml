@@ -47,3 +47,11 @@ hjem:
 #        temperature: 22
     - service: switch.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+
+test_notify:
+  alias: 'Test notifikasjon'
+  sequence:
+   - service: notify.notify
+     data:
+       title: 'Home Assistant'
+       message: 'Test notifikasjon'
