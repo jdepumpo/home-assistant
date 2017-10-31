@@ -10,6 +10,7 @@ default_view:
   - group.sov
   - group.stue
   - group.teknisk
+  - group.ute
 
 avansert:
   name: 'Avansert'
@@ -32,27 +33,6 @@ diagnose:
   - group.strom  
   - group.zwave
 
-rpi:
-  name: 'Raspberry Pi 2'
-  entities:
-  - sensor.cpu_use
-  - sensor.cpu_temperatur
-  - sensor.ram_use
-  - sensor.disk_free_root
-  - sensor.disk_use_root
-  - sensor.ipv4_address_eth0
-  - sensor.last_boot
-
-sensor:
-  name: 'Sensorer'
-  entities:
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-  - sensor.sensor_batteri_bad
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
-  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
-
 alarm:
   name: 'Alarmer'
   entities:
@@ -71,7 +51,6 @@ bad:
   - switch.sonoff_basic_3
   - light.qubino_zmnhdd1_flush_dimmer_level
   - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-  view: false
 
 gang:
   name: 'Gang'
@@ -102,6 +81,28 @@ miljo:
   - sensor.yr_humidity
   - sensor.yr_pressure
 
+rpi:
+  name: 'Raspberry Pi 2'
+  entities:
+  - sensor.cpu_used
+  - sensor.cpu_temperatur
+  - sensor.ram_used
+  - sensor.disk_free_root
+  - sensor.disk_used_root
+  - sensor.ipv4_address_eth0
+  - sensor.last_boot
+  - updater.updater
+
+sensor:
+  name: 'Sensorer'
+  entities:
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+  - sensor.fibaro_battery_bad
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
+  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
+
 sov:
   name: 'Soverom'
   entities:
@@ -110,6 +111,8 @@ stemning:
   name: 'Stemningsbelysning'
   entities:
   - switch.sonoff_basic_2
+#  - switch.sonoff_s20_1
+#  - switch.sonoff_s20_2
 
 strom:
   name: 'Strømforbruk'
@@ -131,17 +134,18 @@ stue:
   name: 'Stue'
   entities:
   - switch.sonoff_basic_2
+#  - switch.sonoff_s20_2
   - climate.remotec_zxt120eu_cooling_1
   - climate.remotec_zxt120eu_heating_1
 
 teknisk:
   name: 'Teknisk'
   entities:
-  - device_tracker.lg_nexus_5x
+  - device_tracker.nexus_5x
   - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
-utelys:
-  name: 'Utendørsbelysning'
+ute:
+  name: 'Utendørs'
   entities:
   - switch.sonoff_basic_1
 
