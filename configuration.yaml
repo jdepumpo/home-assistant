@@ -1,10 +1,10 @@
 homeassistant:
   name: Hjem
-  latitude: !secret ha_lat
-  longitude: !secret ha_long
-  elevation: 58
+  latitude: !secret ha_latitude
+  longitude: !secret ha_longitude
+  elevation: !secret ha_elevation
   unit_system: metric
-  time_zone: Europe/Oslo
+  time_zone: !secret ha_time_zone
   customize: !include customize.yaml
   customize_domain: !include customize_domain.yaml
   customize_glob: !include customize_glob.yaml
@@ -16,17 +16,23 @@ script: !include scripts.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 
-# Show links to resources in log and frontend
-# introduction:
+logger:
+  default: warning
+  logs:
+    homeassistant.components.device_tracker: critical
+    homeassistant.components.zwave: critical
+http:
+  api_password: !secret http_api_password
+  ssl_certificate: /etc/letsencrypt/live/hulkhaugen.duckdns.org/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/hulkhaugen.duckdns.org/privkey.pem
 
-# Enables support for tracking state changes over time.
-# history:
-
-# View all events in a logbook
-# logbook:
-
-# recorder:
-#   purge_interval: 2
+# Mosquitto MQTT
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  client_id: !secret mqtt_client_id
+  username: !secret mqtt_username
+  password: !secret mqtt_password
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -34,50 +40,50 @@ zwave:
 # Enables configuration UI
 config:
 
+# Enables the map/zone
+map:
+
 # Enables the frontend
 frontend:
 
 # Checks for available updates
 updater:
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-
-http:
-  api_password: !secret http_api_password
-  ssl_certificate: /etc/letsencrypt/live/hulkhaugen.duckdns.org/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/hulkhaugen.duckdns.org/privkey.pem
 
 sun:
 
 device_tracker:
-  - platform: asuswrt
-    host: 192.168.1.1
-    username: !secret device_tracker_username
-    password: !secret device_tracker_password
-    protocol: telnet
-    track_new_devices: false
+  platform: asuswrt
+  host: 192.168.1.1
+  username: !secret device_tracker_username
+  password: !secret device_tracker_password
+  protocol: telnet
+  track_new_devices: false
+
+notify:
+  platform: html5
+  gcm_api_key: !secret notify_gcm_api_key
+  gcm_sender_id: !secret notify_gcm_sender_id
+    
+media_player:
+  platform: cast
+
+#google_assistant:
+#  project_id: !secret google_assistant_project_id
+#  client_id: !secret google_assistant_client_id
+#  access_token: !secret google_assistant_access_token
+#  exposed_domains:
+#    - switch
+#    - light
+#    - group
 
 # Discover some devices automatically
 # discovery:
 
-notify:
-  - name: notify
-    platform: html5
-    gcm_api_key: !secret notify_gcm_api_key
-    gcm_sender_id: !secret notify_gcm_sender_id
-    
-# media_player:
-#   - platform: cast
+# Enables support for tracking state changes over time.
+# history:
 
-# Mosquitto MQTT broker
-mqtt:
-  broker: !secret mqtt_broker
-  port: !secret mqtt_port
-  client_id: home-assistant
-  username: !secret mqtt_username
-  password: !secret mqtt_password
+# View all events in a logbook
+# logbook:
     
 # ifttt:
 #   key: !secret ifttt_key
