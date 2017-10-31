@@ -32,25 +32,25 @@ light.fibaro_system_fgd212_dimmer_2_level_2:
 light.qubino_zmnhdd1_flush_dimmer_level:
   friendly_name: 'Taklys bad'
 
-sensor.cpu_use:
+sensor.cpu_used:
   friendly_name: 'CPU aktivitet'
+  icon: mdi:chip
 sensor.disk_free_root:
   friendly_name: 'SD ledig plass /root'
   icon: mdi:micro-sd
-sensor.disk_use_root:
+sensor.disk_used_root:
   friendly_name: 'SD brukt plass /root'
   icon: mdi:micro-sd
 sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
   friendly_name: 'Bevegelse bad'
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
   friendly_name: 'Luminans bad'
+  icon: mdi:brightness-7
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: 'Romtemperatur bad'
-sensor.ipv4_address_eth0:
-  friendly_name: 'IPv4 eth0 adresse'
 sensor.last_boot:
   friendly_name: 'Siste omstart'
-sensor.ram_use:
+sensor.ram_used:
   friendly_name: 'Minnebruk'
 sensor.thermofloor_as_heatit_thermostat_tf_021_temperature:
   friendly_name: 'Gulvføler bad'
@@ -58,7 +58,7 @@ sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2:
   friendly_name: 'Gulvføler gang'
 sensor.yr_humidity:
   friendly_name: 'Luftfuktighet'
-  icon: mdi:water-percent
+  icon: mdi:water
 sensor.yr_pressure:
   friendly_name: 'Trykk'
   icon: mdi:gauge
