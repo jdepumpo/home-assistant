@@ -12,7 +12,7 @@
     - service: light.turn_on
       data:
         entity_id: light.qubino_zmnhdd1_flush_dimmer_level
-        brightness: 100
+        brightness: 120
     - service: homeassistant.turn_on
       entity_id: switch.sonoff_basic_3
 
@@ -47,13 +47,13 @@
     entity_id: switch.sonoff_basic_3
 
 - id: lys_bad_av
-  alias: 'Taklys bad av 20 min'
+  alias: 'Taklys bad av 30 min'
   trigger:
     platform: state
     entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
     to: '0'
     for:
-      minutes: 20
+      minutes: 30
   action:
     service: light.turn_off
     entity_id: light.qubino_zmnhdd1_flush_dimmer_level
@@ -63,10 +63,10 @@
   trigger:
     platform: sun
     event: sunset
-    offset: '-00:30:00'
+    offset: '-00:15:00'
   action:
     - service: homeassistant.turn_on
-      entity_id: group.utelys
+      entity_id: group.ute
     - service: homeassistant.turn_on
       entity_id: group.stemning
 
@@ -77,7 +77,7 @@
     event: sunrise
   action:
     service: homeassistant.turn_off
-    entity_id: group.utelys
+    entity_id: group.ute
 
 - id: stemning_av
   alias: 'Stemningslys av 01:30'
@@ -89,7 +89,7 @@
     entity_id: group.stemning
 
 - id: oppdatering
-  alias: 'Oppdatering notifikasjon'
+  alias: 'Oppdatering tilgjengelig'
   trigger:
     platform: state
     entity_id: updater.updater
@@ -98,3 +98,27 @@
     data:
       title: 'Home Assistant'
       message: 'En ny versjon er tilgjengelig'
+
+- id: temp_h
+  alias: 'Høy systemtemperatur 65°C'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.cpu_temperatur
+    above: 65
+  action:
+    service: notify.notify
+    data:
+      title: 'Home Assistant'
+      message: 'Alarm: System temperatur over 65°C'
+
+- id: temp_hh
+  alias: 'Kritisk systemtemperatur 75°C'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.cpu_temperatur
+    above: 75
+  action:
+    service: notify.notify
+    data:
+      title: 'Home Assistant'
+      message: 'Alarm: System temperatur over 75°C'
