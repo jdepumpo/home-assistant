@@ -1,8 +1,8 @@
 "*_alarm_*":
-  icon: mdi:alarm-bell
-"*_effekt":
-  icon: mdi:flash
-"*_forbruk":
-  icon: mdi:flash
-"switch.*":
-  icon: mdi:power
+  icon: mdi:bell
+"*batter*":
+  icon: mdi:battery
+"*_power*":
+  icon: mdi:speedometer
+"*_energy":
+  icon: mdi:speedometer
