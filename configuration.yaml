@@ -65,7 +65,20 @@ notify:
   gcm_sender_id: !secret notify_gcm_sender_id
     
 media_player:
-  platform: cast
+  - platform: cast
+  - platform: gpmdp
+    host: 192.168.1.6
+  - platform: webostv
+    host: 192.168.1.37
+    filename: webostv.conf
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: 10:08:C1:B6:B4:92
+    customize:
+      sources:
+        - HTPC
+        - Xbox One
 
 #google_assistant:
 #  project_id: !secret google_assistant_project_id
