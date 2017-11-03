@@ -32,6 +32,13 @@ light.fibaro_system_fgd212_dimmer_2_level_2:
 light.qubino_zmnhdd1_flush_dimmer_level:
   friendly_name: 'Taklys bad'
 
+media_player.brrecast:
+  friendly_name: 'Chromecast BørreCast'
+media_player.gpm_desktop_player:
+  friendly_name: 'HTPC Google Play Music'
+media_player.lg_webos_smart_tv:
+  friendly_name: 'LG SmartTV'
+
 sensor.cpu_used:
   friendly_name: 'CPU aktivitet'
   icon: mdi:chip
@@ -77,18 +84,21 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
   friendly_name: 'Varmtvannsbereder'
 switch.qubino_zmnhdd1_flush_dimmer_switch:
   hidden: true
-switch.sonoff_basic_1:
-  friendly_name: 'Dekkslys veranda nord'
-  icon: mdi:lightbulb
 switch.sonoff_basic_2:
   friendly_name: 'Gulvlampe m/bord stue'
   icon: mdi:lightbulb
 switch.sonoff_basic_3:
   friendly_name: 'Speillys bad'
   icon: mdi:lightbulb
-switch.sonoff_s20_1:
+switch.wifi_smart_socket_ps16_1:
+  friendly_name: 'Portlys inngangsparti'
+  icon: mdi:lightbulb
+switch.wifi_smart_socket_ps16_2:
   friendly_name: 'Bordlampe gang'
   icon: mdi:lightbulb
-switch.sonoff_s20_2:
+switch.wifi_smart_socket_ps16_3:
   friendly_name: 'Bordlampe spisestue'
+  icon: mdi:lightbulb
+switch.wifi_smart_socket_ps16_4:
+  friendly_name: 'Dekkslys veranda nord'
   icon: mdi:lightbulb
