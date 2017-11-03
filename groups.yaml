@@ -12,6 +12,14 @@ default_view:
   - group.teknisk
   - group.ute
 
+media_spillere:
+  name: 'Medieavspillere'
+  view: true
+  entities:
+  - media_player.brrecast
+  - media_player.gpm_desktop_player
+  - media_player.lg_webos_smart_tv
+
 avansert:
   name: 'Avansert'
   view: true
@@ -56,6 +64,7 @@ gang:
   name: 'Gang'
   entities:
   - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+  - switch.wifi_smart_socket_ps16_2
 
 garasje:
   name: 'Garasje'
@@ -111,9 +120,10 @@ stemning:
   name: 'Stemningsbelysning'
   entities:
   - switch.sonoff_basic_2
-#  - switch.sonoff_s20_1
-#  - switch.sonoff_s20_2
+  - switch.wifi_smart_socket_ps16_2
+  - switch.wifi_smart_socket_ps16_3
 
+  
 strom:
   name: 'Strømforbruk'
   entities:
@@ -134,7 +144,7 @@ stue:
   name: 'Stue'
   entities:
   - switch.sonoff_basic_2
-#  - switch.sonoff_s20_2
+  - switch.wifi_smart_socket_ps16_3
   - climate.remotec_zxt120eu_cooling_1
   - climate.remotec_zxt120eu_heating_1
 
@@ -147,7 +157,8 @@ teknisk:
 ute:
   name: 'Utendørs'
   entities:
-  - switch.sonoff_basic_1
+  - switch.wifi_smart_socket_ps16_1
+  - switch.wifi_smart_socket_ps16_4
 
 zwave:
   name: 'Z-Wave'
