@@ -141,3 +141,12 @@ wifi_smart_socket_ps16_5:
   picture:
   track: false
   vendor: Espressif Inc.
+
+wifi_smart_socket_ps16_6:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 60:01:94:8D:55:B9
+  name: WiFi Smart Socket 6
+  picture:
+  track: false
+  vendor: Espressif Inc.
