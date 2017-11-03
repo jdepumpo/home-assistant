@@ -87,25 +87,41 @@
   payload_off: "OFF"
   retain: true
 - platform: mqtt
-  name: "Sonoff S20 4"
-  command_topic: "cmnd/sonoff_s20_4/power"
-  state_topic: "stat/sonoff_s20_4/POWER"
+  name: "WiFi Smart Socket PS-16 1"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_1/power"
+  state_topic: "stat/wifi_smart_socket_ps-16_1/POWER"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
 - platform: mqtt
-  name: "Sonoff S20 5"
-  command_topic: "cmnd/sonoff_s20_5/power"
-  state_topic: "stat/sonoff_s20_5/POWER"
+  name: "WiFi Smart Socket PS-16 2"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_2/power"
+  state_topic: "stat/wifi_smart_socket_ps-16_2/POWER"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
 - platform: mqtt
-  name: "Sonoff S20 6"
-  command_topic: "cmnd/sonoff_s20_6/power"
-  state_topic: "stat/sonoff_s20_6/POWER"
+  name: "WiFi Smart Socket PS-16 3"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_3/power"
+  state_topic: "stat/wifi_smart_socket_ps-16_3/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "WiFi Smart Socket PS-16 4"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_4/power"
+  state_topic: "stat/wifi_smart_socket_ps-16_4/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "WiFi Smart Socket PS-16 5"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_5/power"
+  state_topic: "stat/wifi_smart_socket_ps-16_5/POWER"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
