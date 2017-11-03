@@ -11,6 +11,7 @@ homeassistant:
 
 automation: !include automations.yaml
 group: !include groups.yaml
+light: !include lights.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml
