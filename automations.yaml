@@ -16,8 +16,8 @@
     - service: light.turn_on
       entity_id: light.sonoff_basic_3
 
-- id: taklys_bad_dim
-  alias: 'Taklys bad dim 7 min'
+- id: lys_bad_dim
+  alias: 'Belysning bad dim 7 min'
   trigger:
     platform: state
     entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
@@ -33,21 +33,11 @@
       data:
         entity_id: light.qubino_zmnhdd1_flush_dimmer_level
         brightness: 40
-
-- id: speillys_bad_av
-  alias: 'Speillys bad av 7 min'
-  trigger:
-    platform: state
-    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-    to: '0'
-    for:
-      minutes: 7
-  action:
-    service: light.turn_off
-    entity_id: light.sonoff_basic_3
+    - service: light.turn_off
+      entity_id: light.sonoff_basic_3
 
 - id: lys_bad_av
-  alias: 'Taklys bad av 25 min'
+  alias: 'Belysning bad av 25 min'
   trigger:
     platform: state
     entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
