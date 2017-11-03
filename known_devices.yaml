@@ -9,7 +9,7 @@ nexus_5x:
 
 polar_m600:
   hide_if_away: false
-  icon:
+  icon: mdi:watch
   mac: 00:22:D0:C1:5D:C9
   name: Polar M600
   picture:
@@ -18,25 +18,34 @@ polar_m600:
 
 acer_swift_3:
   hide_if_away: false
-  icon:
+  icon: mdi:laptop
   mac: 94:E9:79:EB:55:8F
   name: Acer Swift 3
   picture:
   track: false
-  vendor: unknown
+  vendor: Acer
 
 lgsmarttv:
   hide_if_away: false
-  icon:
+  icon: mdi:television
   mac: 10:08:C1:B6:B4:92
   name: LGSmartTV
   picture:
   track: false
-  vendor: unknown
+  vendor: LG Electronics
+
+chromecast:
+  hide_if_away: false
+  icon: mdi:cast
+  mac: F4:F5:D8:E2:BB:6E
+  name: Chromecast
+  picture:
+  track: false
+  vendor: Google, Inc.
 
 sonoff_basic_1:
   hide_if_away: false
-  icon:
+  icon: mdi:power
   mac: 2C:3A:E8:07:93:57
   name: Sonoff Basic 1
   picture:
@@ -45,18 +54,90 @@ sonoff_basic_1:
 
 sonoff_basic_2:
   hide_if_away: false
-  icon:
+  icon: mdi:power
   mac: 5C:CF:7F:B4:36:8F
   name: Sonoff Basic 2
   picture:
   track: false
-  vendor: unknown
+  vendor: Espressif Inc.
 
 sonoff_basic_3:
   hide_if_away: false
-  icon:
+  icon: mdi:power
   mac: 5C:CF:7F:B4:3E:83
   name: Sonoff Basic 3
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+sonoff_basic_4:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 68:C6:3A:80:F0:2F
+  name: Sonoff Basic 4
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+sonoff_basic_5:
+  hide_if_away: false
+  icon: mdi:power
+  mac: EC:FA:BC:00:73:C2
+  name: Sonoff Basic 5
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+sonoff_basic_7:
+  hide_if_away: false
+  icon: mdi:power
+  mac: EC:FA:BC:00:7D:E4
+  name: Sonoff Basic 7
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+wifi_smart_socket_ps16_1:
+  hide_if_away: false
+  icon:
+  mac: 60:01:94:8B:A9:44
+  name: WiFi Smart Socket 1
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+wifi_smart_socket_ps16_2:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 60:01:94:8D:93:EE
+  name: WiFi Smart Socket 2
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+wifi_smart_socket_ps16_3:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 60:01:94:8D:8D:B3
+  name: WiFi Smart Socket 3
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+wifi_smart_socket_ps16_4:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 60:01:94:8D:53:B6
+  name: WiFi Smart Socket 4
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+wifi_smart_socket_ps16_5:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 60:01:94:8D:54:54
+  name: WiFi Smart Socket 5
   picture:
   track: false
   vendor: Espressif Inc.
