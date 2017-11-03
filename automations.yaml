@@ -65,27 +65,35 @@
     event: sunset
     offset: '-00:10:00'
   action:
-    - service: homeassistant.turn_on
+    - service: light.turn_on
       entity_id: group.ute
-    - service: homeassistant.turn_on
+    - service: light.turn_on
       entity_id: group.stemning
 
-- id: utelys_av
-  alias: 'Utelys av v/soloppgang'
+- id: lys_av
+  alias: 'Lys av v/soloppgang'
   trigger:
     platform: sun
     event: sunrise
   action:
-    service: homeassistant.turn_off
-    entity_id: group.ute
+    service: light.turn_off
+    entity_id: group.all_lights
 
-- id: stemning_av
-  alias: 'Stemningslys av 01:30'
+- id: stemning_av_uke
+  alias: 'Stemningslys av v/midnatt ukedag'
   trigger:
     platform: time
-    at: '01:30:00'
+    at: '01:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
-    service: homeassistant.turn_off
+    service: light.turn_off
     entity_id: group.stemning
 
 - id: oppdatering
