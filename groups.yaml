@@ -56,7 +56,7 @@ alarm:
 bad:
   name: 'Bad'
   entities:
-  - switch.sonoff_basic_3
+  - light.sonoff_basic_3
   - light.qubino_zmnhdd1_flush_dimmer_level
   - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
 
@@ -64,7 +64,7 @@ gang:
   name: 'Gang'
   entities:
   - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
-  - switch.wifi_smart_socket_ps16_2
+  - light.wifi_smart_socket_ps16_2
 
 garasje:
   name: 'Garasje'
@@ -119,9 +119,9 @@ sov:
 stemning:
   name: 'Stemningsbelysning'
   entities:
-  - switch.sonoff_basic_2
-  - switch.wifi_smart_socket_ps16_2
-  - switch.wifi_smart_socket_ps16_3
+  - light.sonoff_basic_2
+  - light.wifi_smart_socket_ps16_2
+  - light.wifi_smart_socket_ps16_3
 
   
 strom:
@@ -143,8 +143,8 @@ strom:
 stue:
   name: 'Stue'
   entities:
-  - switch.sonoff_basic_2
-  - switch.wifi_smart_socket_ps16_3
+  - light.sonoff_basic_2
+  - light.wifi_smart_socket_ps16_3
   - climate.remotec_zxt120eu_cooling_1
   - climate.remotec_zxt120eu_heating_1
 
@@ -157,8 +157,8 @@ teknisk:
 ute:
   name: 'Utendørs'
   entities:
-  - switch.wifi_smart_socket_ps16_1
-  - switch.wifi_smart_socket_ps16_4
+  - light.wifi_smart_socket_ps16_1
+  - light.wifi_smart_socket_ps16_4
 
 zwave:
   name: 'Z-Wave'
