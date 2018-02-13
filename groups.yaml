@@ -1,4 +1,5 @@
 default_view:
+  name: 'Hjem'
   view: true
   entities:
   - group.all_scripts
@@ -12,13 +13,15 @@ default_view:
   - group.teknisk
   - group.ute
 
-media_spillere:
-  name: 'Medieavspillere'
-  view: true
-  entities:
-  - media_player.brrecast
-  - media_player.gpm_desktop_player
-  - media_player.lg_webos_smart_tv
+# media_spillere:
+  # name: 'Medieavspillere'
+  # view: true
+  # entities:
+  # - media_player.brrecast
+  # - media_player.gpm_desktop_player
+  # - media_player.lg_webos_smart_tv
+  # - media_player.google_home_mini
+  # - media_player.plex_web_chrome
 
 avansert:
   name: 'Avansert'
@@ -28,7 +31,9 @@ avansert:
   - group.all_devices
   - group.all_lights
   - group.all_switches
+  - group.klima
   - group.miljo
+  - group.rgb_led
   - group.stemning
 
 diagnose:
@@ -74,7 +79,15 @@ kjokken:
   name: 'Kjøkken'
   entities:
   - light.fibaro_system_fgd212_dimmer_2_level
+  # - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+
+klima:
+  name: 'Klima'
+  entities:
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
   - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+  - climate.remotec_zxt120eu_cooling_1
+  - climate.remotec_zxt120eu_heating_1
 
 kontor:
   name: 'Kontor'
@@ -90,15 +103,24 @@ miljo:
   - sensor.yr_humidity
   - sensor.yr_pressure
 
+rgb_led:
+  name: 'RGB LED Belysning'
+  entities:
+  - light.wifi_smart_bulb_1
+  - light.wifi_smart_bulb_2
+  - light.wifi_smart_bulb_3
+
 rpi:
   name: 'Raspberry Pi 2'
   entities:
-  - sensor.cpu_used
+  - sensor.processor_use
   - sensor.cpu_temperatur
-  - sensor.ram_used
+  - sensor.memory_use_percent
   - sensor.disk_free_root
-  - sensor.disk_used_root
+  - sensor.disk_use_percent_root
   - sensor.ipv4_address_eth0
+  - sensor.time
+  - sensor.date
   - sensor.last_boot
   - updater.updater
 
@@ -145,14 +167,15 @@ stue:
   entities:
   - light.sonoff_basic_2
   - light.wifi_smart_socket_ps16_3
-  - climate.remotec_zxt120eu_cooling_1
-  - climate.remotec_zxt120eu_heating_1
+  # - climate.remotec_zxt120eu_cooling_1
+  # - climate.remotec_zxt120eu_heating_1
 
 teknisk:
   name: 'Teknisk'
   entities:
-  - device_tracker.nexus_5x
+  - device_tracker.galaxys8
   - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+  # - input_boolean.ringeklokke
 
 ute:
   name: 'Utendørs'
