@@ -55,6 +55,13 @@
   retain: true
 
 - platform: mqtt
+  name: "Sonoff S20 3"
+  command_topic: "cmnd/sonoff_s20_3/power"
+  state_topic: "stat/sonoff_s20_3/POWER"
+  qos: 1
+  retain: true
+
+- platform: mqtt
   name: "WiFi Smart Socket PS-16 5"
   command_topic: "cmnd/wifi_smart_socket_ps-16_5/power"
   state_topic: "stat/wifi_smart_socket_ps-16_5/POWER"
