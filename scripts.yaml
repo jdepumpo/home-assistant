@@ -1,28 +1,30 @@
 stromspar:
   alias: 'Strømsparing'
   sequence:
-#    - service: light.turn_off
-#      entity_id: group.all_lights
     - service: climate.set_temperature
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
       data:
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
         temperature: 12
     - service: climate.set_temperature
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
       data:
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
         temperature: 12
-    - service: climate.set_operation_mode
-      entity_id: climate.remotec_zxt120eu_heating_1
-      data:
-        operation_mode: heat
-#    - service: climate.set_swing_mode
-#      entity_id: climate.remotec_zxt120eu_heating_1
-#      data:
-#        operation_mode: auto
-#    - service: climate.set_temperature
-#      entity_id: climate.remotec_zxt120eu_heating_1
-#      data:
-#        temperature: 16
+    # - service: climate.set_operation_mode
+      # data:
+        # entity_id: climate.remotec_zxt120eu_heating_1
+        # operation_mode: heat
+    # - service: climate.set_swing_mode
+      # data:
+        # entity_id: climate.remotec_zxt120eu_heating_1
+        # operation_mode: auto
+    # - service: climate.set_temperature
+      # data:
+        # entity_id: climate.remotec_zxt120eu_heating_1
+        # temperature: 16
+    - service: automation.turn_off
+      entity_id: automation.dagkning_temperatur_0700
+    - service: automation.turn_off
+      entity_id: automation.nattsenking_temperatur_20c_0000
     - service: switch.turn_off
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
@@ -30,23 +32,28 @@ hjem:
   alias: 'Hjem'
   sequence:
     - service: climate.set_temperature
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
       data:
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
         temperature: 25
     - service: climate.set_temperature
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
       data:
-        temperature: 23
-#    - service: climate.set_operation_mode
-#      entity_id: climate.remotec_zxt120eu_heating_1
-#      data:
-#        operation_mode: heat
-#    - service: climate.set_temperature
-#      entity_id: climate.remotec_zxt120eu_heating_1
-#      data:
-#        temperature: 22
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        temperature: 24
+    # - service: climate.set_operation_mode
+      # data:
+        # entity_id: climate.remotec_zxt120eu_heating_1
+        # operation_mode: heat
+    # - service: climate.set_temperature
+      # data:
+        # entity_id: climate.remotec_zxt120eu_heating_1
+        # temperature: 22
+    - service: automation.turn_on
+      entity_id: automation.dagkning_temperatur_0700
+    - service: automation.turn_on
+      entity_id: automation.nattsenking_temperatur_20c_0000
     - service: switch.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+
 
 test_notify:
   alias: 'Test notifikasjon'
@@ -55,3 +62,51 @@ test_notify:
      data:
        title: 'Home Assistant'
        message: 'Test notifikasjon'
+       data:
+         tag: 'test-notify'
+
+# rgb_test_ww:
+  # alias: rgb test warm white
+  # sequence:
+  # - service: light.turn_on
+    # entity_id: group.rgb_led
+    # data:
+      # brightness values 0-255
+      # brightness: 255
+      # color_temp values 154-500
+      # color_temp: 154 
+      # rgb_color values 0-255
+      # rgb_color: [255, 220, 30]
+      # white_value values 0-255
+      # white_value: 25
+      # transition: 5
+
+# rgb_test_purple:
+  # alias: rgb test purple
+  # sequence:
+  # - service: light.turn_on
+    # entity_id: group.rgb_led
+    # data:
+      # brightness: 255
+      # rgb_color: [255, 0, 255]
+      # white_value: 0
+      # transition: 5
+
+# rgb_test_white:
+  # alias: rgb test white
+  # sequence:
+  # - service: light.turn_on
+    # entity_id: group.rgb_led
+    # data:
+      # brightness: 125
+      # rgb_color: [255, 255, 255]
+      # white_value: 255
+      # transition: 5
+
+# rgb_test_off:
+  # alias: rgb_off
+  # sequence:
+  # - service: light.turn_off
+    # entity_id: group.rgb_led
+    # data:
+      # transition: 10
