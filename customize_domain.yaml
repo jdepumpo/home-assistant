@@ -2,3 +2,5 @@ automation:
   icon: mdi:auto-fix
 switch:
   icon: mdi:power
+group:
+  control: hidden
