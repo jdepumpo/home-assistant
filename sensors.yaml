@@ -34,3 +34,8 @@
     - type: memory_use_percent
     - type: processor_use
     - type: last_boot
+
+- platform: time_date
+  display_options:
+    - time
+    - date
