@@ -17,13 +17,13 @@
       entity_id: light.sonoff_basic_3
 
 - id: lys_bad_dim
-  alias: 'Belysning bad dim 7 min'
+  alias: 'Belysning bad dim 10 min'
   trigger:
     platform: state
     entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
     to: '0'
     for:
-      minutes: 7
+      minutes: 10
   condition:
     condition: state
     entity_id: light.qubino_zmnhdd1_flush_dimmer_level
@@ -37,13 +37,13 @@
       entity_id: light.sonoff_basic_3
 
 - id: lys_bad_av
-  alias: 'Belysning bad av 25 min'
+  alias: 'Belysning bad av 15 min'
   trigger:
     platform: state
     entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
     to: '0'
     for:
-      minutes: 25
+      minutes: 15
   action:
     service: light.turn_off
     entity_id: light.qubino_zmnhdd1_flush_dimmer_level
@@ -70,10 +70,10 @@
     entity_id: group.all_lights
 
 - id: stemning_av_uke
-  alias: 'Stemningslys av v/midnatt ukedag'
+  alias: 'Stemningslys av 00:00 (ukedag)'
   trigger:
     platform: time
-    at: '01:00:00'
+    at: '00:00:00'
   condition:
     condition: time
     weekday:
@@ -86,6 +86,58 @@
     service: light.turn_off
     entity_id: group.stemning
 
+- id: stemning_av_helg
+  alias: 'Stemningslys av 01:30 (helg)'
+  trigger:
+    platform: time
+    at: '01:30:00'
+  condition:
+    condition: time
+    weekday:
+      - sat
+      - sun
+  action:
+    service: light.turn_off
+    entity_id: group.stemning
+
+- id: nattsenk
+  alias: 'Nattsenking temperatur 20°C 00:00 (ukedag)'
+  trigger:
+    platform: time
+    at: '00:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+        temperature: 20
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        temperature: 20
+
+- id: dagokning
+  alias: 'Dagøkning temperatur 07:00'
+  trigger:
+    platform: time
+    at: '07:00:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+        temperature: 25
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        temperature: 24
+
 - id: oppdatering
   alias: 'Oppdatering tilgjengelig'
   trigger:
@@ -93,11 +145,14 @@
     entity_id: updater.updater
   action:
     service: notify.notify
-    data:
+    data_template:
       title: 'Home Assistant'
-      message: 'En ny versjon er tilgjengelig'
+      message: 'Versjon {{ states.updater.updater.state }} er tilgjengelig'
+    # data:
+      # data:
+        # tag: 'ha-update'
 
-- id: temp_h
+- id: rpi_temp_h
   alias: 'Høy systemtemperatur 65°C'
   trigger:
     platform: numeric_state
@@ -109,7 +164,7 @@
       title: 'Home Assistant'
       message: 'Alarm: System temperatur over 65°C'
 
-- id: temp_hh
+- id: rpi_temp_hh
   alias: 'Kritisk systemtemperatur 75°C'
   trigger:
     platform: numeric_state
@@ -120,3 +175,29 @@
     data:
       title: 'Home Assistant'
       message: 'Alarm: System temperatur over 75°C'
+
+# - id: restart_modem
+  # alias: 'Restart fiber modem 05:45'
+  # trigger:
+    # platform: time
+    # at: '05:45:30'
+  # action:
+    # - service: switch.turn_off
+      # entity_id: switch.sonoff_s20_1
+    # - delay: '00:01:00'
+    # - service: switch.turn_on
+      # entity_id: switch.sonoff_s20_1
+
+# - id: dingdong_aut
+  # alias: "Ringeklokke trigger"
+  # trigger:
+    # platform: event
+    # event_type: pilight_received
+    # event_data:
+      # protocol: c12
+      # unitcode: 24
+      # state: off
+      # uuid: 0000-b8-27-eb-466a01
+  # action:
+    # - service: homeassistant.turn_on
+      # entity_id: input_boolean.ringeklokke
