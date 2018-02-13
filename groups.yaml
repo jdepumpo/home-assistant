@@ -32,7 +32,7 @@ avansert:
   - group.all_lights
   - group.all_switches
   - group.klima
-  - group.miljo
+  - group.vaer
   - group.rgb_led
   - group.stemning
 
@@ -40,35 +40,35 @@ diagnose:
   name: 'Diagnose'
   view: true
   entities:
-  - group.alarm
+  # - group.alarm
   - group.rpi
   - group.sensor
-  - group.strom  
+  # - group.strom  
   - group.zwave
 
-alarm:
-  name: 'Alarmer'
-  entities:
-  - sensor.fibaro_system_fgd212_dimmer_2_alarm_level
-  - sensor.fibaro_system_fgd212_dimmer_2_alarm_type
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type
-  - sensor.qubino_zmnhdd1_flush_dimmer_alarm_level
-  - sensor.qubino_zmnhdd1_flush_dimmer_alarm_type
+# alarm:
+  # name: 'Alarmer'
+  # entities:
+  # - sensor.fibaro_fgd212_alarm_level
+  # - sensor.fibaro_fgd212_alarm_type
+  # - sensor.fibaro_fgms001zw5_alarm_level
+  # - sensor.fibaro_fgms001zw5_alarm_type
+  # - sensor.fibaro_fgwpef_alarm_level
+  # - sensor.fibaro_fgwpef_alarm_type
+  # - sensor.qubino_zmnhdd1_alarm_level
+  # - sensor.qubino_zmnhdd1_alarm_type
 
 bad:
   name: 'Bad'
   entities:
   - light.sonoff_basic_3
-  - light.qubino_zmnhdd1_flush_dimmer_level
-  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+  - light.qubino_zmnhdd1_level
+  - climate.thermofloor_heatit_tf_021_energy_heat
 
 gang:
   name: 'Gang'
   entities:
-  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+  - climate.thermofloor_heatit_tf_021_energy_heat_2
   - light.wifi_smart_socket_ps16_2
 
 garasje:
@@ -78,14 +78,15 @@ garasje:
 kjokken:
   name: 'Kjøkken'
   entities:
-  - light.fibaro_system_fgd212_dimmer_2_level
-  # - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+  - light.fibaro_fgd212_level
+  - light.fibaro_fgd212_level_3
+  # - climate.thermofloor_heatit_tf_021_energy_heat_2
 
 klima:
   name: 'Klima'
   entities:
-  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+  - climate.thermofloor_heatit_tf_021_energy_heat
+  - climate.thermofloor_heatit_tf_021_energy_heat_2
   - climate.remotec_zxt120eu_cooling_1
   - climate.remotec_zxt120eu_heating_1
 
@@ -93,8 +94,8 @@ kontor:
   name: 'Kontor'
   entities:
 
-miljo:
-  name: 'Miljø'
+vaer:
+  name: 'Været'
   entities:
   - sun.sun
   - sensor.yr_symbol
@@ -127,12 +128,12 @@ rpi:
 sensor:
   name: 'Sensorer'
   entities:
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+  - sensor.fibaro_fgms001zw5_burglar
+  - sensor.fibaro_fgms001zw5_luminance
   - sensor.fibaro_battery_bad
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
-  - sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
+  - sensor.fibaro_fgms001zw5_temperature
+  - sensor.thermofloor_heatit_tf_021_temperature
+  - sensor.thermofloor_heatit_tf_021_temperature_2
 
 sov:
   name: 'Soverom'
@@ -144,27 +145,27 @@ stemning:
   - light.sonoff_basic_2
   - light.wifi_smart_socket_ps16_2
   - light.wifi_smart_socket_ps16_3
-
   
-strom:
-  name: 'Strømforbruk'
-  entities:
-  - sensor.fibaro_system_fgd212_dimmer_2_energy
-  - sensor.fibaro_system_fgd212_dimmer_2_power
-  - sensor.fibaro_system_fgd212_dimmer_2_power_2
-  - sensor.fibaro_system_fgd212_dimmer_2_power_management
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management
-  - sensor.qubino_zmnhdd1_flush_dimmer_energy
-  - sensor.qubino_zmnhdd1_flush_dimmer_power
-  - sensor.qubino_zmnhdd1_flush_dimmer_power_management
-  - sensor.thermofloor_as_heatit_thermostat_tf_021_energy
+# strom:
+  # name: 'Strømforbruk'
+  # entities:
+  # - sensor.fibaro_fgd212_energy
+  # - sensor.fibaro_fgd212_power
+  # - sensor.fibaro_fgd212_power_2
+  # - sensor.fibaro_fgd212_power_management
+  # - sensor.fibaro_fgwpef_energy
+  # - sensor.fibaro_fgwpef_power
+  # - sensor.fibaro_fgwpef_power_2
+  # - sensor.fibaro_fgwpef_power_management
+  # - sensor.qubino_zmnhdd1_energy
+  # - sensor.qubino_zmnhdd1_power
+  # - sensor.qubino_zmnhdd1_power_management
+  # - sensor.thermofloor_heatit_tf_021_energy
 
 stue:
   name: 'Stue'
   entities:
+  - light.fibaro_fgd212_level_5
   - light.sonoff_basic_2
   - light.wifi_smart_socket_ps16_3
   # - climate.remotec_zxt120eu_cooling_1
@@ -174,7 +175,7 @@ teknisk:
   name: 'Teknisk'
   entities:
   - device_tracker.galaxys8
-  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+  - switch.fibaro_fgwpef_switch
   # - input_boolean.ringeklokke
 
 ute:
@@ -188,6 +189,8 @@ zwave:
   entities:
   - zwave.aeotec_zw090_zstick_gen5_eu
   - zwave.fibaro_system_fgd212_dimmer_2
+  - zwave.fibaro_system_fgd212_dimmer_2_2
+  - zwave.fibaro_system_fgd212_dimmer_2_3
   - zwave.fibaro_system_fgms001zw5_motion_sensor
   - zwave.fibaro_system_fgwpef_wall_plug_gen5
   - zwave.qubino_zmnhdd1_flush_dimmer
