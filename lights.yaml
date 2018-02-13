@@ -3,62 +3,80 @@
   command_topic: "cmnd/sonoff_basic_2/power"
   state_topic: "stat/sonoff_basic_2/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff Basic 3"
   command_topic: "cmnd/sonoff_basic_3/power"
   state_topic: "stat/sonoff_basic_3/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
+- platform: mqtt
+  name: "Sonoff S20 3"
+  command_topic: "cmnd/sonoff_s20_3/power"
+  state_topic: "stat/sonoff_s20_3/POWER"
+  qos: 1
+  retain: true
+
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 1"
   command_topic: "cmnd/wifi_smart_socket_ps-16_1/power"
   state_topic: "stat/wifi_smart_socket_ps-16_1/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 2"
   command_topic: "cmnd/wifi_smart_socket_ps-16_2/power"
   state_topic: "stat/wifi_smart_socket_ps-16_2/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 3"
   command_topic: "cmnd/wifi_smart_socket_ps-16_3/power"
   state_topic: "stat/wifi_smart_socket_ps-16_3/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 4"
   command_topic: "cmnd/wifi_smart_socket_ps-16_4/power"
   state_topic: "stat/wifi_smart_socket_ps-16_4/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
-- platform: mqtt
-  name: "WiFi Smart Socket PS-16 5"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_5/power"
-  state_topic: "stat/wifi_smart_socket_ps-16_5/POWER"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
-- platform: mqtt
-  name: "WiFi Smart Socket PS-16 6"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_6/power"
-  state_topic: "stat/wifi_smart_socket_ps-16_6/POWER"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
+
+- platform: mqtt_json
+  name: 'WiFi Smart Bulb 1'
+  command_topic: "WiFi_Smart_Bulb_1-43FC47/set"
+  state_topic: "WiFi_Smart_Bulb_1-43FC47"
+  color_temp: true
+  brightness: true
+  rgb: true
+  white_value: true
+  effect: false
+  optimistic: false
+
+- platform: mqtt_json
+  name: 'WiFi Smart Bulb 2'
+  command_topic: "WiFi_Smart_Bulb_2-43FF65/set"
+  state_topic: "WiFi_Smart_Bulb_2-43FF65"
+  color_temp: true
+  brightness: true
+  rgb: true
+  white_value: true
+  effect: false
+  optimistic: false
+
+- platform: mqtt_json
+  name: 'WiFi Smart Bulb 3'
+# Name is #3, but MQTT topic is #2 due to "mistake", leave as is.
+  command_topic: "WiFi_Smart_Bulb_2-440071/set"
+  state_topic: "WiFi_Smart_Bulb_2-440071"
+  color_temp: true
+  brightness: true
+  rgb: true
+  white_value: true
+  effect: false
+  optimistic: false
