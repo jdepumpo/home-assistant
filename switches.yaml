@@ -3,70 +3,76 @@
   command_topic: "cmnd/sonoff_basic_1/power"
   state_topic: "stat/sonoff_basic_1/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff Basic 4"
   command_topic: "cmnd/sonoff_basic_4/power"
   state_topic: "stat/sonoff_basic_4/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff Basic 5"
   command_topic: "cmnd/sonoff_basic_5/power"
   state_topic: "stat/sonoff_basic_5/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff Basic 6"
   command_topic: "cmnd/sonoff_basic_6/power"
   state_topic: "stat/sonoff_basic_6/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff Basic 7"
   command_topic: "cmnd/sonoff_basic_7/power"
   state_topic: "stat/sonoff_basic_7/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff Basic 8"
   command_topic: "cmnd/sonoff_basic_8/power"
   state_topic: "stat/sonoff_basic_8/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff S20 1"
   command_topic: "cmnd/sonoff_s20_1/power"
   state_topic: "stat/sonoff_s20_1/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
   name: "Sonoff S20 2"
   command_topic: "cmnd/sonoff_s20_2/power"
   state_topic: "stat/sonoff_s20_2/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
 - platform: mqtt
-  name: "Sonoff S20 3"
-  command_topic: "cmnd/sonoff_s20_3/power"
-  state_topic: "stat/sonoff_s20_3/POWER"
+  name: "WiFi Smart Socket PS-16 5"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_5/power"
+  state_topic: "stat/wifi_smart_socket_ps-16_5/POWER"
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
   retain: true
+
+- platform: mqtt
+  name: "WiFi Smart Socket PS-16 6"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_6/power"
+  state_topic: "stat/wifi_smart_socket_ps-16_6/POWER"
+  qos: 1
+  retain: true
+
+# - platform: rpi_rf
+ # gpio: 17
+ # switches:
+   # ringeklokke:
+     # protocol: 1
+     # pulselength: 218
+     ## pulselength: 219
+     # code_on: 89940
