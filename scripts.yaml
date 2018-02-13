@@ -1,13 +1,13 @@
 stromspar:
-  alias: 'Strømsparing'
+  alias: 'Varme - strømsparing'
   sequence:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat
         temperature: 12
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 12
     # - service: climate.set_operation_mode
       # data:
@@ -26,18 +26,18 @@ stromspar:
     - service: automation.turn_off
       entity_id: automation.nattsenking_temperatur_20c_0000
     - service: switch.turn_off
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+      entity_id: switch.fibaro_fgwpef_switch
 
 hjem:
-  alias: 'Hjem'
+  alias: 'Varme - normal drift'
   sequence:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat
         temperature: 25
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 24
     # - service: climate.set_operation_mode
       # data:
@@ -52,18 +52,57 @@ hjem:
     - service: automation.turn_on
       entity_id: automation.nattsenking_temperatur_20c_0000
     - service: switch.turn_on
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+      entity_id: switch.fibaro_fgwpef_switch
 
-
-test_notify:
-  alias: 'Test notifikasjon'
+lys_demp:
+  alias: 'Belysning - dempet'
   sequence:
-   - service: notify.notify
-     data:
-       title: 'Home Assistant'
-       message: 'Test notifikasjon'
-       data:
-         tag: 'test-notify'
+    - service: light.turn_on
+      data:
+        entity_id: light.fibaro_fgd212_level
+        brightness: 50
+    - service: light.turn_on
+      data:
+        entity_id: light.fibaro_fgd212_level_3
+        brightness: 50
+    - service: light.turn_on
+      data:
+        entity_id: light.fibaro_fgd212_level_5
+        brightness: 10
+    - service: light.turn_off
+      entity_id: light.sonoff_basic_2
+    - service: light.turn_off
+      entity_id: light.wifi_smart_socket_ps16_3
+
+lys_arbeid:
+  alias: 'Belysning - arbeid'
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.fibaro_fgd212_level
+        brightness: 120
+    - service: light.turn_on
+      data:
+        entity_id: light.fibaro_fgd212_level_3
+        brightness: 120
+    - service: light.turn_on
+      data:
+        entity_id: light.fibaro_fgd212_level_5
+        brightness: 120
+    - service: light.turn_on
+      entity_id: light.sonoff_basic_2
+    - service: light.turn_on
+      entity_id: light.wifi_smart_socket_ps16_3
+      
+# test_notify:
+  # alias: 'Test notifikasjon'
+  # sequence:
+   # - service: notify.notify
+     # data:
+       # title: 'Home Assistant'
+       # message: 'Test notifikasjon'
+       # data:
+         # tag: 'test-notify'
 
 # rgb_test_ww:
   # alias: rgb test warm white
