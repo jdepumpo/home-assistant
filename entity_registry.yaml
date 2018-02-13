@@ -1,0 +1,231 @@
+sensor.thermofloor_heatit_tf_021_temperature:
+  platform: zwave
+  unique_id: 4-72057594110033938
+sensor.thermofloor_heatit_tf_021_energy:
+  platform: zwave
+  unique_id: 4-72057594110050306
+sensor.thermofloor_heatit_tf_021_exporting:
+  platform: zwave
+  unique_id: 4-72057594110050816
+climate.thermofloor_heatit_tf_021_heating:
+  platform: zwave
+  unique_id: 4-72057594110328850
+climate.thermofloor_heatit_tf_021_energy_heat:
+  platform: zwave
+  unique_id: 4-72057594110329010
+sensor.thermofloor_heatit_tf_021_temperature_2:
+  platform: zwave
+  unique_id: 5-72057594126811154
+sensor.thermofloor_heatit_tf_021_unknown:
+  platform: zwave
+  unique_id: 5-72057594126827522
+climate.thermofloor_heatit_tf_021_heating_2:
+  platform: zwave
+  unique_id: 5-72057594127106066
+climate.thermofloor_heatit_tf_021_energy_heat_2:
+  platform: zwave
+  unique_id: 5-72057594127106226
+climate.remotec_zxt120eu_heating_1:
+  platform: zwave
+  unique_id: 6-72057594143883282
+climate.remotec_zxt120eu_cooling_1:
+  platform: zwave
+  unique_id: 6-72057594143883298
+climate.remotec_zxt120eu_unused_4:
+  platform: zwave
+  unique_id: 6-72057594143883330
+climate.remotec_zxt120eu_unused_6:
+  platform: zwave
+  unique_id: 6-72057594143883362
+switch.qubino_zmnhdd1_switch:
+  platform: zwave
+  unique_id: 9-72057594193723392
+light.qubino_zmnhdd1_level:
+  platform: zwave
+  unique_id: 9-72057594193739777
+binary_sensor.qubino_zmnhdd1_sensor:
+  platform: zwave
+  unique_id: 9-72057594193903616
+sensor.qubino_zmnhdd1_energy:
+  platform: zwave
+  unique_id: 9-72057594193936386
+sensor.qubino_zmnhdd1_power:
+  platform: zwave
+  unique_id: 9-72057594193936514
+sensor.qubino_zmnhdd1_exporting:
+  platform: zwave
+  unique_id: 9-72057594193936896
+sensor.qubino_zmnhdd1_alarm_type:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.qubino_zmnhdd1_alarm_level:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.qubino_zmnhdd1_sourcenodeid:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.qubino_zmnhdd1_power_management:
+  platform: zwave
+  unique_id: 9-72057594194968753
+binary_sensor.fibaro_fgms001zw5_sensor:
+  platform: zwave
+  unique_id: 10-72057594210680832
+sensor.fibaro_fgms001zw5_temperature:
+  platform: zwave
+  unique_id: 10-72057594210697234
+sensor.fibaro_fgms001zw5_luminance:
+  platform: zwave
+  unique_id: 10-72057594210697266
+sensor.fibaro_fgms001zw5_seismic_intensity:
+  platform: zwave
+  unique_id: 10-72057594210697618
+sensor.fibaro_fgms001zw5_alarm_type:
+  platform: zwave
+  unique_id: 10-72057594211745793
+sensor.fibaro_fgms001zw5_alarm_level:
+  platform: zwave
+  unique_id: 10-72057594211745809
+sensor.fibaro_fgms001zw5_sourcenodeid:
+  platform: zwave
+  unique_id: 10-72057594211745825
+sensor.fibaro_fgms001zw5_burglar:
+  platform: zwave
+  unique_id: 10-72057594211745953
+sensor.fibaro_fgms001zw5_general:
+  platform: zwave
+  unique_id: 10-72057594212450305
+light.fibaro_fgd212_level:
+  platform: zwave
+  unique_id: 11-72057594227294209
+light.fibaro_fgd212_level_2:
+  platform: zwave
+  unique_id: 11-144115188265222145
+sensor.fibaro_fgd212_power:
+  platform: zwave
+  unique_id: 11-72057594227474498
+sensor.fibaro_fgd212_energy:
+  platform: zwave
+  unique_id: 11-72057594227490818
+sensor.fibaro_fgd212_power_2:
+  platform: zwave
+  unique_id: 11-72057594227490946
+sensor.fibaro_fgd212_exporting:
+  platform: zwave
+  unique_id: 11-72057594227491328
+sensor.fibaro_fgd212_alarm_type:
+  platform: zwave
+  unique_id: 11-72057594228523009
+sensor.fibaro_fgd212_alarm_level:
+  platform: zwave
+  unique_id: 11-72057594228523025
+sensor.fibaro_fgd212_sourcenodeid:
+  platform: zwave
+  unique_id: 11-72057594228523041
+sensor.fibaro_fgd212_heat:
+  platform: zwave
+  unique_id: 11-72057594228523121
+sensor.fibaro_fgd212_power_management:
+  platform: zwave
+  unique_id: 11-72057594228523185
+sensor.fibaro_fgd212_system:
+  platform: zwave
+  unique_id: 11-72057594228523201
+switch.fibaro_fgwpef_switch:
+  platform: zwave
+  unique_id: 13-72057594260832256
+sensor.fibaro_fgwpef_power:
+  platform: zwave
+  unique_id: 13-72057594261028930
+sensor.fibaro_fgwpef_energy:
+  platform: zwave
+  unique_id: 13-72057594261045250
+sensor.fibaro_fgwpef_power_2:
+  platform: zwave
+  unique_id: 13-72057594261045378
+sensor.fibaro_fgwpef_exporting:
+  platform: zwave
+  unique_id: 13-72057594261045760
+sensor.fibaro_fgwpef_alarm_type:
+  platform: zwave
+  unique_id: 13-72057594262077441
+sensor.fibaro_fgwpef_alarm_level:
+  platform: zwave
+  unique_id: 13-72057594262077457
+sensor.fibaro_fgwpef_sourcenodeid:
+  platform: zwave
+  unique_id: 13-72057594262077473
+sensor.fibaro_fgwpef_power_management:
+  platform: zwave
+  unique_id: 13-72057594262077617
+light.fibaro_fgd212_level_3:
+  platform: zwave
+  unique_id: 14-72057594277625857
+sensor.fibaro_fgd212_alarm_type_2:
+  platform: zwave
+  unique_id: 14-72057594278854657
+sensor.fibaro_fgd212_alarm_level_2:
+  platform: zwave
+  unique_id: 14-72057594278854673
+light.fibaro_fgd212_level_4:
+  platform: zwave
+  unique_id: 14-144115188315553793
+sensor.fibaro_fgd212_power_3:
+  platform: zwave
+  unique_id: 14-72057594277822594
+sensor.fibaro_fgd212_exporting_2:
+  platform: zwave
+  unique_id: 14-72057594277822976
+sensor.fibaro_fgd212_sourcenodeid_2:
+  platform: zwave
+  unique_id: 14-72057594278854689
+sensor.fibaro_fgd212_heat_2:
+  platform: zwave
+  unique_id: 14-72057594278854769
+sensor.fibaro_fgd212_power_management_2:
+  platform: zwave
+  unique_id: 14-72057594278854833
+sensor.fibaro_fgd212_system_2:
+  platform: zwave
+  unique_id: 14-72057594278854849
+sensor.fibaro_fgd212_power_4:
+  platform: zwave
+  unique_id: 14-72057594277806146
+sensor.fibaro_fgd212_energy_2:
+  platform: zwave
+  unique_id: 14-72057594277822466
+light.fibaro_fgd212_level_5:
+  platform: zwave
+  unique_id: 16-72057594311180289
+sensor.fibaro_fgd212_alarm_type_3:
+  platform: zwave
+  unique_id: 16-72057594312409089
+sensor.fibaro_fgd212_alarm_level_3:
+  platform: zwave
+  unique_id: 16-72057594312409105
+light.fibaro_fgd212_level_6:
+  platform: zwave
+  unique_id: 16-144115188349108225
+sensor.fibaro_fgd212_power_5:
+  platform: zwave
+  unique_id: 16-72057594311360578
+sensor.fibaro_fgd212_power_6:
+  platform: zwave
+  unique_id: 16-72057594311377026
+sensor.fibaro_fgd212_exporting_3:
+  platform: zwave
+  unique_id: 16-72057594311377408
+sensor.fibaro_fgd212_sourcenodeid_3:
+  platform: zwave
+  unique_id: 16-72057594312409121
+sensor.fibaro_fgd212_heat_3:
+  platform: zwave
+  unique_id: 16-72057594312409201
+sensor.fibaro_fgd212_power_management_3:
+  platform: zwave
+  unique_id: 16-72057594312409265
+sensor.fibaro_fgd212_system_3:
+  platform: zwave
+  unique_id: 16-72057594312409281
+sensor.fibaro_fgd212_energy_3:
+  platform: zwave
+  unique_id: 16-72057594311376898
