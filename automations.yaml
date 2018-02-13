@@ -2,16 +2,16 @@
   alias: 'Belysning bad på v/beveglse'
   trigger:
     - platform: state
-      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+      entity_id: sensor.fibaro_fgms001zw5_burglar
       to: '8'
   condition:
     condition: numeric_state
-    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+    entity_id: sensor.fibaro_fgms001zw5_luminance
     below: 150
   action:
     - service: light.turn_on
       data:
-        entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+        entity_id: light.qubino_zmnhdd1_level
         brightness: 120
     - service: light.turn_on
       entity_id: light.sonoff_basic_3
@@ -20,18 +20,18 @@
   alias: 'Belysning bad dim 10 min'
   trigger:
     platform: state
-    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    entity_id: sensor.fibaro_fgms001zw5_burglar
     to: '0'
     for:
       minutes: 10
   condition:
     condition: state
-    entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+    entity_id: light.qubino_zmnhdd1_level
     state: 'on'
   action:
     - service: light.turn_on
       data:
-        entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+        entity_id: light.qubino_zmnhdd1_level
         brightness: 40
     - service: light.turn_off
       entity_id: light.sonoff_basic_3
@@ -40,13 +40,13 @@
   alias: 'Belysning bad av 15 min'
   trigger:
     platform: state
-    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    entity_id: sensor.fibaro_fgms001zw5_burglar
     to: '0'
     for:
       minutes: 15
   action:
     service: light.turn_off
-    entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+    entity_id: light.qubino_zmnhdd1_level
 
 - id: utelys_stemning_paa
   alias: 'Ute- og stemningslys på v/solnedgang'
@@ -116,11 +116,11 @@
   action:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat
         temperature: 20
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 20
 
 - id: dagokning
@@ -131,11 +131,11 @@
   action:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat
         temperature: 25
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 24
 
 - id: oppdatering
