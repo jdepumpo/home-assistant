@@ -31,6 +31,8 @@
       arg: /root
     - type: disk_free
       arg: /root
+    - type: ipv4_address
+      arg: eth0
     - type: memory_use_percent
     - type: processor_use
     - type: last_boot
