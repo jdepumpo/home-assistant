@@ -76,6 +76,11 @@ sensor.last_boot:
   friendly_name: 'Siste omstart'
 sensor.memory_use_percent:
   friendly_name: 'Minnebruk'
+sensor.sonoff_basic_2_dht22_temperature:
+  friendly_name: 'Temperatur stue'
+sensor.sonoff_basic_2_dht22_humidity:
+  friendly_name: 'Luftfuktighet stue'
+  icon: mdi:water-percent
 sensor.thermofloor_heatit_tf_021_temperature:
   friendly_name: 'Gulvføler bad'
 sensor.thermofloor_heatit_tf_021_temperature_2:
