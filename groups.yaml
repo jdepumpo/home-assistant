@@ -170,6 +170,8 @@ stue:
   - light.wifi_smart_socket_ps16_3
   # - climate.remotec_zxt120eu_cooling_1
   # - climate.remotec_zxt120eu_heating_1
+  - sensor.sonoff_basic_2_dht22_temperature
+  - sensor.sonoff_basic_2_dht22_humidity
 
 teknisk:
   name: 'Teknisk'
