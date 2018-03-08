@@ -48,20 +48,39 @@
     service: light.turn_off
     entity_id: light.qubino_zmnhdd1_level
 
-- id: utelys_stemning_paa
-  alias: 'Ute- og stemningslys på v/solnedgang'
+- id: belysning_paa_solned
+  alias: 'Belysning på 15 min før solnedgang'
   trigger:
     platform: sun
     event: sunset
-    offset: '-00:10:00'
+    offset: '-00:15:00'
   action:
     - service: light.turn_on
       entity_id: group.ute
     - service: light.turn_on
       entity_id: group.stemning
+    - condition: state
+      entity_id: device_tracker.galaxys8
+      state: 'home'
+    - service: script.turn_on
+      entity_id: script.lys_demp
 
-- id: lys_av
-  alias: 'Lys av v/soloppgang'
+# - id: taklys_paa_hjem
+  # alias: 'Taklys på v/solnedgang hvis hjemme'
+  # trigger:
+    # platform: sun
+    # event: sunset
+    # offset: '-00:15:00'
+  # condition:
+    # condition: state
+    # entity_id: device_tracker.galaxys8
+    # state: 'home'
+  # action:
+    # service: script.turn_on
+    # entity_id: script.lys_demp
+
+- id: lys_av_solopp
+  alias: 'Alt lys av v/soloppgang'
   trigger:
     platform: sun
     event: sunrise
@@ -83,8 +102,8 @@
       - thu
       - fri
   action:
-    service: light.turn_off
-    entity_id: group.stemning
+    - service: light.turn_off
+      entity_id: group.stemning
 
 - id: stemning_av_helg
   alias: 'Stemningslys av 01:30 (helg)'
@@ -100,8 +119,8 @@
     service: light.turn_off
     entity_id: group.stemning
 
-- id: nattsenk
-  alias: 'Nattsenking temperatur 20°C 00:00 (ukedag)'
+- id: nattsenk_paa
+  alias: 'Nattsenking på, 20°C 00:00 (ukedag)'
   trigger:
     platform: time
     at: '00:00:00'
@@ -123,8 +142,8 @@
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 20
 
-- id: dagokning
-  alias: 'Dagøkning temperatur 07:00'
+- id: nattsenk_av
+  alias: 'Nattsenking av, 07:00'
   trigger:
     platform: time
     at: '07:00:00'
@@ -153,16 +172,16 @@
         # tag: 'ha-update'
 
 - id: rpi_temp_h
-  alias: 'Høy systemtemperatur 65°C'
+  alias: 'Høy systemtemperatur 60°C'
   trigger:
     platform: numeric_state
     entity_id: sensor.cpu_temperatur
-    above: 65
+    above: 60
   action:
     service: notify.notify
     data:
       title: 'Home Assistant'
-      message: 'Alarm: System temperatur over 65°C'
+      message: 'Alarm: System temperatur over 60°C'
 
 - id: rpi_temp_hh
   alias: 'Kritisk systemtemperatur 75°C'
