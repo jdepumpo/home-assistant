@@ -49,7 +49,7 @@
     entity_id: light.qubino_zmnhdd1_level
 
 - id: belysning_paa_solned
-  alias: 'Belysning på 15 min før solnedgang'
+  alias: 'Belysning på v/solnedgang'
   trigger:
     platform: sun
     event: sunset
@@ -80,7 +80,7 @@
     # entity_id: script.lys_demp
 
 - id: lys_av_solopp
-  alias: 'Alt lys av v/soloppgang'
+  alias: 'Belysning av v/soloppgang'
   trigger:
     platform: sun
     event: sunrise
@@ -89,7 +89,7 @@
     entity_id: group.all_lights
 
 - id: stemning_av_uke
-  alias: 'Stemningslys av 00:00 (ukedag)'
+  alias: 'Stemningslys av, ukedag'
   trigger:
     platform: time
     at: '00:00:00'
@@ -106,7 +106,7 @@
       entity_id: group.stemning
 
 - id: stemning_av_helg
-  alias: 'Stemningslys av 01:30 (helg)'
+  alias: 'Stemningslys av, helg'
   trigger:
     platform: time
     at: '01:30:00'
@@ -120,7 +120,7 @@
     entity_id: group.stemning
 
 - id: nattsenk_paa
-  alias: 'Nattsenking på, 20°C 00:00 (ukedag)'
+  alias: 'Varmekabler nattsenk på, ukedag'
   trigger:
     platform: time
     at: '00:00:00'
@@ -143,10 +143,10 @@
         temperature: 20
 
 - id: nattsenk_av
-  alias: 'Nattsenking av, 07:00'
+  alias: 'Varmekabler nattsenk av'
   trigger:
     platform: time
-    at: '07:00:00'
+    at: '08:00:00'
   action:
     - service: climate.set_temperature
       data:
@@ -157,8 +157,30 @@
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 24
 
+- id: stromspar_vvb_av
+  alias: 'Varmtvannsbereder strømsparing av'
+  trigger:
+    - platform: time
+      at: '11:00:00'
+    - platform: time
+      at: '20:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.fibaro_fgwpef_switch
+
+- id: stromspar_vvb_paa
+  alias: 'Varmtvannsbereder strømsparing på'
+  trigger:
+    - platform: time
+      at: '07:00:00'
+    - platform: time
+      at: '17:00:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.fibaro_fgwpef_switch
+
 - id: oppdatering
-  alias: 'Oppdatering tilgjengelig'
+  alias: 'Home Assistant oppdatering tilgjengelig'
   trigger:
     platform: state
     entity_id: updater.updater
@@ -172,7 +194,7 @@
         # tag: 'ha-update'
 
 - id: rpi_temp_h
-  alias: 'Høy systemtemperatur 60°C'
+  alias: 'Systemtemperatur høy'
   trigger:
     platform: numeric_state
     entity_id: sensor.cpu_temperatur
@@ -184,7 +206,7 @@
       message: 'Alarm: System temperatur over 60°C'
 
 - id: rpi_temp_hh
-  alias: 'Kritisk systemtemperatur 75°C'
+  alias: 'Systemtemperatur kritisk'
   trigger:
     platform: numeric_state
     entity_id: sensor.cpu_temperatur
