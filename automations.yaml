@@ -1,23 +1,21 @@
-- id: lys_bad_paa
-  alias: 'Belysning bad på v/beveglse'
+- id: lys_bad_av
+  alias: 'Belysning bad av'
   trigger:
-    - platform: state
-      entity_id: sensor.fibaro_fgms001zw5_burglar
-      to: '8'
-  condition:
-    condition: numeric_state
-    entity_id: sensor.fibaro_fgms001zw5_luminance
-    below: 150
+    platform: state
+    entity_id: sensor.fibaro_fgms001zw5_burglar
+    to: '0'
+    for:
+      minutes: 20
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.qubino_zmnhdd1_level
-        brightness: 120
-    - service: light.turn_on
+    - service: light.turn_off
+      entity_id: light.qubino_zmnhdd1_level
+    - service: light.turn_off
       entity_id: light.sonoff_basic_3
+    - service: switch.turn_off
+      entity_id: switch.sonoff_basic_4
 
 - id: lys_bad_dim
-  alias: 'Belysning bad dim 10 min'
+  alias: 'Belysning bad dim'
   trigger:
     platform: state
     entity_id: sensor.fibaro_fgms001zw5_burglar
@@ -36,102 +34,71 @@
     - service: light.turn_off
       entity_id: light.sonoff_basic_3
 
-- id: lys_bad_av
-  alias: 'Belysning bad av 15 min'
+- id: lys_bad_paa
+  alias: 'Belysning bad på v/beveglse'
   trigger:
-    platform: state
-    entity_id: sensor.fibaro_fgms001zw5_burglar
-    to: '0'
-    for:
-      minutes: 15
+    - platform: state
+      entity_id: sensor.fibaro_fgms001zw5_burglar
+      to: '8'
   action:
-    service: light.turn_off
-    entity_id: light.qubino_zmnhdd1_level
+    - service: switch.turn_on
+      entity_id: switch.sonoff_basic_4
+    - condition: numeric_state
+      entity_id: sensor.fibaro_fgms001zw5_luminance
+      below: 120
+    - service: light.turn_on
+      data:
+        entity_id: light.qubino_zmnhdd1_level
+        brightness: 120
+    - service: light.turn_on
+      entity_id: light.sonoff_basic_3
 
 - id: belysning_paa_solned
   alias: 'Belysning på v/solnedgang'
   trigger:
     platform: sun
     event: sunset
-    offset: '-00:15:00'
+    offset: '-00:30:00'
   action:
     - service: light.turn_on
       entity_id: group.ute
     - service: light.turn_on
       entity_id: group.stemning
-    - condition: state
-      entity_id: device_tracker.galaxys8
-      state: 'home'
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: device_tracker.galaxys8
+          state: 'home'
+        - condition: state
+          entity_id: device_tracker.galaxys6
+          state: 'home'
     - service: script.turn_on
       entity_id: script.lys_demp
 
-# - id: taklys_paa_hjem
-  # alias: 'Taklys på v/solnedgang hvis hjemme'
-  # trigger:
-    # platform: sun
-    # event: sunset
-    # offset: '-00:15:00'
-  # condition:
-    # condition: state
-    # entity_id: device_tracker.galaxys8
-    # state: 'home'
-  # action:
-    # service: script.turn_on
-    # entity_id: script.lys_demp
-
-- id: lys_av_solopp
-  alias: 'Belysning av v/soloppgang'
-  trigger:
-    platform: sun
-    event: sunrise
-  action:
-    service: light.turn_off
-    entity_id: group.all_lights
-
-- id: stemning_av_uke
-  alias: 'Stemningslys av, ukedag'
+- id: stemning_av
+  alias: 'Stemningsbelysning av'
   trigger:
     platform: time
     at: '00:00:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
   action:
     - service: light.turn_off
       entity_id: group.stemning
 
-- id: stemning_av_helg
-  alias: 'Stemningslys av, helg'
-  trigger:
-    platform: time
-    at: '01:30:00'
-  condition:
-    condition: time
-    weekday:
-      - sat
-      - sun
-  action:
-    service: light.turn_off
-    entity_id: group.stemning
-
 - id: nattsenk_paa
-  alias: 'Varmekabler nattsenk på, ukedag'
+  alias: 'Varmekabler nattsenking'
   trigger:
     platform: time
-    at: '00:00:00'
+    at: '00:23:00'
   condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: template
+      value_template: '{{ states.climate.thermofloor_heatit_tf_021_energy_heat.attributes.temperature > 17 }}'
   action:
     - service: climate.set_temperature
       data:
@@ -141,13 +108,7 @@
       data:
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 20
-
-- id: nattsenk_av
-  alias: 'Varmekabler nattsenk av'
-  trigger:
-    platform: time
-    at: '08:00:00'
-  action:
+    - delay: 09:00:00
     - service: climate.set_temperature
       data:
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat
@@ -157,30 +118,51 @@
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
         temperature: 24
 
-- id: stromspar_vvb_av
-  alias: 'Varmtvannsbereder strømsparing av'
-  trigger:
-    - platform: time
-      at: '11:00:00'
-    - platform: time
-      at: '20:00:00'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.fibaro_fgwpef_switch
+# - id: nattsenk_av
+  # alias: 'Varmekabler nattsenk av'
+  # trigger:
+    # platform: time
+    # at: '08:00:00'
+  # action:
+    # - service: climate.set_temperature
+      # data:
+        # entity_id: climate.thermofloor_heatit_tf_021_energy_heat
+        # temperature: 25
+    # - service: climate.set_temperature
+      # data:
+        # entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
+        # temperature: 24
 
-- id: stromspar_vvb_paa
-  alias: 'Varmtvannsbereder strømsparing på'
+# - id: stromspar_vvb_av
+  # alias: 'Varmtvannsbereder strømsparing av'
+  # trigger:
+    # - platform: time
+      # at: '11:00:00'
+    # - platform: time
+      # at: '20:00:00'
+  # action:
+    # - service: switch.turn_on
+      # entity_id: switch.fibaro_fgwpef_switch
+
+- id: stromspar_vvb
+  alias: 'Varmtvannsbereder strømsparing'
   trigger:
     - platform: time
       at: '07:00:00'
     - platform: time
-      at: '17:00:00'
+      at: '15:30:00'
+  condition:
+    - condition: template
+      value_template: '{{ states.climate.thermofloor_heatit_tf_021_energy_heat.attributes.temperature > 17 }}'
   action:
     - service: switch.turn_off
       entity_id: switch.fibaro_fgwpef_switch
+    - delay: 04:30:00
+    - service: switch.turn_on
+      entity_id: switch.fibaro_fgwpef_switch
 
 - id: oppdatering
-  alias: 'Home Assistant oppdatering tilgjengelig'
+  alias: 'Home Assistant oppdatering'
   trigger:
     platform: state
     entity_id: updater.updater
