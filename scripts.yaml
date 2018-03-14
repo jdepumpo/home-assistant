@@ -21,12 +21,6 @@ stromspar:
       # data:
         # entity_id: climate.remotec_zxt120eu_heating_1
         # temperature: 16
-    - service: automation.turn_off
-      entity_id: automation.varmekabler_nattsenk_av
-    - service: automation.turn_off
-      entity_id: automation.varmekabler_nattsenk_pa_ukedag
-    - service: automation.turn_off
-      entity_id: automation.varmtvannsbereder_strmsparing_pa
     - service: switch.turn_off
       entity_id: switch.fibaro_fgwpef_switch
 
@@ -48,13 +42,7 @@ hjem:
     # - service: climate.set_temperature
       # data:
         # entity_id: climate.remotec_zxt120eu_heating_1
-        # temperature: 22
-    - service: automation.turn_on
-      entity_id: automation.varmekabler_nattsenk_av
-    - service: automation.turn_on
-      entity_id: automation.varmekabler_nattsenk_pa_ukedag
-    - service: automation.turn_on
-      entity_id: automation.varmtvannsbereder_strmsparing_pa
+        # temperature: 23
     - service: switch.turn_on
       entity_id: switch.fibaro_fgwpef_switch
 
@@ -64,19 +52,15 @@ lys_demp:
     - service: light.turn_on
       data:
         entity_id: light.fibaro_fgd212_level
-        brightness: 50
+        brightness: 60
     - service: light.turn_on
       data:
         entity_id: light.fibaro_fgd212_level_3
-        brightness: 50
+        brightness: 60
     - service: light.turn_on
       data:
         entity_id: light.fibaro_fgd212_level_5
-        brightness: 10
-    # - service: light.turn_off
-      # entity_id: light.sonoff_basic_2
-    # - service: light.turn_off
-      # entity_id: light.wifi_smart_socket_ps16_3
+        brightness: 15
 
 lys_arbeid:
   alias: 'Belysning - arbeid'
