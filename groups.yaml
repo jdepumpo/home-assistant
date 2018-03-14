@@ -40,29 +40,16 @@ diagnose:
   name: 'Diagnose'
   view: true
   entities:
-  # - group.alarm
   - group.rpi
   - group.sensor
-  # - group.strom  
   - group.zwave
-
-# alarm:
-  # name: 'Alarmer'
-  # entities:
-  # - sensor.fibaro_fgd212_alarm_level
-  # - sensor.fibaro_fgd212_alarm_type
-  # - sensor.fibaro_fgms001zw5_alarm_level
-  # - sensor.fibaro_fgms001zw5_alarm_type
-  # - sensor.fibaro_fgwpef_alarm_level
-  # - sensor.fibaro_fgwpef_alarm_type
-  # - sensor.qubino_zmnhdd1_alarm_level
-  # - sensor.qubino_zmnhdd1_alarm_type
 
 bad:
   name: 'Bad'
   entities:
   - light.sonoff_basic_3
   - light.qubino_zmnhdd1_level
+  - switch.sonoff_basic_4
   - climate.thermofloor_heatit_tf_021_energy_heat
 
 gang:
@@ -80,7 +67,6 @@ kjokken:
   entities:
   - light.fibaro_fgd212_level
   - light.fibaro_fgd212_level_3
-  # - climate.thermofloor_heatit_tf_021_energy_heat_2
 
 klima:
   name: 'Klima'
@@ -146,30 +132,12 @@ stemning:
   - light.wifi_smart_socket_ps16_2
   - light.wifi_smart_socket_ps16_3
   
-# strom:
-  # name: 'Strømforbruk'
-  # entities:
-  # - sensor.fibaro_fgd212_energy
-  # - sensor.fibaro_fgd212_power
-  # - sensor.fibaro_fgd212_power_2
-  # - sensor.fibaro_fgd212_power_management
-  # - sensor.fibaro_fgwpef_energy
-  # - sensor.fibaro_fgwpef_power
-  # - sensor.fibaro_fgwpef_power_2
-  # - sensor.fibaro_fgwpef_power_management
-  # - sensor.qubino_zmnhdd1_energy
-  # - sensor.qubino_zmnhdd1_power
-  # - sensor.qubino_zmnhdd1_power_management
-  # - sensor.thermofloor_heatit_tf_021_energy
-
 stue:
   name: 'Stue'
   entities:
   - light.fibaro_fgd212_level_5
   - light.sonoff_basic_2
   - light.wifi_smart_socket_ps16_3
-  # - climate.remotec_zxt120eu_cooling_1
-  # - climate.remotec_zxt120eu_heating_1
   - sensor.sonoff_basic_2_dht22_temperature
   - sensor.sonoff_basic_2_dht22_humidity
 
@@ -177,8 +145,8 @@ teknisk:
   name: 'Teknisk'
   entities:
   - device_tracker.galaxys8
+  - device_tracker.galaxys6
   - switch.fibaro_fgwpef_switch
-  # - input_boolean.ringeklokke
 
 ute:
   name: 'Utendørs'
