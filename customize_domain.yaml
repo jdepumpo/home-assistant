@@ -1,5 +1,7 @@
 automation:
   icon: mdi:auto-fix
+script:
+  icon: mdi:script
 switch:
   icon: mdi:power
 group:
