@@ -1,5 +1,7 @@
 automation:
   icon: mdi:auto-fix
+scene:
+  icon: mdi:movie
 script:
   icon: mdi:script
 switch:
