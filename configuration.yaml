@@ -1,5 +1,4 @@
 homeassistant:
-  name: Hjem
   latitude: !secret ha_latitude
   longitude: !secret ha_longitude
   elevation: !secret ha_elevation
@@ -58,37 +57,50 @@ device_tracker:
   username: !secret device_tracker_username
   password: !secret device_tracker_password
   protocol: telnet
-  track_new_devices: false
+  new_device_defaults:
+    track_new_devices: false
 
 notify:
   platform: html5
   gcm_api_key: !secret notify_gcm_api_key
   gcm_sender_id: !secret notify_gcm_sender_id
-    
-media_player:
-  - platform: cast
-  - platform: gpmdp
-    host: 192.168.1.6
-  - platform: webostv
-    host: 192.168.1.37
-    filename: webostv.conf
-    turn_on_action:
-      service: wake_on_lan.send_magic_packet
-      data:
-        mac: 10:08:C1:B6:B4:92
-    customize:
-      sources:
-        - HTPC
-        - Xbox One
 
-#google_assistant:
-#  project_id: !secret google_assistant_project_id
-#  client_id: !secret google_assistant_client_id
-#  access_token: !secret google_assistant_access_token
-#  exposed_domains:
-#    - switch
-#    - light
-#    - group
+# pilight:
+  # host: 127.0.0.1
+  # port: 5000
+
+# input_boolean:
+  # ringeklokke:
+    # name: 'Ringeklokke'
+    # initial: off
+    # icon: mdi:glassdoor
+
+# media_player:
+  # - platform: plex
+  # - platform: cast
+    # host: 192.168.1.83
+  # - platform: gpmdp
+    # host: 192.168.1.6
+  # - platform: webostv
+    # host: 192.168.1.37
+    # filename: webostv.conf
+    # turn_on_action:
+      # service: wake_on_lan.send_magic_packet
+      # data:
+        # mac: 10:08:C1:B6:B4:92
+    # customize:
+      # sources:
+        # - HTPC
+        # - Xbox One
+
+# google_assistant:
+  # project_id: !secret google_assistant_project_id
+  # client_id: !secret google_assistant_client_id
+  # access_token: !secret google_assistant_access_token
+  # exposed_domains:
+    # - switch
+    # - light
+    # - group
 
 # Discover some devices automatically
 # discovery:
@@ -100,11 +112,11 @@ media_player:
 # logbook:
     
 # ifttt:
-#   key: !secret ifttt_key
+  # key: !secret ifttt_key
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 # conversation:
 
 # Text to speech
 # tts:
-#   platform: google
+  # platform: google
