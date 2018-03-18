@@ -2,16 +2,16 @@ default_view:
   name: 'Hjem'
   view: true
   entities:
-  - group.all_scripts
+  - group.scener
   - group.bad
   - group.gang
-  - group.garasje
   - group.kjokken
   - group.kontor
   - group.sov
   - group.stue
-  - group.teknisk
+  - group.garasje
   - group.ute
+  - group.teknisk
 
 # media_spillere:
   # name: 'Medieavspillere'
@@ -30,6 +30,7 @@ avansert:
   - group.all_automations
   - group.all_devices
   - group.all_lights
+  - group.all_scripts
   - group.all_switches
   - group.klima
   - group.vaer
@@ -110,6 +111,13 @@ rpi:
   - sensor.date
   - sensor.last_boot
   - updater.updater
+
+scener:
+  name: 'Scener'
+  entities:
+  - scene.belysning__alt_av
+  - scene.belysning__arbeid
+  - scene.belysning__dempet
 
 sensor:
   name: 'Sensorer'
