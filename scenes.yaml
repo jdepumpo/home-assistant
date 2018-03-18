@@ -1,1 +1,29 @@
-#scenes
+- name: 'Belysning - alt av'
+  entities:
+    group.all_lights: off
+
+- name: 'Belysning - arbeid'
+  entities:
+    light.fibaro_fgd212_level:
+      state: on
+      brightness: 120
+    light.fibaro_fgd212_level_3:
+      state: on
+      brightness: 120
+    light.fibaro_fgd212_level_5:
+      state: on
+      brightness: 120
+    light.sonoff_basic_2: on
+    light.wifi_smart_socket_ps16_3: on
+
+- name: 'Belysning - dempet'
+  entities:
+    light.fibaro_fgd212_level:
+      state: on
+      brightness: 60
+    light.fibaro_fgd212_level_3:
+      state: on
+      brightness: 60
+    light.fibaro_fgd212_level_5:
+      state: on
+      brightness: 15
