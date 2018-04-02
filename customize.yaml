@@ -23,14 +23,19 @@ light.fibaro_fgd212_level_6:
   hidden: true
 light.sonoff_basic_2:
   friendly_name: 'Gulvlampe m/bord stue'
+  icon: mdi:floor-lamp
 light.sonoff_basic_3:
   friendly_name: 'Speillys bad'
+light.sonoff_basic_5:
+  friendly_name: 'Utelampe nord'
 light.wifi_smart_socket_ps16_1:
   friendly_name: 'Portlys inngangsparti'
 light.wifi_smart_socket_ps16_2:
   friendly_name: 'Bordlampe gang'
+  icon: mdi:lamp
 light.wifi_smart_socket_ps16_3:
   friendly_name: 'Bordlampe spisestue'
+  icon: mdi:lamp
 light.wifi_smart_socket_ps16_4:
   friendly_name: 'Dekkslys veranda nord'
 
@@ -52,7 +57,7 @@ sensor.disk_use_percent_root:
 sensor.fibaro_fgms001zw5_luminance:
   icon: mdi:brightness-7
 sensor.fibaro_fgms001zw5_temperature:
-  friendly_name: 'Romtemperatur bad'
+  friendly_name: 'Temperatur bad'
 sensor.ipv4_address_eth0:
   friendly_name: 'IPv4 ethernet adresse'
 sensor.last_boot:
@@ -74,7 +79,7 @@ sensor.yr_pressure:
   icon: mdi:gauge
 sensor.processor_use:
   friendly_name: 'CPU aktivitet'
-  icon: mdi:raspberrypi
+  icon: mdi:chip
 sensor.yr_symbol:
   friendly_name: 'Værstatus'
 sensor.yr_temperature:
@@ -92,6 +97,3 @@ switch.sonoff_basic_4:
   friendly_name: 'Håndkletørker bad'
 switch.qubino_zmnhdd1_switch:
   hidden: true
-# switch.sonoff_s20_1:
-  # friendly_name: 'Alcatel fiber modem'
-  # icon: mdi:network
