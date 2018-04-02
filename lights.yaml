@@ -13,6 +13,13 @@
   retain: true
 
 - platform: mqtt
+  name: "Sonoff Basic 5"
+  command_topic: "cmnd/sonoff_basic_5/power"
+  state_topic: "stat/sonoff_basic_5/POWER"
+  qos: 1
+  retain: true
+
+- platform: mqtt
   name: "WiFi Smart Socket PS-16 1"
   command_topic: "cmnd/wifi_smart_socket_ps-16_1/power"
   state_topic: "stat/wifi_smart_socket_ps-16_1/POWER"
@@ -64,7 +71,7 @@
 
 - platform: mqtt_json
   name: 'WiFi Smart Bulb 3'
-# Name is #3, but MQTT topic is #2 due to "mistake", leave as is.
+# Name is #3, but MQTT topics is #2 due to "mistake", leave as is.
   command_topic: "WiFi_Smart_Bulb_2-440071/set"
   state_topic: "WiFi_Smart_Bulb_2-440071"
   color_temp: true
