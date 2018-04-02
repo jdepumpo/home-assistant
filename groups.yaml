@@ -78,8 +78,9 @@ klima:
   - climate.remotec_zxt120eu_heating_1
 
 kontor:
-  name: 'Kontor'
+  name: 'Gjesterom / kontor'
   entities:
+  - light.wifi_smart_bulb_1
 
 vaer:
   name: 'Været'
@@ -101,6 +102,7 @@ rgb_led:
 rpi:
   name: 'Raspberry Pi 2'
   entities:
+  - device_tracker.raspberry_pi_2
   - sensor.processor_use
   - sensor.cpu_temperatur
   - sensor.memory_use_percent
@@ -128,6 +130,8 @@ sensor:
   - sensor.fibaro_fgms001zw5_temperature
   - sensor.thermofloor_heatit_tf_021_temperature
   - sensor.thermofloor_heatit_tf_021_temperature_2
+  - sensor.sonoff_basic_2_dht22_temperature
+  - sensor.sonoff_basic_2_dht22_humidity
 
 sov:
   name: 'Soverom'
@@ -147,7 +151,6 @@ stue:
   - light.sonoff_basic_2
   - light.wifi_smart_socket_ps16_3
   - sensor.sonoff_basic_2_dht22_temperature
-  - sensor.sonoff_basic_2_dht22_humidity
 
 teknisk:
   name: 'Teknisk'
@@ -159,6 +162,7 @@ teknisk:
 ute:
   name: 'Utendørs'
   entities:
+  - light.sonoff_basic_5
   - light.wifi_smart_socket_ps16_1
   - light.wifi_smart_socket_ps16_4
 
