@@ -13,13 +13,6 @@
   retain: true
 
 - platform: mqtt
-  name: "Sonoff Basic 5"
-  command_topic: "cmnd/sonoff_basic_5/power"
-  state_topic: "stat/sonoff_basic_5/POWER"
-  qos: 1
-  retain: true
-
-- platform: mqtt
   name: "Sonoff Basic 6"
   command_topic: "cmnd/sonoff_basic_6/power"
   state_topic: "stat/sonoff_basic_6/POWER"
