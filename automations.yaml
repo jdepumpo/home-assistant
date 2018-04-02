@@ -5,7 +5,7 @@
     entity_id: sensor.fibaro_fgms001zw5_burglar
     to: '0'
     for:
-      minutes: 20
+      minutes: 15
   action:
     - service: light.turn_off
       entity_id: light.qubino_zmnhdd1_level
@@ -21,7 +21,7 @@
     entity_id: sensor.fibaro_fgms001zw5_burglar
     to: '0'
     for:
-      minutes: 10
+      minutes: 8
   condition:
     condition: state
     entity_id: light.qubino_zmnhdd1_level
@@ -33,6 +33,11 @@
         brightness: 40
     - service: light.turn_off
       entity_id: light.sonoff_basic_3
+    - condition: numeric_state
+      entity_id: sensor.fibaro_fgms001zw5_luminance
+      above: 100
+    - service: light.turn_off
+      entity_id: light.qubino_zmnhdd1_level
 
 - id: lys_bad_paa
   alias: 'Belysning bad på v/beveglse'
@@ -45,7 +50,7 @@
       entity_id: switch.sonoff_basic_4
     - condition: numeric_state
       entity_id: sensor.fibaro_fgms001zw5_luminance
-      below: 200
+      below: 300
     - service: light.turn_on
       data:
         entity_id: light.qubino_zmnhdd1_level
@@ -53,8 +58,8 @@
     - service: light.turn_on
       entity_id: light.sonoff_basic_3
 
-- id: belysning_paa_solned
-  alias: 'Belysning på v/solnedgang'
+- id: lys_solned
+  alias: 'Belysning v/solnedgang på'
   trigger:
     platform: sun
     event: sunset
@@ -75,6 +80,33 @@
     - service: scene.turn_on
       entity_id: scene.belysning__dempet
 
+- id: lys_hjem
+  alias: 'Belysning v/hjemkomst på'
+  trigger:
+    - platform: state
+      entity_id: device_tracker.galaxys8
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.galaxys6
+      to: 'home'
+  condition:
+    - condition: sun
+      after: sunset
+    - condition: time
+      before: '02:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.belysning__dempet
+
+- id: lys_solopp
+  alias: 'Belysning v/soloppgang av'
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: light.turn_off
+      entity_id: group.all_lights
+
 - id: stemning_av
   alias: 'Belysning stemning av'
   trigger:
@@ -84,28 +116,19 @@
     - service: light.turn_off
       entity_id: group.stemning
 
-- id: lys_av_solopp
-  alias: 'Belysning av v/soloppgang'
-  trigger:
-    platform: sun
-    event: sunrise
-  action:
-    - service: light.turn_off
-      entity_id: group.all_lights
-
 - id: vk_nattsenk
   alias: 'Varmekabler nattsenking'
   trigger:
     platform: time
     at: '00:23:00'
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    # - condition: time
+      # weekday:
+        # - mon
+        # - tue
+        # - wed
+        # - thu
+        # - fri
     - condition: template
       value_template: '{{ states.climate.thermofloor_heatit_tf_021_energy_heat.attributes.temperature > 17 }}'
   action:
@@ -116,16 +139,16 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
-        temperature: 20
+        temperature: 18
     - delay: 09:00:00
     - service: climate.set_temperature
       data:
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat
-        temperature: 25
+        temperature: 24
     - service: climate.set_temperature
       data:
         entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
-        temperature: 24
+        temperature: 22
 
 - id: stromspar_vvb
   alias: 'Varmtvannsbereder strømsparing'
@@ -140,7 +163,13 @@
   action:
     - service: switch.turn_off
       entity_id: switch.fibaro_fgwpef_switch
-    - delay: 04:30:00
+    - delay: 00:01:00
+    - service: switch.turn_off
+      entity_id: switch.fibaro_fgwpef_switch
+    - delay: 04:29:00
+    - service: switch.turn_on
+      entity_id: switch.fibaro_fgwpef_switch
+    - delay: 00:01:00
     - service: switch.turn_on
       entity_id: switch.fibaro_fgwpef_switch
 
