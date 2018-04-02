@@ -1,8 +1,17 @@
+asrock_vision_ht_321b:
+  hide_if_away: false
+  icon: mdi:windows
+  mac: BC:5F:F4:45:E8:ED
+  name: ASRock Stue PC
+  picture:
+  track: true
+  vendor: ASRock Incorporation
+
 galaxys8:
   hide_if_away: false
   icon: mdi:cellphone
   mac: 04:D6:AA:A6:BB:E0
-  name: Galaxy S8
+  name: Børres Galaxy S8
   picture:
   track: true
   vendor: Samsung
@@ -11,10 +20,37 @@ galaxys6:
   hide_if_away: false
   icon: mdi:cellphone
   mac: A4:08:EA:1C:DF:39
-  name: Galaxy S6
+  name: Christines Galaxy S6
   picture:
   track: true
   vendor: Samsung
+
+lgsmarttv:
+  hide_if_away: false
+  icon: mdi:television
+  mac: 10:08:C1:B6:B4:92
+  name: LG Smart TV
+  picture:
+  track: true
+  vendor: LG Electronics
+
+raspberry_pi_2:
+  hide_if_away: false
+  icon: mdi:home-assistant
+  mac: B8:27:EB:46:6A:01
+  name: Raspberry Pi 2
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
+
+xbox_one_x:
+  hide_if_away: false
+  icon: mdi:xbox
+  mac: 2C:54:91:79:40:5B
+  name: Xbox One X
+  picture:
+  track: true
+  vendor: Microsoft Corporation
 
 polar_m600:
   hide_if_away: false
@@ -22,35 +58,26 @@ polar_m600:
   mac: 00:22:D0:C1:5D:C9
   name: Polar M600
   picture:
-  track: true
+  track: false
   vendor: Polar
 
-pi3-plex-server:
+brother_dcp-1610w:
   hide_if_away: false
-  icon: mdi:plex
-  mac: B8:27:EB:07:09:CA
-  name: Pi3 Plex Media Server
+  icon: mdi:printer
+  mac: 94:53:30:1F:6D:CA
+  name: Brother DCP-1610W
   picture:
   track: false
-  vendor: Raspberry Pi Foundation
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
 
 acer_swift_3:
   hide_if_away: false
   icon: mdi:laptop
   mac: 94:E9:79:EB:55:8F
-  name: Acer Swift 3
+  name: Acer laptop
   picture:
   track: false
   vendor: Acer
-
-lgsmarttv:
-  hide_if_away: false
-  icon: mdi:television
-  mac: 10:08:C1:B6:B4:92
-  name: LGSmartTV
-  picture:
-  track: false
-  vendor: LG Electronics
 
 googlehome:
   hide_if_away: false
@@ -69,6 +96,24 @@ chromecast:
   picture:
   track: false
   vendor: Google, Inc.
+
+wd_mybook_live_3tb:
+  hide_if_away: false
+  icon: mdi:server-network
+  mac: 00:90:A9:B8:43:01
+  name: WD My Book Live 3TB
+  picture:
+  track: false
+  vendor: WESTERN DIGITAL
+
+retropie:
+  hide_if_away: false
+  icon: mdi:gamepad-variant
+  mac: B8:27:EB:52:5C:9F
+  name: RetroPie
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
 
 sonoff_basic_1:
   hide_if_away: false
@@ -120,6 +165,24 @@ sonoff_basic_7:
   icon: mdi:power
   mac: EC:FA:BC:00:7D:E4
   name: Sonoff Basic 7
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+sonoff_dual_r2_1:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 60:01:94:9F:31:28
+  name: Sonoff Dual R2 1
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+sonoff_dual_r2_2:
+  hide_if_away: false
+  icon: mdi:power
+  mac: 60:01:94:9D:78:B4
+  name: Sonoff Dual R2 2
   picture:
   track: false
   vendor: Espressif Inc.
