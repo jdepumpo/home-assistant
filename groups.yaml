@@ -28,21 +28,17 @@ avansert:
   view: true
   entities:
   - group.all_automations
-  - group.all_devices
   - group.all_lights
-  - group.all_scripts
   - group.all_switches
+  - group.effekt
+  - group.all_devices
   - group.klima
-  - group.vaer
   - group.rgb_led
-  - group.stemning
-
-diagnose:
-  name: 'Diagnose'
-  view: true
-  entities:
   - group.rpi
   - group.sensor
+  - group.all_scripts
+  - group.stemning
+  - group.vaer
   - group.zwave
 
 bad:
@@ -132,6 +128,15 @@ sensor:
   - sensor.thermofloor_heatit_tf_021_temperature_2
   - sensor.sonoff_basic_2_dht22_temperature
   - sensor.sonoff_basic_2_dht22_humidity
+
+effekt:
+  name: 'Effektforbruk'
+  entities:
+  - sensor.qubino_zmnhdd1_power
+  - sensor.fibaro_fgd212_power_4
+  - sensor.fibaro_fgd212_power
+  - sensor.fibaro_fgd212_power_5
+  - sensor.fibaro_fgwpef_power
 
 sov:
   name: 'Soverom'
