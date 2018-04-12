@@ -67,7 +67,7 @@ sensor.qubino_zmnhdd1_energy:
   platform: zwave
   unique_id: 9-72057594193936386
 sensor.qubino_zmnhdd1_power:
-  name:
+  name: Taklys bad
   platform: zwave
   unique_id: 9-72057594193936514
 sensor.qubino_zmnhdd1_exporting:
@@ -135,7 +135,7 @@ light.fibaro_fgd212_level_2:
   platform: zwave
   unique_id: 11-144115188265222145
 sensor.fibaro_fgd212_power:
-  name:
+  name: Taklys kjøkken
   platform: zwave
   unique_id: 11-72057594227474498
 sensor.fibaro_fgd212_energy:
@@ -179,7 +179,7 @@ switch.fibaro_fgwpef_switch:
   platform: zwave
   unique_id: 13-72057594260832256
 sensor.fibaro_fgwpef_power:
-  name:
+  name: Varmtvannsbereder
   platform: zwave
   unique_id: 13-72057594261028930
 sensor.fibaro_fgwpef_energy:
@@ -251,7 +251,7 @@ sensor.fibaro_fgd212_system_2:
   platform: zwave
   unique_id: 14-72057594278854849
 sensor.fibaro_fgd212_power_4:
-  name:
+  name: Benkeplatelys kjøkken
   platform: zwave
   unique_id: 14-72057594277806146
 sensor.fibaro_fgd212_energy_2:
@@ -275,7 +275,7 @@ light.fibaro_fgd212_level_6:
   platform: zwave
   unique_id: 16-144115188349108225
 sensor.fibaro_fgd212_power_5:
-  name:
+  name: Taklys TV stue
   platform: zwave
   unique_id: 16-72057594311360578
 sensor.fibaro_fgd212_power_6:
