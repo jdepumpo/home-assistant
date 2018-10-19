@@ -3,11 +3,11 @@ stromspar:
   sequence:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_heatit_tf_021_energy_heat
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
         temperature: 12
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
         temperature: 12
     # - service: climate.set_operation_mode
       # data:
@@ -22,21 +22,21 @@ stromspar:
         # entity_id: climate.remotec_zxt120eu_heating_1
         # temperature: 16
     - service: switch.turn_off
-      entity_id: switch.fibaro_fgwpef_switch
-    - delay: 00:01:00
+      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    - delay: 00:05:00
     - service: switch.turn_off
-      entity_id: switch.fibaro_fgwpef_switch
+      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
 hjem:
   alias: 'Varme - normal drift'
   sequence:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_heatit_tf_021_energy_heat
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
         temperature: 24
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_heatit_tf_021_energy_heat_2
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
         temperature: 22
     # - service: climate.set_operation_mode
       # data:
@@ -47,10 +47,10 @@ hjem:
         # entity_id: climate.remotec_zxt120eu_heating_1
         # temperature: 23
     - service: switch.turn_on
-      entity_id: switch.fibaro_fgwpef_switch
-    - delay: 00:01:00
+      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    - delay: 00:05:00
     - service: switch.turn_on
-      entity_id: switch.fibaro_fgwpef_switch
+      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
 # rgb_test_ww:
   # alias: rgb test warm white
