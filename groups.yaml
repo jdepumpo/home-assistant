@@ -5,23 +5,87 @@ default_view:
   - group.scener
   - group.bad
   - group.gang
+  - group.garasje
+  - group.gjest
   - group.kjokken
-  - group.kontor
   - group.sov
   - group.stue
-  - group.garasje
-  - group.ute
-  - group.teknisk
+  - group.utelys
 
-# media_spillere:
-  # name: 'Medieavspillere'
-  # view: true
-  # entities:
-  # - media_player.brrecast
-  # - media_player.gpm_desktop_player
-  # - media_player.lg_webos_smart_tv
-  # - media_player.google_home_mini
-  # - media_player.plex_web_chrome
+scener:
+  name: 'Scener'
+  entities:
+  - scene.belysning__alt_av
+  - scene.belysning__arbeid
+  - scene.belysning__dempet
+
+bad:
+  name: 'Bad'
+  entities:
+  - light.qubino_zmnhdd1_flush_dimmer_level
+  - light.sb_speillys
+  - switch.sb_handkletorker
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+
+gang:
+  name: 'Gang'
+  entities:
+  - light.wifi_smart_socket_ps16_2
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+
+garasje:
+  name: 'Garasje'
+  entities:
+
+gjest:
+  name: 'Gjesterom / kontor'
+  entities:
+
+kjokken:
+  name: 'Kjøkken'
+  entities:
+  - light.fibaro_system_fgd212_dimmer_2_level
+  - light.fibaro_system_fgd212_dimmer_2_level_3
+
+sov:
+  name: 'Soverom'
+  entities:
+  - light.fibaro_system_fgd212_dimmer_2_level_10
+  - light.fibaro_system_fgd212_dimmer_2_level_12
+  - cover.qubino_zmnhod1_flush_shutter_dc_level
+  
+stue:
+  name: 'Stue'
+  entities:
+  - light.fibaro_system_fgd212_dimmer_2_level_7
+  - light.mh_hyllelys
+  - light.wifi_smart_socket_ps16_3
+  - light.fibaro_system_fgd212_dimmer_2_level_5
+  - light.sb_gulvlampe
+  - sensor.sb_gulvlampe_temperatur
+
+teknisk:
+  name: 'Teknisk'
+  entities:
+  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+
+utelys:
+  name: 'Utendørs'
+  entities:
+  - light.sb_utelampe_n
+  - light.wifi_smart_socket_ps16_1
+  - light.wifi_smart_socket_ps16_4
+
+# Medieavspillere
+
+medieavspillere:
+  name: 'Medieavspillere'
+  view: true
+  entities:
+  - media_player.chromecast
+  - media_player.google_home_mini
+
+# Avansert
 
 avansert:
   name: 'Avansert'
@@ -33,67 +97,48 @@ avansert:
   - group.effekt
   - group.all_devices
   - group.klima
-  - group.rgb_led
+  - group.linker
   - group.rpi
   - group.sensor
   - group.all_scripts
   - group.stemning
+  - group.teknisk
   - group.vaer
   - group.zwave
 
-bad:
-  name: 'Bad'
+effekt:
+  name: 'Effektforbruk'
   entities:
-  - light.sonoff_basic_3
-  - light.qubino_zmnhdd1_level
-  - switch.sonoff_basic_4
-  - climate.thermofloor_heatit_tf_021_energy_heat
-
-gang:
-  name: 'Gang'
-  entities:
-  - climate.thermofloor_heatit_tf_021_energy_heat_2
-  - light.wifi_smart_socket_ps16_2
-
-garasje:
-  name: 'Garasje'
-  entities:
-
-kjokken:
-  name: 'Kjøkken'
-  entities:
-  - light.fibaro_fgd212_level
-  - light.fibaro_fgd212_level_3
+  - sensor.qubino_zmnhdd1_flush_dimmer_power
+  - sensor.fibaro_system_fgd212_dimmer_2_power
+  - sensor.fibaro_system_fgd212_dimmer_2_power_3
+  - sensor.fibaro_system_fgd212_dimmer_2_power_5
+  - sensor.fibaro_system_fgd212_dimmer_2_power_7
+  - sensor.fibaro_system_fgd212_dimmer_2_power_10
+  - sensor.fibaro_system_fgd212_dimmer_2_power_12
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
 
 klima:
   name: 'Klima'
   entities:
-  - climate.thermofloor_heatit_tf_021_energy_heat
-  - climate.thermofloor_heatit_tf_021_energy_heat_2
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+  - climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
   - climate.remotec_zxt120eu_cooling_1
   - climate.remotec_zxt120eu_heating_1
 
-kontor:
-  name: 'Gjesterom / kontor'
+linker:
+  name: 'Lokalt nettverk'
   entities:
-  - light.wifi_smart_bulb_1
+  - weblink.asus_rtac66u
+  - weblink.brother_dcp1610w
+  - weblink.pihole
+  - weblink.wd_my_book_live
 
-vaer:
-  name: 'Været'
+personer:
+  name: 'Personer'
   entities:
-  - sun.sun
-  - sensor.yr_symbol
-  - sensor.yr_temperature
-  - sensor.yr_wind_speed
-  - sensor.yr_humidity
-  - sensor.yr_pressure
-
-rgb_led:
-  name: 'RGB LED Belysning'
-  entities:
-  - light.wifi_smart_bulb_1
-  - light.wifi_smart_bulb_2
-  - light.wifi_smart_bulb_3
+  - device_tracker.galaxys8_bh
+  - device_tracker.galaxys8_cg
 
 rpi:
   name: 'Raspberry Pi 2'
@@ -110,13 +155,6 @@ rpi:
   - sensor.last_boot
   - updater.updater
 
-scener:
-  name: 'Scener'
-  entities:
-  - scene.belysning__alt_av
-  - scene.belysning__arbeid
-  - scene.belysning__dempet
-
 sensor:
   name: 'Sensorer'
   entities:
@@ -126,50 +164,26 @@ sensor:
   - sensor.fibaro_fgms001zw5_temperature
   - sensor.thermofloor_heatit_tf_021_temperature
   - sensor.thermofloor_heatit_tf_021_temperature_2
-  - sensor.sonoff_basic_2_dht22_temperature
-  - sensor.sonoff_basic_2_dht22_humidity
-
-effekt:
-  name: 'Effektforbruk'
-  entities:
-  - sensor.qubino_zmnhdd1_power
-  - sensor.fibaro_fgd212_power_4
-  - sensor.fibaro_fgd212_power
-  - sensor.fibaro_fgd212_power_5
-  - sensor.fibaro_fgwpef_power
-
-sov:
-  name: 'Soverom'
-  entities:
+  - sensor.sb_gulvlampe_temperatur
+  - sensor.sb_gulvlampe_luftfuktighet
 
 stemning:
   name: 'Stemningsbelysning'
   entities:
-  - light.sonoff_basic_2
+  - light.mh_hyllelys
+  - light.sb_gulvlampe
   - light.wifi_smart_socket_ps16_2
   - light.wifi_smart_socket_ps16_3
-  
-stue:
-  name: 'Stue'
-  entities:
-  - light.fibaro_fgd212_level_5
-  - light.sonoff_basic_2
-  - light.wifi_smart_socket_ps16_3
-  - sensor.sonoff_basic_2_dht22_temperature
 
-teknisk:
-  name: 'Teknisk'
+vaer:
+  name: 'Været'
   entities:
-  - device_tracker.galaxys8
-  - device_tracker.galaxys6
-  - switch.fibaro_fgwpef_switch
-
-ute:
-  name: 'Utendørs'
-  entities:
-  - light.sonoff_basic_5
-  - light.wifi_smart_socket_ps16_1
-  - light.wifi_smart_socket_ps16_4
+  - sun.sun
+  - sensor.yr_symbol
+  - sensor.yr_temperature
+  - sensor.yr_wind_speed
+  - sensor.yr_humidity
+  - sensor.yr_pressure
 
 zwave:
   name: 'Z-Wave'
@@ -178,9 +192,13 @@ zwave:
   - zwave.fibaro_system_fgd212_dimmer_2
   - zwave.fibaro_system_fgd212_dimmer_2_2
   - zwave.fibaro_system_fgd212_dimmer_2_3
+  - zwave.fibaro_system_fgd212_dimmer_2_4
+  - zwave.fibaro_system_fgd212_dimmer_2_5
+  - zwave.fibaro_system_fgd212_dimmer_2_6
   - zwave.fibaro_system_fgms001zw5_motion_sensor
   - zwave.fibaro_system_fgwpef_wall_plug_gen5
   - zwave.qubino_zmnhdd1_flush_dimmer
+  - zwave.qubino_zmnhod1_flush_shutter_dc
   - zwave.remotec_zxt120eu
   - zwave.thermofloor_as_heatit_thermostat_tf_021
   - zwave.thermofloor_as_heatit_thermostat_tf_021_2
