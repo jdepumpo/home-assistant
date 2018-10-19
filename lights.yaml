@@ -1,28 +1,28 @@
 - platform: mqtt
-  name: "Sonoff Basic 2"
-  command_topic: "cmnd/sonoff_basic_2/POWER"
-  state_topic: "stat/sonoff_basic_2/POWER"
-  availability_topic: "tele/sonoff_basic_2/LWT"  
+  name: "SB Gulvlampe"
+  command_topic: "cmnd/sb_gulvlampe/POWER1"
+  state_topic: "stat/sb_gulvlampe/POWER1"
+  availability_topic: "tele/sb_gulvlampe/LWT"  
   qos: 1
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: true
 
 - platform: mqtt
-  name: "Sonoff Basic 3"
-  command_topic: "cmnd/sonoff_basic_3/POWER"
-  state_topic: "stat/sonoff_basic_3/POWER"
-  availability_topic: "tele/sonoff_basic_3/LWT"  
+  name: "SB Speillys"
+  command_topic: "cmnd/sb_speillys/POWER"
+  state_topic: "stat/sb_speillys/POWER"
+  availability_topic: "tele/sb_speillys/LWT"  
   qos: 1
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: true
 
 - platform: mqtt
-  name: "Sonoff Basic 5"
-  command_topic: "cmnd/sonoff_basic_5/POWER"
-  state_topic: "stat/sonoff_basic_5/POWER"
-  availability_topic: "tele/sonoff_basic_5/LWT"  
+  name: "SB Utelampe N"
+  command_topic: "cmnd/sb_utelampe_n/POWER"
+  state_topic: "stat/sb_utelampe_n/POWER"
+  availability_topic: "tele/sb_utelampe_n/LWT"  
   qos: 1
   payload_available: "Online"
   payload_not_available: "Offline"
@@ -30,8 +30,8 @@
 
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 1"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_1/POWER"
-  state_topic: "stat/wifi_smart_socket_ps-16_1/POWER"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_1/POWER1"
+  state_topic: "stat/wifi_smart_socket_ps-16_1/POWER1"
   availability_topic: "tele/wifi_smart_socket_ps-16_1/LWT"  
   qos: 1
   payload_available: "Online"
@@ -40,8 +40,8 @@
 
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 2"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_2/POWER"
-  state_topic: "stat/wifi_smart_socket_ps-16_2/POWER"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_2/POWER1"
+  state_topic: "stat/wifi_smart_socket_ps-16_2/POWER1"
   availability_topic: "tele/wifi_smart_socket_ps-16_2/LWT"  
   qos: 1
   payload_available: "Online"
@@ -50,8 +50,8 @@
 
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 3"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_3/POWER"
-  state_topic: "stat/wifi_smart_socket_ps-16_3/POWER"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_3/POWER1"
+  state_topic: "stat/wifi_smart_socket_ps-16_3/POWER1"
   availability_topic: "tele/wifi_smart_socket_ps-16_3/LWT"  
   qos: 1
   payload_available: "Online"
@@ -60,8 +60,8 @@
 
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 4"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_4/POWER"
-  state_topic: "stat/wifi_smart_socket_ps-16_4/POWER"
+  command_topic: "cmnd/wifi_smart_socket_ps-16_4/POWER1"
+  state_topic: "stat/wifi_smart_socket_ps-16_4/POWER1"
   availability_topic: "tele/wifi_smart_socket_ps-16_4/LWT"  
   qos: 1
   payload_available: "Online"
@@ -69,42 +69,15 @@
   retain: true
 
 - platform: mqtt
-  name: "WiFi Smart Socket PS-16 4"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_4/power"
-  state_topic: "stat/wifi_smart_socket_ps-16_4/POWER"
-  qos: 1
+  name: "MH Hyllelys"
+  state_topic: "stat/mh_hyllelys/POWER1"
+  command_topic: "cmnd/mh_hyllelys/POWER1"
+  availability_topic: "tele/mh_hyllelys/LWT"
+  brightness_state_topic: "stat/mh_hyllelys/RESULT"
+  brightness_command_topic: "cmnd/mh_hyllelys/Dimmer"
+  brightness_scale: 100
+  brightness_value_template: "{{ value_json.Dimmer }}"
   retain: true
-
-- platform: mqtt_json
-  name: 'WiFi Smart Bulb 1'
-  command_topic: "WiFi_Smart_Bulb_1-43FC47/set"
-  state_topic: "WiFi_Smart_Bulb_1-43FC47"
-  color_temp: true
-  brightness: true
-  rgb: true
-  white_value: true
-  effect: false
-  optimistic: false
-
-- platform: mqtt_json
-  name: 'WiFi Smart Bulb 2'
-  command_topic: "WiFi_Smart_Bulb_2-43FF65/set"
-  state_topic: "WiFi_Smart_Bulb_2-43FF65"
-  color_temp: true
-  brightness: true
-  rgb: true
-  white_value: true
-  effect: false
-  optimistic: false
-
-- platform: mqtt_json
-  name: 'WiFi Smart Bulb 3'
-# Name is #3, but MQTT topics is #2 due to "mistake", leave as is.
-  command_topic: "WiFi_Smart_Bulb_2-440071/set"
-  state_topic: "WiFi_Smart_Bulb_2-440071"
-  color_temp: true
-  brightness: true
-  rgb: true
-  white_value: true
-  effect: false
-  optimistic: false
+  qos: 1
+  payload_available: "Online"
+  payload_not_available: "Offline"
