@@ -18,7 +18,6 @@
         {% endif %}'
       unit_of_measurement: '%'
 
-
 - platform: command_line
   name: 'CPU temperatur'
   command: "cat /sys/class/thermal/thermal_zone0/temp"
@@ -43,12 +42,12 @@
     - date
 
 - platform: mqtt
-  name: "Sonoff Basic 2 DHT22 Temperature"
-  state_topic: "tele/sonoff_basic_2/SENSOR"
+  name: "SB Gulvlampe Temperatur"
+  state_topic: "tele/sb_gulvlampe/SENSOR"
   value_template: "{{ value_json['SI7021'].Temperature }}"
   unit_of_measurement: "°C"
 - platform: mqtt
-  name: "Sonoff Basic 2 DHT22 Humidity"
-  state_topic: "tele/sonoff_basic_2/SENSOR"
+  name: "SB Gulvlampe Luftfuktighet"
+  state_topic: "tele/sb_gulvlampe/SENSOR"
   value_template: "{{ value_json['SI7021'].Humidity }}"
   unit_of_measurement: "%"
