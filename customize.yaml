@@ -1,3 +1,6 @@
+cover.qubino_zmnhod1_flush_shutter_dc_level:
+  icon: mdi:blinds
+
 group.all_automations:
   hidden: false
   friendly_name: 'Automasjoner'
@@ -14,35 +17,47 @@ group.all_scripts:
 group.all_switches:
   hidden: false
   friendly_name: 'Brytere'
+group.stemning:
+  control:
 
-light.fibaro_fgd212_level_2:
+light.fibaro_system_fgd212_dimmer_2_level_2:
   hidden: true
-light.fibaro_fgd212_level_4:
+light.fibaro_system_fgd212_dimmer_2_level_4:
   hidden: true
-light.fibaro_fgd212_level_6:
+light.fibaro_system_fgd212_dimmer_2_level_6:
   hidden: true
-light.sonoff_basic_2:
+light.fibaro_system_fgd212_dimmer_2_level_7:
+  icon: mdi:ceiling-light
+light.fibaro_system_fgd212_dimmer_2_level_8:
+  hidden: true
+light.fibaro_system_fgd212_dimmer_2_level_9:
+  hidden: true
+light.fibaro_system_fgd212_dimmer_2_level_11:
+  hidden: true
+light.fibaro_system_fgd212_dimmer_2_level_12:
+  icon: mdi:ceiling-light
+light.mh_hyllelys:
+  friendly_name: 'Hyllelys spisestue'
+  icon: mdi:led-strip
+light.sb_gulvlampe:
   friendly_name: 'Gulvlampe m/bord stue'
   icon: mdi:floor-lamp
-light.sonoff_basic_3:
+light.sb_speillys:
   friendly_name: 'Speillys bad'
-light.sonoff_basic_5:
+light.sb_utelampe_n:
   friendly_name: 'Utelampe nord'
+  icon: mdi:wall-sconce
 light.wifi_smart_socket_ps16_1:
   friendly_name: 'Portlys inngangsparti'
 light.wifi_smart_socket_ps16_2:
   friendly_name: 'Bordlampe gang'
-  icon: mdi:lamp
+  icon: mdi:desk-lamp
 light.wifi_smart_socket_ps16_3:
   friendly_name: 'Bordlampe spisestue'
-  icon: mdi:lamp
+  icon: mdi:desk-lamp
 light.wifi_smart_socket_ps16_4:
   friendly_name: 'Dekkslys veranda nord'
 
-media_player.brrecast:
-  friendly_name: 'Chromecast BørreCast'
-media_player.gpm_desktop_player:
-  friendly_name: 'HTPC Google Play Music'
 media_player.lg_webos_smart_tv:
   friendly_name: 'LG SmartTV'
 
@@ -64,9 +79,9 @@ sensor.last_boot:
   friendly_name: 'Siste omstart'
 sensor.memory_use_percent:
   friendly_name: 'Minnebruk'
-sensor.sonoff_basic_2_dht22_temperature:
+sensor.sb_gulvlampe_temperatur:
   friendly_name: 'Temperatur stue'
-sensor.sonoff_basic_2_dht22_humidity:
+sensor.sb_gulvlampe_luftfuktighet:
   friendly_name: 'Luftfuktighet stue'
   icon: mdi:water-percent
 sensor.time:
@@ -93,7 +108,9 @@ sun.sun:
 
 switch.fibaro_fgwpef_switch:
   icon: mdi:water
-switch.sonoff_basic_4:
-  friendly_name: 'Håndkletørker bad'
-switch.qubino_zmnhdd1_switch:
+switch.qubino_zmnhdd1_flush_dimmer_switch:
   hidden: true
+switch.qubino_zmnhod1_flush_shutter_dc_switch:
+  hidden: true
+switch.sb_handkletorker:
+  friendly_name: 'Håndkletørker bad'
