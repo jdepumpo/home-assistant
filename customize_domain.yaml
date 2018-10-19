@@ -1,9 +1,5 @@
-automation:
-  icon: mdi:auto-fix
-scene:
-  icon: mdi:movie
 script:
-  icon: mdi:script
+  can_cancel: false
 switch:
   icon: mdi:power
 group:
