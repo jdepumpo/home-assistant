@@ -6,6 +6,16 @@
     - pressure
     - humidity
 
+sensor:
+  - platform: xbox_live
+    api_key: d84c509e072ce1ad0b62230af5304c0e67086b46
+    xuid:
+      - ElgenHaugen
+      - Finnsa197
+      - hulkhaugen84
+      - kayeboy
+      - Mbentzen
+
 - platform: template
   sensors:
     fibaro_battery_bad:
