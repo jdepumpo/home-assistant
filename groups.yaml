@@ -78,8 +78,8 @@ utelys:
 
 # Medieavspillere
 
-medieavspillere:
-  name: 'Medieavspillere'
+multimedia:
+  name: 'Multimedia'
   view: true
   entities:
   - media_player.chromecast
