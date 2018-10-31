@@ -10,11 +10,12 @@ sensor:
   - platform: xbox_live
     api_key: d84c509e072ce1ad0b62230af5304c0e67086b46
     xuid:
-      - ElgenHaugen
-      - Finnsa197
-      - hulkhaugen84
-      - kayeboy
-      - Mbentzen
+#Extracted from e.g: https://xboxapi.com/v2/xuid/hulkhaugen84
+      - 2533274934106454
+      - 2535409873827380
+      - 2533274836441831
+      - 2533274798318388
+      - 2533274997028457
 
 - platform: template
   sensors:
