@@ -7,15 +7,16 @@
     - humidity
 
 - platform: xbox_live
+#  api_key: !secret xbox_live_api_key 
   api_key: d84c509e072ce1ad0b62230af5304c0e67086b46
   scan_interval: 300
   xuid:
-  #Extracted from e.g: https://xboxapi.com/v2/xuid/hulkhaugen84
-    - 2533274934106454
-    - 2535409873827380
+  #Extracted from e.g: https://xboxapi.com/v2/xuid/hulkhaugen84 --> 2533274836441831
+#    - 2533274934106454
+#    - 2535409873827380
     - 2533274836441831
-    - 2533274798318388
-    - 2533274997028457
+#    - 2533274798318388
+#    - 2533274997028457
 
 #- platform: template
 #  sensors:
