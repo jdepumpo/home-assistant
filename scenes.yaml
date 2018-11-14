@@ -2,41 +2,23 @@
   entities:
     group.all_lights: off
 
-- name: 'Belysning - arbeid'
-  entities:
-    light.fibaro_system_fgd212_dimmer_2_level:
-      state: on
-      brightness: 120
-    light.fibaro_system_fgd212_dimmer_2_level_3:
-      state: on
-      brightness: 120
-    light.fibaro_system_fgd212_dimmer_2_level_5:
-      state: on
-      brightness: 120
-    light.fibaro_system_fgd212_dimmer_2_level_7:
-      state: on
-      brightness: 200
-    light.sb_gulvlampe: on
-    light.wifi_smart_socket_ps16_2: on
-    light.wifi_smart_socket_ps16_3: on
-
 - name: 'Belysning - dempet'
   entities:
     light.fibaro_system_fgd212_dimmer_2_level:
       state: on
-      brightness: 80
+      brightness: 75
     light.fibaro_system_fgd212_dimmer_2_level_3:
       state: on
-      brightness: 80
+      brightness: 75
     light.fibaro_system_fgd212_dimmer_2_level_5:
       state: on
       brightness: 25
-    # light.fibaro_system_fgd212_dimmer_2_level_7:
-      # state: on
-      # brightness: 150
+    light.fibaro_system_fgd212_dimmer_2_level_7:
+      state: on
+      brightness: 50
     light.sb_gulvlampe: on
     light.mh_hyllelys:
       state: on
-      brightness: 30
+      brightness: 35
     light.wifi_smart_socket_ps16_2: on
     light.wifi_smart_socket_ps16_3: on
