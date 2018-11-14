@@ -1,271 +1,244 @@
 - id: lys_bad_av
-  alias: 'Belysning bad av'
+  alias: Belysning bad av
   trigger:
-    - platform: state
-      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-      to: '0'
-      for:
-        minutes: 20
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    to: 'off'
+    for:
+      minutes: 15
   action:
-    - service: light.turn_off
-      entity_id: light.qubino_zmnhdd1_flush_dimmer_level
-    - service: light.turn_off
-      entity_id: light.sb_speillys
-    - service: switch.turn_off
-      entity_id: switch.sb_handkletorker
+  - service: light.turn_off
+    entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+  - service: light.turn_off
+    entity_id: light.sb_speillys
+  - service: switch.turn_off
+    entity_id: switch.sb_handkletorker
 
 - id: lys_bad_dim
-  alias: 'Belysning bad dim'
+  alias: Belysning bad dim
   trigger:
-    - platform: state
-      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-      to: '0'
-      for:
-        minutes: 15
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    to: 'off'
+    for:
+      minutes: 10
   condition:
-    - condition: state
+  - condition: state
+    entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+    state: 'on'
+  action:
+  - service: light.turn_on
+    data:
       entity_id: light.qubino_zmnhdd1_flush_dimmer_level
-      state: 'on'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.qubino_zmnhdd1_flush_dimmer_level
-        brightness: 40
-    - service: light.turn_off
-      entity_id: light.sb_speillys
-    - condition: numeric_state
-      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-      above: 100
-    - service: light.turn_off
-      entity_id: light.qubino_zmnhdd1_flush_dimmer_level
-
-- id: lys_bad_bevegelse
-  alias: 'Belysning bad på v/beveglse'
-  trigger:
-    - platform: state
-      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-      to: '8'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.sb_handkletorker
-    - condition: numeric_state
-      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-      below: 300
-    - service: light.turn_on
-      data:
-        entity_id: light.qubino_zmnhdd1_flush_dimmer_level
-        brightness: 120
-    - service: light.turn_on
-      entity_id: light.sb_speillys
-
-- id: lys_borte
-  alias: 'Belysnig av v/tomt hus'
-  trigger:
-    - platform: state
-      entity_id: group.personer
-      to: 'not_home'
-  condition:
-    - condition: sun
-      after: sunset
-    - condition: time
-      after: '15:00:00'
-      before: '02:00:00'
-  action:
-    - service: light.turn_off
-      entity_id: group.all_lights
+      brightness: 40
+  - service: light.turn_off
+    entity_id: light.sb_speillys
+  - condition: numeric_state
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+    above: 100
+  - service: light.turn_off
+    entity_id: light.qubino_zmnhdd1_flush_dimmer_level
     
-- id: lys_solopp
-  alias: 'Belysning av v/soloppgang'
+- id: lys_bad_bevegelse
+  alias: Belysning bad på v/beveglse
   trigger:
-    platform: sun
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.sb_handkletorker
+  - condition: numeric_state
+    entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+    below: 300
+  - service: light.turn_on
+    data:
+      entity_id: light.qubino_zmnhdd1_flush_dimmer_level
+      brightness: 120
+  - service: light.turn_on
+    entity_id: light.sb_speillys
+
+- id: lys_av_4_sol_borte
+  alias: Belysning av 4:00, soloppgang og tomt hus
+  trigger:
+  - platform: time
+    at: 04:00:00
+  - platform: sun
     event: sunrise
+  - platform: state
+    entity_id: group.personer
+    to: not_home
+    for: 0:30:00
   action:
-    - service: light.turn_off
-      entity_id: group.all_lights
-
-- id: lys_hjem
-  alias: 'Belysning på v/hjemkomst'
+  - service: light.turn_off
+    entity_id: group.all_lights
+    
+- id: lys_paa_hjem
+  alias: Belysning på v/hjemkomst
   trigger:
-    - platform: state
-      entity_id: group.personer
-      to: 'home'
+  - platform: state
+    entity_id: group.personer
+    to: home
   condition:
-    - condition: sun
-      after: sunset
-    - condition: time
-      after: '15:00:00'
-      before: '02:00:00'
+  - condition: sun
+    after: sunset
+  - condition: time
+    after: '15:00:00'
+    before: 01:00:00
   action:
-    - service: scene.turn_on
-      entity_id: scene.belysning__dempet
-
-- id: lys_solned
-  alias: 'Belysning på v/solnedgang'
+  - service: scene.turn_on
+    entity_id: scene.belysning__dempet
+    
+- id: lys_paa_solned
+  alias: Belysning på v/solnedgang
   trigger:
-    - platform: sun
-      event: sunset
-      offset: '-00:30:00'
+  - platform: sun
+    event: sunset
+    offset: -00:30:00
   action:
-    - service: light.turn_on
-      entity_id: group.utelys
-    - service: light.turn_on
-      entity_id: group.stemning
-    - condition: state
-      entity_id: group.personer
-      state: 'home'
-    - service: scene.turn_on
-      entity_id: scene.belysning__dempet
-
-- id: lys_stemning_av
-  alias: 'Stemningsbelysning av'
+  - service: light.turn_on
+    entity_id: group.utelys
+  - service: light.turn_on
+    entity_id: group.stemning
+  - condition: state
+    entity_id: group.personer
+    state: home
+  - service: scene.turn_on
+    entity_id: scene.belysning__dempet
+    
+- id: lys_av_stemning
+  alias: Stemningsbelysning av 24:00
   trigger:
-    - platform: time
-      at: '00:00:00'
+  - platform: time
+    at: 00:00:00
   action:
-    - service: light.turn_off
-      entity_id: group.stemning
-
-- id: lys__ute_av
-  alias: 'Belysning av v/tomt hus'
-  trigger:
-    - platform: time
-      at: '04:00:00'
-  condition:
-    - condition: state
-      entity_id: group.personer
-      state: 'not_home'
-  action:
-    - service: light.turn_off
-      entity_id: group.all_lights
-
+  - service: light.turn_off
+    entity_id: group.stemning
 - id: rullgardiner_sov_opp
-  alias: 'Rullgardiner soverom opp'
+  alias: Rullgardiner soverom opp
   trigger:
-    - platform: state
-      entity_id: group.personer
-      to: 'not_home'
+  - platform: state
+    entity_id: group.personer
+    to: not_home
+    for:
+      minutes: 15
   action:
-    - service: cover.open_cover
-      entity_id: cover.qubino_zmnhod1_flush_shutter_dc_level
-
+  - service: cover.open_cover
+    entity_id: cover.qubino_zmnhod1_flush_shutter_dc_level
+    
 - id: vk_nattsenk
-  alias: 'Varmekabler nattsenking'
+  alias: Varmekabler nattsenking
   trigger:
-    - platform: time
-      at: '23:00:00'
+  - at: '23:00:00'
+    platform: time
   condition:
-    - condition: template
-      value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature > 17 }}'
+  - condition: template
+    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
+      > 15 }}'
   action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-        temperature: 18
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
-        temperature: 16
-
+  - data:
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+      temperature: 22
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+      temperature: 18
+    service: climate.set_temperature
+    
 - id: vk_nattsenk_off
-  alias: 'Varmekabler nattsenking av'
+  alias: Varmekabler nattsenking av
   trigger:
-    - platform: time
-      at: '09:00:00'
+  - at: 08:30:00
+    platform: time
   condition:
-    - condition: template
-      value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature > 17 }}'
+  - condition: template
+    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
+      > 15 }}'
   action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-        temperature: 23
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
-        temperature: 20
-
+  - data:
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+      temperature: 24
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+      temperature: 21
+    service: climate.set_temperature
+    
 - id: stromspar_vvb
-  alias: 'Varmtvannsbereder strømsparing'
+  alias: Varmtvannsbereder strømsparing
   trigger:
-    - platform: time
-      at: '06:00:00'
-    - platform: time
-      at: '15:00:00'
+  - platform: time
+    at: 06:00:00
+  - platform: time
+    at: '15:00:00'
   condition:
-    - condition: template
-      value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature > 17 }}'
+  - condition: template
+    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
+      > 15 }}'
   action:
-    - service: switch.turn_off
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-    - delay: 00:05:00
-    - service: switch.turn_off
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-
+  - service: switch.turn_off
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+  - delay: 00:05:00
+  - service: switch.turn_off
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    
 - id: stromspar_vvb_off
-  alias: 'Varmtvannsbereder strømsparing av'
+  alias: Varmtvannsbereder strømsparing av
   trigger:
-    - platform: time
-      at: '11:00:00'
-    - platform: time
-      at: '20:00:00'
+  - platform: time
+    at: '11:00:00'
+  - platform: time
+    at: '20:00:00'
   condition:
-    - condition: template
-      value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature > 17 }}'
+  - condition: template
+    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
+      > 15 }}'
   action:
-    - service: switch.turn_on
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-    - delay: 00:05:00
-    - service: switch.turn_on
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+  - service: switch.turn_on
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+  - delay: 00:05:00
+  - service: switch.turn_on
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    
+- id: radio_volum
+  hide_entity: true
+  alias: 'Radio volum'
+  trigger:
+    platform: state
+    entity_id: input_number.radio_volum
+  action:
+    service: media_player.volume_set
+    data_template:
+      entity_id: >
+        {% if is_state("input_select.radio", "Alle") %} media_player.home_group
+        {% elif is_state("input_select.radio", "Bad (Google Home Mini)") %} media_player.google_home_mini
+        {% elif is_state("input_select.radio", "Soverom (Chrome Cast)") %} media_player.chromecast
+        {% endif %}
+      volume_level: '{{  states.input_number.radio_volum.state  }}' 
 
 - id: oppdatering
-  alias: 'Home Assistant oppdatering'
+  alias: Home Assistant oppdatering
   trigger:
-    - platform: state
-      entity_id: updater.updater
+  - platform: state
+    entity_id: updater.updater
   action:
-    - service: notify.notify
-      data_template:
-        title: 'Home Assistant'
-        message: 'Versjon {{ states.updater.updater.state }} er tilgjengelig'
+  - service: notify.notify
+    data_template:
+      title: Home Assistant
+      message: Versjon {{ states.updater.updater.state }} er tilgjengelig
+    data:
       data:
-        data:
-          tag: 'ha-update'
-
+        tag: ha-update
+        
 - id: rpi_temp_h
-  alias: 'Systemtemperatur høy'
+  hide_entity: true
+  alias: Systemtemperatur høy
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.cpu_temperatur
-      above: 60
+  - platform: numeric_state
+    entity_id: sensor.cpu_temperatur
+    above: 60
   action:
-    - service: notify.notify
-      data:
-        title: 'Home Assistant'
-        message: 'Alarm: System temperatur over 60°C'
-
-# - id: restart_modem
-  # alias: 'Restart fiber modem 05:45'
-  # trigger:
-    # platform: time
-    # at: '05:45:30'
-  # action:
-    # - service: switch.turn_off
-      # entity_id: switch.sonoff_s20_1
-    # - delay: '00:01:00'
-    # - service: switch.turn_on
-      # entity_id: switch.sonoff_s20_1
-
-# - id: dingdong_aut
-  # alias: "Ringeklokke trigger"
-  # trigger:
-    # platform: event
-    # event_type: pilight_received
-    # event_data:
-      # protocol: c12
-      # unitcode: 24
-      # state: off
-      # uuid: 0000-b8-27-eb-466a01
-  # action:
-    # - service: homeassistant.turn_on
-      # entity_id: input_boolean.ringeklokke
+  - service: notify.notify
+    data:
+      title: Home Assistant
+      message: 'Alarm: System temperatur over 60°C'
