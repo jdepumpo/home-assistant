@@ -52,48 +52,45 @@ hjem:
     - service: switch.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
-# rgb_test_ww:
-  # alias: rgb test warm white
-  # sequence:
-  # - service: light.turn_on
-    # entity_id: group.rgb_led
-    # data:
-      # brightness values 0-255
-      # brightness: 255
-      # color_temp values 154-500
-      # color_temp: 154 
-      # rgb_color values 0-255
-      # rgb_color: [255, 220, 30]
-      # white_value values 0-255
-      # white_value: 25
-      # transition: 5
-
-# rgb_test_purple:
-  # alias: rgb test purple
-  # sequence:
-  # - service: light.turn_on
-    # entity_id: group.rgb_led
-    # data:
-      # brightness: 255
-      # rgb_color: [255, 0, 255]
-      # white_value: 0
-      # transition: 5
-
-# rgb_test_white:
-  # alias: rgb test white
-  # sequence:
-  # - service: light.turn_on
-    # entity_id: group.rgb_led
-    # data:
-      # brightness: 125
-      # rgb_color: [255, 255, 255]
-      # white_value: 255
-      # transition: 5
-
-# rgb_test_off:
-  # alias: rgb_off
-  # sequence:
-  # - service: light.turn_off
-    # entity_id: group.rgb_led
-    # data:
-      # transition: 10
+radio:
+  alias: 'Spill av'
+  sequence:
+    # - service: media_player.volume_set
+      # data:
+        # entity_id: media_player.chromecast
+        # volume_level: '1.00'
+    # -  service: media_player.volume_set
+       # data:
+         # entity_id: media_player.google_home_mini
+         # volume_level: '0.20'
+    -  service: media_player.play_media
+       data_template:
+         entity_id: >
+          {% if is_state("input_select.radio", "Alle") %} media_player.home_group
+          {% elif is_state("input_select.radio", "Bad (Google Home Mini)") %} media_player.google_home_mini
+          {% elif is_state("input_select.radio", "Soverom (Chrome Cast)") %} media_player.chromecast
+          {% endif %}
+         media_content_id: >
+          {% if is_state("input_select.radiokanal", "Kiss N'Dance") %} http://live-bauerno.sharp-stream.com/kiss_no_mp3
+          {% elif is_state("input_select.radiokanal", "NRJ") %} http://stream.p4.no/nrj_mp3_mq?Nettplayer_P4.no
+          {% elif is_state("input_select.radiokanal", "NRK mP3") %} http://lyd.nrk.no/nrk_radio_mp3_mp3_m
+          {% elif is_state("input_select.radiokanal", "NRK P1") %} http://lyd.nrk.no/nrk_radio_p1_ostlandssendingen_mp3_m
+          {% elif is_state("input_select.radiokanal", "NRK P2") %} http://lyd.nrk.no/nrk_radio_p2_mp3_m
+          {% elif is_state("input_select.radiokanal", "NRK P3") %} http://lyd.nrk.no/nrk_radio_p3_mp3_m
+          {% elif is_state("input_select.radiokanal", "NRK P13") %} http://lyd.nrk.no/nrk_radio_p13_mp3_m
+          {% elif is_state("input_select.radiokanal", "P4 Lyden av Norge") %} http://stream.p4.no/p4_mp3_mq?Nettplayer_P4.no
+          {% elif is_state("input_select.radiokanal", "P5 Hits") %} http://stream.p4.no/p5oslo_mp3_mq?Nettplayer_Oslo.P5.no
+          {% elif is_state("input_select.radiokanal", "P6 Rock") %} http://stream.p4.no/p6_mp3_mq?Nettplayer_P6.no
+          {% elif is_state("input_select.radiokanal", "P7 Klem") %} http://stream.p4.no/p7_mp3_mq?Nettplayer_P4.no
+          {% elif is_state("input_select.radiokanal", "P8 Pop") %} http://stream.p4.no/p8_mp3_mq?Nettplayer_P4.no
+          {% elif is_state("input_select.radiokanal", "P9 Retro") %} http://stream.p4.no/p9_mp3_mq?Nettplayer_P9Retro.no
+          {% elif is_state("input_select.radiokanal", "P10 Country") %} http://stream.p4.no/p10_mp3_mq?Nettplayer_P10Country.no
+          {% elif is_state("input_select.radiokanal", "P24/7 Mix") %} http://live-bauerno.sharp-stream.com/p247mix_no_mp3
+          {% elif is_state("input_select.radiokanal", "Radio1") %} http://live-bauerno.sharp-stream.com/radio1_no_mp3
+          {% elif is_state("input_select.radiokanal", "Radio Norge") %} http://live-bauerno.sharp-stream.com/radionorge_no_mp3
+          {% elif is_state("input_select.radiokanal", "Radio Norsk Pop") %} http://live-bauerno.sharp-stream.com/norskpop_no_mp3
+          {% elif is_state("input_select.radiokanal", "Radio Rock") %} http://live-bauerno.sharp-stream.com/radiorock_no_mp3
+          {% elif is_state("input_select.radiokanal", "Radio Topp 40") %} http://live-bauerno.sharp-stream.com/top40_no_mp3
+          {% elif is_state("input_select.radiokanal", "Radio Vinyl") %} http://live-bauerno.sharp-stream.com/vinyl_no_mp3
+          {% endif %}
+         media_content_type: 'audio/mp4' 
