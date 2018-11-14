@@ -6,7 +6,6 @@
   # qos: 1
   # payload_available: "Online"
   # payload_not_available: "Offline"
-  # retain: true
 
 # - platform: mqtt
   # name: "Sonoff Basic 4"
@@ -16,7 +15,6 @@
   # qos: 1
   # payload_available: "Online"
   # payload_not_available: "Offline"
-  # retain: true
 
 - platform: mqtt
   name: "SB Handkletorker"
@@ -26,7 +24,6 @@
   qos: 1
   payload_available: "Online"
   payload_not_available: "Offline"
-  retain: true
 
 # - platform: mqtt
   # name: "Sonoff Basic 8"
@@ -36,7 +33,6 @@
   # qos: 1
   # payload_available: "Online"
   # payload_not_available: "Offline"
-  # retain: true
 
 # - platform: mqtt
   # name: "Sonoff Dual R2 1.1"
@@ -46,7 +42,6 @@
   # qos: 1
   # payload_available: "Online"
   # payload_not_available: "Offline"
-  # retain: true
 
 # - platform: mqtt
   # name: "Sonoff Dual R2 1.2"
@@ -56,7 +51,6 @@
   # qos: 1
   # payload_available: "Online"
   # payload_not_available: "Offline"
-  # retain: true
 
 # - platform: mqtt
   # name: "Sonoff Dual R2 2.1"
@@ -66,7 +60,6 @@
   # qos: 1
   # payload_available: "Online"
   # payload_not_available: "Offline"
-  # retain: true
 
 # - platform: mqtt
   # name: "Sonoff Dual R2 2.2"
@@ -76,57 +69,51 @@
   # qos: 1
   # payload_available: "Online"
   # payload_not_available: "Offline"
-  # retain: true
 
-- platform: mqtt
-  name: "Sonoff S20 1"
-  command_topic: "cmnd/sonoff_s20_1/POWER1"
-  state_topic: "stat/sonoff_s20_1/POWER1"
-  availability_topic: "tele/sonoff_s20_1/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
+# - platform: mqtt
+  # name: "Sonoff S20 1"
+  # command_topic: "cmnd/sonoff_s20_1/POWER1"
+  # state_topic: "stat/sonoff_s20_1/POWER1"
+  # availability_topic: "tele/sonoff_s20_1/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Sonoff S20 2"
-  command_topic: "cmnd/sonoff_s20_2/POWER1"
-  state_topic: "stat/sonoff_s20_2/POWER1"
-  availability_topic: "tele/sonoff_s20_2/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
+# - platform: mqtt
+  # name: "Sonoff S20 2"
+  # command_topic: "cmnd/sonoff_s20_2/POWER1"
+  # state_topic: "stat/sonoff_s20_2/POWER1"
+  # availability_topic: "tele/sonoff_s20_2/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Sonoff S20 3"
-  command_topic: "cmnd/sonoff_s20_3/POWER1"
-  state_topic: "stat/sonoff_s20_3/POWER1"
-  availability_topic: "tele/sonoff_s20_3/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
+# - platform: mqtt
+  # name: "Sonoff S20 3"
+  # command_topic: "cmnd/sonoff_s20_3/POWER1"
+  # state_topic: "stat/sonoff_s20_3/POWER1"
+  # availability_topic: "tele/sonoff_s20_3/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "WiFi Smart Socket PS-16 5"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_5/POWER1"
-  state_topic: "stat/wifi_smart_socket_ps-16_5/POWER1"
-  availability_topic: "tele/wifi_smart_socket_ps-16_5/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
+# - platform: mqtt
+  # name: "WiFi Smart Socket PS-16 5"
+  # command_topic: "cmnd/wifi_smart_socket_ps-16_5/POWER1"
+  # state_topic: "stat/wifi_smart_socket_ps-16_5/POWER1"
+  # availability_topic: "tele/wifi_smart_socket_ps-16_5/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "WiFi Smart Socket PS-16 6"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_6/POWER1"
-  state_topic: "stat/wifi_smart_socket_ps-16_6/POWER1"
-  availability_topic: "tele/wifi_smart_socket_ps-16_6/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
+# - platform: mqtt
+  # name: "WiFi Smart Socket PS-16 6"
+  # command_topic: "cmnd/wifi_smart_socket_ps-16_6/POWER1"
+  # state_topic: "stat/wifi_smart_socket_ps-16_6/POWER1"
+  # availability_topic: "tele/wifi_smart_socket_ps-16_6/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
 # - platform: rpi_rf
  # gpio: 17
