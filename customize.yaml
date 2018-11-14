@@ -1,25 +1,21 @@
 cover.qubino_zmnhod1_flush_shutter_dc_level:
   icon: mdi:blinds
-
 group.all_automations:
   hidden: false
-  friendly_name: 'Automasjoner'
+  friendly_name: Automasjoner
 group.all_devices:
   hidden: false
-  friendly_name: 'Enheter'
+  friendly_name: Enheter
 group.all_lights:
   hidden: false
-  friendly_name: 'Belysning'
+  friendly_name: Belysning
   control:
 group.all_scripts:
   hidden: false
-  friendly_name: 'Skript'
+  friendly_name: Skript
 group.all_switches:
   hidden: false
-  friendly_name: 'Brytere'
-group.stemning:
-  control:
-
+  friendly_name: Brytere
 light.fibaro_system_fgd212_dimmer_2_level_2:
   hidden: true
 light.fibaro_system_fgd212_dimmer_2_level_4:
@@ -37,75 +33,58 @@ light.fibaro_system_fgd212_dimmer_2_level_11:
 light.fibaro_system_fgd212_dimmer_2_level_12:
   icon: mdi:ceiling-light
 light.mh_hyllelys:
-  friendly_name: 'Hyllelys spisestue'
+  friendly_name: Hyllelys spisestue
   icon: mdi:led-strip
 light.sb_gulvlampe:
-  friendly_name: 'Gulvlampe m/bord stue'
+  friendly_name: Gulvlampe m/bord stue
   icon: mdi:floor-lamp
 light.sb_speillys:
-  friendly_name: 'Speillys bad'
+  friendly_name: Speillys bad
 light.sb_utelampe_n:
-  friendly_name: 'Utelampe nord'
+  friendly_name: Utelampe nord
   icon: mdi:wall-sconce
 light.wifi_smart_socket_ps16_1:
-  friendly_name: 'Portlys inngangsparti'
+  friendly_name: Portlys inngangsparti
 light.wifi_smart_socket_ps16_2:
-  friendly_name: 'Bordlampe gang'
+  friendly_name: Bordlampe gang
   icon: mdi:desk-lamp
 light.wifi_smart_socket_ps16_3:
-  friendly_name: 'Bordlampe spisestue'
+  friendly_name: Bordlampe spisestue
   icon: mdi:desk-lamp
 light.wifi_smart_socket_ps16_4:
-  friendly_name: 'Dekkslys veranda nord'
-
-media_player.lg_webos_smart_tv:
-  friendly_name: 'LG SmartTV'
-
-sensor.date:
-  friendly_name: 'Dato'
+  friendly_name: Dekkslys veranda nord
+script.radio:
+  icon: mdi:play
 sensor.disk_free_root:
-  friendly_name: 'SD kort ledig plass'
+  friendly_name: SD kort ledig plass
   icon: mdi:micro-sd
 sensor.disk_use_percent_root:
-  friendly_name: 'SD kort brukt plass'
+  friendly_name: SD kort brukt plass
   icon: mdi:micro-sd
 sensor.fibaro_fgms001zw5_luminance:
   icon: mdi:brightness-7
 sensor.fibaro_fgms001zw5_temperature:
-  friendly_name: 'Temperatur bad'
+  friendly_name: Temperatur bad
 sensor.ipv4_address_eth0:
-  friendly_name: 'IPv4 ethernet adresse'
+  friendly_name: IPv4 ethernet adresse
 sensor.last_boot:
-  friendly_name: 'Siste omstart'
+  friendly_name: Siste omstart
 sensor.memory_use_percent:
-  friendly_name: 'Minnebruk'
+  friendly_name: Minnebruk
 sensor.sb_gulvlampe_temperatur:
-  friendly_name: 'Temperatur stue'
+  friendly_name: Temperatur stue
 sensor.sb_gulvlampe_luftfuktighet:
-  friendly_name: 'Luftfuktighet stue'
+  friendly_name: Luftfuktighet stue
   icon: mdi:water-percent
-sensor.time:
-  friendly_name: 'Klokke'
-sensor.yr_humidity:
-  friendly_name: 'Luftfuktighet'
-  icon: mdi:water-percent
-sensor.yr_pressure:
-  friendly_name: 'Trykk'
-  icon: mdi:gauge
 sensor.processor_use:
-  friendly_name: 'CPU aktivitet'
+  friendly_name: CPU aktivitet
   icon: mdi:chip
-sensor.yr_symbol:
-  friendly_name: 'Værstatus'
-sensor.yr_temperature:
-  friendly_name: 'Temperatur'
-sensor.yr_wind_speed:
-  friendly_name: 'Vindhastighet'
-  icon: mdi:weather-windy
-
+sensor.current_uv_index:
+  unit_of_measurement: ''
+sensor.max_uv_index:
+  unit_of_measurement: ''
 sun.sun:
-  friendly_name: 'Sola'
-
+  friendly_name: Sola
 switch.fibaro_fgwpef_switch:
   icon: mdi:water
 switch.qubino_zmnhdd1_flush_dimmer_switch:
@@ -113,4 +92,4 @@ switch.qubino_zmnhdd1_flush_dimmer_switch:
 switch.qubino_zmnhod1_flush_shutter_dc_switch:
   hidden: true
 switch.sb_handkletorker:
-  friendly_name: 'Håndkletørker bad'
+  friendly_name: Håndkletørker bad
