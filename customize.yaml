@@ -76,13 +76,25 @@ sensor.sb_gulvlampe_temperatur:
 sensor.sb_gulvlampe_luftfuktighet:
   friendly_name: Luftfuktighet stue
   icon: mdi:water-percent
+sensor.electricity_price_sagmesterveien_6:
+  friendly_name: Strømpris nå
+  icon: mdi:chart-line
+  unit_of_measurement: kr/kWh 
+sensor.tibber_min:
+  icon: mdi:arrow-bottom-right
+sensor.tibber_max:
+  icon: mdi:arrow-top-right
+sensor.tibber_snitt:
+  icon: mdi:arrow-collapse
+sensor.tibber_forbruk:
+  icon: mdi:cash-100
 sensor.processor_use:
   friendly_name: CPU aktivitet
   icon: mdi:chip
 sensor.current_uv_index:
-  unit_of_measurement: ''
+  unit_of_measurement:
 sensor.max_uv_index:
-  unit_of_measurement: ''
+  unit_of_measurement:
 sun.sun:
   friendly_name: Sola
 switch.fibaro_fgwpef_switch:
