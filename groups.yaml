@@ -52,11 +52,13 @@ avansert:
   view: true
   entities:
   - group.all_automations
+  - group.tibber
   - group.effekt
   - group.rpi
   - group.sensor
   - group.vaer
   - group.zwave
+
 
 #1 Hjemside - default_view
 
@@ -139,14 +141,14 @@ sola:
   name: 'Sola'
   entities:
   - sun.sun
-  - sensor.current_uv_index
   - sensor.current_uv_level
+  - sensor.current_uv_index
   - sensor.max_uv_index
 
 # Multimedia
 
 radio:
-  name: Radio
+  name: 'Radio'
   entities:
   - input_select.radio
   - input_select.radiokanal
@@ -161,6 +163,15 @@ xbox_live:
   - sensor.mbentzen_current
 
 # Avansert
+
+tibber:
+  name: 'Strømforbruk'
+  entities:
+  - sensor.electricity_price_sagmesterveien_6
+  - sensor.tibber_min
+  - sensor.tibber_max
+  - sensor.tibber_snitt
+  - sensor.tibber_forbruk
 
 effekt:
   name: 'Effektforbruk'
@@ -189,6 +200,7 @@ rpi:
 sensor:
   name: 'Sensorer'
   entities:
+  - sensor.electricity_price_sagmesterveien_6
   - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
   - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
   - sensor.fibaro_system_fgms001zw5_luminance
@@ -213,7 +225,6 @@ zwave:
   - zwave.fibaro_system_fgwpef_wall_plug_gen5
   - zwave.qubino_zmnhdd1_flush_dimmer
   - zwave.qubino_zmnhod1_flush_shutter_dc
-  - zwave.remotec_zxt120eu
   - zwave.thermofloor_as_heatit_thermostat_tf_021
   - zwave.thermofloor_as_heatit_thermostat_tf_021_2
 
@@ -232,3 +243,4 @@ stemning:
   - light.sb_gulvlampe
   - light.wifi_smart_socket_ps16_2
   - light.wifi_smart_socket_ps16_3
+  
