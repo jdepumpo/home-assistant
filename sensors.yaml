@@ -7,55 +7,7 @@
    # - 2535409873827380 Finnsa197
    - 2533274836441831
    - 2533274798318388
-   # - 2533274997028457
-
-- platform: template
-  sensors:
-    hulkhaugen84_current:
-      friendly_name_template: '{{ states.sensor.hulkhaugen84.attributes["friendly_name"] }}'
-      value_template:
-        '{% if is_state("sensor.hulkhaugen84", "Offline") %}
-          Borte
-        {% else %}
-          {{ states.sensor.hulkhaugen84.attributes["XboxOne Full"] }}
-        {% endif %}'
-      entity_picture_template: '{{ states.sensor.hulkhaugen84.attributes["entity_picture"] }}'
-
-- platform: template
-  sensors:
-    kayeboy_current:
-      friendly_name_template: '{{ states.sensor.kayeboy.attributes["friendly_name"] }}'
-      value_template:
-        '{% if is_state("sensor.kayeboy", "Offline") %}
-          Borte
-        {% else %}
-          {{ states.sensor.kayeboy.attributes["XboxOne Full"] }}
-        {% endif %}'
-      entity_picture_template: '{{ states.sensor.kayeboy.attributes["entity_picture"] }}'
-
-# - platform: template
-  # sensors:
-    # mbentzen_current:
-      # friendly_name_template: '{{ states.sensor.mbentzen.attributes["friendly_name"] }}'
-      # value_template:
-        # '{% if is_state("sensor.mbentzen", "Offline") %}
-          # Borte
-        # {% else %}
-          # {{ states.sensor.mbentzen.attributes["XboxOne Full"] }}
-        # {% endif %}'
-      # entity_picture_template: '{{ states.sensor.mbentzen.attributes["entity_picture"] }}'
-
-- platform: template
-  sensors:
-    fibaro_battery_bad:
-      friendly_name: 'Multisensor batteri bad'
-      value_template:
-        '{% if states.zwave.fibaro_system_fgms001zw5_motion_sensor %}
-          {{ states.zwave.fibaro_system_fgms001zw5_motion_sensor.attributes.battery_level }}
-        {% else %}
-          Ikke tilgjengelig
-        {% endif %}'
-      unit_of_measurement: '%'
+   - 2533274997028457
 
 - platform: command_line
   name: 'CPU temperatur'
@@ -86,3 +38,80 @@
   state_topic: "tele/sb_gulvlampe/SENSOR"
   value_template: "{{ value_json['SI7021'].Humidity }}"
   unit_of_measurement: "%"
+
+- platform: template
+  sensors:
+    hulkhaugen84_current:
+      friendly_name_template: '{{ states.sensor.hulkhaugen84.attributes["friendly_name"] }}'
+      value_template:
+        '{% if states.sensor.hulkhaugen84.attributes["XboxOne Full"] is defined %} 
+          {{ states.sensor.hulkhaugen84.attributes["XboxOne Full"] }}
+        {% elif states.sensor.hulkhaugen84.attributes["XboxOne Background"] is defined %} 
+          Xbox One: {{ states.sensor.hulkhaugen84.attributes["XboxOne Background"] }}
+        {% elif states.sensor.hulkhaugen84.attributes["WindowsOneCore Full"] is defined %} 
+          Windows: {{ states.sensor.hulkhaugen84.attributes["WindowsOneCore Full"] }}
+        {% elif states.sensor.hulkhaugen84.attributes["Android Full"] is defined %} 
+          Android: {{ states.sensor.hulkhaugen84.attributes["Android Full"] }}
+        {% else %}
+          Borte
+        {% endif %}'
+      entity_picture_template: '{{ states.sensor.hulkhaugen84.attributes["entity_picture"] }}'
+    kayeboy_current:
+      friendly_name_template: '{{ states.sensor.kayeboy.attributes["friendly_name"] }}'
+      value_template:
+        '{% if states.sensor.kayeboy.attributes["XboxOne Full"] is defined %} 
+          {{ states.sensor.kayeboy.attributes["XboxOne Full"] }}
+        {% elif states.sensor.kayeboy.attributes["XboxOne Background"] is defined %} 
+          Xbox One: {{ states.sensor.kayeboy.attributes["XboxOne Background"] }}
+        {% elif states.sensor.kayeboy.attributes["WindowsOneCore Full"] is defined %} 
+          Windows: {{ states.sensor.kayeboy.attributes["WindowsOneCore Full"] }}
+        {% elif states.sensor.kayeboy.attributes["Android Full"] is defined %} 
+          Android: {{ states.sensor.kayeboy.attributes["Android Full"] }}
+        {% else %}
+          Borte
+        {% endif %}'
+      entity_picture_template: '{{ states.sensor.kayeboy.attributes["entity_picture"] }}'
+    mbentzen_current:
+      friendly_name_template: '{{ states.sensor.mbentzen.attributes["friendly_name"] }}'
+      value_template:
+        '{% if states.sensor.mbentzen.attributes["XboxOne Full"] is defined %} 
+          {{ states.sensor.mbentzen.attributes["XboxOne Full"] }}
+        {% elif states.sensor.mbentzen.attributes["XboxOne Background"] is defined %} 
+          Xbox One: {{ states.sensor.mbentzen.attributes["XboxOne Background"] }}
+        {% elif states.sensor.mbentzen.attributes["WindowsOneCore Full"] is defined %} 
+          Windows: {{ states.sensor.mbentzen.attributes["WindowsOneCore Full"] }}
+        {% elif states.sensor.mbentzen.attributes["Android Full"] is defined %} 
+          Android: {{ states.sensor.mbentzen.attributes["Android Full"] }}
+        {% else %}
+          Borte
+        {% endif %}'
+      entity_picture_template: '{{ states.sensor.mbentzen.attributes["entity_picture"] }}'
+    fibaro_battery_bad:
+      friendly_name: 'Multisensor batteri bad'
+      value_template:
+        '{% if states.zwave.fibaro_system_fgms001zw5_motion_sensor %}
+          {{ states.zwave.fibaro_system_fgms001zw5_motion_sensor.attributes.battery_level }}
+        {% else %}
+          Ikke tilgjengelig
+        {% endif %}'
+      unit_of_measurement: '%'
+    tibber_forbruk:
+      friendly_name: 'Estimert årlig forbruk'
+      unit_of_measurement: "kr"
+      value_template: >-
+        {{states.sensor.electricity_price_sagmesterveien_6.attributes["estimated_annual_consumption"]}}
+    tibber_min:
+      friendly_name: 'Strømpris min'
+      unit_of_measurement: "kr/kWh"
+      value_template: >-
+        {{states.sensor.electricity_price_sagmesterveien_6.attributes["min_price"] | round(3)}}
+    tibber_max:
+      friendly_name: 'Strømpris maks'
+      unit_of_measurement: "kr/kWh"
+      value_template: >-
+        {{states.sensor.electricity_price_sagmesterveien_6.attributes["max_price"] | round(3)}}
+    tibber_snitt:
+      friendly_name: 'Strømpris snitt'
+      unit_of_measurement: "kr/kWh"
+      value_template: >-
+        {{((float(states.sensor.electricity_price_sagmesterveien_6.attributes["min_price"])+float(states.sensor.electricity_price_sagmesterveien_6.attributes["max_price"])) / 2 )| round(3)}}
