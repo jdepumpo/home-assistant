@@ -16,20 +16,8 @@ group.all_scripts:
 group.all_switches:
   hidden: false
   friendly_name: Brytere
-light.fibaro_system_fgd212_dimmer_2_level_2:
-  hidden: true
-light.fibaro_system_fgd212_dimmer_2_level_4:
-  hidden: true
-light.fibaro_system_fgd212_dimmer_2_level_6:
-  hidden: true
 light.fibaro_system_fgd212_dimmer_2_level_7:
   icon: mdi:ceiling-light
-light.fibaro_system_fgd212_dimmer_2_level_8:
-  hidden: true
-light.fibaro_system_fgd212_dimmer_2_level_9:
-  hidden: true
-light.fibaro_system_fgd212_dimmer_2_level_11:
-  hidden: true
 light.fibaro_system_fgd212_dimmer_2_level_12:
   icon: mdi:ceiling-light
 light.mh_hyllelys:
@@ -44,7 +32,7 @@ light.sb_utelampe_n:
   friendly_name: Utelampe nord
   icon: mdi:wall-sconce
 light.wifi_smart_socket_ps16_1:
-  friendly_name: Portlys inngangsparti
+  friendly_name: Julelys port inngangsparti
 light.wifi_smart_socket_ps16_2:
   friendly_name: Bordlampe gang
   icon: mdi:desk-lamp
@@ -53,13 +41,22 @@ light.wifi_smart_socket_ps16_3:
   icon: mdi:desk-lamp
 light.wifi_smart_socket_ps16_4:
   friendly_name: Dekkslys veranda nord
+light.wifi_smart_socket_ps16_5:
+  friendly_name: Julelys veranda sørøst
+light.wifi_smart_socket_ps16_6:
+  friendly_name: Julestjerne spisestue
+  icon: mdi:hexagram
+light.sonoff_s20_1:
+  friendly_name: Adventsstake TV stue
+light.sonoff_s20_2:
+  friendly_name: Adventsstake kjøkken
+light.sonoff_s20_3:
+  friendly_name: Juletre
+  icon: mdi:pine-tree
 script.radio:
   icon: mdi:play
 sensor.disk_free_root:
   friendly_name: SD kort ledig plass
-  icon: mdi:micro-sd
-sensor.disk_use_percent_root:
-  friendly_name: SD kort brukt plass
   icon: mdi:micro-sd
 sensor.fibaro_fgms001zw5_luminance:
   icon: mdi:brightness-7
@@ -76,18 +73,16 @@ sensor.sb_gulvlampe_temperatur:
 sensor.sb_gulvlampe_luftfuktighet:
   friendly_name: Luftfuktighet stue
   icon: mdi:water-percent
-sensor.electricity_price_sagmesterveien_6:
-  friendly_name: Strømpris nå
+sensor.tibber_now:
   icon: mdi:chart-line
-  unit_of_measurement: kr/kWh 
 sensor.tibber_min:
   icon: mdi:arrow-bottom-right
 sensor.tibber_max:
   icon: mdi:arrow-top-right
-sensor.tibber_snitt:
+sensor.tibber_avg:
   icon: mdi:arrow-collapse
-sensor.tibber_forbruk:
-  icon: mdi:cash-100
+sensor.tibber_use:
+  icon: mdi:coins
 sensor.processor_use:
   friendly_name: CPU aktivitet
   icon: mdi:chip
@@ -99,9 +94,9 @@ sun.sun:
   friendly_name: Sola
 switch.fibaro_fgwpef_switch:
   icon: mdi:water
-switch.qubino_zmnhdd1_flush_dimmer_switch:
-  hidden: true
-switch.qubino_zmnhod1_flush_shutter_dc_switch:
-  hidden: true
 switch.sb_handkletorker:
   friendly_name: Håndkletørker bad
+sensor.electricity_price_sagmesterveien_6:
+  friendly_name: Strømpris nå
+  icon: mdi:chart-line
+  unit_of_measurement: kr/kWh
