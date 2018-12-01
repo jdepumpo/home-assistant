@@ -6,3 +6,7 @@
   icon: mdi:speedometer
 "*_energy":
   icon: mdi:speedometer
+"binary_sensor.*motion*":
+  device_class: motion
+sensor.dnb*:
+  icon: mdi:chart-line
