@@ -1,0 +1,90 @@
+title: My Awesome Home
+
+resources: 
+  - url: /local/slider-entity-row.js
+    type: js
+  - url: /local/weather-card.js
+    type: js
+  - url: /local/vertical-stack-in-card.js
+    type: js
+    
+views:
+    # View tab title.
+  - title: Example
+    id: test1
+    theme: dark-mode
+    # panel: true
+    # Makes the first card fill the view
+    cards:
+        # The markdown card will render markdown text.
+      - type: gauge
+        entity: sensor.electricity_price_sagmesterveien_6
+        title: 'Strømpris'
+        unit_of_measurement: 'kr'
+        min: 0
+        max: 2
+        severity:
+          green: 0
+          yellow: 0.65
+          red: 1.2
+          # - type: sensor
+        # entity: sensor.electricity_price_sagmesterveien_6
+        # name: 'Prisutvikling'
+        # graph: line
+        # hours_to_show: 24
+        # accuracy: 120
+        # height: 200 
+        # line_color: "#3498db"
+      - type: thermostat
+        entity: climate.thermofloor_as_heatit_thermostat_tf_021_heating
+      - type: custom:weather-card
+        # title: Ver
+        entity_weather: weather.metno
+        entity_sun: sun.sun
+        entity_wind: sensor.vindstyrke_tekst
+      - type: entities
+        title: Soverom
+        show_header_toggle: false
+        entities:
+          - type: custom:slider-entity-row
+            entity: light.fibaro_system_fgd212_dimmer_2_level_10
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: light.fibaro_system_fgd212_dimmer_2_level_12
+            toggle: true
+      - type: custom:vertical-stack-in-card
+        title: Stue
+        cards:
+        - type: entities
+          entities:
+            - type: custom:slider-entity-row
+              entity: light.fibaro_system_fgd212_dimmer_2_level_7
+              name: Taklampe
+              toggle: true
+            - type: custom:slider-entity-row
+              entity: light.fibaro_system_fgd212_dimmer_2_level_5
+              name: Downlights
+              toggle: true
+            - type: custom:slider-entity-row
+              entity: light.mh_hyllelys
+              name: Hyllelys
+              toggle: true
+        - type: glance
+          show_state: false
+          entities:
+            - entity: light.wifi_smart_socket_ps16_3
+              name: Bordlampe
+              tap_action: toggle
+              hold_action: more-info
+            - entity: light.sb_gulvlampe
+              name: Gulvlampe
+              tap_action: toggle
+              hold_action: more-info
+            - entity: light.wifi_smart_socket_ps16_6
+              name: Julestjerne
+              tap_action: toggle
+              hold_action: more-info
+            - entity: light.sonoff_s20_1
+              name: Adventslys
+              tap_action: toggle
+              hold_action: more-info

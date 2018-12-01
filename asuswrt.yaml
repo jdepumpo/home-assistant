@@ -1,0 +1,6 @@
+platform: asuswrt
+host: 192.168.1.1
+username: !secret asuswrt_username
+password: !secret asuswrt_password
+protocol: telnet
+track_new_devices: false

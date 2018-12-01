@@ -1,0 +1,4 @@
+purge_keep_days: 2
+include:
+  entities:
+    - sensor.electricity_price_sagmesterveien_6
