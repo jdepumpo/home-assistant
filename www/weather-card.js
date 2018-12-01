@@ -1,110 +1,112 @@
-.clear {
-  clear: both;
+class WeatherCard extends HTMLElement {
+  set hass(hass) {
+    if (!this.content) {
+      const card = document.createElement('ha-card');
+      const link = document.createElement('link');
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
+      link.href = '/local/weather-card.css';
+      card.appendChild(link);
+      this.content = document.createElement('div');
+      this.content.className = 'card';
+      card.appendChild(this.content);
+      this.appendChild(card);
+    }
+    const getUnit = function (measure) {
+      const lengthUnit = hass.config.unit_system.length;
+      switch (measure) {
+        case 'air_pressure':
+          return lengthUnit === 'km' ? 'hPa' : 'inHg';
+        case 'length':
+          return lengthUnit;
+        case 'precipitation':
+          return lengthUnit === 'km' ? 'mm' : 'in';
+        default:
+          return hass.config.unit_system[measure] || '';
+      }
+    };
+    const transformDayNight = {
+      "below_horizon": "night",
+      "above_horizon": "day",
+    }
+    const belowabovehorizon = {
+      "below_horizon": "Under horisonten",
+      "above_horizon": "Over horisonten",
+    }
+    const sunLocation = transformDayNight[hass.states[this.config.entity_sun].state];
+    const sunHorizon = belowabovehorizon[hass.states[this.config.entity_sun].state];
+    const weatherIcons = {
+      'clear-night': `${sunLocation}`,
+      'cloudy': 'cloudy',
+      'fog': 'cloudy',
+      'hail': 'rainy-7',
+      'lightning': 'thunder',
+      'lightning-rainy': 'thunder',
+      'partlycloudy': `cloudy-${sunLocation}-3`,
+      'pouring': 'rainy-6',
+      'rainy': 'rainy-5',
+      'snowy': 'snowy-6',
+      'snowy-rainy': 'rainy-7',
+      'sunny': `${sunLocation}`,
+      'windy': 'cloudy',
+      'windy-variant': `cloudy-${sunLocation}-3`,
+      'exceptional': '!!',
+    }
+    const windDirections = [
+      'nord',
+      'nordøst',
+      'øst',
+      'sørøst',
+      'sør',
+      'sørvest',
+      'vest',
+      'nordvest',
+      'nord'
+    ];
+    const entity = hass.states[this.config.entity_weather];
+	const entity_w = hass.states[this.config.entity_wind];
+    const currentCondition = entity.state;
+    const humidity = entity.attributes.humidity;
+    const pressure = entity.attributes.pressure;
+    const temperature = Math.round(entity.attributes.temperature);
+    const windBearing = windDirections[(parseInt((entity.attributes.wind_bearing + 22.5) / 45))];
+    const windSpeed = entity_w.state;
+    const forecast = entity.attributes.forecast.slice(0, 5);
+    this.content.innerHTML = `
+      <span class="icon bigger" style="background: none, url(/local/icons/weather_icons/animated/${weatherIcons[currentCondition]}.svg) no-repeat; background-size: contain;">${currentCondition}</span>
+      <span class="temp">${temperature}</span>
+	  <span class="tempc">${getUnit('temperature')}</span>
+      <span>
+        <!--ul class="variations right">
+          <li><span class="ha-icon"><ha-icon icon="mdi:water-percent"></ha-icon></span>${humidity}<span class="unit"> %</span></li>
+          <li><span class="ha-icon"><ha-icon icon="mdi:gauge"></ha-icon></span>${pressure}<span class="unit">${getUnit('air_pressure')}</span></li>
+        </ul-->
+        <ul class="variations">
+          <li><!--span class="ha-icon"><ha-icon icon="mdi:weather-windy"></ha-icon></span-->${windSpeed} fra ${windBearing}</li>
+          <!--li><span class="ha-icon"><ha-icon icon="mdi:weather-sunset"></ha-icon></span>${sunHorizon}</li-->
+        </ul>
+      </span>
+      <div class="forecast clear">${forecast.map(daily => `
+              <div class="day">
+                  <span class="dayname">${(new 
+Date(daily.datetime)).toString().split(' ')[0]}</span>
+                  <br><i class="icon" style="background: none, 
+url(/local/icons/weather_icons/animated/${weatherIcons[daily.condition]}.svg) 
+no-repeat; background-size: contain;"></i>
+                  <br><span 
+class="highTemp">${daily.temperature}${getUnit('temperature')}</span>
+              </div>`).join('')}
+      </div>`;
+  }
+  setConfig(config) {
+    if (!config.entity_weather || !config.entity_sun) {
+      throw new Error('Please define entities');
+    }
+    this.config = config;
+  }
+  // @TODO: This requires more intelligent logic
+  getCardSize() {
+    return 3;
+  }
 }
-.card {
-  margin: auto;
-  padding-top: 2em;
-  padding-bottom: 0em;
-  padding-left: 1em;
-  padding-right:1em;
-  position: relative;
-}
-.ha-icon {
-  height: 18px;
-  margin-right: 5px;
-  color: var(--paper-item-icon-color);
-}
-.temp {
-  font-weight: 300;
-  font-size: 4em;
-  color: var(--primary-text-color);
-  position: absolute;
-  right: 1em;
-}
-.tempc {
-  font-weight: 300;
-  font-size: 1.5em;
-  vertical-align: super;
-  color: var(--primary-text-color);
-  position: absolute;
-  right: 1em;
-  margin-top: -14px;
-  margin-right: 7px;
-}
-.variations {
-  display: inline-block;
-  font-weight: 300;
-  color: var(--primary-text-color);
-  list-style: none;
-  margin-left: -2em;
-  margin-top: 4.5em;
-}
-.variations.right {
-  position: absolute;
-  right: 1em;
-  margin-left: 0;
-  margin-right: 1em;
-}
-.unit {
-  font-size: .8em;
-}
-.forecast {
-  width: 100%;
-  margin: 0 auto;
-  height: 9em;
-}
-.day {
-  display: block;
-  width: 20%;
-  float: left;
-  text-align: center;
-  color: var(--primary-text-color);
-  border-right: .1em solid #d9d9d9;
-  line-height: 2;
-  box-sizing: border-box;
-}
-.dayname {
-  text-transform: uppercase;
-}
-.forecast .day:first-child {
-  margin-left: 0;
-}
-.forecast .day:nth-last-child(1) {
-  border-right: none;
-  margin-right: 0;
-}
-.highTemp {
-  font-weight: bold;
-}
-.lowTemp {
-  color: var(--secondary-text-color);
-}
-.icon.bigger {
-  width: 10em;
-  height: 10em;
-  margin-top: -4em;
-  position: absolute;
-  left: 0em;
-}
-.icon {
-  width: 50px;
-  height: 50px;
-  margin-right: 5px;
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-indent: -9999px;
-}
-.weather {
-  font-weight: 300;
-  font-size: 1.5em;
-  color: var(--primary-text-color);
-  text-align: left;
-  position: absolute;
-  top: -0.5em;
-  left: 6em;
-  word-wrap: break-word;
-  width: 30%;
-}
+customElements.define('weather-card', WeatherCard);
