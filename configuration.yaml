@@ -9,151 +9,73 @@ homeassistant:
   customize_domain: !include customize_domain.yaml
   customize_glob: !include customize_glob.yaml
 
-automation: !include automations.yaml
-group: !include groups.yaml
-input_number: !include input_number.yaml
-input_select: !include input_select.yaml
-light: !include lights.yaml
-scene: !include scenes.yaml
-script: !include scripts.yaml
-sensor: !include sensors.yaml
-switch: !include switches.yaml
-
-http:
-  base_url: !secret http_base_url
-  ssl_certificate: /etc/letsencrypt/live/hulkhaugen.duckdns.org/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/hulkhaugen.duckdns.org/privkey.pem
-
-# Text to speech
-tts:
-  platform: google
-  language: 'no'
-
-# Enables configuration UI
-config:
-
-# Enables the map/zone
-map:
-
-# Enables the frontend
-frontend:
-
-# Checks for available updates
-updater:
-
-logger:
-  default: warning
-  logs:
-    # homeassistant.components.device_tracker: critical
-    # homeassistant.components.zwave: critical
-    homeassistant.components.sensor_hulkhaugen84: error
-    homeassistant.helpers.entity.sensor_kayeboy: error
-    # homeassistant.components.sensor_mbentzen: error
-
-# recorder:
-  # purge_keep_days: 3
-  # exclude:
-    # domains:
-      # - automation
-      # - climate
-      # - group
-      # - input_number
-      # - input_select
-      # - sensor
-      # - sun
-      # - updater
-      # - zwave
-    # entities:
-      # - binary_sensor.qubino_zmnhdd1_flush_dimmer_sensor
-      # - cover.qubino_zmnhod1_flush_shutter_dc_switch
-      # - device_tracker.raspberry_pi_2
-  # include:
-    # entities:
-      # - sensor.qubino_zmnhdd1_flush_dimmer_power
-      # - sensor.fibaro_system_fgd212_dimmer_2_power
-      # - sensor.fibaro_system_fgd212_dimmer_2_power_3
-      # - sensor.fibaro_system_fgd212_dimmer_2_power_5
-      # - sensor.fibaro_system_fgd212_dimmer_2_power_7
-      # - sensor.fibaro_system_fgd212_dimmer_2_power_10
-      # - sensor.fibaro_system_fgd212_dimmer_2_power_12
-      # - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
-
-# Enables support for tracking state changes over time.
-# history:
-
-# View all events in a logbook
-# logbook:
-
-sun:
-
-zwave:
-  usb_path: /dev/ttyACM0
-
-# Mosquitto MQTT
-mqtt:
-  broker: !secret mqtt_broker
-  port: !secret mqtt_port
-  client_id: !secret mqtt_client_id
-  username: !secret mqtt_username
-  password: !secret mqtt_password
+# asuswrt:
+  # host: 192.168.1.1
+  # username: !secret asuswrt_username
+  # password: !secret asuswrt_password
+  # protocol: telnet
+  # port: 23
 
 device_tracker:
   platform: asuswrt
   host: 192.168.1.1
-  username: !secret device_tracker_username
-  password: !secret device_tracker_password
+  username: !secret asuswrt_username
+  password: !secret asuswrt_password
   protocol: telnet
+  port: 23
   track_new_devices: false
 
-google_assistant:
-  project_id: !secret google_assistant_project_id
-  api_key: !secret google_assistant_api_key
-  exposed_domains:
-    - climate
-    - cover
-    # - fan
-    # - group
-    # - input boolean
-    - light
-    - media_player
-    - scene
-    - script
-    - switch
-
+automation: !include automations.yaml
+config:
+# conversation:
+# discovery:
+frontend:
+google_assistant: !include google_assistant.yaml
+group: !include groups.yaml
+# history:
+http:
+  base_url: !secret http_base_url
+  ssl_certificate: /etc/letsencrypt/live/hulkhaugen.duckdns.org/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/hulkhaugen.duckdns.org/privkey.pem
+# ifttt:
+  # key: !secret ifttt_keyinput_number: !include input_number.yaml
+input_number: !include input_number.yaml
+input_select: !include input_select.yaml
+light: !include lights.yaml
+# logbook:
+# logger: !include logger.yaml
+map:
+mqtt: !include mqtt.yaml
 notify:
   platform: html5
   gcm_api_key: !secret notify_gcm_api_key
   gcm_sender_id: !secret notify_gcm_sender_id
-
+# recorder: !include recorder.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+sun:
+switch: !include switches.yaml
 tibber:
   access_token: !secret tibber_access_token
-
+tts:
+  platform: google
+  language: 'no'
+updater:
+  include_used_components: true
 weather:
   - platform: met
+zwave: !include zwave.yaml
 
-openuv:
-  api_key: !secret openuv_api_key
-  binary_sensors:
-    monitored_conditions:
-  sensors:
-    monitored_conditions:
-      # - current_ozone_level
-      - current_uv_level
-      - current_uv_index
-      - max_uv_index
-    # - safe_exposure_time_type_2
-    # - safe_exposure_time_type_3
-
-# binary_sensor:
-  # - platform: mqtt
-    # state_topic: "cmnd/wifi_led_controller_rgb_1/POWER2"
-    # name: "WiFi LED Controller RGB 1 PIR"
-
-# input_boolean:
-  # ringeklokke:
-    # name: 'Ringeklokke'
-    # initial: off
-    # icon: mdi:glassdoor
+# openuv:
+  # api_key: !secret openuv_api_key
+  # binary_sensors:
+    # monitored_conditions:
+  # sensors:
+    # monitored_conditions:
+      # - current_uv_level
+      # - current_uv_index
+      # - max_uv_index
 
 # media_player:
   # - platform: plex
@@ -168,12 +90,3 @@ openuv:
       # sources:
         # - HTPC
         # - Xbox One
-
-# Discover some devices automatically
-# discovery:
-
-# ifttt:
-  # key: !secret ifttt_key
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-# conversation:
