@@ -1,24 +1,18 @@
-- platform: xbox_live
-  api_key: !secret xbox_live_api_key 
-  scan_interval: 300
-  xuid:
+# - platform: xbox_live
+  # api_key: !secret xbox_live_api_key 
+  # scan_interval: 300
+  # command_timeout: 30
+  # timeout: 30
+  # xuid:
   #Extracted from e.g: https://xboxapi.com/v2/xuid/hulkhaugen84 --> 2533274836441831
    # - 2533274934106454 ElgenHaugen
    # - 2535409873827380 Finnsa197
-   - 2533274836441831
-   - 2533274798318388
-   - 2533274997028457
-
-- platform: command_line
-  name: 'CPU temperatur'
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
-  unit_of_measurement: "°C"
-  value_template: '{{ value | multiply(0.001) | round(1) }}'
+   # - 2533274836441831
+   # - 2533274798318388
+   # - 2533274997028457
 
 - platform: systemmonitor
   resources:
-    - type: disk_use_percent
-      arg: /root
     - type: disk_free
       arg: /root
     - type: ipv4_address
@@ -41,51 +35,51 @@
 
 - platform: template
   sensors:
-    hulkhaugen84_current:
-      friendly_name_template: '{{ states.sensor.hulkhaugen84.attributes["friendly_name"] }}'
-      value_template:
-        '{% if states.sensor.hulkhaugen84.attributes["XboxOne Full"] is defined %} 
-          {{ states.sensor.hulkhaugen84.attributes["XboxOne Full"] }}
-        {% elif states.sensor.hulkhaugen84.attributes["XboxOne Background"] is defined %} 
-          Xbox One: {{ states.sensor.hulkhaugen84.attributes["XboxOne Background"] }}
-        {% elif states.sensor.hulkhaugen84.attributes["WindowsOneCore Full"] is defined %} 
-          Windows: {{ states.sensor.hulkhaugen84.attributes["WindowsOneCore Full"] }}
-        {% elif states.sensor.hulkhaugen84.attributes["Android Full"] is defined %} 
-          Android: {{ states.sensor.hulkhaugen84.attributes["Android Full"] }}
-        {% else %}
-          Borte
-        {% endif %}'
-      entity_picture_template: '{{ states.sensor.hulkhaugen84.attributes["entity_picture"] }}'
-    kayeboy_current:
-      friendly_name_template: '{{ states.sensor.kayeboy.attributes["friendly_name"] }}'
-      value_template:
-        '{% if states.sensor.kayeboy.attributes["XboxOne Full"] is defined %} 
-          {{ states.sensor.kayeboy.attributes["XboxOne Full"] }}
-        {% elif states.sensor.kayeboy.attributes["XboxOne Background"] is defined %} 
-          Xbox One: {{ states.sensor.kayeboy.attributes["XboxOne Background"] }}
-        {% elif states.sensor.kayeboy.attributes["WindowsOneCore Full"] is defined %} 
-          Windows: {{ states.sensor.kayeboy.attributes["WindowsOneCore Full"] }}
-        {% elif states.sensor.kayeboy.attributes["Android Full"] is defined %} 
-          Android: {{ states.sensor.kayeboy.attributes["Android Full"] }}
-        {% else %}
-          Borte
-        {% endif %}'
-      entity_picture_template: '{{ states.sensor.kayeboy.attributes["entity_picture"] }}'
-    mbentzen_current:
-      friendly_name_template: '{{ states.sensor.mbentzen.attributes["friendly_name"] }}'
-      value_template:
-        '{% if states.sensor.mbentzen.attributes["XboxOne Full"] is defined %} 
-          {{ states.sensor.mbentzen.attributes["XboxOne Full"] }}
-        {% elif states.sensor.mbentzen.attributes["XboxOne Background"] is defined %} 
-          Xbox One: {{ states.sensor.mbentzen.attributes["XboxOne Background"] }}
-        {% elif states.sensor.mbentzen.attributes["WindowsOneCore Full"] is defined %} 
-          Windows: {{ states.sensor.mbentzen.attributes["WindowsOneCore Full"] }}
-        {% elif states.sensor.mbentzen.attributes["Android Full"] is defined %} 
-          Android: {{ states.sensor.mbentzen.attributes["Android Full"] }}
-        {% else %}
-          Borte
-        {% endif %}'
-      entity_picture_template: '{{ states.sensor.mbentzen.attributes["entity_picture"] }}'
+    # hulkhaugen84_current:
+      # friendly_name_template: '{{ states.sensor.hulkhaugen84.attributes["friendly_name"] }}'
+      # value_template:
+        # '{% if states.sensor.hulkhaugen84.attributes["XboxOne Full"] is defined %} 
+          # {{ states.sensor.hulkhaugen84.attributes["XboxOne Full"] }}
+        # {% elif states.sensor.hulkhaugen84.attributes["XboxOne Background"] is defined %} 
+          # Xbox One: {{ states.sensor.hulkhaugen84.attributes["XboxOne Background"] }}
+        # {% elif states.sensor.hulkhaugen84.attributes["WindowsOneCore Full"] is defined %} 
+          # Windows: {{ states.sensor.hulkhaugen84.attributes["WindowsOneCore Full"] }}
+        # {% elif states.sensor.hulkhaugen84.attributes["Android Full"] is defined %} 
+          # Android: {{ states.sensor.hulkhaugen84.attributes["Android Full"] }}
+        # {% else %}
+          # Borte
+        # {% endif %}'
+      # entity_picture_template: '{{ states.sensor.hulkhaugen84.attributes["entity_picture"] }}'
+    # kayeboy_current:
+      # friendly_name_template: '{{ states.sensor.kayeboy.attributes["friendly_name"] }}'
+      # value_template:
+        # '{% if states.sensor.kayeboy.attributes["XboxOne Full"] is defined %} 
+          # {{ states.sensor.kayeboy.attributes["XboxOne Full"] }}
+        # {% elif states.sensor.kayeboy.attributes["XboxOne Background"] is defined %} 
+          # Xbox One: {{ states.sensor.kayeboy.attributes["XboxOne Background"] }}
+        # {% elif states.sensor.kayeboy.attributes["WindowsOneCore Full"] is defined %} 
+          # Windows: {{ states.sensor.kayeboy.attributes["WindowsOneCore Full"] }}
+        # {% elif states.sensor.kayeboy.attributes["Android Full"] is defined %} 
+          # Android: {{ states.sensor.kayeboy.attributes["Android Full"] }}
+        # {% else %}
+          # Borte
+        # {% endif %}'
+      # entity_picture_template: '{{ states.sensor.kayeboy.attributes["entity_picture"] }}'
+    # mbentzen_current:
+      # friendly_name_template: '{{ states.sensor.mbentzen.attributes["friendly_name"] }}'
+      # value_template:
+        # '{% if states.sensor.mbentzen.attributes["XboxOne Full"] is defined %} 
+          # {{ states.sensor.mbentzen.attributes["XboxOne Full"] }}
+        # {% elif states.sensor.mbentzen.attributes["XboxOne Background"] is defined %} 
+          # Xbox One: {{ states.sensor.mbentzen.attributes["XboxOne Background"] }}
+        # {% elif states.sensor.mbentzen.attributes["WindowsOneCore Full"] is defined %} 
+          # Windows: {{ states.sensor.mbentzen.attributes["WindowsOneCore Full"] }}
+        # {% elif states.sensor.mbentzen.attributes["Android Full"] is defined %} 
+          # Android: {{ states.sensor.mbentzen.attributes["Android Full"] }}
+        # {% else %}
+          # Borte
+        # {% endif %}'
+      # entity_picture_template: '{{ states.sensor.mbentzen.attributes["entity_picture"] }}'
     fibaro_battery_bad:
       friendly_name: 'Multisensor batteri bad'
       value_template:
@@ -95,23 +89,119 @@
           Ikke tilgjengelig
         {% endif %}'
       unit_of_measurement: '%'
-    tibber_forbruk:
-      friendly_name: 'Estimert årlig forbruk'
+    # tibber_use:
+      # friendly_name: 'Estimert forbruk'
+      # unit_of_measurement: "kr/år"
+      # value_template: >-
+        # {{'{:,.2f}'.format(states.sensor.electricity_price_sagmesterveien_6.attributes["estimated_annual_consumption"])}}
+    # tibber_now:
+      # friendly_name: 'Strømpris nå'
+      # unit_of_measurement: "kr/kWh"
+      # value_template: >
+        # {{states('sensor.electricity_price_sagmesterveien_6') | round(2)}}
+    # tibber_min:
+      # friendly_name: 'Strømpris lav'
+      # unit_of_measurement: "kr/kWh"
+      # value_template: >
+        # {{'{:.2f}'.format(states.sensor.electricity_price_sagmesterveien_6.attributes["min_price"])}}
+    # tibber_max:
+      # friendly_name: 'Strømpris høy'
+      # unit_of_measurement: "kr/kWh"
+      # value_template: >
+        # {{'{:.2f}'.format(states.sensor.electricity_price_sagmesterveien_6.attributes["max_price"])}}
+    # tibber_avg:
+      # friendly_name: 'Strømpris snitt'
+      # unit_of_measurement: "kr/kWh"
+      # value_template: >
+        # {{'%0.2f' % ((float(states.sensor.electricity_price_sagmesterveien_6.attributes["min_price"])+float(states.sensor.electricity_price_sagmesterveien_6.attributes["max_price"]))/2 )}}
+    dnb_ask_beholding:
+      friendly_name: 'Aksjesparekonto beholdning'
       unit_of_measurement: "kr"
-      value_template: >-
-        {{states.sensor.electricity_price_sagmesterveien_6.attributes["estimated_annual_consumption"]}}
-    tibber_min:
-      friendly_name: 'Strømpris min'
-      unit_of_measurement: "kr/kWh"
-      value_template: >-
-        {{states.sensor.electricity_price_sagmesterveien_6.attributes["min_price"] | round(3)}}
-    tibber_max:
-      friendly_name: 'Strømpris maks'
-      unit_of_measurement: "kr/kWh"
-      value_template: >-
-        {{states.sensor.electricity_price_sagmesterveien_6.attributes["max_price"] | round(3)}}
-    tibber_snitt:
-      friendly_name: 'Strømpris snitt'
-      unit_of_measurement: "kr/kWh"
-      value_template: >-
-        {{((float(states.sensor.electricity_price_sagmesterveien_6.attributes["min_price"])+float(states.sensor.electricity_price_sagmesterveien_6.attributes["max_price"])) / 2 )| round(3)}}
+      value_template: >
+        {{('{0:,.2f}'.format((1203.706 * (states('sensor.dnb_teknologi_kurs')|replace(',','.')|float)) + (0 * (states('sensor.dnb_health_care_kurs')|replace(',','.')|float)))|replace(',',' '))}}
+    vindstyrke_tekst:
+      entity_id: weather.metno
+      friendly_name: 'Vindstyrke'
+      value_template: >
+        {% set vind = (states.weather.metno.attributes["wind_speed"]|float/3.6)|round(1) %}
+          {% if   vind|float <   0.3 %}Stille, {{vind}} m/s
+          {% elif vind|float <   1.6 %}Flau vind, {{vind}} m/s
+          {% elif vind|float <   3.4 %}Svak vind, {{vind}} m/s
+          {% elif vind|float <   5.5 %}Lett bris, {{vind}} m/s
+          {% elif vind|float <   8.0 %}Laber bris, {{vind}} m/s
+          {% elif vind|float <  10.8 %}Frisk bris, {{vind}} m/s
+          {% elif vind|float <  13.9 %}Liten kuling, {{vind}} m/s
+          {% elif vind|float <  17.2 %}Stiv kuling, {{vind}} m/s
+          {% elif vind|float <  20.8 %}Sterk kuling, {{vind}} m/s
+          {% elif vind|float <  24.5 %}Liten storm, {{vind}} m/s
+          {% elif vind|float <  28.5 %}Full storm, {{vind}} m/s
+          {% elif vind|float <  32.7 %}Sterk storm, {{vind}} m/s
+          {% elif vind|float >= 32.7 %}Orkan, {{vind}} m/s
+          {% else %} {{vind}} m/s
+        {% endif %}
+      icon_template: >-
+          {% if states.weather.metno.attributes["wind_speed"]|float < 1.08 %} mdi:circle-outline
+          {% else %} mdi:weather-windy
+          {% endif %}
+
+- platform: command_line
+  name: 'CPU temperatur'
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+# - platform: command_line
+  # name: 'DNB Global Indeks 1 dag'
+  # command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F00000JORS&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
+  # unit_of_measurement: "%"
+  # scan_interval: 1800
+  # command_timeout: 30
+
+- platform: command_line
+  name: 'DNB Health Care 1 dag'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGG&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
+  unit_of_measurement: "%"
+  scan_interval: 900
+  command_timeout: 30
+
+- platform: command_line
+  name: 'DNB Health Care kurs'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGG" | grep "NAV" | awk -F'line text\">' '{ print $2 }' | awk -F'</td>' '{ print substr($1, length($1)-5)}'
+  unit_of_measurement: "%"
+  scan_interval: 900
+  command_timeout: 30
+
+# - platform: command_line
+  # name: 'DNB Norge Indeks 1 dag'
+  # command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F00000JORR&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
+  # unit_of_measurement: "%"
+  # scan_interval: 1800
+  # command_timeout: 30
+
+- platform: command_line
+  name: 'DNB Teknologi 1 dag'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGU&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
+  unit_of_measurement: "%"
+  scan_interval: 900
+  command_timeout: 30
+
+- platform: command_line
+  name: 'DNB Teknologi kurs'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGU" | grep "NAV" | awk -F'line text\">' '{ print $2 }' | awk -F'</td>' '{ print substr($1, length($1)-6)}'
+  unit_of_measurement: "%"
+  scan_interval: 900
+  command_timeout: 30
+
+# - platform: command_line
+  # name: 'DNB Teknologi 1 uke'
+  # command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGU&tab=1" | grep "1 uke" | awk -F'value number\">' '{ print $3 }' | awk -F'</td>' '{ print $1  }'
+  # unit_of_measurement: "%"
+  # scan_interval: 600
+  # command_timeout: 30
+
+# - platform: command_line
+  # name: 'DNB Teknologi 1 mnd'
+  # command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGU&tab=1" | grep "1 måned" | awk -F'value number\">' '{ print $3 }' | awk -F'</td>' '{ print $1  }'
+  # unit_of_measurement: "%"
+  # scan_interval: 600
+  # command_timeout: 30 
