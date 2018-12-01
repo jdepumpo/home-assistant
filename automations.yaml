@@ -5,7 +5,7 @@
     entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
     to: 'off'
     for:
-      minutes: 15
+      minutes: 25
   action:
   - service: light.turn_off
     entity_id: light.qubino_zmnhdd1_flush_dimmer_level
@@ -58,11 +58,11 @@
   - service: light.turn_on
     entity_id: light.sb_speillys
 
-- id: lys_av_4_sol_borte
-  alias: Belysning av 4:00, soloppgang og tomt hus
+- id: lys_av_sol_borte
+  alias: Belysning av v/soloppgang og tomt hus
   trigger:
-  - platform: time
-    at: 04:00:00
+  # - platform: time
+    # at: '04:00:00'
   - platform: sun
     event: sunrise
   - platform: state
@@ -100,6 +100,8 @@
     entity_id: group.utelys
   - service: light.turn_on
     entity_id: group.stemning
+  - service: light.turn_on
+    entity_id: group.jul
   - condition: state
     entity_id: group.personer
     state: home
@@ -114,6 +116,7 @@
   action:
   - service: light.turn_off
     entity_id: group.stemning
+
 - id: rullgardiner_sov_opp
   alias: Rullgardiner soverom opp
   trigger:
@@ -129,52 +132,53 @@
 - id: vk_nattsenk
   alias: Varmekabler nattsenking
   trigger:
-  - at: '23:00:00'
-    platform: time
+  - platform: time
+    at: '16:00:00'
+  - platform: time
+    at: '23:00:00'
   condition:
   - condition: template
-    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
-      > 15 }}'
+    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
   action:
   - data:
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-      temperature: 22
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
+      temperature: 21
     service: climate.set_temperature
   - data:
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
       temperature: 18
     service: climate.set_temperature
     
 - id: vk_nattsenk_off
   alias: Varmekabler nattsenking av
   trigger:
-  - at: 08:30:00
-    platform: time
+  - platform: time
+    at: '18:00:00'
+  - platform: time
+    at: '10:30:00'
   condition:
   - condition: template
-    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
-      > 15 }}'
+    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
   action:
   - data:
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-      temperature: 24
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
+      temperature: 25
     service: climate.set_temperature
   - data:
-      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
-      temperature: 21
+      entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
+      temperature: 22
     service: climate.set_temperature
     
 - id: stromspar_vvb
   alias: Varmtvannsbereder strømsparing
   trigger:
   - platform: time
-    at: 06:00:00
+    at: '05:00:00'
   - platform: time
-    at: '15:00:00'
+    at: '14:00:00'
   condition:
   - condition: template
-    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
-      > 15 }}'
+    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
   action:
   - service: switch.turn_off
     entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
@@ -186,19 +190,35 @@
   alias: Varmtvannsbereder strømsparing av
   trigger:
   - platform: time
-    at: '11:00:00'
-  - platform: time
     at: '20:00:00'
+  - platform: time
+    at: '12:00:00'
   condition:
   - condition: template
-    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat.attributes.temperature
-      > 15 }}'
+    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15 }}'
   action:
   - service: switch.turn_on
     entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
   - delay: 00:05:00
   - service: switch.turn_on
     entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    
+# - id: stromspar_vvb_tibber
+  # alias: Varmtvannsbereder strømsparing pris
+  # trigger:
+  # - platform: state
+    # entity_id: sensor.electricity_price_sagmesterveien_6
+  # condition:
+  # - condition: template
+    # value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
+  # action:
+  # - service_template: >-
+      # {% if states.sensor.electricity_price_sagmesterveien_6.state|float < states.sensor.electricity_price_sagmesterveien_6.attributes["avg_price"] %}
+        # switch.turn_on
+      # {% else %}
+        # switch.turn_off
+      # {% endif %}
+    # entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
     
 - id: radio_volum
   hide_entity: true
@@ -207,14 +227,14 @@
     platform: state
     entity_id: input_number.radio_volum
   action:
-    service: media_player.volume_set
+  - service: media_player.volume_set
     data_template:
       entity_id: >
         {% if is_state("input_select.radio", "Alle") %} media_player.home_group
         {% elif is_state("input_select.radio", "Bad (Google Home Mini)") %} media_player.google_home_mini
         {% elif is_state("input_select.radio", "Soverom (Chrome Cast)") %} media_player.chromecast
         {% endif %}
-      volume_level: '{{  states.input_number.radio_volum.state  }}' 
+      volume_level: '{{states.input_number.radio_volum.state}}' 
 
 - id: oppdatering
   alias: Home Assistant oppdatering
@@ -222,10 +242,10 @@
   - platform: state
     entity_id: updater.updater
   action:
-  - service: notify.notify
+  - service: notify.html5_galaxy_s8_bh
     data_template:
       title: Home Assistant
-      message: Versjon {{ states.updater.updater.state }} er tilgjengelig
+      message: Versjon {{states.updater.updater.state}} er tilgjengelig
     data:
       data:
         tag: ha-update
@@ -238,7 +258,34 @@
     entity_id: sensor.cpu_temperatur
     above: 60
   action:
-  - service: notify.notify
+  - service: notify.html5_galaxy_s8_bh
     data:
       title: Home Assistant
       message: 'Alarm: System temperatur over 60°C'
+
+- id: ask_daglig
+  alias: Aksjesparekonto daglig
+  trigger:
+  # - platform: state
+    # entity_id: sensor.dnb_teknologi_1_dag
+  - platform: time
+    at: '11:45:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+  - service: notify.html5_galaxy_s8_bh
+    data_template:
+      title: Aksjesparekonto
+      message: |
+        Beholdning: {{states.sensor.dnb_ask_beholding.state}} kr,
+        DNB Health Care 1 dag: {{states.sensor.dnb_health_care_1_dag.state}}%,
+        DNB Teknologi 1 dag: {{states.sensor.dnb_teknologi_1_dag.state}}%,
+    data:
+      data:
+        tag: ask-update
