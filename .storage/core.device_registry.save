@@ -1,0 +1,260 @@
+{
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "3569520a00a244aea77b7abb96286c14"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "109aa757cd43429d999690069c1649b0",
+                "identifiers": [
+                    [
+                        "cast",
+                        "36c340a11f370692a106fac38a025d10"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Google Home Mini",
+                "name": "Google Home Mini",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "3569520a00a244aea77b7abb96286c14"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "987c5ffab5954346b4ea13eec61e173c",
+                "identifiers": [
+                    [
+                        "cast",
+                        "a66028215bd815d1850436ed770cca02"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Chromecast",
+                "name": "SoveCast",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "c11b643cce8a49e3a411bfa2ae6949f5",
+                "identifiers": [
+                    [
+                        "zwave",
+                        4
+                    ]
+                ],
+                "manufacturer": "ThermoFloor AS",
+                "model": "Heatit Thermostat TF 021",
+                "name": "ThermoFloor AS Heatit Thermostat TF 021",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "fae9e559d0ec4d6ab1750e17609481c7",
+                "identifiers": [
+                    [
+                        "zwave",
+                        5
+                    ]
+                ],
+                "manufacturer": "ThermoFloor AS",
+                "model": "Heatit Thermostat TF 021",
+                "name": "ThermoFloor AS Heatit Thermostat TF 021",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "0c582b03a8b44505b381b77575fee135",
+                "identifiers": [
+                    [
+                        "zwave",
+                        9
+                    ]
+                ],
+                "manufacturer": "Qubino",
+                "model": "ZMNHDD1 Flush Dimmer",
+                "name": "Qubino ZMNHDD1 Flush Dimmer",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "bd14dd485c554b08b17ac0623e10bcd0",
+                "identifiers": [
+                    [
+                        "zwave",
+                        10
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGMS001-ZW5 Motion Sensor",
+                "name": "FIBARO System FGMS001-ZW5 Motion Sensor",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "b0a110a09f22490f9d1dbb02e3883f72",
+                "identifiers": [
+                    [
+                        "zwave",
+                        11
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGD212 Dimmer 2",
+                "name": "FIBARO System FGD212 Dimmer 2",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "b7d9340f909c4197b2634c430927ae65",
+                "identifiers": [
+                    [
+                        "zwave",
+                        13
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGWPE/F Wall Plug Gen5",
+                "name": "FIBARO System FGWPE/F Wall Plug Gen5",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "c2f19a1dce9e46189ae80ae5866d77d0",
+                "identifiers": [
+                    [
+                        "zwave",
+                        14
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGD212 Dimmer 2",
+                "name": "FIBARO System FGD212 Dimmer 2",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "86d1f17ef8c94c06a3723b9f92772ad3",
+                "identifiers": [
+                    [
+                        "zwave",
+                        16
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGD212 Dimmer 2",
+                "name": "FIBARO System FGD212 Dimmer 2",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "3aaac76bd7904c17abacf59e8d4b6f4e",
+                "identifiers": [
+                    [
+                        "zwave",
+                        17
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGD212 Dimmer 2",
+                "name": "FIBARO System FGD212 Dimmer 2",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "37bb427498dc43f483dcbe63ff5ef891",
+                "identifiers": [
+                    [
+                        "zwave",
+                        20
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGD212 Dimmer 2",
+                "name": "FIBARO System FGD212 Dimmer 2",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "d83a47dca4b3450290244ff6b8e0c2e0",
+                "identifiers": [
+                    [
+                        "zwave",
+                        21
+                    ]
+                ],
+                "manufacturer": "Qubino",
+                "model": "ZMNHOD1 Flush Shutter DC",
+                "name": "Qubino ZMNHOD1 Flush Shutter DC",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "fd3804de9b704ffcbf90813f9375c5ad",
+                "identifiers": [
+                    [
+                        "zwave",
+                        23
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGD212 Dimmer 2",
+                "name": "FIBARO System FGD212 Dimmer 2",
+                "sw_version": null
+            }
+        ]
+    },
+    "key": "core.device_registry",
+    "version": 1
+}

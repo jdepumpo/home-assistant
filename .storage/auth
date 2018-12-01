@@ -1,0 +1,326 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "hulkhaugen"
+                },
+                "id": "5e963209edeb44139fd54dc45a1d7ad1",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "christinegul"
+                },
+                "id": "c076668c8091482eaeb2837d540f2958",
+                "user_id": "6e367300085a40f99a33a273d2c22d66"
+            }
+        ],
+        "groups": [
+            {
+                "id": "system-admin",
+                "name": "Administrators"
+            },
+            {
+                "id": "system-read-only",
+                "name": "Read Only"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-09-30T23:49:31.609583+00:00",
+                "id": "cac9a139fea548929851772b94e4d760",
+                "jwt_key": "e555d8b6bfa16a60b0aae36ddc33503e4cb8d4d4056bef42e1043fcd03d4d2444bf190d59756aee5be82bf8252d89146aab18b410c6e65e9fddcb9f100ef3115",
+                "last_used_at": "2018-11-22T17:57:15.969057+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "2bbe80ed25e2554521307082f537e858cf59d9c80ec25fe92e36cd8392a90b8f8c04c9f229bbfed4be6ba665454175587a673cc3b08a246f52b56dfa39d05d61",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-10-02T13:12:06.499632+00:00",
+                "id": "50bfbd68f0544f09884ff7351b2d9f0b",
+                "jwt_key": "77e550454408315ce6b8c197d45a1a7859572ca38a86fe4dee5b73f80d76b462197e752e1d690b1d4622a692f6302ef48192a0b539e22f75635ad7bb9fa5c0b2",
+                "last_used_at": "2018-12-01T08:57:48.253186+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "d9f5c02cdcb473ba37378306183140d559afb4aded9a9aaeacc5294d7a6b9fe30f22f6c8571897647a9bbe8101450bd34c09d5a064063cd51b4636b2c7e2473c",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-10-18T17:04:22.857744+00:00",
+                "id": "406681750b4d463a8018dd6dd5dda050",
+                "jwt_key": "c134263a734c4baee6b7c393d246f89aef4c814b2387935867b3a1c4e2868ed3433be1a191349ca2fd55031b016b8ef0cff9503ea78dcad1a7f9fb8425d48b63",
+                "last_used_at": "2018-12-01T08:59:12.554817+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "bfccb4cbc6b7e3b5180fc553575a2d1485b0ba4620e433065294ca0eee4e84020d194c188dd26825f03d0d11003ebaad0e9e0a722a365e0a16022022505e7959",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://oauth-redirect.googleusercontent.com/",
+                "client_name": null,
+                "created_at": "2018-10-19T04:04:26.705716+00:00",
+                "id": "71166dc9390145bb987d0e32627f4d8f",
+                "jwt_key": "f28caa2cf5c5bbc07a8e1760ff059e789b862fb6ed4a137c5e530eb892da6d8629b4da8bbcd35d54d2afa583c47d8ebf1fd6188f613adc093d56d1dfd93faf40",
+                "last_used_at": "2018-11-30T00:43:55.648492+00:00",
+                "last_used_ip": "66.249.93.15",
+                "token": "c01782837f2cdfe2bdf56d4640263303c3db4ebe2a392a4c203ef6cd365d6ad7a2540101a655b0723dd0fc3247820e70b6c50fdaa676f8ab9c646972a8cf1843",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://192.168.1.2:8123/",
+                "client_name": null,
+                "created_at": "2018-11-08T15:33:33.966121+00:00",
+                "id": "5547edf7a18d4c2ea8ba2546c0d2fd02",
+                "jwt_key": "4ab79a1cb4582901cf2f40d278155d3e02d877b54a9d1f89a45cd5a56f3467f4da00460a312b7575e78cfa21544974b4bf2d2ad464fed26b28835e73ce92f547",
+                "last_used_at": "2018-11-08T15:33:33.966607+00:00",
+                "last_used_ip": "192.168.1.6",
+                "token": "dea54c65dc4f6ea4e5897e1940e85866cbb258497bc8a4f4b6c0a2d63448d070e1d080d50e5e1924a23f7c50806921e79cf0468f90b08de1b4c3130f338f86e4",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://192.168.1.2:8123/",
+                "client_name": null,
+                "created_at": "2018-11-12T00:20:19.364211+00:00",
+                "id": "26d95dee164840768961efe17f8f4620",
+                "jwt_key": "772f7cbe3607f621a875481a71e5e96efa4bbe63cb0f62db97b9cd797babc47465b91071fb5a89a3401d297b7f19b6dd03fede9cbb0fe83769e690fbcf1e1adf",
+                "last_used_at": "2018-11-29T14:52:20.756033+00:00",
+                "last_used_ip": "192.168.1.6",
+                "token": "d768f7cbd7d724f812c6ee464ccd31b715f3972da5cb555232c49ea9ffae658b53b6e4380535f9bcef769c612dc5ad31f5349acdfcc23f70ffe93517677a7b27",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-28T22:59:55.940010+00:00",
+                "id": "a0562467d166457f81f3a32ffa0ed759",
+                "jwt_key": "4d67ab5b7f5350c969bcdd16ee8738e3145ef4ccbae99253fd5f1b838c1bed330fd4eca9843d3abedbd029c46ee1e6ad2056247a2aa9154724f07332d0c2b25d",
+                "last_used_at": "2018-11-28T22:59:55.940506+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "9348b43a7afbe2eeb326858f626015238371e631df90a7a1b06403321f383aac98139ae82928d0fb5c915628ce908b0c74b76085f15396fa3e3cf90dceb66c3f",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-28T23:00:31.384054+00:00",
+                "id": "898148dc28564e4c8d52f9f08dce2cc7",
+                "jwt_key": "6db98878155325e65a43bc030e497b2f106af4270167e927b61b7da4fb09acfaae77f7a236e7cf3f0911cc22d823dc00b01d2f5e07b09324f130c2dd81878767",
+                "last_used_at": "2018-11-28T23:00:31.384630+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "7d13955ed59f554a39810a9885980aa43c06f8111d01a022b5972cf3f519891b9797cb30ae79e96c1b89dd57126a35f020478e6db91bf0098506c51f16eddce9",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-28T23:02:09.624398+00:00",
+                "id": "7af8da4ca05545308225616798841806",
+                "jwt_key": "965f7d3d05a4b6e28be085ecddfe91b1df125dcaba8a4bd2725ea67d28d1be66eee25b49b017d79bbe96336b25fe7eee1286fc2954812848d7d05b221a61ee3f",
+                "last_used_at": "2018-11-28T23:02:09.624937+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "dd413380c2d02726cb790fcc27ef13a1212d56ff6737d2228c172d8293446b173999977a55ad3c62557d422a6712fe3f887f6f12cfe16d38f8dc960d1fff84ed",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-29T08:54:52.730914+00:00",
+                "id": "0d1bd88eb729463f86daa3a0be678af1",
+                "jwt_key": "9f1d1695154b63ca9967057de1b5cd4d8f6f84fac13bf9434ad4c1891d83904582e510d7ba467f551d015d3198e3b2f80ca2f0cd845df65004c625374c6c7cf1",
+                "last_used_at": "2018-11-29T08:54:52.732868+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "e6ea272107e20166b3c17ec0180c4238f49a1f4212f9332b0ab23b6d5b0ea648de7f63fb4bc8700d892dfaf78ba665ee93fe96c959e2273e84870beb6b83c9e0",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-29T08:56:14.195130+00:00",
+                "id": "475b48d6b0ef43c5bc806727f4510869",
+                "jwt_key": "a37609e52f70260e2f1955efc86a82c4ce87fa387149203d87eb70422de1c6033936ecd16d4cac53842920c313bfd8c1ca77d00ea312c886c56b81a52685d57b",
+                "last_used_at": "2018-11-29T08:56:14.195726+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "428b3b864d505459b4d4d32b75c3c71ed346c51723b3ef4fafab77afa11e6f87d5b3639922d1948eaee32084645ad1f4817bfddd55a717d4e8758e4399180be0",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-29T08:56:40.130150+00:00",
+                "id": "41546e1c074c40b9bd67baa06a7dd17c",
+                "jwt_key": "7cf6d23e148cf1eeafeb4b8d4b977659da3d4b29bd35d4bfac4cfab20a57b9dc922331c241d26ac7135a8a9ce5e4b03cfea9aca70c0a06845472061cd867d11e",
+                "last_used_at": "2018-11-29T08:56:40.130588+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "452f837a8bdf7193bdd325bde274b305360e554b9eba7a1cd1f432785e20a7ea178bfa784c4f032bb220509f2cb78286871024bbcb218072900c97dc3f477b39",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-29T08:58:28.026444+00:00",
+                "id": "7ea22402e32745299ef52ccc6cbf81c4",
+                "jwt_key": "7036bc95bb43c610bf31546e95a39810c0926fff16dcd40e5b8a9a189a71303a510db5772d565b6ad9a924d7fed2c0c5b6dd267d26756570d4343976ac509969",
+                "last_used_at": "2018-11-29T08:58:28.026971+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "e7e1a509964de50550dada7c7bc514d926f2db55ca9f040e375c64879435006bf19e6e399675b32fdf30142984e0a46acc8791728c0f2c704f4ed494ddfaeaa0",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-29T08:59:55.925488+00:00",
+                "id": "980fc0ed11b14045b00821b1f8a67c83",
+                "jwt_key": "554a8d08d9ab0c5dcee47927513813058ba7e5ce10149997683ca2036ecbc3a7b3a5d4cdbf50155260f3bc51dfa9dfb738d636c65a8d9551e467b4d308c07b9f",
+                "last_used_at": "2018-11-29T08:59:55.926092+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "957fe38990f01a1d2893d3500281cb6c967de112847c7237f7cee8ce833253181ca5581dc7f452724399a7bbe43d452a26344b28377910685928432d7a83de13",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-29T11:05:43.259066+00:00",
+                "id": "2b2f1ee6b39542f9b2fa68753460f308",
+                "jwt_key": "4d83134feec43a8cf8a856b1728d069f484f2e14f74a9ce5b9afe831aeb942dd026716c390157fe432401a11a1c7f1f8055d19eb5635f8c833bc4dd68578ff50",
+                "last_used_at": "2018-11-29T11:05:43.259585+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "e78fa41f4a4752be417d534ceca485e343b81f023920a1792573a6ac15c950b2f551d5cd9bae4bcd39da0ea990170e01d48855642f611f310d2e40389429c1c5",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-11-29T11:08:18.129172+00:00",
+                "id": "0cc55a3586a647d78dbf22f366ac66d8",
+                "jwt_key": "15e3f9171d2a81aecd1977e93febbd71c248a2e39982f199dc66d6b2f251ac575d24300d4c18f5ed40a70590d1b2eda56ef7925c8038db4c38ca74181c2b6ad0",
+                "last_used_at": "2018-11-29T11:08:18.129712+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "156e38c0f95d6204ef5271f8818d61965aec6ba79cce71b23e22f0e534b2098528740e4f3210eb0c4e1ba7ec170cd1a3f2ad35db6b7916a5502e0a8447438bd9",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://oauth-redirect.googleusercontent.com/",
+                "client_name": null,
+                "created_at": "2018-11-30T00:54:51.521351+00:00",
+                "id": "e8ab23c26d504fba95ac79c63f363997",
+                "jwt_key": "4a3ea19565704af95c2aa13bfd3be854b756b7fcf31bb36ffdb6ce4e7b7377252e8c5a64ba1aaa275bd6f57cc96d27667300893769afa12b1f35a86721670f53",
+                "last_used_at": "2018-11-30T18:13:45.130782+00:00",
+                "last_used_ip": "66.249.93.14",
+                "token": "f8ad15acf185522b67c65d74ab7586542b2f2c8c124e320d21cd8a28abb2da06ee07d864334c9b6c7b7b2c6158517fb13bf3a8780e959fa9126e64d6fb58118d",
+                "token_type": "normal",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-09-04T20:11:49.116676+00:00",
+                "id": "944b754d922b497b90493859e5b33c63",
+                "jwt_key": "958a6dbed5bb530fcae9ad00ccad047b23f19ed6c91a79d5ab56980a75efd93f8b4ef8bc517c04601ff1120e86483470fe6e2a1e40ac4eecab800480813e8c3b",
+                "last_used_at": "2018-11-28T07:43:51.303375+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "90c0b0e66e92fd099e5c239a892b3adac4b82081b31e53c3038e8c0acee1d2c593a91996183f3f656eab060c6658fc4e4b172da979063b6a975a0f9db94f5218",
+                "token_type": "normal",
+                "user_id": "6e367300085a40f99a33a273d2c22d66"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://hulkhaugen.duckdns.org/",
+                "client_name": null,
+                "created_at": "2018-10-18T17:00:40.604816+00:00",
+                "id": "b197fc4b706046d1b16bbb4f2e466c9a",
+                "jwt_key": "a0a5aff76aad046091c83b8bc8a5d4c309bceffa7909650d1bf95efde5b800cc860d103b77a0ff0fc06347cde8893cc60bc6388634a6b1fdb4b28a4a698a06aa",
+                "last_used_at": "2018-10-18T17:00:40.605307+00:00",
+                "last_used_ip": "192.168.1.1",
+                "token": "8ea45c8028b1ec416c451450f65b08deb2a53be7c9e3bd14b4df3ee57284e4a4e56bd8045d88a7d37f809b178a2985f8d7056481e0aff18ea94d4533ccce3f5d",
+                "token_type": "normal",
+                "user_id": "6e367300085a40f99a33a273d2c22d66"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "937cd9684dd9441dace5bf4b85fa9ac1",
+                "is_active": true,
+                "is_owner": true,
+                "name": "B\u00f8rre Haugen",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "6e367300085a40f99a33a273d2c22d66",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Christine Gulbrandsen",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}

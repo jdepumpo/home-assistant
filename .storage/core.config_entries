@@ -1,0 +1,60 @@
+{
+    "data": {
+        "entries": [
+            {
+                "connection_class": "unknown",
+                "data": {},
+                "domain": "cast",
+                "entry_id": "3569520a00a244aea77b7abb96286c14",
+                "source": "user",
+                "title": "Google Cast",
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {},
+                "domain": "mqtt",
+                "entry_id": "00be2fa65ac74aa1a4b23fa67bed3f02",
+                "source": "import",
+                "title": "configuration.yaml",
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {
+                    "network_key": null,
+                    "usb_path": "/dev/ttyACM0"
+                },
+                "domain": "zwave",
+                "entry_id": "17eb262fd24243778a06e00993b30218",
+                "source": "import",
+                "title": "Z-Wave (import from configuration.yaml)",
+                "version": 1
+            },
+            {
+                "connection_class": "cloud_poll",
+                "data": {
+                    "api_key": "a0f955f9b23b61eddfd98028adcc08d2",
+                    "binary_sensors": {
+                        "monitored_conditions": []
+                    },
+                    "scan_interval": 1800,
+                    "sensors": {
+                        "monitored_conditions": [
+                            "current_uv_level",
+                            "current_uv_index",
+                            "max_uv_index"
+                        ]
+                    }
+                },
+                "domain": "openuv",
+                "entry_id": "3648f3e7d20b4a87983dfe81d2729526",
+                "source": "import",
+                "title": "58.45, 8.744",
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}
