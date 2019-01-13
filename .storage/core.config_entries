@@ -41,14 +41,12 @@
                     "scan_interval": 1800,
                     "sensors": {
                         "monitored_conditions": [
-                            "current_uv_level",
-                            "current_uv_index",
                             "max_uv_index"
                         ]
                     }
                 },
                 "domain": "openuv",
-                "entry_id": "3648f3e7d20b4a87983dfe81d2729526",
+                "entry_id": "e492353156d543b0acb9564719e18001",
                 "source": "import",
                 "title": "58.45, 8.744",
                 "version": 1

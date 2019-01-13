@@ -252,6 +252,24 @@
                 "model": "FGD212 Dimmer 2",
                 "name": "FIBARO System FGD212 Dimmer 2",
                 "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "17eb262fd24243778a06e00993b30218"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "c8d33cdecff34cfeaba42f8f9321c57f",
+                "identifiers": [
+                    [
+                        "zwave",
+                        24
+                    ]
+                ],
+                "manufacturer": "FIBARO System",
+                "model": "FGD212 Dimmer 2",
+                "name": "FIBARO System FGD212 Dimmer 2",
+                "sw_version": null
             }
         ]
     },
