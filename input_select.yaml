@@ -1,35 +1,26 @@
-radiokanal:
-  name: 'Radiokanal'
-  options:
-    - Kiss N'Dance
-    - NRJ
-    - NRK mP3
-    - NRK P1
-    - NRK P2
-    - NRK P3
-    - NRK P13
-    - P4 Lyden av Norge
-    - P5 Hits
-    - P6 Rock
-    - P7 Klem
-    - P8 Pop
-    - P9 Retro
-    - P10 Country
-    - P24/7 Mix
-    - Radio1
-    - Radio Norge
-    - Radio Norsk Pop
-    - Radio Rock
-    - Radio Topp 40
-    - Radio Vinyl
-  initial: 'P5 Hits'
-  icon: mdi:radio
-
-radio:
-  name: 'Høyttalere'
-  options:
-    - Alle
-    - Bad (Google Home Mini)
-    - Soverom (Chrome Cast)
-  initial: 'Bad (Google Home Mini)'
-  icon: mdi:speaker
+# radio_kanal:
+  # name: 'Radiokanal'
+  # options:
+    # - Kiss N'Dance
+    # - NRJ
+    # - NRK mP3
+    # - NRK P1
+    # - NRK P2
+    # - NRK P3
+    # - NRK P13
+    # - P4 Lyden av Norge
+    # - P5 Hits
+    # - P6 Rock
+    # - P7 Klem
+    # - P8 Pop
+    # - P9 Retro
+    # - P10 Country
+    # - P24/7 Mix
+    # - Radio1
+    # - Radio Norge
+    # - Radio Norsk Pop
+    # - Radio Rock
+    # - Radio Topp 40
+    # - Radio Vinyl
+  # initial: 'P5 Hits'
+  # icon: mdi:radio

@@ -4,8 +4,7 @@ asrock_vision_ht_321b:
   mac: BC:5F:F4:45:E8:ED
   name: ASRock Stue PC
   picture:
-  track: true
-  vendor: ASRock Incorporation
+  track: false
 
 asrock_wifi:
   hide_if_away: false
@@ -17,21 +16,19 @@ asrock_wifi:
 
 galaxys8_bh:
   hide_if_away: false
-  icon: mdi:cellphone-android
+  icon: mdi:human-male
   mac: 04:D6:AA:A6:BB:E0
   name: Børres Galaxy S8
   picture:
   track: true
-  vendor: Samsung
 
 galaxys8_cg:
   hide_if_away: false
-  icon: mdi:cellphone-android
+  icon: mdi:human-female
   mac: 30:07:4D:59:4B:7A
   name: Christines Galaxy S8
   picture:
   track: true
-  vendor: Samsung
 
 lgsmarttv:
   hide_if_away: false
@@ -40,7 +37,6 @@ lgsmarttv:
   name: LG Smart TV
   picture:
   track: true
-  vendor: LG Electronics
 
 raspberry_pi_2:
   hide_if_away: false
@@ -48,8 +44,7 @@ raspberry_pi_2:
   mac: B8:27:EB:46:6A:01
   name: Raspberry Pi 2
   picture:
-  track: true
-  vendor: Raspberry Pi Foundation
+  track: false
 
 xbox_one_x:
   hide_if_away: false
@@ -58,7 +53,6 @@ xbox_one_x:
   name: Xbox One X
   picture:
   track: true
-  vendor: Microsoft Corporation
 
 polar_m600:
   hide_if_away: false
@@ -67,7 +61,6 @@ polar_m600:
   name: Polar M600
   picture:
   track: false
-  vendor: Polar
 
 brother_dcp-1610w:
   hide_if_away: false
@@ -76,7 +69,6 @@ brother_dcp-1610w:
   name: Brother DCP-1610W
   picture:
   track: false
-  vendor: Hon Hai Precision Ind. Co.,Ltd.
 
 acer_swift_3:
   hide_if_away: false
@@ -85,7 +77,6 @@ acer_swift_3:
   name: Acer laptop
   picture:
   track: false
-  vendor: Acer
 
 googlehome:
   hide_if_away: false
@@ -94,8 +85,6 @@ googlehome:
   name: Google Home Mini
   picture:
   track: false
-  vendor: Google, Inc.
-
 chromecast:
   hide_if_away: false
   icon: mdi:cast
@@ -103,7 +92,6 @@ chromecast:
   name: Chromecast
   picture:
   track: false
-  vendor: Google, Inc.
 
 wd_mybook_live_3tb:
   hide_if_away: false
@@ -112,7 +100,6 @@ wd_mybook_live_3tb:
   name: WD My Book Live 3TB
   picture:
   track: false
-  vendor: WESTERN DIGITAL
 
 huawei_pad:
   hide_if_away: false
@@ -120,7 +107,7 @@ huawei_pad:
   mac: 0C:D6:BD:2B:F4:97
   name: Huawei nettbrett
   picture:
-  track: true
+  track: false
 
 jensenradio:
   hide_if_away: false
@@ -145,7 +132,6 @@ retropie:
   name: RetroPie
   picture:
   track: false
-  vendor: Raspberry Pi Foundation
 
 mh_hyllelys:
   hide_if_away: false
@@ -194,7 +180,6 @@ sonoff_s20_1:
   name: Sonoff S20 1
   picture:
   track: false
-  vendor: Espressif Inc.
 
 sonoff_s20_2:
   hide_if_away: false
@@ -203,7 +188,6 @@ sonoff_s20_2:
   name: Sonoff S20 2
   picture:
   track: false
-  vendor: Espressif Inc.
 
 sonoff_s20_3:
   hide_if_away: false
@@ -212,7 +196,6 @@ sonoff_s20_3:
   name: Sonoff S20 3
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_socket_ps16_1:
   hide_if_away: false
@@ -221,7 +204,6 @@ wifi_smart_socket_ps16_1:
   name: WiFi Smart Socket 1
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_socket_ps16_2:
   hide_if_away: false
@@ -230,7 +212,6 @@ wifi_smart_socket_ps16_2:
   name: WiFi Smart Socket 2
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_socket_ps16_3:
   hide_if_away: false
@@ -239,7 +220,6 @@ wifi_smart_socket_ps16_3:
   name: WiFi Smart Socket 3
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_socket_ps16_4:
   hide_if_away: false
@@ -248,7 +228,6 @@ wifi_smart_socket_ps16_4:
   name: WiFi Smart Socket 4
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_socket_ps16_5:
   hide_if_away: false
@@ -257,7 +236,6 @@ wifi_smart_socket_ps16_5:
   name: WiFi Smart Socket 5
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_socket_ps16_6:
   hide_if_away: false
@@ -266,7 +244,6 @@ wifi_smart_socket_ps16_6:
   name: WiFi Smart Socket 6
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_bulb_1:
   hide_if_away: false
@@ -275,7 +252,6 @@ wifi_smart_bulb_1:
   name: WiFi Smart Bulb 1
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_bulb_2:
   hide_if_away: false
@@ -284,7 +260,6 @@ wifi_smart_bulb_2:
   name: WiFi Smart Bulb 2
   picture:
   track: false
-  vendor: Espressif Inc.
 
 wifi_smart_bulb_3:
   hide_if_away: false
@@ -293,4 +268,3 @@ wifi_smart_bulb_3:
   name: WiFi Smart Bulb 3
   picture:
   track: false
-  vendor: Espressif Inc.

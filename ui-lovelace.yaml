@@ -1,90 +1,336 @@
-title: My Awesome Home
-
-resources: 
-  - url: /local/slider-entity-row.js
-    type: js
-  - url: /local/weather-card.js
-    type: js
-  - url: /local/vertical-stack-in-card.js
-    type: js
-    
+resources:
+  - type: js
+    url: /local/card-tools.js
+  - type: js
+    url: /local/fold-entity-row.js?v=0.18.12.14
+  - type: js
+    url: /local/slider-entity-row.js?v=0.19.01.12
+  - type: js
+    url: /local/vertical-stack-in-card.js?v=0.1.0
+  - type: js
+    url: /local/weather-card.js?v=0.2.1
+  - type: js
+    url: /local/monster-card.js?v=0.2.3
+title: Sagmesterveien 6
 views:
-    # View tab title.
-  - title: Example
-    id: test1
-    theme: dark-mode
-    # panel: true
-    # Makes the first card fill the view
-    cards:
-        # The markdown card will render markdown text.
-      - type: gauge
-        entity: sensor.electricity_price_sagmesterveien_6
-        title: 'Strømpris'
-        unit_of_measurement: 'kr'
-        min: 0
-        max: 2
-        severity:
-          green: 0
-          yellow: 0.65
-          red: 1.2
-          # - type: sensor
-        # entity: sensor.electricity_price_sagmesterveien_6
-        # name: 'Prisutvikling'
-        # graph: line
-        # hours_to_show: 24
-        # accuracy: 120
-        # height: 200 
-        # line_color: "#3498db"
-      - type: thermostat
-        entity: climate.thermofloor_as_heatit_thermostat_tf_021_heating
-      - type: custom:weather-card
-        # title: Ver
-        entity_weather: weather.metno
-        entity_sun: sun.sun
-        entity_wind: sensor.vindstyrke_tekst
-      - type: entities
-        title: Soverom
+  - cards:
+      - entities:
+          - action_name: Av
+            icon: 'mdi:power'
+            name: All belysning
+            service: light.turn_off
+            service_data:
+              entity_id: group.all_lights
+            type: call-service
+          - action_name: På
+            icon: 'mdi:power'
+            name: Dempet belysning
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.belysning__dempet
+            type: call-service
+          - entity: light.innelys
+          - entity: light.stemningslys
+          - entity: light.utelys
+        id: lysstyring
         show_header_toggle: false
-        entities:
-          - type: custom:slider-entity-row
-            entity: light.fibaro_system_fgd212_dimmer_2_level_10
-            toggle: true
-          - type: custom:slider-entity-row
-            entity: light.fibaro_system_fgd212_dimmer_2_level_12
-            toggle: true
-      - type: custom:vertical-stack-in-card
+        title: Lysstyring
+        type: entities
+      - entities:
+          - entity: light.fibaro_system_fgd212_dimmer_2_level_7
+            name: Taklampe
+            slideronly: true
+            type: 'custom:slider-entity-row'
+          - entity: light.fibaro_system_fgd212_dimmer_2_level_5
+            name: Downlights
+            slideronly: true
+            type: 'custom:slider-entity-row'
+          - entity: light.mh_hyllelys
+            name: Hyllelys
+            slideronly: true
+            type: 'custom:slider-entity-row'
+          - entity: light.wifi_smart_socket_ps16_3
+            name: Bordlampe
+          - entity: light.sonoff_s20_2
+            name: Oslo gulvlampe
+        show_header_toggle: false
         title: Stue
-        cards:
-        - type: entities
+        type: entities
+      - entities:
+          - entity: light.fibaro_system_fgd212_dimmer_2_level
+            name: Downlights
+            slideronly: true
+            type: 'custom:slider-entity-row'
+          - entity: light.fibaro_system_fgd212_dimmer_2_level_3
+            name: Benkeplate
+            slideronly: true
+            type: 'custom:slider-entity-row'
+        id: kjokken
+        show_header_toggle: false
+        title: Kjøkken
+        type: entities
+      - entities:
+          - entity: light.fibaro_system_fgd212_dimmer_2_level_10
+            name: Downlights
+            slideronly: true
+            type: 'custom:slider-entity-row'
+          - entity: light.fibaro_system_fgd212_dimmer_2_level_12
+            name: Taklampe
+            slideronly: true
+            type: 'custom:slider-entity-row'
+          - entity: cover.qubino_zmnhod1_flush_shutter_dc_level
+            name: Rullgardiner
+        show_header_toggle: false
+        title: Soverom
+        type: entities
+      - cards:
+          - entities:
+              - entity: light.fibaro_system_fgd212_dimmer_2_level_14
+                name: Taklampe
+                slideronly: true
+                type: 'custom:slider-entity-row'
+            type: entities
+          - entities:
+              - entity: light.sb_gulvlampe
+                hold_action:
+                  action: more-info
+                tap_action:
+                  action: toggle
+              - entity: sensor.sb_gulvlampe_temperatur
+              - entity: sensor.sb_gulvlampe_luftfuktighet
+            type: glance
+        show_header_toggle: false
+        title: Kontor / Gjesterom
+        type: 'custom:vertical-stack-in-card'
+      - entities:
+          - entity: light.qubino_zmnhdd1_flush_dimmer_level
+            name: Downlights
+            slideronly: true
+            type: 'custom:slider-entity-row'
+          - entity: light.sb_speillys
+            name: Speillys
+          - entity: switch.sb_handkletorker
+            name: Håndkletørker
+          - entity: climate.thermofloor_as_heatit_thermostat_tf_021_heating
+            name: Varmekabel
+        show_header_toggle: false
+        title: Bad
+        type: entities
+      - entities:
+          - entity: light.wifi_smart_socket_ps16_2
+            name: Bordlampe
+          - entity: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
+            name: Varmekabel
+        show_header_toggle: false
+        title: Gang
+        type: entities
+      - entities:
+          - entity: light.wifi_smart_socket_ps16_1
+            hold_action:
+              action: more-info
+            name: Portlys
+            tap_action:
+              action: toggle
+          - entity: light.wifi_smart_socket_ps16_4
+            hold_action:
+              action: more-info
+            name: Dekkslys
+            tap_action:
+              action: toggle
+          - entity: light.wifi_smart_socket_ps16_5
+            hold_action:
+              action: more-info
+            name: Verandarekke
+            tap_action:
+              action: toggle
+        id: utendors
+        show_state: false
+        title: Utendørs
+        type: glance
+    icon: 'mdi:home'
+    id: hjem
+    title: Hjem
+  - cards:
+      - card:
           entities:
-            - type: custom:slider-entity-row
-              entity: light.fibaro_system_fgd212_dimmer_2_level_7
-              name: Taklampe
-              toggle: true
-            - type: custom:slider-entity-row
-              entity: light.fibaro_system_fgd212_dimmer_2_level_5
-              name: Downlights
-              toggle: true
-            - type: custom:slider-entity-row
-              entity: light.mh_hyllelys
-              name: Hyllelys
-              toggle: true
-        - type: glance
+            - entity: updater.updater
+              name: Oppdatering tilgjengelig
+              secondary_info: last-changed
+            - icon: 'mdi:home-assistant'
+              name: Home Assistant release notes
+              type: weblink
+              url: 'https://www.home-assistant.io/latest-release-notes/'
+          show_header_toggle: false
+          title: Oppdatering
+          type: entities
+        conditions:
+          - entity: updater.updater
+            state_not: 0.1
+        type: conditional
+      - card:
           show_state: false
+          title: Enheter hjemme/på
+          type: glance
+        entities:
+          - entity: device_tracker.galaxys8_bh
+            name: Børre
+          - entity: device_tracker.galaxys8_cg
+            name: Christine
+          - entity: device_tracker.lgsmarttv
+          - entity: device_tracker.xbox_one_x
+        id: enheter
+        state_filter:
+          - home
+        type: entity-filter
+      - entity_sun: sun.sun
+        entity_sun_level: sensor.sunrise_sunset
+        entity_uv: sensor.uv_niva
+        entity_weather: weather.metno
+        entity_wind: sensor.vindstyrke_tekst
+        type: 'custom:weather-card'
+      - entities:
+          - group_config:
+              secondary_info: last-changed
+            head: sensor.dnb_ask_beholding
+            items:
+              - sensor.dnb_health_care_kurs
+              - sensor.dnb_teknologi_kurs
+              - sensor.dnb_global_indeks_1_dag
+              - sensor.dnb_health_care_1_dag
+              - sensor.dnb_norge_indeks_1_dag
+              - sensor.dnb_teknologi_1_dag
+            type: 'custom:fold-entity-row'
+        show_header_toggle: false
+        title: Finans
+        type: entities
+      - card:
+          show_header_toggle: false
+          title: Effektforbruk
+          type: entities
           entities:
-            - entity: light.wifi_smart_socket_ps16_3
-              name: Bordlampe
-              tap_action: toggle
-              hold_action: more-info
-            - entity: light.sb_gulvlampe
-              name: Gulvlampe
-              tap_action: toggle
-              hold_action: more-info
-            - entity: light.wifi_smart_socket_ps16_6
-              name: Julestjerne
-              tap_action: toggle
-              hold_action: more-info
-            - entity: light.sonoff_s20_1
-              name: Adventslys
-              tap_action: toggle
-              hold_action: more-info
+            - entity: sensor.qubino_zmnhdd1_flush_dimmer_power
+        filter:
+          include:
+            - entity_id: sensor.*power*
+              state: '> 0'
+        type: 'custom:monster-card'
+      - entities:
+          - head: group.all_lights
+            items:
+              - light.fibaro_system_fgd212_dimmer_2_level
+              - light.fibaro_system_fgd212_dimmer_2_level_3
+              - light.fibaro_system_fgd212_dimmer_2_level_5
+              - light.fibaro_system_fgd212_dimmer_2_level_7
+              - light.fibaro_system_fgd212_dimmer_2_level_10
+              - light.fibaro_system_fgd212_dimmer_2_level_12
+              - light.fibaro_system_fgd212_dimmer_2_level_14
+              - light.innelys
+              - light.mh_hyllelys
+              - light.qubino_zmnhdd1_flush_dimmer_level
+              - light.sb_gulvlampe
+              - light.sb_speillys
+              - light.sonoff_s20_2
+              - light.stemningslys
+              - light.utelys
+              - light.wifi_smart_socket_ps16_1
+              - light.wifi_smart_socket_ps16_2
+              - light.wifi_smart_socket_ps16_3
+              - light.wifi_smart_socket_ps16_4
+              - light.wifi_smart_socket_ps16_5
+            type: 'custom:fold-entity-row'
+          - head: group.all_switches
+            items:
+              - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+              - switch.sb_handkletorker
+            type: 'custom:fold-entity-row'
+          - head: group.all_scripts
+            items:
+              - script.hjem
+              - script.stromspar
+            type: 'custom:fold-entity-row'
+        id: grupper
+        show_header_toggle: false
+        title: Grupper
+        type: entities
+      - card:
+          title: Automasjoner
+          type: entities
+          show_header_toggle: false
+          entities:
+            - entity: automation.aksjesparekonto_daglig
+            - entity: automation.belysning_av_vsoloppgang
+            - entity: automation.belysning_bad_av
+            - entity: automation.belysning_bad_dim
+            - entity: automation.belysning_bad_pa_vbeveglse
+            - entity: automation.belysning_pa_vhjemkomst
+            - entity: automation.belysning_pa_vsolnedgang
+            - entity: automation.home_assistant_oppdatering
+            - entity: automation.innelys_av_vtomt_hus_og_400
+            - entity: automation.rullgardiner_soverom_opp
+            - entity: automation.stemningslys_av_2400
+            - entity: automation.systemtemperatur_hy
+            - entity: automation.varmekabler_nattsenking
+            - entity: automation.varmekabler_nattsenking_av
+            - entity: automation.varmtvannsbereder_strmsparing
+            - entity: automation.varmtvannsbereder_strmsparing_av
+        filter:
+          include:
+            - domain: automation
+        type: 'custom:monster-card'
+      - card:
+          show_header_toggle: false
+          title: Sensorer
+          type: entities
+          entities:
+            - entity: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+            - entity: sensor.cpu_temperatur
+            - entity: sensor.disk_free_root
+            - entity: sensor.electricity_price_sagmesterveien_6
+            - entity: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+            - entity: sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+            - entity: sensor.ipv4_address_eth0
+            - entity: sensor.last_boot
+            - entity: sensor.max_uv_index
+            - entity: sensor.memory_use_percent
+            - entity: sensor.processor_use
+            - entity: sensor.sb_gulvlampe_luftfuktighet
+            - entity: sensor.sb_gulvlampe_temperatur
+            - entity: sensor.sunrise_sunset
+            - entity: sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
+            - entity: sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
+            - entity: sensor.uv_niva
+            - entity: sensor.vindstyrke_tekst
+        filter:
+          exclude:
+            - entity_id: sensor.dnb*
+            - entity_id: sensor.*power*
+          include:
+            - domain: binary_sensor
+            - domain: sensor
+        type: 'custom:monster-card'
+      - card:
+          show_header_toggle: false
+          title: Z-Wave
+          type: entities
+          entities:
+            - entity: zwave.aeotec_zw090_zstick_gen5_eu
+            - entity: zwave.fibaro_system_fgd212_dimmer_2
+            - entity: zwave.fibaro_system_fgd212_dimmer_2_2
+            - entity: zwave.fibaro_system_fgd212_dimmer_2_3
+            - entity: zwave.fibaro_system_fgd212_dimmer_2_4
+            - entity: zwave.fibaro_system_fgd212_dimmer_2_5
+            - entity: zwave.fibaro_system_fgd212_dimmer_2_6
+            - entity: zwave.fibaro_system_fgd212_dimmer_2_7
+            - entity: zwave.fibaro_system_fgms001zw5_motion_sensor
+            - entity: zwave.fibaro_system_fgwpef_wall_plug_gen5
+            - entity: zwave.qubino_zmnhdd1_flush_dimmer
+            - entity: zwave.qubino_zmnhod1_flush_shutter_dc
+            - entity: zwave.thermofloor_as_heatit_thermostat_tf_021
+            - entity: zwave.thermofloor_as_heatit_thermostat_tf_021_2
+        filter:
+          include:
+            - domain: zwave
+        type: 'custom:monster-card'
+    icon: 'mdi:settings'
+    id: avansert
+    title: Avansert

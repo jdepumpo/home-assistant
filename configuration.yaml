@@ -3,8 +3,8 @@ homeassistant:
   latitude: !secret ha_latitude
   longitude: !secret ha_longitude
   elevation: !secret ha_elevation
-  time_zone: !secret ha_time_zone
   unit_system: metric
+  time_zone: !secret ha_time_zone
   customize: !include customize.yaml
   customize_domain: !include customize_domain.yaml
   customize_glob: !include customize_glob.yaml
@@ -22,7 +22,6 @@ device_tracker:
   username: !secret asuswrt_username
   password: !secret asuswrt_password
   protocol: telnet
-  port: 23
   track_new_devices: false
 
 automation: !include automations.yaml
@@ -39,8 +38,8 @@ http:
   ssl_key: /etc/letsencrypt/live/hulkhaugen.duckdns.org/privkey.pem
 # ifttt:
   # key: !secret ifttt_keyinput_number: !include input_number.yaml
-input_number: !include input_number.yaml
-input_select: !include input_select.yaml
+# input_number: !include input_number.yaml
+# input_select: !include input_select.yaml
 light: !include lights.yaml
 # logbook:
 # logger: !include logger.yaml
@@ -59,13 +58,15 @@ switch: !include switches.yaml
 tibber:
   access_token: !secret tibber_access_token
 tts:
-  platform: google
-  language: 'no'
+  - platform: google
+    language: 'no'
 updater:
   include_used_components: true
 weather:
   - platform: met
 zwave: !include zwave.yaml
+
+# custom_updater:
 
 # openuv:
   # api_key: !secret openuv_api_key
@@ -73,8 +74,6 @@ zwave: !include zwave.yaml
     # monitored_conditions:
   # sensors:
     # monitored_conditions:
-      # - current_uv_level
-      # - current_uv_index
       # - max_uv_index
 
 # media_player:

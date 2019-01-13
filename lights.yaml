@@ -1,3 +1,34 @@
+- platform: group
+  name: Innelys
+  entities:
+  - light.sb_speillys
+  - light.qubino_zmnhdd1_flush_dimmer_level
+  - light.fibaro_system_fgd212_dimmer_2_level
+  - light.fibaro_system_fgd212_dimmer_2_level_3
+  - light.fibaro_system_fgd212_dimmer_2_level_5
+  - light.fibaro_system_fgd212_dimmer_2_level_7
+  - light.fibaro_system_fgd212_dimmer_2_level_10
+  - light.fibaro_system_fgd212_dimmer_2_level_12
+  - light.fibaro_system_fgd212_dimmer_2_level_14
+  - light.mh_hyllelys
+
+- platform: group
+  name: Utelys
+  entities:
+  # - light.sb_utelampe_n
+  - light.wifi_smart_socket_ps16_1
+  - light.wifi_smart_socket_ps16_4
+  - light.wifi_smart_socket_ps16_5
+
+- platform: group
+  name: Stemningslys
+  entities:
+  - light.sb_gulvlampe
+  - light.wifi_smart_socket_ps16_2
+  - light.wifi_smart_socket_ps16_3
+  - light.sonoff_s20_2
+
+
 - platform: mqtt
   name: "SB Gulvlampe"
   command_topic: "cmnd/sb_gulvlampe/POWER1"
@@ -9,21 +40,21 @@
 
 - platform: mqtt
   name: "SB Speillys"
-  command_topic: "cmnd/sb_speillys/POWER"
-  state_topic: "stat/sb_speillys/POWER"
+  command_topic: "cmnd/sb_speillys/POWER1"
+  state_topic: "stat/sb_speillys/POWER1"
   availability_topic: "tele/sb_speillys/LWT"  
   qos: 1
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "SB Utelampe N"
-  command_topic: "cmnd/sb_utelampe_n/POWER"
-  state_topic: "stat/sb_utelampe_n/POWER"
-  availability_topic: "tele/sb_utelampe_n/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
+# - platform: mqtt
+  # name: "SB Utelampe N"
+  # command_topic: "cmnd/sb_utelampe_n/POWER1"
+  # state_topic: "stat/sb_utelampe_n/POWER1"
+  # availability_topic: "tele/sb_utelampe_n/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 1"
@@ -61,14 +92,14 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Sonoff S20 1"
-  command_topic: "cmnd/sonoff_s20_1/POWER1"
-  state_topic: "stat/sonoff_s20_1/POWER1"
-  availability_topic: "tele/sonoff_s20_1/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
+# - platform: mqtt
+  # name: "Sonoff S20 1"
+  # command_topic: "cmnd/sonoff_s20_1/POWER1"
+  # state_topic: "stat/sonoff_s20_1/POWER1"
+  # availability_topic: "tele/sonoff_s20_1/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Sonoff S20 2"
@@ -79,14 +110,14 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Sonoff S20 3"
-  command_topic: "cmnd/sonoff_s20_3/POWER1"
-  state_topic: "stat/sonoff_s20_3/POWER1"
-  availability_topic: "tele/sonoff_s20_3/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
+# - platform: mqtt
+  # name: "Sonoff S20 3"
+  # command_topic: "cmnd/sonoff_s20_3/POWER1"
+  # state_topic: "stat/sonoff_s20_3/POWER1"
+  # availability_topic: "tele/sonoff_s20_3/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
 - platform: mqtt
   name: "WiFi Smart Socket PS-16 5"
@@ -97,14 +128,14 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "WiFi Smart Socket PS-16 6"
-  command_topic: "cmnd/wifi_smart_socket_ps-16_6/POWER1"
-  state_topic: "stat/wifi_smart_socket_ps-16_6/POWER1"
-  availability_topic: "tele/wifi_smart_socket_ps-16_6/LWT"  
-  qos: 1
-  payload_available: "Online"
-  payload_not_available: "Offline"
+# - platform: mqtt
+  # name: "WiFi Smart Socket PS-16 6"
+  # command_topic: "cmnd/wifi_smart_socket_ps-16_6/POWER1"
+  # state_topic: "stat/wifi_smart_socket_ps-16_6/POWER1"
+  # availability_topic: "tele/wifi_smart_socket_ps-16_6/LWT"  
+  # qos: 1
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
 
 - platform: mqtt
   name: "MH Hyllelys"

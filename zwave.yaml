@@ -1,0 +1,106 @@
+usb_path: /dev/ttyACM0
+
+device_config:
+  binary_sensor.qubino_zmnhdd1_flush_dimmer_sensor:
+    ignored: true
+    polling_intensity: 0
+  cover.qubino_zmnhod1_flush_shutter_dc_switch:
+    ignored: true
+    polling_intensity: 0
+  light.fibaro_system_fgd212_dimmer_2_level_2:
+    ignored: true
+    polling_intensity: 0
+  light.fibaro_system_fgd212_dimmer_2_level_4:
+    ignored: true
+    polling_intensity: 0
+  light.fibaro_system_fgd212_dimmer_2_level_6:
+    ignored: true
+    polling_intensity: 0
+  light.fibaro_system_fgd212_dimmer_2_level_8:
+    ignored: true
+    polling_intensity: 0
+  light.fibaro_system_fgd212_dimmer_2_level_9:
+    ignored: true
+    polling_intensity: 0
+  light.fibaro_system_fgd212_dimmer_2_level_11:
+    ignored: true
+    polling_intensity: 0
+  light.fibaro_system_fgd212_dimmer_2_level_13:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgd212_dimmer_2_power_2:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgd212_dimmer_2_power_4:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgd212_dimmer_2_power_6:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgd212_dimmer_2_power_8:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgd212_dimmer_2_power_9:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgd212_dimmer_2_power_11:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgd212_dimmer_2_power_13:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgwpef_wall_plug_gen5_interval:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+    ignored: true
+    polling_intensity: 0
+  sensor.fibaro_system_fgwpef_wall_plug_gen5_previous_reading:
+    ignored: true
+    polling_intensity: 0
+  sensor.qubino_zmnhod1_flush_shutter_dc_previous_reading:
+    ignored: true
+    polling_intensity: 0
+  switch.qubino_zmnhdd1_flush_dimmer_switch:
+    ignored: true
+    polling_intensity: 0
+  switch.qubino_zmnhod1_flush_shutter_dc_switch:
+    ignored: true
+    polling_intensity: 0
+
+# device_config_domain:
+
+device_config_glob:
+  "climate.*energy_heat*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.*sourcenodeid*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.*exporting*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.*management*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.*system*system*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.*dimmer_2_heat*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.*energy*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.*_alarm_*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.fibaro_*_burglar*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.fibaro_*_motion_sensor_general*":
+    ignored: true
+    polling_intensity: 0
+  "sensor.fibaro_*_seismic_intensity*":
+    ignored: true
+    polling_intensity: 0

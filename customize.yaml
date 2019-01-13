@@ -1,38 +1,48 @@
 cover.qubino_zmnhod1_flush_shutter_dc_level:
   icon: mdi:blinds
 group.all_automations:
-  hidden: false
   friendly_name: Automasjoner
+  icon: mdi:playlist-play
 group.all_devices:
-  hidden: false
   friendly_name: Enheter
+  icon: mdi:cellphone-link
 group.all_lights:
-  hidden: false
   friendly_name: Belysning
+  icon: mdi:lightbulb
   control:
 group.all_scripts:
-  hidden: false
   friendly_name: Skript
+  icon: mdi:file-document
 group.all_switches:
-  hidden: false
   friendly_name: Brytere
+  icon: mdi:power
+group.rpi:
+  icon: mdi:raspberrypi
+group.sensor:
+  icon: mdi:eye
+group.zwave:
+  icon: mdi:z-wave
 light.fibaro_system_fgd212_dimmer_2_level_7:
   icon: mdi:ceiling-light
 light.fibaro_system_fgd212_dimmer_2_level_12:
+  icon: mdi:ceiling-light
+light.fibaro_system_fgd212_dimmer_2_level_14:
   icon: mdi:ceiling-light
 light.mh_hyllelys:
   friendly_name: Hyllelys spisestue
   icon: mdi:led-strip
 light.sb_gulvlampe:
-  friendly_name: Gulvlampe m/bord stue
+  friendly_name: Gulvlampe m/bord
   icon: mdi:floor-lamp
 light.sb_speillys:
   friendly_name: Speillys bad
 light.sb_utelampe_n:
   friendly_name: Utelampe nord
   icon: mdi:wall-sconce
+light.utelys:
+  icon: mdi:wall-sconce
 light.wifi_smart_socket_ps16_1:
-  friendly_name: Julelys port inngangsparti
+  friendly_name: Portlys inngangsparti
 light.wifi_smart_socket_ps16_2:
   friendly_name: Bordlampe gang
   icon: mdi:desk-lamp
@@ -42,25 +52,17 @@ light.wifi_smart_socket_ps16_3:
 light.wifi_smart_socket_ps16_4:
   friendly_name: Dekkslys veranda nord
 light.wifi_smart_socket_ps16_5:
-  friendly_name: Julelys veranda sørøst
-light.wifi_smart_socket_ps16_6:
-  friendly_name: Julestjerne spisestue
-  icon: mdi:hexagram
-light.sonoff_s20_1:
-  friendly_name: Adventsstake TV stue
+  friendly_name: Rekkverkslys veranda sørøst
 light.sonoff_s20_2:
-  friendly_name: Adventsstake kjøkken
-light.sonoff_s20_3:
-  friendly_name: Juletre
-  icon: mdi:pine-tree
-script.radio:
-  icon: mdi:play
+  friendly_name: Oslo gulvlampe
+  icon: mdi:floor-lamp
 sensor.disk_free_root:
   friendly_name: SD kort ledig plass
   icon: mdi:micro-sd
-sensor.fibaro_fgms001zw5_luminance:
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  friendly_name: Luminans bad
   icon: mdi:brightness-7
-sensor.fibaro_fgms001zw5_temperature:
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: Temperatur bad
 sensor.ipv4_address_eth0:
   friendly_name: IPv4 ethernet adresse
@@ -69,20 +71,20 @@ sensor.last_boot:
 sensor.memory_use_percent:
   friendly_name: Minnebruk
 sensor.sb_gulvlampe_temperatur:
-  friendly_name: Temperatur stue
+  friendly_name: Temperatur
 sensor.sb_gulvlampe_luftfuktighet:
-  friendly_name: Luftfuktighet stue
+  friendly_name: Luftfuktighet
   icon: mdi:water-percent
-sensor.tibber_now:
-  icon: mdi:chart-line
-sensor.tibber_min:
-  icon: mdi:arrow-bottom-right
-sensor.tibber_max:
-  icon: mdi:arrow-top-right
-sensor.tibber_avg:
-  icon: mdi:arrow-collapse
-sensor.tibber_use:
-  icon: mdi:coins
+# sensor.tibber_now:
+  # icon: mdi:chart-line
+# sensor.tibber_min:
+  # icon: mdi:arrow-bottom-right
+# sensor.tibber_max:
+  # icon: mdi:arrow-top-right
+# sensor.tibber_avg:
+  # icon: mdi:arrow-collapse
+# sensor.tibber_use:
+  # icon: mdi:coins
 sensor.processor_use:
   friendly_name: CPU aktivitet
   icon: mdi:chip

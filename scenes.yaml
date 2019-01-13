@@ -15,10 +15,14 @@
       brightness: 25
     light.fibaro_system_fgd212_dimmer_2_level_7:
       state: on
-      brightness: 50
-    light.sb_gulvlampe: on
+      brightness: 35
     light.mh_hyllelys:
       state: on
       brightness: 35
-    light.wifi_smart_socket_ps16_2: on
-    light.wifi_smart_socket_ps16_3: on
+    # light.sb_gulvlampe: on
+    # light.wifi_smart_socket_ps16_2: on
+    # light.wifi_smart_socket_ps16_3: on
+    # light.wifi_smart_socket_ps16_5: on
+    # light.wifi_smart_socket_ps16_6: on
+    # light.sonoff_s20_1: on
+    # light.sonoff_s20_2: on
