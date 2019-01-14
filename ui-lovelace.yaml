@@ -2,7 +2,7 @@ resources:
   - type: js
     url: /local/card-tools.js
   - type: js
-    url: /local/fold-entity-row.js?v=0.18.12.14
+    url: /local/fold-entity-row.js?v=0.19.01.13
   - type: js
     url: /local/slider-entity-row.js?v=0.19.01.12
   - type: js
@@ -11,9 +11,17 @@ resources:
     url: /local/weather-card.js?v=0.2.1
   - type: js
     url: /local/monster-card.js?v=0.2.3
+  - type: module
+    url: /local/mini-media-player-bundle.js?v=0.9.8
 title: Sagmesterveien 6
 views:
   - cards:
+      - entity: media_player.chromecast
+        type: 'custom:mini-media-player'
+        artwork: full-cover
+        show_progress: true
+        hide_power: true
+        hide_volume: true
       - entities:
           - action_name: Av
             icon: 'mdi:power'
@@ -204,11 +212,10 @@ views:
         title: Finans
         type: entities
       - card:
+          entities: []
           show_header_toggle: false
           title: Effektforbruk
           type: entities
-          entities:
-            - entity: sensor.qubino_zmnhdd1_flush_dimmer_power
         filter:
           include:
             - entity_id: sensor.*power*
@@ -253,9 +260,6 @@ views:
         title: Grupper
         type: entities
       - card:
-          title: Automasjoner
-          type: entities
-          show_header_toggle: false
           entities:
             - entity: automation.aksjesparekonto_daglig
             - entity: automation.belysning_av_vsoloppgang
@@ -273,14 +277,14 @@ views:
             - entity: automation.varmekabler_nattsenking_av
             - entity: automation.varmtvannsbereder_strmsparing
             - entity: automation.varmtvannsbereder_strmsparing_av
+          show_header_toggle: false
+          title: Automasjoner
+          type: entities
         filter:
           include:
             - domain: automation
         type: 'custom:monster-card'
       - card:
-          show_header_toggle: false
-          title: Sensorer
-          type: entities
           entities:
             - entity: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
             - entity: sensor.cpu_temperatur
@@ -300,6 +304,9 @@ views:
             - entity: sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
             - entity: sensor.uv_niva
             - entity: sensor.vindstyrke_tekst
+          show_header_toggle: false
+          title: Sensorer
+          type: entities
         filter:
           exclude:
             - entity_id: sensor.dnb*
@@ -309,9 +316,6 @@ views:
             - domain: sensor
         type: 'custom:monster-card'
       - card:
-          show_header_toggle: false
-          title: Z-Wave
-          type: entities
           entities:
             - entity: zwave.aeotec_zw090_zstick_gen5_eu
             - entity: zwave.fibaro_system_fgd212_dimmer_2
@@ -327,6 +331,9 @@ views:
             - entity: zwave.qubino_zmnhod1_flush_shutter_dc
             - entity: zwave.thermofloor_as_heatit_thermostat_tf_021
             - entity: zwave.thermofloor_as_heatit_thermostat_tf_021_2
+          show_header_toggle: false
+          title: Z-Wave
+          type: entities
         filter:
           include:
             - domain: zwave
