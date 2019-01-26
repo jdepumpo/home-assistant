@@ -111,7 +111,7 @@
     after: sunset
   - condition: time
     after: '15:00:00'
-    before: 01:00:00
+    before: '01:00:00'
   action:
   - service: scene.turn_on
     entity_id: scene.belysning_dempet
@@ -137,7 +137,7 @@
   alias: Stemningslys av 24:00
   trigger:
   - platform: time
-    at: 00:00:00
+    at: '00:00:00'
   action:
   - service: light.turn_off
     entity_id: light.stemningslys
@@ -327,6 +327,17 @@
   trigger:
   - platform: state
     entity_id: sensor.dnb_teknologi_1_dag
+  condition:
+    condition: time
+  # At least one of the following is required.
+    after: '09:30:00'
+    before: '15:00:00'
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
   - delay: '00:05'
   - service: notify.notify
