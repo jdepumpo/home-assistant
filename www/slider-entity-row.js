@@ -3,47 +3,67 @@ class SliderEntityRow extends Polymer.Element {
   static get template() {
     const style = Polymer.html`
       <style>
-	    ha-slider {width: 150px;}
-        .flex {display: flex; align-items: center;}
-        .state {min-width: 45px; text-align: center;}
-        .toggle {margin-left: 8px;}
+        ha-slider {width: 160px;}
+        .flex {
+          display: flex;
+          align-items: center;
+          }
+        .state {
+          min-width: 45px;
+          text-align: center;
+        }
+        .toggle {
+          margin-left: 8px;
+        }
       </style>
-      <template is="dom-if" if="{{displaySlideronly}}">
-        <style>ha-slider ::div#sliderContainer {margin-right:0;}</style>
-      </template>
       <template is="dom-if" if="{{!displayRow}}">
         <style>
-          ha-slider {width: 100%;}
+        ha-slider {
+          width: 100%;
+        }
         </style>
       </template>
     `;
 
     const input = Polymer.html`
       <div>
-        <div class="flex">
-          <template is="dom-if" if="{{displaySlider}}">
-            <ha-slider min="0" max="100" value="{{value}}" step="5" pin on-change="selectedValue" on-click="stopPropagation" ignore-bar-touch>
-			</ha-slider>
+          <div class="flex">
+        <template is="dom-if" if="{{displaySlider}}">
+            <ha-slider
+              min="{{min}}"
+              max="{{max}}"
+              value="{{value}}"
+              step="{{step}}"
+              pin
+              on-change="selectedValue"
+              on-click="stopPropagation"
+              ignore-bar-touch
+            ></ha-slider>
             <template is="dom-if" if="{{displayValue}}">
               <span class="state" on-click="stopPropagation">
                 [[statusString(stateObj)]]
               </span>
             </template>
-          </template>
-          <template is="dom-if" if="{{displayToggle}}">
-	        <span class="toggle" on-click="stopPropagation">
-              <ha-entity-toggle state-obj="[[stateObj]]" hass="[[_hass]]">
-			  </ha-entity-toggle>
-            </span>
-          </template>			
-        </div>
+        </template>
+            <template is="dom-if" if="{{displayToggle}}">
+              <span class="toggle" on-click="stopPropagation">
+                <ha-entity-toggle
+                  state-obj="[[stateObj]]"
+                  hass="[[_hass]]"
+                ></ha-entity-toggle>
+                </span>
+            </template>
+          </div>
       </div>
     `;
 
     return Polymer.html`
       ${style}
       <template is="dom-if" if="{{displayRow}}">
-        <hui-generic-entity-row hass="[[_hass]]" config="[[_config]]">
+        <hui-generic-entity-row
+          hass="[[_hass]]"
+          config="[[_config]]"
+        >
           ${input}
         </hui-generic-entity-row>
       </template>
@@ -105,7 +125,7 @@ class SliderEntityRow extends Polymer.Element {
             this._hass.callService('cover', 'close_cover', { entity_id: stateObj.entity_id });
         },
         get: (stateObj) => {
-          return (stateObj.state === 'open')?stateObj.attributes.current_position:0;
+          return (stateObj.state === 'open')?Math.ceil(stateObj.attributes.current_position):0;
         },
         supported: (stateObj) => {
           if('current_position' in stateObj.attributes) return true;
@@ -130,9 +150,13 @@ class SliderEntityRow extends Polymer.Element {
 
     this.displayRow = !config.full_row;
     this.displayToggle = config.toggle && domain === 'light';
-	this.displaySlideronly = config.slideronly;
-    this.displayValue = !this.displayToggle && !this.displaySlideronly;
+    this.displayValue = !this.displayToggle;
+    if(config.hide_state) this.displayValue = false;
     this.displaySlider = false;
+
+    this.min = config.min || 0;
+    this.max = config.max || 100;
+    this.step = config.step || 5;
   }
 
   statusString(stateObj) {

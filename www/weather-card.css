@@ -1,0 +1,86 @@
+        :host {
+          cursor: pointer;
+        }
+        .content {
+          padding: 0 20px 20px;
+        }
+        ha-icon {
+          color: var(--paper-item-icon-color);
+        }
+        .header {
+          font-family: var(--paper-font-headline_-_font-family);
+          -webkit-font-smoothing: var(--paper-font-headline_-_-webkit-font-smoothing);
+          font-size: var(--paper-font-headline_-_font-size);
+          font-weight: var(--paper-font-headline_-_font-weight);
+          letter-spacing: var(--paper-font-headline_-_letter-spacing);
+          line-height: var(--paper-font-headline_-_line-height);
+          text-rendering: var(--paper-font-common-expensive-kerning_-_text-rendering);
+          opacity: var(--dark-primary-opacity);
+          padding: 24px 16px 16px;
+          display: flex;
+          align-items: baseline;
+        }
+        .name {
+          margin-left: 16px;
+          font-size: 16px;
+          color: var(--secondary-text-color);
+        }
+        .now {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        .main {
+          display: flex;
+		  flex: 1 1 auto;
+          align-items: center;
+          margin-right: 32px;
+        }
+        .main .icon {
+          /* flex: 1 1 auto; */
+          margin: -32px 0 -32px -32px;
+		  width: 128px;
+        }
+        /* .icon img .aniconbig { */
+          /* height: 100px; */
+          /* width: 100px; */
+          /* margin: -25px; */
+        /* } */
+        .main .temp {
+          font-size: 52px;
+          line-height: 1em;
+          position: relative;
+        }
+        .main .temp span {
+          font-size: 24px;
+          line-height: 1em;
+          position: absolute;
+          top: 4px;
+        }
+        .forecast {
+          margin-top: 16px;
+          display: flex;
+          justify-content: space-between;
+        }
+        .forecast div {
+          /* flex: 1 1 auto; */
+          text-align: center;
+        }
+        .forecast .icon {
+          margin: -10px auto;
+          /* text-align: center; */
+        }
+        .weekday {
+          font-weight: bold;
+        }
+        .attributes, .templow, .precipitation {
+          color: var(--secondary-text-color);
+        }
+		/* .aniconbig { */
+		/* width: 72px; */
+		/* height: 72px; */
+		/* } */
+img { width: 100%;
+ /* height: auto; */
+ }
