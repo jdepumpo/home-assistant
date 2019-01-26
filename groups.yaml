@@ -1,32 +1,32 @@
 # Faner
 
-default_view:
-  icon: mdi:home
-  name: 'Hjem'
-  view: true
-  entities:
-  - light.innelys
-  - light.utelys
-  - light.stemningslys
-  - group.scener
+# default_view:
+  # icon: mdi:home
+  # name: 'Hjem'
+  # view: true
+  # entities:
+  # - light.innelys
+  # - light.utelys
+  # - light.stemningslys
+  # - group.scener
   # - group.jul
-  - group.bad
-  - group.gang
-  - group.garasje
-  - group.gjest
-  - group.kjokken
-  - group.sov
-  - group.stue
+  # - group.bad
+  # - group.gang
+  # - group.garasje
+  # - group.gjest
+  # - group.kjokken
+  # - group.sov
+  # - group.stue
   # - group.utelys
   # - group.teknisk
-  - weather.metno
+  # - weather.met_no
 
 # vaer:
   # icon: mdi:weather-partlycloudy
   # name: 'Været'
   # view: true
   # entities:
-  # - weather.metno
+  # - weather.met_no
   # - group.sola
 
 # multimedia:
@@ -56,61 +56,61 @@ default_view:
 
 #1 Hjemside - default_view
 
-scener:
-  name: 'Scener'
-  entities:
-  - scene.belysning__alt_av
-  - scene.belysning__dempet
+# scener:
+  # name: 'Scener'
+  # entities:
+  # - scene.belysning__alt_av
+  # - scene.belysning__dempet
 
-bad:
-  name: 'Bad'
-  entities:
-  - light.qubino_zmnhdd1_flush_dimmer_level
-  - light.sb_speillys
-  - switch.sb_handkletorker
-  - climate.thermofloor_as_heatit_thermostat_tf_021_heating
+# bad:
+  # name: 'Bad'
+  # entities:
+  # - light.qubino_zmnhdd1_flush_dimmer_level
+  # - light.sb_speillys
+  # - switch.sb_handkletorker
+  # - climate.thermofloor_as_heatit_thermostat_tf_021_heating
   # - input_select.radiokanal
   # - input_number.radio_volum
 
-gang:
-  name: 'Gang'
-  entities:
-  - light.wifi_smart_socket_ps16_2
-  - climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
+# gang:
+  # name: 'Gang'
+  # entities:
+  # - light.wifi_smart_socket_ps16_2
+  # - climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
 
 # garasje:
   # name: 'Garasje'
   # entities:
 
-gjest:
-  name: 'Gjesterom / kontor'
-  entities:
-  - light.fibaro_system_fgd212_dimmer_2_level_14
-  - light.sb_gulvlampe
-  - sensor.sb_gulvlampe_temperatur
-  - sensor.sb_gulvlampe_luftfuktighet
+# gjest:
+  # name: 'Gjesterom / kontor'
+  # entities:
+  # - light.fibaro_system_fgd212_dimmer_2_level_14
+  # - light.sb_gulvlampe
+  # - sensor.sb_gulvlampe_temperatur
+  # - sensor.sb_gulvlampe_luftfuktighet
 
-kjokken:
-  name: 'Kjøkken'
-  entities:
-  - light.fibaro_system_fgd212_dimmer_2_level
-  - light.fibaro_system_fgd212_dimmer_2_level_3
+# kjokken:
+  # name: 'Kjøkken'
+  # entities:
+  # - light.fibaro_system_fgd212_dimmer_2_level
+  # - light.fibaro_system_fgd212_dimmer_2_level_3
 
-sov:
-  name: 'Soverom'
-  entities:
-  - light.fibaro_system_fgd212_dimmer_2_level_10
-  - light.fibaro_system_fgd212_dimmer_2_level_12
-  - cover.qubino_zmnhod1_flush_shutter_dc_level
+# sov:
+  # name: 'Soverom'
+  # entities:
+  # - light.fibaro_system_fgd212_dimmer_2_level_10
+  # - light.fibaro_system_fgd212_dimmer_2_level_12
+  # - cover.qubino_zmnhod1_flush_shutter_dc_level
   
-stue:
-  name: 'Stue'
-  entities:
-  - light.fibaro_system_fgd212_dimmer_2_level_7
-  - light.mh_hyllelys
-  - light.wifi_smart_socket_ps16_3
-  - light.fibaro_system_fgd212_dimmer_2_level_5
-  - light.sonoff_s20_2
+# stue:
+  # name: 'Stue'
+  # entities:
+  # - light.fibaro_system_fgd212_dimmer_2_level_7
+  # - light.mh_hyllelys
+  # - light.wifi_smart_socket_ps16_3
+  # - light.fibaro_system_fgd212_dimmer_2_level_5
+  # - light.sonoff_s20_2
 
 
 # teknisk:
@@ -216,7 +216,7 @@ stue:
 personer:
   name: 'Personer'
   entities:
-  - device_tracker.galaxys8_bh
+  - device_tracker.galaxys9_bh
   - device_tracker.galaxys8_cg
 
 # innelys:

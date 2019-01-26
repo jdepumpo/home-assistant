@@ -42,7 +42,7 @@
     vindstyrke_tekst:
       friendly_name: 'Vindstyrke'
       value_template: >
-        {% set vind = (states.weather.metno.attributes["wind_speed"]|float/3.6)|round(1) %}
+        {% set vind = (states.weather.met_no.attributes["wind_speed"]|float/3.6)|round(1) %}
           {% if   vind|float <   0.5 %}Stille, {{vind}} m/s
           {% elif vind|float <   1.5 %}Flau vind, {{vind}} m/s
           {% elif vind|float <   3.3 %}Svak vind, {{vind}} m/s
@@ -59,7 +59,7 @@
           {% else %} {{vind}} m/s
         {% endif %}
       icon_template: >-
-          {% if states.weather.metno.attributes["wind_speed"]|float < 1.08 %} mdi:circle-outline
+          {% if states.weather.met_no.attributes["wind_speed"]|float < 1.08 %} mdi:circle-outline
           {% else %} mdi:weather-windy
           {% endif %}
     sunrise_sunset:

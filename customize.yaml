@@ -20,8 +20,6 @@ group.rpi:
   icon: mdi:raspberrypi
 group.sensor:
   icon: mdi:eye
-group.zwave:
-  icon: mdi:z-wave
 light.fibaro_system_fgd212_dimmer_2_level_7:
   icon: mdi:ceiling-light
 light.fibaro_system_fgd212_dimmer_2_level_12:
@@ -88,8 +86,6 @@ sensor.sb_gulvlampe_luftfuktighet:
 sensor.processor_use:
   friendly_name: CPU aktivitet
   icon: mdi:chip
-sensor.current_uv_index:
-  unit_of_measurement:
 sensor.max_uv_index:
   unit_of_measurement:
 sun.sun:

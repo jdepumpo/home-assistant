@@ -114,7 +114,7 @@
     before: 01:00:00
   action:
   - service: scene.turn_on
-    entity_id: scene.belysning__dempet
+    entity_id: scene.belysning_dempet
     
 - id: lys_paa_solned
   alias: Belysning på v/solnedgang
@@ -131,7 +131,7 @@
     entity_id: group.personer
     state: home
   - service: scene.turn_on
-    entity_id: scene.belysning__dempet
+    entity_id: scene.belysning_dempet
     
 - id: lys_av_stemning
   alias: Stemningslys av 24:00
@@ -299,12 +299,13 @@
   - platform: state
     entity_id: updater.updater
   action:
-  - service: notify.html5_galaxy_s8_bh
+  - service: notify.notify
     data_template:
       title: Home Assistant
       message: Versjon {{states.updater.updater.state}} er tilgjengelig
-    data:
+      target: Galaxy S9
       data:
+        url: https://www.home-assistant.io/latest-release-notes/
         tag: ha-update
         
 - id: rpi_temp_h
@@ -314,10 +315,12 @@
     entity_id: sensor.cpu_temperatur
     above: 60
   action:
-  - service: notify.html5_galaxy_s8_bh
-    data:
+  - service: notify.notify
+    data_template:
       title: Home Assistant
-      message: 'Alarm: System temperatur over 60°C'
+      message: 'Alarm: System temperatur er {{states.sensor.cpu_temperatur.state}}°C'
+      data:
+        tag: pitemp
 
 - id: ask_daglig
   alias: Aksjesparekonto daglig
@@ -326,15 +329,16 @@
     entity_id: sensor.dnb_teknologi_1_dag
   action:
   - delay: '00:05'
-  - service: notify.html5_galaxy_s8_bh
+  - service: notify.notify
     data_template:
       title: Aksjesparekonto
       message: |
         Beholdning: {{states.sensor.dnb_ask_beholding.state}} kr,
         DNB Health Care 1 dag: {{states.sensor.dnb_health_care_1_dag.state}}%,
         DNB Teknologi 1 dag: {{states.sensor.dnb_teknologi_1_dag.state}}%,
-    data:
+      target: Galaxy S9
       data:
+        url: http://www.morningstar.no/no/portfoliomanager/portfolio.aspx
         tag: ask-update
 
       # - condition: or

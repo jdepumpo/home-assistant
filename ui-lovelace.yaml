@@ -1,10 +1,10 @@
 resources:
   - type: js
-    url: /local/card-tools.js
+    url: /local/card-tools.js?v=0.3
   - type: js
-    url: /local/fold-entity-row.js?v=0.19.01.13
+    url: /local/fold-entity-row.js?v=0.19.01.24
   - type: js
-    url: /local/slider-entity-row.js?v=0.19.01.12
+    url: /local/slider-entity-row.js?v=0.19.01.20b
   - type: js
     url: /local/vertical-stack-in-card.js?v=0.1.0
   - type: js
@@ -16,13 +16,18 @@ resources:
 title: Sagmesterveien 6
 views:
   - cards:
-      - entity: media_player.chromecast
-        type: 'custom:mini-media-player'
-        artwork: full-cover
-        show_progress: true
+      - artwork: full-cover
+        entity: media_player.chromecast
         hide_power: true
         hide_volume: true
+        show_progress: true
+        type: 'custom:mini-media-player'
       - entities:
+          - entity: light.innelys
+            toggle: true
+            type: 'custom:slider-entity-row'
+          - entity: light.stemningslys
+          - entity: light.utelys
           - action_name: Av
             icon: 'mdi:power'
             name: All belysning
@@ -35,27 +40,24 @@ views:
             name: Dempet belysning
             service: scene.turn_on
             service_data:
-              entity_id: scene.belysning__dempet
+              entity_id: scene.belysning_dempet
             type: call-service
-          - entity: light.innelys
-          - entity: light.stemningslys
-          - entity: light.utelys
         id: lysstyring
         show_header_toggle: false
         title: Lysstyring
         type: entities
       - entities:
           - entity: light.fibaro_system_fgd212_dimmer_2_level_7
+            hide_state: true
             name: Taklampe
-            slideronly: true
             type: 'custom:slider-entity-row'
           - entity: light.fibaro_system_fgd212_dimmer_2_level_5
+            hide_state: true
             name: Downlights
-            slideronly: true
             type: 'custom:slider-entity-row'
           - entity: light.mh_hyllelys
+            hide_state: true
             name: Hyllelys
-            slideronly: true
             type: 'custom:slider-entity-row'
           - entity: light.wifi_smart_socket_ps16_3
             name: Bordlampe
@@ -66,12 +68,12 @@ views:
         type: entities
       - entities:
           - entity: light.fibaro_system_fgd212_dimmer_2_level
+            hide_state: true
             name: Downlights
-            slideronly: true
             type: 'custom:slider-entity-row'
           - entity: light.fibaro_system_fgd212_dimmer_2_level_3
+            hide_state: true
             name: Benkeplate
-            slideronly: true
             type: 'custom:slider-entity-row'
         id: kjokken
         show_header_toggle: false
@@ -79,12 +81,12 @@ views:
         type: entities
       - entities:
           - entity: light.fibaro_system_fgd212_dimmer_2_level_10
+            hide_state: true
             name: Downlights
-            slideronly: true
             type: 'custom:slider-entity-row'
           - entity: light.fibaro_system_fgd212_dimmer_2_level_12
+            hide_state: true
             name: Taklampe
-            slideronly: true
             type: 'custom:slider-entity-row'
           - entity: cover.qubino_zmnhod1_flush_shutter_dc_level
             name: Rullgardiner
@@ -94,8 +96,8 @@ views:
       - cards:
           - entities:
               - entity: light.fibaro_system_fgd212_dimmer_2_level_14
+                hide_state: true
                 name: Taklampe
-                slideronly: true
                 type: 'custom:slider-entity-row'
             type: entities
           - entities:
@@ -112,8 +114,8 @@ views:
         type: 'custom:vertical-stack-in-card'
       - entities:
           - entity: light.qubino_zmnhdd1_flush_dimmer_level
+            hide_state: true
             name: Downlights
-            slideronly: true
             type: 'custom:slider-entity-row'
           - entity: light.sb_speillys
             name: Speillys
@@ -180,12 +182,14 @@ views:
           title: Enheter hjemme/på
           type: glance
         entities:
-          - entity: device_tracker.galaxys8_bh
+          - entity: device_tracker.galaxys9_bh
             name: Børre
           - entity: device_tracker.galaxys8_cg
             name: Christine
           - entity: device_tracker.lgsmarttv
+            name: TV
           - entity: device_tracker.xbox_one_x
+            name: Xbox
         id: enheter
         state_filter:
           - home
@@ -193,7 +197,7 @@ views:
       - entity_sun: sun.sun
         entity_sun_level: sensor.sunrise_sunset
         entity_uv: sensor.uv_niva
-        entity_weather: weather.metno
+        entity_weather: weather.met_no
         entity_wind: sensor.vindstyrke_tekst
         type: 'custom:weather-card'
       - entities:
@@ -201,6 +205,7 @@ views:
               secondary_info: last-changed
             head: sensor.dnb_ask_beholding
             items:
+              - sensor.dnb_ask_beholding
               - sensor.dnb_health_care_kurs
               - sensor.dnb_teknologi_kurs
               - sensor.dnb_global_indeks_1_dag
@@ -211,8 +216,19 @@ views:
         show_header_toggle: false
         title: Finans
         type: entities
+      - entity: sensor.electricity_price_sagmesterveien_6
+        max: 1.6
+        severity:
+          green: 0
+          red: 1
+          yellow: 0.65
+        title: Strømpris
+        type: gauge
+        unit: kr
       - card:
-          entities: []
+          entities:
+            - entity: sensor.fibaro_system_fgd212_dimmer_2_power_12
+            - entity: sensor.qubino_zmnhdd1_flush_dimmer_power
           show_header_toggle: false
           title: Effektforbruk
           type: entities
