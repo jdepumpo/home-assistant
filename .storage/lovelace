@@ -4,15 +4,15 @@
             "resources": [
                 {
                     "type": "js",
-                    "url": "/local/card-tools.js"
+                    "url": "/local/card-tools.js?v=0.3"
                 },
                 {
                     "type": "js",
-                    "url": "/local/fold-entity-row.js?v=0.18.12.14"
+                    "url": "/local/fold-entity-row.js?v=0.19.01.24"
                 },
                 {
                     "type": "js",
-                    "url": "/local/slider-entity-row.js?v=0.19.01.12"
+                    "url": "/local/slider-entity-row.js?v=0.19.01.20b"
                 },
                 {
                     "type": "js",
@@ -25,6 +25,10 @@
                 {
                     "type": "js",
                     "url": "/local/monster-card.js?v=0.2.3"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/mini-media-player-bundle.js?v=0.9.8"
                 }
             ],
             "title": "Sagmesterveien 6",
@@ -32,7 +36,26 @@
                 {
                     "cards": [
                         {
+                            "artwork": "full-cover",
+                            "entity": "media_player.chromecast",
+                            "hide_power": true,
+                            "hide_volume": true,
+                            "show_progress": true,
+                            "type": "custom:mini-media-player"
+                        },
+                        {
                             "entities": [
+                                {
+                                    "entity": "light.innelys",
+                                    "toggle": true,
+                                    "type": "custom:slider-entity-row"
+                                },
+                                {
+                                    "entity": "light.stemningslys"
+                                },
+                                {
+                                    "entity": "light.utelys"
+                                },
                                 {
                                     "action_name": "Av",
                                     "icon": "mdi:power",
@@ -49,18 +72,9 @@
                                     "name": "Dempet belysning",
                                     "service": "scene.turn_on",
                                     "service_data": {
-                                        "entity_id": "scene.belysning__dempet"
+                                        "entity_id": "scene.belysning_dempet"
                                     },
                                     "type": "call-service"
-                                },
-                                {
-                                    "entity": "light.innelys"
-                                },
-                                {
-                                    "entity": "light.stemningslys"
-                                },
-                                {
-                                    "entity": "light.utelys"
                                 }
                             ],
                             "id": "lysstyring",
@@ -72,20 +86,20 @@
                             "entities": [
                                 {
                                     "entity": "light.fibaro_system_fgd212_dimmer_2_level_7",
+                                    "hide_state": true,
                                     "name": "Taklampe",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
                                     "entity": "light.fibaro_system_fgd212_dimmer_2_level_5",
+                                    "hide_state": true,
                                     "name": "Downlights",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
                                     "entity": "light.mh_hyllelys",
+                                    "hide_state": true,
                                     "name": "Hyllelys",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
@@ -105,14 +119,14 @@
                             "entities": [
                                 {
                                     "entity": "light.fibaro_system_fgd212_dimmer_2_level",
+                                    "hide_state": true,
                                     "name": "Downlights",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
                                     "entity": "light.fibaro_system_fgd212_dimmer_2_level_3",
+                                    "hide_state": true,
                                     "name": "Benkeplate",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 }
                             ],
@@ -125,14 +139,14 @@
                             "entities": [
                                 {
                                     "entity": "light.fibaro_system_fgd212_dimmer_2_level_10",
+                                    "hide_state": true,
                                     "name": "Downlights",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
                                     "entity": "light.fibaro_system_fgd212_dimmer_2_level_12",
+                                    "hide_state": true,
                                     "name": "Taklampe",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
@@ -150,8 +164,8 @@
                                     "entities": [
                                         {
                                             "entity": "light.fibaro_system_fgd212_dimmer_2_level_14",
+                                            "hide_state": true,
                                             "name": "Taklampe",
-                                            "slideronly": true,
                                             "type": "custom:slider-entity-row"
                                         }
                                     ],
@@ -186,8 +200,8 @@
                             "entities": [
                                 {
                                     "entity": "light.qubino_zmnhdd1_flush_dimmer_level",
+                                    "hide_state": true,
                                     "name": "Downlights",
-                                    "slideronly": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
@@ -302,7 +316,7 @@
                             },
                             "entities": [
                                 {
-                                    "entity": "device_tracker.galaxys8_bh",
+                                    "entity": "device_tracker.galaxys9_bh",
                                     "name": "B\u00f8rre"
                                 },
                                 {
@@ -310,10 +324,12 @@
                                     "name": "Christine"
                                 },
                                 {
-                                    "entity": "device_tracker.lgsmarttv"
+                                    "entity": "device_tracker.lgsmarttv",
+                                    "name": "TV"
                                 },
                                 {
-                                    "entity": "device_tracker.xbox_one_x"
+                                    "entity": "device_tracker.xbox_one_x",
+                                    "name": "Xbox"
                                 }
                             ],
                             "id": "enheter",
@@ -326,7 +342,7 @@
                             "entity_sun": "sun.sun",
                             "entity_sun_level": "sensor.sunrise_sunset",
                             "entity_uv": "sensor.uv_niva",
-                            "entity_weather": "weather.metno",
+                            "entity_weather": "weather.met_no",
                             "entity_wind": "sensor.vindstyrke_tekst",
                             "type": "custom:weather-card"
                         },
@@ -338,6 +354,7 @@
                                     },
                                     "head": "sensor.dnb_ask_beholding",
                                     "items": [
+                                        "sensor.dnb_ask_beholding",
                                         "sensor.dnb_health_care_kurs",
                                         "sensor.dnb_teknologi_kurs",
                                         "sensor.dnb_global_indeks_1_dag",
@@ -353,8 +370,27 @@
                             "type": "entities"
                         },
                         {
+                            "entity": "sensor.electricity_price_sagmesterveien_6",
+                            "max": 1.6,
+                            "severity": {
+                                "green": 0,
+                                "red": 1,
+                                "yellow": 0.65
+                            },
+                            "title": "Str\u00f8mpris",
+                            "type": "gauge",
+                            "unit": "kr"
+                        },
+                        {
                             "card": {
-                                "entities": [],
+                                "entities": [
+                                    {
+                                        "entity": "sensor.fibaro_system_fgd212_dimmer_2_power_12"
+                                    },
+                                    {
+                                        "entity": "sensor.qubino_zmnhdd1_flush_dimmer_power"
+                                    }
+                                ],
                                 "show_header_toggle": false,
                                 "title": "Effektforbruk",
                                 "type": "entities"
