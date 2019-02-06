@@ -314,6 +314,12 @@
   - platform: numeric_state
     entity_id: sensor.cpu_temperatur
     above: 60
+  - platform: numeric_state
+    entity_id: sensor.cpu_temperatur
+    above: 65
+  - platform: numeric_state
+    entity_id: sensor.cpu_temperatur
+    above: 70
   action:
   - service: notify.notify
     data_template:
@@ -329,7 +335,6 @@
     entity_id: sensor.dnb_teknologi_1_dag
   condition:
     condition: time
-  # At least one of the following is required.
     after: '09:30:00'
     before: '15:00:00'
     weekday:
@@ -368,3 +373,15 @@
                   # minutes: 2
               # - condition: template
                 # value_template: "{{ (as_timestamp(now())-as_timestamp(states.group.bad.last_changed)) <= 300 }}"
+
+- id: openuv
+  alias: Oppdater OpenUV data
+  trigger:
+    - platform: time_pattern
+      minutes: '/30'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: above_horizon
+  action:
+    - service: openuv.update_data

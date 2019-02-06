@@ -1,4 +1,12 @@
-asrock_vision_ht_321b:
+tibber_pulse:
+  hide_if_away: false
+  icon: mdi:speedometer
+  mac: 24:0A:C4:20:DA:E8
+  name: Tibber Pulse
+  picture:
+  track: false
+
+asrock_vision_ht_321b_lan:
   hide_if_away: false
   icon: mdi:windows
   mac: BC:5F:F4:45:E8:ED
@@ -6,7 +14,7 @@ asrock_vision_ht_321b:
   picture:
   track: false
 
-asrock_wifi:
+asrock_vision_ht_321b_wifi:
   hide_if_away: false
   icon: mdi:windows
   mac: E0:B9:A5:FC:3E:C9

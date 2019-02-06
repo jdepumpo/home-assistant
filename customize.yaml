@@ -16,10 +16,6 @@ group.all_scripts:
 group.all_switches:
   friendly_name: Brytere
   icon: mdi:power
-group.rpi:
-  icon: mdi:raspberrypi
-group.sensor:
-  icon: mdi:eye
 light.fibaro_system_fgd212_dimmer_2_level_7:
   icon: mdi:ceiling-light
 light.fibaro_system_fgd212_dimmer_2_level_12:
@@ -73,19 +69,11 @@ sensor.sb_gulvlampe_temperatur:
 sensor.sb_gulvlampe_luftfuktighet:
   friendly_name: Luftfuktighet
   icon: mdi:water-percent
-# sensor.tibber_now:
-  # icon: mdi:chart-line
-# sensor.tibber_min:
-  # icon: mdi:arrow-bottom-right
-# sensor.tibber_max:
-  # icon: mdi:arrow-top-right
-# sensor.tibber_avg:
-  # icon: mdi:arrow-collapse
-# sensor.tibber_use:
-  # icon: mdi:coins
 sensor.processor_use:
   friendly_name: CPU aktivitet
   icon: mdi:chip
+sensor.real_time_consumption_sagmesterveien_6:
+  icon: mdi:speedometer
 sensor.max_uv_index:
   unit_of_measurement:
 sun.sun:
@@ -96,5 +84,5 @@ switch.sb_handkletorker:
   friendly_name: Håndkletørker bad
 sensor.electricity_price_sagmesterveien_6:
   friendly_name: Strømpris nå
-  icon: mdi:chart-line
+  icon: mdi:flash
   unit_of_measurement: kr/kWh

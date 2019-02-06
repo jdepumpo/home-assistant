@@ -21,6 +21,12 @@
     - type: processor_use
     - type: last_boot
 
+# - platform: alpha_vantage
+  # api_key: !secret alpha_vantage_api_key
+  # symbols:
+    # - symbol: GOOGL
+      # name: Google
+
 - platform: mqtt
   name: "SB Gulvlampe Temperatur"
   state_topic: "tele/sb_gulvlampe/SENSOR"
@@ -35,10 +41,21 @@
 
 - platform: template
   sensors:
+  
+    stromforbruk_t:
+      friendly_name: 'Strømforbruk'
+      unit_of_measurement: "kr/t"
+      value_template: "{{'{0:,.2f}'.format(states('sensor.real_time_consumption_sagmesterveien_6')|float * states('sensor.electricity_price_sagmesterveien_6')|float / 1000 )}}"
+      icon_template: >-
+          {% if states.sensor.electricity_price_sagmesterveien_6.state|float < 0.5 %} mdi:coins
+          {% else %} mdi:cash
+          {% endif %}
+ 
     dnb_ask_beholding:
-      friendly_name: 'Aksjesparekonto beholdning'
+      friendly_name: 'Aksjesparekonto'
       unit_of_measurement: "kr"
       value_template: "{{('{0:,.2f}'.format((553.346 * (states('sensor.dnb_teknologi_kurs')|replace(',','.')|float)) + (2742.943 * (states('sensor.dnb_health_care_kurs')|replace(',','.')|float)))|replace(',',' '))}}"
+
     vindstyrke_tekst:
       friendly_name: 'Vindstyrke'
       value_template: >
@@ -59,9 +76,10 @@
           {% else %} {{vind}} m/s
         {% endif %}
       icon_template: >-
-          {% if states.weather.met_no.attributes["wind_speed"]|float < 1.08 %} mdi:circle-outline
-          {% else %} mdi:weather-windy
-          {% endif %}
+        {% if states.weather.met_no.attributes["wind_speed"]|float < 1.08 %} mdi:circle-outline
+        {% else %} mdi:weather-windy
+        {% endif %}
+
     sunrise_sunset:
       friendly_name: 'Solhendelse'
       value_template: >
@@ -74,17 +92,17 @@
         {% if states.sun.sun.attributes["next_rising"] < states.sun.sun.attributes["next_setting"] %} mdi:weather-sunset-up
         {% else %} mdi:weather-sunset-down
         {% endif %}
+
     uv_niva:
       friendly_name: 'UV nivå'
       value_template: >-
         {% set max_uv = states.sensor.max_uv_index.state|round(1) %}
-          {% if   max_uv|float <=  2 %}Lav UV, {{max_uv}}
-          {% elif max_uv|float <=  5 %}Moderat UV, {{max_uv}}
-          {% elif max_uv|float <=  7 %}Sterk UV, {{max_uv}}
-          {% elif max_uv|float <= 10 %}Svært sterk UV, {{max_uv}}
-          {% elif max_uv|float >  10 %}Ekstrem UV, {{max_uv}}
-        {% else %}
-          {{max_uv}}
+          {% if   max_uv|float <=  2 %}Lav UV indeks, {{max_uv}}
+          {% elif max_uv|float <=  5 %}Moderat UV indeks, {{max_uv}}
+          {% elif max_uv|float <=  7 %}Sterk UV indeks, {{max_uv}}
+          {% elif max_uv|float <= 10 %}Svært sterk UV indeks, {{max_uv}}
+          {% elif max_uv|float >  10 %}Ekstrem UV indeks, {{max_uv}}
+          {% else %} Ukjent UV nivå
         {% endif %}
       icon_template: >-
         {% if states.sensor.max_uv_index.state|float <= 5 %}
@@ -92,6 +110,7 @@
         {% else %}
           mdi:sunglasses
         {% endif %}
+        
     # tibber_use:
       # friendly_name: 'Estimert forbruk'
       # unit_of_measurement: "kr/år"
