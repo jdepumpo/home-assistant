@@ -54,7 +54,7 @@
     dnb_ask_beholding:
       friendly_name: 'Aksjesparekonto'
       unit_of_measurement: "kr"
-      value_template: "{{('{0:,.2f}'.format((553.346 * (states('sensor.dnb_teknologi_kurs')|replace(',','.')|float)) + (2742.943 * (states('sensor.dnb_health_care_kurs')|replace(',','.')|float)))|replace(',',' '))}}"
+      value_template: "{{('{0:,.2f}'.format((7602.003 * (states('sensor.dnb_teknologi_r_kurs')|replace(',','.')|float)) + (7433.745 * (states('sensor.dnb_health_care_r_kurs')|replace(',','.')|float)))|replace(',',' '))}}"
 
     vindstyrke_tekst:
       friendly_name: 'Vindstyrke'
@@ -200,15 +200,15 @@
   command_timeout: 30
 
 - platform: command_line
-  name: 'DNB Health Care 1 dag'
-  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGG&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
+  name: 'DNB Health Care R 1 dag'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F00000ZFFV&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
   unit_of_measurement: "%"
   scan_interval: 900
   command_timeout: 30
 
 - platform: command_line
-  name: 'DNB Health Care kurs'
-  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGG" | grep "NAV" | awk -F'line text\">' '{ print $2 }' | awk -F'</td>' '{ print substr($1, length($1)-5)}'
+  name: 'DNB Health Care R kurs'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F00000ZFFV" | grep "NAV" | awk -F'line text\">' '{ print $2 }' | awk -F'</td>' '{ print substr($1, length($1)-5)}'
   unit_of_measurement: "kr"
   scan_interval: 900
   command_timeout: 30
@@ -221,15 +221,15 @@
   command_timeout: 30
 
 - platform: command_line
-  name: 'DNB Teknologi 1 dag'
-  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGU&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
+  name: 'DNB Teknologi R 1 dag'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F00000ZFG1&tab=1" | grep "1 dag" | awk -F'value number\">' '{ print $2 }' | awk -F'</td>' '{ print $1  }'
   unit_of_measurement: "%"
   scan_interval: 900
   command_timeout: 30
 
 - platform: command_line
-  name: 'DNB Teknologi kurs'
-  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F0GBR04NGU" | grep "NAV" | awk -F'line text\">' '{ print $2 }' | awk -F'</td>' '{ print substr($1, length($1)-6)}'
+  name: 'DNB Teknologi R kurs'
+  command: curl -sSL "http://www.morningstar.no/no/funds/snapshot/snapshot.aspx?id=F00000ZFG1" | grep "NAV" | awk -F'line text\">' '{ print $2 }' | awk -F'</td>' '{ print substr($1, length($1)-5)}'
   unit_of_measurement: "kr"
   scan_interval: 900
   command_timeout: 30

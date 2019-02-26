@@ -169,7 +169,7 @@
   action:
   - data:
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
-      temperature: 21
+      temperature: 20
     service: climate.set_temperature
   - data:
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
@@ -189,7 +189,7 @@
   action:
   - data:
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
-      temperature: 25
+      temperature: 24
     service: climate.set_temperature
   - data:
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
@@ -345,14 +345,14 @@
       - fri
   action:
   - delay: '00:05'
-  - service: notify.notify
+  - service: notify.html5_galaxy_s9
     data_template:
       title: Aksjesparekonto
       message: |
         Beholdning: {{states.sensor.dnb_ask_beholding.state}} kr,
-        DNB Health Care 1 dag: {{states.sensor.dnb_health_care_1_dag.state}}%,
-        DNB Teknologi 1 dag: {{states.sensor.dnb_teknologi_1_dag.state}}%,
-      target: Galaxy S9
+        DNB Health Care R, 1 dag: {{states.sensor.dnb_health_care_r_1_dag.state}}%,
+        DNB Teknologi R, 1 dag: {{states.sensor.dnb_teknologi_r_1_dag.state}}%,
+      # target: Galaxy S9
       data:
         url: http://www.morningstar.no/no/portfoliomanager/portfolio.aspx
         tag: ask-update
@@ -378,7 +378,7 @@
   alias: Oppdater OpenUV data
   trigger:
     - platform: time_pattern
-      minutes: '/30'
+      minutes: '/90'
   condition:
     - condition: state
       entity_id: sun.sun

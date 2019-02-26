@@ -285,3 +285,11 @@ wifi_smart_bulb_3:
   name: WiFi Smart Bulb 3
   picture:
   track: false
+
+5c_5e_ab_43_1e_ce:
+  hide_if_away: false
+  icon:
+  mac: 5C:5E:AB:43:1E:CE
+  name: 5c 5e ab 43 1e ce
+  picture:
+  track: false

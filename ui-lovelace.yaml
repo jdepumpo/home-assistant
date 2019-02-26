@@ -1,31 +1,25 @@
 resources:
   - type: js
-    url: /local/card-tools.js?v=0.3
+    url: /local/auto-entities.js?v=be1323
   - type: js
-    url: /local/fold-entity-row.js?v=0.19.01.24
+    url: /local/card-tools.js?track=true
   - type: js
-    url: /local/slider-entity-row.js?v=0.19.01.20b
+    url: /local/fold-entity-row.js?v=6d11d3
   - type: js
-    url: /local/vertical-stack-in-card.js?v=0.1.0
+    url: /local/slider-entity-row.js?v=be80ff.bhmod
+  - type: module
+    url: /customcards/github/custom-cards/tracker-card.js?track=true
+  - type: js
+    url: /local/vertical-stack-in-card.js?v=0.1.1
   - type: js
     url: /local/weather-card.js?v=0.2.1
-  - type: js
-    url: /local/monster-card.js?v=0.2.3
   - type: module
-    url: /local/mini-media-player-bundle.js?v=0.9.8
+    url: /local/mini-media-player-bundle.js?v=1.0.2
 title: Sagmesterveien 6
 views:
   - cards:
-      - artwork: full-cover
-        entity: media_player.chromecast
-        hide_power: true
-        hide_volume: true
-        show_progress: true
-        type: 'custom:mini-media-player'
       - entities:
           - entity: light.innelys
-            toggle: true
-            type: 'custom:slider-entity-row'
           - entity: light.stemningslys
           - entity: light.utelys
           - action_name: Av
@@ -79,20 +73,29 @@ views:
         show_header_toggle: false
         title: Kjøkken
         type: entities
-      - entities:
-          - entity: light.fibaro_system_fgd212_dimmer_2_level_10
-            hide_state: true
-            name: Downlights
-            type: 'custom:slider-entity-row'
-          - entity: light.fibaro_system_fgd212_dimmer_2_level_12
-            hide_state: true
-            name: Taklampe
-            type: 'custom:slider-entity-row'
-          - entity: cover.qubino_zmnhod1_flush_shutter_dc_level
-            name: Rullgardiner
-        show_header_toggle: false
-        title: Soverom
-        type: entities
+      - card:
+          show_header_toggle: false
+          title: Soverom
+          type: entities
+        filter:
+          exclude:
+            - state: unavailable
+          include:
+            - attributes:
+                friendly_name: '*soverom'
+              domain: light
+              options:
+                hide_state: true
+                type: 'custom:slider-entity-row'
+            - entity_id: cover.qubino_zmnhod1_flush_shutter_dc_level
+            - entity_id: media_player.chromecast
+              options:
+                artwork: cover
+                hide_power: true
+                hide_volume: true
+                show_progress: true
+                type: 'custom:mini-media-player'
+        type: 'custom:auto-entities'
       - cards:
           - entities:
               - entity: light.fibaro_system_fgd212_dimmer_2_level_14
@@ -104,6 +107,7 @@ views:
               - entity: light.sb_gulvlampe
                 hold_action:
                   action: more-info
+                name: Gulvlampe
                 tap_action:
                   action: toggle
               - entity: sensor.sb_gulvlampe_temperatur
@@ -178,65 +182,108 @@ views:
             state_not: 0.1
         type: conditional
       - card:
-          show_state: false
-          title: Enheter hjemme/på
-          type: glance
-        entities:
-          - entity: device_tracker.galaxys9_bh
-            name: Børre
-          - entity: device_tracker.galaxys8_cg
-            name: Christine
-          - entity: device_tracker.lgsmarttv
-            name: TV
-          - entity: device_tracker.xbox_one_x
-            name: Xbox
-        id: enheter
-        state_filter:
-          - home
-        type: entity-filter
+          type: 'custom:tracker-card'
+          title: Oppdateringer
+          name_text: Navn
+          current_text: Nåværende
+          available_text: Tilgjengelig
+          check_text: Sjekk
+          update_all_text: Oppdater alle
+        conditions:
+          - entity: sensor.custom_card_tracker
+            state_not: '0'
+        type: conditional
+      - card:
+          card:
+            show_state: false
+            title: Enheter hjemme / på
+            type: glance
+          entities:
+            - entity: device_tracker.galaxys9_bh
+              name: Børre
+            - entity: device_tracker.galaxys8_cg
+              name: Christine
+            - entity: device_tracker.lgsmarttv
+              name: TV
+            - entity: device_tracker.xbox_one_x
+              name: Xbox
+          id: enheter
+          state_filter:
+            - home
+          type: entity-filter
+        conditions:
+          - entity: group.all_devices
+            state: home
+        type: conditional
       - entity_sun: sun.sun
         entity_sun_level: sensor.sunrise_sunset
         entity_uv: sensor.uv_niva
         entity_weather: weather.met_no
         entity_wind: sensor.vindstyrke_tekst
         type: 'custom:weather-card'
+      - cards:
+          - cards:
+              - entity: sensor.real_time_consumption_sagmesterveien_6
+                max: 12000
+                min: 0
+                name: Forbruk
+                severity:
+                  green: 0
+                  red: 9000
+                  yellow: 6000
+                type: gauge
+                unit: W
+              - entity: sensor.electricity_price_sagmesterveien_6
+                max: 1.6
+                min: 0
+                name: Pris
+                severity:
+                  green: 0
+                  red: 1.1
+                  yellow: 0.8
+                type: gauge
+                unit: kr
+            type: horizontal-stack
+          - card:
+              show_header_toggle: false
+              type: entities
+            filter:
+              exclude:
+                - state: '0.0'
+              include:
+                - entity_id: sensor.stromforbruk_t
+                - entity_id: sensor.*power*
+            type: 'custom:auto-entities'
+        title: Strømforbruk
+        type: 'custom:vertical-stack-in-card'
       - entities:
           - group_config:
               secondary_info: last-changed
             head: sensor.dnb_ask_beholding
             items:
               - sensor.dnb_ask_beholding
-              - sensor.dnb_health_care_kurs
-              - sensor.dnb_teknologi_kurs
+              - sensor.dnb_health_care_r_kurs
+              - sensor.dnb_teknologi_r_kurs
               - sensor.dnb_global_indeks_1_dag
-              - sensor.dnb_health_care_1_dag
+              - sensor.dnb_health_care_r_1_dag
               - sensor.dnb_norge_indeks_1_dag
-              - sensor.dnb_teknologi_1_dag
+              - sensor.dnb_teknologi_r_1_dag
             type: 'custom:fold-entity-row'
         show_header_toggle: false
         title: Finans
         type: entities
-      - entity: sensor.electricity_price_sagmesterveien_6
-        max: 1.6
-        severity:
-          green: 0
-          red: 1
-          yellow: 0.65
-        title: Strømpris
-        type: gauge
-        unit: kr
       - card:
-          entities:
-            - entity: sensor.fibaro_system_fgd212_dimmer_2_power_12
-            - entity: sensor.qubino_zmnhdd1_flush_dimmer_power
           show_header_toggle: false
-          title: Effektforbruk
+          title: Sensorer
           type: entities
         filter:
-          include:
+          exclude:
+            - entity_id: sensor.dnb*
             - entity_id: sensor.*power*
-              state: '> 0'
-        type: 'custom:monster-card'
+          include:
+            - domain: binary_sensor
+            - domain: sensor
+        type: 'custom:auto-entities'
       - entities:
           - head: group.all_lights
             items:
@@ -276,84 +323,21 @@ views:
         title: Grupper
         type: entities
       - card:
-          entities:
-            - entity: automation.aksjesparekonto_daglig
-            - entity: automation.belysning_av_vsoloppgang
-            - entity: automation.belysning_bad_av
-            - entity: automation.belysning_bad_dim
-            - entity: automation.belysning_bad_pa_vbeveglse
-            - entity: automation.belysning_pa_vhjemkomst
-            - entity: automation.belysning_pa_vsolnedgang
-            - entity: automation.home_assistant_oppdatering
-            - entity: automation.innelys_av_vtomt_hus_og_400
-            - entity: automation.rullgardiner_soverom_opp
-            - entity: automation.stemningslys_av_2400
-            - entity: automation.systemtemperatur_hy
-            - entity: automation.varmekabler_nattsenking
-            - entity: automation.varmekabler_nattsenking_av
-            - entity: automation.varmtvannsbereder_strmsparing
-            - entity: automation.varmtvannsbereder_strmsparing_av
           show_header_toggle: false
           title: Automasjoner
           type: entities
         filter:
           include:
             - domain: automation
-        type: 'custom:monster-card'
+        type: 'custom:auto-entities'
       - card:
-          entities:
-            - entity: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-            - entity: sensor.cpu_temperatur
-            - entity: sensor.disk_free_root
-            - entity: sensor.electricity_price_sagmesterveien_6
-            - entity: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-            - entity: sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-            - entity: sensor.ipv4_address_eth0
-            - entity: sensor.last_boot
-            - entity: sensor.max_uv_index
-            - entity: sensor.memory_use_percent
-            - entity: sensor.processor_use
-            - entity: sensor.sb_gulvlampe_luftfuktighet
-            - entity: sensor.sb_gulvlampe_temperatur
-            - entity: sensor.sunrise_sunset
-            - entity: sensor.thermofloor_as_heatit_thermostat_tf_021_temperature
-            - entity: sensor.thermofloor_as_heatit_thermostat_tf_021_temperature_2
-            - entity: sensor.uv_niva
-            - entity: sensor.vindstyrke_tekst
-          show_header_toggle: false
-          title: Sensorer
-          type: entities
-        filter:
-          exclude:
-            - entity_id: sensor.dnb*
-            - entity_id: sensor.*power*
-          include:
-            - domain: binary_sensor
-            - domain: sensor
-        type: 'custom:monster-card'
-      - card:
-          entities:
-            - entity: zwave.aeotec_zw090_zstick_gen5_eu
-            - entity: zwave.fibaro_system_fgd212_dimmer_2
-            - entity: zwave.fibaro_system_fgd212_dimmer_2_2
-            - entity: zwave.fibaro_system_fgd212_dimmer_2_3
-            - entity: zwave.fibaro_system_fgd212_dimmer_2_4
-            - entity: zwave.fibaro_system_fgd212_dimmer_2_5
-            - entity: zwave.fibaro_system_fgd212_dimmer_2_6
-            - entity: zwave.fibaro_system_fgd212_dimmer_2_7
-            - entity: zwave.fibaro_system_fgms001zw5_motion_sensor
-            - entity: zwave.fibaro_system_fgwpef_wall_plug_gen5
-            - entity: zwave.qubino_zmnhdd1_flush_dimmer
-            - entity: zwave.qubino_zmnhod1_flush_shutter_dc
-            - entity: zwave.thermofloor_as_heatit_thermostat_tf_021
-            - entity: zwave.thermofloor_as_heatit_thermostat_tf_021_2
           show_header_toggle: false
           title: Z-Wave
           type: entities
         filter:
           include:
             - domain: zwave
-        type: 'custom:monster-card'
+        type: 'custom:auto-entities'
     icon: 'mdi:settings'
     id: avansert
     title: Avansert

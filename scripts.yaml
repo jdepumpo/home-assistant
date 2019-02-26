@@ -1,13 +1,13 @@
-stromspar:
-  alias: 'Varme - strømsparing'
+varme_borte:
+  alias: 'Varme - bortemodus'
   sequence:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
         temperature: 12
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
         temperature: 12
     - service: switch.turn_off
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
@@ -15,17 +15,17 @@ stromspar:
     - service: switch.turn_off
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
-hjem:
-  alias: 'Varme - normal drift'
+varme_hjem:
+  alias: 'Varme - normalmodus'
   sequence:
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat
-        temperature: 24
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
+        temperature: 20
     - service: climate.set_temperature
       data:
-        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_energy_heat_2
-        temperature: 22
+        entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
+        temperature: 18
     - service: switch.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
     - delay: 00:05:00

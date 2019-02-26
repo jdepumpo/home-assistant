@@ -49,12 +49,14 @@ notify:
   platform: html5
   gcm_api_key: !secret notify_gcm_api_key
   gcm_sender_id: !secret notify_gcm_sender_id
+person:
 # recorder: !include recorder.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml
 sun:
 switch: !include switches.yaml
+system_health:
 tibber:
   access_token: !secret tibber_access_token
 tts:
@@ -66,7 +68,9 @@ weather:
   - platform: met
 zwave: !include zwave.yaml
 
-# custom_updater:
+custom_updater:
+  card_urls:
+    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
 
 # openuv:
   # api_key: !secret openuv_api_key
