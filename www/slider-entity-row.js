@@ -3,9 +3,10 @@ class SliderEntityRow extends Polymer.Element {
   static get template() {
     const style = Polymer.html`
       <style>
+
         ha-slider {width: 160px;}
-        .flex {
-          display: flex;
+
+         display: flex;
           align-items: center;
           }
         .state {
@@ -157,6 +158,14 @@ class SliderEntityRow extends Polymer.Element {
     this.min = config.min || 0;
     this.max = config.max || 100;
     this.step = config.step || 5;
+
+    if(this._hass && this._config) {
+      this.stateObj = this._config.entity in this._hass.states ? this._hass.states[this._config.entity] : null;
+      if(this.stateObj) {
+        this.value = this.controller.get(this.stateObj);
+        this.displaySlider = this.controller.supported(this.stateObj);
+      }
+    }
   }
 
   statusString(stateObj) {
@@ -167,10 +176,13 @@ class SliderEntityRow extends Polymer.Element {
 
   set hass(hass) {
     this._hass = hass;
-    this.stateObj = this._config.entity in hass.states ? hass.states[this._config.entity] : null;
-    if(this.stateObj) {
-      this.value = this.controller.get(this.stateObj);
-      this.displaySlider = this.controller.supported(this.stateObj);
+
+    if(hass && this._config) {
+      this.stateObj = this._config.entity in hass.states ? hass.states[this._config.entity] : null;
+      if(this.stateObj) {
+        this.value = this.controller.get(this.stateObj);
+        this.displaySlider = this.controller.supported(this.stateObj);
+      }
     }
   }
 
