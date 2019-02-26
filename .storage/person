@@ -1,0 +1,24 @@
+{
+    "data": {
+        "persons": [
+            {
+                "device_trackers": [
+                    "device_tracker.galaxys9_bh"
+                ],
+                "id": "2a61fb406bb14a4c9589d15b6c62f281",
+                "name": "B\u00f8rre",
+                "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
+            },
+            {
+                "device_trackers": [
+                    "device_tracker.galaxys8_cg"
+                ],
+                "id": "b7ea0d0324e34887ad5bf414fadbab20",
+                "name": "Christine",
+                "user_id": "6e367300085a40f99a33a273d2c22d66"
+            }
+        ]
+    },
+    "key": "person",
+    "version": 1
+}

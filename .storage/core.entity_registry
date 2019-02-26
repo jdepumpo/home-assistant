@@ -1247,6 +1247,51 @@
                 "config_entry_id": "17eb262fd24243778a06e00993b30218",
                 "device_id": "c8d33cdecff34cfeaba42f8f9321c57f",
                 "disabled_by": null,
+                "entity_id": "light.fibaro_system_fgd212_dimmer_2_level_14",
+                "name": "Taklampe kontor / gjesterom",
+                "platform": "zwave",
+                "unique_id": "24-72057594445398017"
+            },
+            {
+                "config_entry_id": "17eb262fd24243778a06e00993b30218",
+                "device_id": "c8d33cdecff34cfeaba42f8f9321c57f",
+                "disabled_by": null,
+                "entity_id": "sensor.fibaro_system_fgd212_dimmer_2_power_14",
+                "name": "Taklampe kontor / gjesterom",
+                "platform": "zwave",
+                "unique_id": "24-72057594445578306"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.real_time_consumption_sagmesterveien_6",
+                "name": null,
+                "platform": "tibber",
+                "unique_id": "707057500078598066_rt_consumption"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.borre",
+                "name": null,
+                "platform": "person",
+                "unique_id": "2a61fb406bb14a4c9589d15b6c62f281"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.christine",
+                "name": null,
+                "platform": "person",
+                "unique_id": "b7ea0d0324e34887ad5bf414fadbab20"
+            },
+            {
+                "config_entry_id": "17eb262fd24243778a06e00993b30218",
+                "device_id": "c8d33cdecff34cfeaba42f8f9321c57f",
+                "disabled_by": null,
                 "entity_id": "light.fibaro_system_fgd212_dimmer_2_level_13",
                 "name": null,
                 "platform": "zwave",
@@ -1260,33 +1305,6 @@
                 "name": null,
                 "platform": "zwave",
                 "unique_id": "24-72057594445594754"
-            },
-            {
-                "config_entry_id": "17eb262fd24243778a06e00993b30218",
-                "device_id": "c8d33cdecff34cfeaba42f8f9321c57f",
-                "disabled_by": null,
-                "entity_id": "light.fibaro_system_fgd212_dimmer_2_level_14",
-                "name": "Taklampe kontor / gjesterom",
-                "platform": "zwave",
-                "unique_id": "24-72057594445398017"
-            },
-            {
-                "config_entry_id": "17eb262fd24243778a06e00993b30218",
-                "device_id": "c8d33cdecff34cfeaba42f8f9321c57f",
-                "disabled_by": null,
-                "entity_id": "sensor.fibaro_system_fgd212_dimmer_2_energy_7",
-                "name": null,
-                "platform": "zwave",
-                "unique_id": "24-72057594445594626"
-            },
-            {
-                "config_entry_id": "17eb262fd24243778a06e00993b30218",
-                "device_id": "c8d33cdecff34cfeaba42f8f9321c57f",
-                "disabled_by": null,
-                "entity_id": "sensor.fibaro_system_fgd212_dimmer_2_power_14",
-                "name": "Taklampe kontor / gjesterom",
-                "platform": "zwave",
-                "unique_id": "24-72057594445578306"
             }
         ]
     },

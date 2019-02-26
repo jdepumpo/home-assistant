@@ -1,0 +1,30 @@
+{
+    "auto-entities": {
+        "dir": "/home/homeassistant/.homeassistant/www/",
+        "version": "be1323"
+    },
+    "card-tools": {
+        "dir": "/home/homeassistant/.homeassistant/www/",
+        "version": "8b9151"
+    },
+    "fold-entity-row": {
+        "dir": "/home/homeassistant/.homeassistant/www/",
+        "version": "6d11d3"
+    },
+    "slider-entity-row": {
+        "dir": "/home/homeassistant/.homeassistant/www/",
+        "version": "be80ff"
+    },
+    "tracker-card": {
+        "dir": "/home/homeassistant/.homeassistant/www/github/custom-cards/",
+        "version": "1.2.6"
+    },
+    "vertical-stack-in-card": {
+        "dir": "/home/homeassistant/.homeassistant/www/",
+        "version": "v0.1.1"
+    },
+    "mini-media-player-bundle": {
+        "dir": "/home/homeassistant/.homeassistant/www/",
+        "version": "1.0.2"
+    }
+}

@@ -2,6 +2,7 @@
     "data": {
         "devices": [
             {
+                "area_id": null,
                 "config_entries": [
                     "3569520a00a244aea77b7abb96286c14"
                 ],
@@ -20,6 +21,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "d6d9769aed2b4543ae1d3e47031876a1",
                 "config_entries": [
                     "3569520a00a244aea77b7abb96286c14"
                 ],
@@ -38,6 +40,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "e148c859664340498b819f0236ff1d4c",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -56,6 +59,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "b5510fdf661e4e7e8bd71e3c55e29c4e",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -74,6 +78,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "e148c859664340498b819f0236ff1d4c",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -92,6 +97,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "e148c859664340498b819f0236ff1d4c",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -110,6 +116,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "5f45bee75ef54cfdadebd2cfe17c6693",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -128,6 +135,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "2728da8441c24ce08ab47a939327bc7f",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -146,6 +154,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "5f45bee75ef54cfdadebd2cfe17c6693",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -164,6 +173,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "7179267aab65495ab65b7da7e3890373",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -182,6 +192,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "1dcd1509d55848c1a94af2292bded788",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -200,6 +211,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "d6d9769aed2b4543ae1d3e47031876a1",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -218,6 +230,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "d6d9769aed2b4543ae1d3e47031876a1",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -236,6 +249,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "d6d9769aed2b4543ae1d3e47031876a1",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],
@@ -254,6 +268,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "830ef896b7ad4f34aabc515c8e3d8ee2",
                 "config_entries": [
                     "17eb262fd24243778a06e00993b30218"
                 ],

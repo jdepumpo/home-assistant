@@ -1,0 +1,56 @@
+{
+    "data": {
+        "areas": [
+            {
+                "id": "5f5369ba60514e83b4a903e0a4180f24",
+                "name": "Stue"
+            },
+            {
+                "id": "d6d9769aed2b4543ae1d3e47031876a1",
+                "name": "Soverom"
+            },
+            {
+                "id": "5f45bee75ef54cfdadebd2cfe17c6693",
+                "name": "Kj\u00f8kken"
+            },
+            {
+                "id": "e148c859664340498b819f0236ff1d4c",
+                "name": "Bad"
+            },
+            {
+                "id": "1dcd1509d55848c1a94af2292bded788",
+                "name": "Spisestue"
+            },
+            {
+                "id": "7179267aab65495ab65b7da7e3890373",
+                "name": "TV stue"
+            },
+            {
+                "id": "830ef896b7ad4f34aabc515c8e3d8ee2",
+                "name": "Kontor / Gjesterom"
+            },
+            {
+                "id": "743c85ff505149118d49b0d45643d485",
+                "name": "Garasje"
+            },
+            {
+                "id": "19ae80b6fc264cc19367457f5c7954cf",
+                "name": "Kjeller"
+            },
+            {
+                "id": "ac02508481e648bdb2bf2d02f60c73f2",
+                "name": "Utend\u00f8rs"
+            },
+            {
+                "id": "b5510fdf661e4e7e8bd71e3c55e29c4e",
+                "name": "Gang"
+            },
+            {
+                "id": "2728da8441c24ce08ab47a939327bc7f",
+                "name": "Teknisk"
+            }
+        ]
+    },
+    "key": "core.area_registry",
+    "version": 1
+}
