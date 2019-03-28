@@ -7,7 +7,9 @@ exposed_domains:
   # - group
   # - input_boolean
   - light
+  # - lock
   - media_player
   - scene
   - script
   - switch
+  - vacuum
