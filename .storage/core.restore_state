@@ -1,531 +1,106 @@
 {
     "data": [
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "editable": true,
                     "friendly_name": "B\u00f8rre",
+                    "gps_accuracy": 0,
                     "id": "2a61fb406bb14a4c9589d15b6c62f281",
                     "latitude": 58.45,
                     "longitude": 8.744,
-                    "source": "person.borre",
+                    "source": "device_tracker.galaxys9_bh",
                     "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
                 },
                 "context": {
-                    "id": "b875e9450a784490b2ac9d4aedbd473a",
+                    "id": "a02e2b8b53d543abbf3e74a7fe97eb1f",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "person.borre",
-                "last_changed": "2019-02-26T12:08:27.603722+00:00",
-                "last_updated": "2019-02-26T12:08:27.603722+00:00",
+                "last_changed": "2019-03-28T12:47:37.542167+00:00",
+                "last_updated": "2019-03-28T12:47:37.542167+00:00",
                 "state": "home"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "editable": true,
                     "friendly_name": "Christine",
                     "id": "b7ea0d0324e34887ad5bf414fadbab20",
-                    "latitude": 58.45,
-                    "longitude": 8.744,
-                    "source": "person.christine",
+                    "source": "device_tracker.galaxys8_cg",
                     "user_id": "6e367300085a40f99a33a273d2c22d66"
                 },
                 "context": {
-                    "id": "ec2b14837c7d4cd485baa71d071a2af8",
+                    "id": "07ee0eb133bc4bacaad76edde5859499",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "person.christine",
-                "last_changed": "2019-02-26T12:08:27.607216+00:00",
-                "last_updated": "2019-02-26T12:08:27.607216+00:00",
-                "state": "home"
+                "last_changed": "2019-03-28T11:39:00.032366+00:00",
+                "last_updated": "2019-03-28T11:39:00.032366+00:00",
+                "state": "not_home"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
-                    "friendly_name": "Stemningslys av 24:00",
-                    "id": "lys_av_stemning",
-                    "last_triggered": "2019-02-25T23:00:00.087656+00:00"
+                    "friendly_name": "H\u00e5ndklet\u00f8rker bad",
+                    "icon": "mdi:power"
                 },
                 "context": {
-                    "id": "5e0bafee76524316b4cd0044dd514ece",
+                    "id": "310c4d0463ee4df9beccf454f1edd776",
+                    "parent_id": "fafca9296890425eaede8624a8c765cb",
                     "user_id": null
                 },
-                "entity_id": "automation.stemningslys_av_24_00",
-                "last_changed": "2019-02-26T12:08:27.609007+00:00",
-                "last_updated": "2019-02-26T12:08:27.609007+00:00",
-                "state": "off"
+                "entity_id": "switch.sb_handkletorker",
+                "last_changed": "2019-03-28T13:48:47.079111+00:00",
+                "last_updated": "2019-03-28T13:48:47.079111+00:00",
+                "state": "on"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Rullgardiner soverom opp",
-                    "id": "rullgardiner_sov_opp",
-                    "last_triggered": "2019-02-23T14:41:21.037826+00:00"
-                },
-                "context": {
-                    "id": "6aa15f6958f34a5da1848eb2fb40467a",
-                    "user_id": null
-                },
-                "entity_id": "automation.rullgardiner_soverom_opp",
-                "last_changed": "2019-02-26T12:08:27.610929+00:00",
-                "last_updated": "2019-02-26T12:08:27.610929+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Varmekabler nattsenking",
-                    "id": "vk_nattsenk",
-                    "last_triggered": "2019-02-25T22:00:00.047821+00:00"
-                },
-                "context": {
-                    "id": "ba99e0ffc2114852a7d41b9b10bdd88b",
-                    "user_id": null
-                },
-                "entity_id": "automation.varmekabler_nattsenking",
-                "last_changed": "2019-02-26T12:08:27.613859+00:00",
-                "last_updated": "2019-02-26T12:08:27.613859+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Varmekabler nattsenking av",
-                    "id": "vk_nattsenk_off",
-                    "last_triggered": "2019-02-26T09:30:00.060645+00:00"
-                },
-                "context": {
-                    "id": "3667dd2ccebb4fa68e291469fb35c289",
-                    "user_id": null
-                },
-                "entity_id": "automation.varmekabler_nattsenking_av",
-                "last_changed": "2019-02-26T12:08:27.615971+00:00",
-                "last_updated": "2019-02-26T12:08:27.615971+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Belysning bad av",
-                    "id": "lys_bad_av",
-                    "last_triggered": "2019-02-26T11:18:02.128315+00:00"
-                },
-                "context": {
-                    "id": "4acb123209394577a71b2d5e6f87a7e9",
-                    "user_id": null
-                },
-                "entity_id": "automation.belysning_bad_av",
-                "last_changed": "2019-02-26T12:08:27.617475+00:00",
-                "last_updated": "2019-02-26T12:08:27.617475+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Varmtvannsbereder str\u00f8msparing",
-                    "id": "stromspar_vvb",
-                    "last_triggered": "2019-02-26T04:00:00.049170+00:00"
-                },
-                "context": {
-                    "id": "eb33fb7e483049fa8a07a073003f1677",
-                    "user_id": null
-                },
-                "entity_id": "automation.varmtvannsbereder_stromsparing",
-                "last_changed": "2019-02-26T12:08:27.618898+00:00",
-                "last_updated": "2019-02-26T12:08:27.618898+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Belysning bad dim",
-                    "id": "lys_bad_dim",
-                    "last_triggered": "2019-02-26T12:02:33.073161+00:00"
-                },
-                "context": {
-                    "id": "b6214f9728a74398bfa5e63a4c4a0885",
-                    "user_id": null
-                },
-                "entity_id": "automation.belysning_bad_dim",
-                "last_changed": "2019-02-26T12:08:27.620409+00:00",
-                "last_updated": "2019-02-26T12:08:27.620409+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Varmtvannsbereder str\u00f8msparing av",
-                    "id": "stromspar_vvb_off",
-                    "last_triggered": "2019-02-26T11:00:00.065911+00:00"
-                },
-                "context": {
-                    "id": "96ae7cd7b74c41099f324f32bb8a9101",
-                    "user_id": null
-                },
-                "entity_id": "automation.varmtvannsbereder_stromsparing_av",
-                "last_changed": "2019-02-26T12:08:27.621822+00:00",
-                "last_updated": "2019-02-26T12:08:27.621822+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Belysning bad p\u00e5 v/beveglse",
-                    "id": "lys_bad_bevegelse",
-                    "last_triggered": "2019-02-26T11:45:44.928148+00:00"
-                },
-                "context": {
-                    "id": "11693a118b2440abad0ec4118dc8b92e",
-                    "user_id": null
-                },
-                "entity_id": "automation.belysning_bad_pa_v_beveglse",
-                "last_changed": "2019-02-26T12:08:27.623339+00:00",
-                "last_updated": "2019-02-26T12:08:27.623339+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Home Assistant oppdatering",
-                    "id": "oppdatering",
-                    "last_triggered": "2019-02-22T14:50:54.281660+00:00"
-                },
-                "context": {
-                    "id": "cddb133c13714b22be535634198deda1",
-                    "user_id": null
-                },
-                "entity_id": "automation.home_assistant_oppdatering",
-                "last_changed": "2019-02-26T12:08:27.624840+00:00",
-                "last_updated": "2019-02-26T12:08:27.624840+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Belysning av v/soloppgang",
-                    "id": "lys_av_solopp",
-                    "last_triggered": "2019-02-26T06:29:36.408817+00:00"
-                },
-                "context": {
-                    "id": "77181c2b841849fda21d418ca09b3cad",
-                    "user_id": null
-                },
-                "entity_id": "automation.belysning_av_v_soloppgang",
-                "last_changed": "2019-02-26T12:08:27.626239+00:00",
-                "last_updated": "2019-02-26T12:08:27.626239+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Systemtemperatur h\u00f8y",
-                    "id": "rpi_temp_h",
-                    "last_triggered": "2019-02-26T10:04:47.420605+00:00"
-                },
-                "context": {
-                    "id": "c8f16c0304994af78b689c8b978587b7",
-                    "user_id": null
-                },
-                "entity_id": "automation.systemtemperatur_hoy",
-                "last_changed": "2019-02-26T12:08:27.627594+00:00",
-                "last_updated": "2019-02-26T12:08:27.627594+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Innelys av v/tomt hus og 4:00",
-                    "id": "lys_av_borte",
-                    "last_triggered": "2019-02-26T06:39:53.288184+00:00"
-                },
-                "context": {
-                    "id": "e66a8573c9274d32b8a29d38d7243bfd",
-                    "user_id": null
-                },
-                "entity_id": "automation.innelys_av_v_tomt_hus_og_4_00",
-                "last_changed": "2019-02-26T12:08:27.628961+00:00",
-                "last_updated": "2019-02-26T12:08:27.628961+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Aksjesparekonto daglig",
-                    "id": "ask_daglig",
-                    "last_triggered": "2019-02-26T11:31:50.267737+00:00"
-                },
-                "context": {
-                    "id": "552f4eb1b5594ce191a8befe1f672791",
-                    "user_id": null
-                },
-                "entity_id": "automation.aksjesparekonto_daglig",
-                "last_changed": "2019-02-26T12:08:27.630462+00:00",
-                "last_updated": "2019-02-26T12:08:27.630462+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Belysning p\u00e5 v/hjemkomst",
-                    "id": "lys_paa_hjem",
-                    "last_triggered": "2019-02-23T17:15:33.615892+00:00"
-                },
-                "context": {
-                    "id": "9a039178762d42aaa18647348863e800",
-                    "user_id": null
-                },
-                "entity_id": "automation.belysning_pa_v_hjemkomst",
-                "last_changed": "2019-02-26T12:08:27.631918+00:00",
-                "last_updated": "2019-02-26T12:08:27.631918+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Oppdater OpenUV data",
-                    "id": "openuv",
-                    "last_triggered": "2019-02-26T11:00:02.498012+00:00"
-                },
-                "context": {
-                    "id": "4cc8617e131a4503a6008a3a776d37ed",
-                    "user_id": null
-                },
-                "entity_id": "automation.oppdater_openuv_data",
-                "last_changed": "2019-02-26T12:08:27.633265+00:00",
-                "last_updated": "2019-02-26T12:08:27.633265+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Belysning p\u00e5 v/solnedgang",
-                    "id": "lys_paa_solned",
-                    "last_triggered": "2019-02-25T16:14:05.203157+00:00"
-                },
-                "context": {
-                    "id": "35bd35cf017a46ba94944aafcaacb9fb",
-                    "user_id": null
-                },
-                "entity_id": "automation.belysning_pa_v_solnedgang",
-                "last_changed": "2019-02-26T12:08:27.634679+00:00",
-                "last_updated": "2019-02-26T12:08:27.634679+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Rekkverkslys veranda s\u00f8r\u00f8st",
-                    "supported_features": 0
-                },
-                "context": {
-                    "id": "285cf9e8cbd24f128720dec4ea49b6b9",
-                    "user_id": null
-                },
-                "entity_id": "light.wifi_smart_socket_ps16_5",
-                "last_changed": "2019-02-26T12:08:27.855866+00:00",
-                "last_updated": "2019-02-26T12:08:27.855866+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Hyllelys spisestue",
-                    "icon": "mdi:led-strip",
-                    "supported_features": 1
-                },
-                "context": {
-                    "id": "029d74e7779b42418dd88222e61935ad",
-                    "user_id": null
-                },
-                "entity_id": "light.mh_hyllelys",
-                "last_changed": "2019-02-26T12:08:29.942692+00:00",
-                "last_updated": "2019-02-26T12:08:29.942692+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "B\u00f8rres Galaxy S9",
-                    "gps_accuracy": 0,
-                    "icon": "mdi:human-male",
-                    "latitude": 58.45,
-                    "longitude": 8.744,
-                    "scanner": "AsusWrtDeviceScanner",
-                    "source_type": "router"
-                },
-                "context": {
-                    "id": "de9c5b94aa934ead9f0233a2800cc26e",
-                    "user_id": null
-                },
-                "entity_id": "device_tracker.galaxys9_bh",
-                "last_changed": "2019-02-26T12:08:30.083393+00:00",
-                "last_updated": "2019-02-26T12:08:30.720978+00:00",
-                "state": "home"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Christines Galaxy S8",
-                    "gps_accuracy": 0,
-                    "icon": "mdi:human-female",
-                    "latitude": 58.45,
-                    "longitude": 8.744,
-                    "scanner": "AsusWrtDeviceScanner",
-                    "source_type": "router"
-                },
-                "context": {
-                    "id": "be0b3e0fee754a828ae7190ea4def3dc",
-                    "user_id": null
-                },
-                "entity_id": "device_tracker.galaxys8_cg",
-                "last_changed": "2019-02-26T12:08:30.085760+00:00",
-                "last_updated": "2019-02-26T12:08:30.661865+00:00",
-                "state": "home"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "LG Smart TV",
-                    "gps_accuracy": 0,
-                    "icon": "mdi:television",
-                    "latitude": 58.45,
-                    "longitude": 8.744,
-                    "scanner": "AsusWrtDeviceScanner",
-                    "source_type": "router"
-                },
-                "context": {
-                    "id": "fd7639ba1c304f96bc2d468242b77bb1",
-                    "user_id": null
-                },
-                "entity_id": "device_tracker.lgsmarttv",
-                "last_changed": "2019-02-26T12:08:30.088206+00:00",
-                "last_updated": "2019-02-26T12:08:30.652817+00:00",
-                "state": "home"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Xbox One X",
-                    "gps_accuracy": 0,
-                    "icon": "mdi:xbox",
-                    "latitude": 58.45,
-                    "longitude": 8.744,
-                    "source_type": "router"
-                },
-                "context": {
-                    "id": "72170672b2ce425d838958d8c9ae7728",
-                    "user_id": null
-                },
-                "entity_id": "device_tracker.xbox_one_x",
-                "last_changed": "2019-02-26T12:08:30.090713+00:00",
-                "last_updated": "2019-02-26T12:08:30.090713+00:00",
-                "state": "home"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Gulvlampe m/bord",
-                    "icon": "mdi:floor-lamp",
-                    "supported_features": 0
-                },
-                "context": {
-                    "id": "2308eeaebc004361823388ad66fbfe9c",
-                    "user_id": null
-                },
-                "entity_id": "light.sb_gulvlampe",
-                "last_changed": "2019-02-26T12:08:30.093173+00:00",
-                "last_updated": "2019-02-26T12:08:30.093173+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Speillys bad",
                     "supported_features": 0
                 },
                 "context": {
-                    "id": "65d7f0a764be4443b74680d7164fe5dc",
+                    "id": "0c436674e8814a4aa232c6e0a601fd5f",
+                    "parent_id": "0fa1096179c54620935f135b803f323e",
                     "user_id": null
                 },
                 "entity_id": "light.sb_speillys",
-                "last_changed": "2019-02-26T12:08:30.123387+00:00",
-                "last_updated": "2019-02-26T12:08:30.123387+00:00",
+                "last_changed": "2019-03-28T14:04:13.177761+00:00",
+                "last_updated": "2019-03-28T14:04:13.177761+00:00",
                 "state": "off"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Portlys inngangsparti",
                     "supported_features": 0
                 },
                 "context": {
-                    "id": "f9ee703b1a8e4420acf0ee53bde3c944",
+                    "id": "16df7b44d84e465e9e4c53b5a0676ccb",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "light.wifi_smart_socket_ps16_1",
-                "last_changed": "2019-02-26T12:08:30.141340+00:00",
-                "last_updated": "2019-02-26T12:08:30.141340+00:00",
+                "last_changed": "2019-03-27T18:32:48.771602+00:00",
+                "last_updated": "2019-03-27T18:32:48.771602+00:00",
                 "state": "unavailable"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Bordlampe gang",
@@ -533,17 +108,18 @@
                     "supported_features": 0
                 },
                 "context": {
-                    "id": "847cf787979345c593f29e29a710f9f2",
+                    "id": "221169d2242947fab01dec2b78b2d6d3",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "light.wifi_smart_socket_ps16_2",
-                "last_changed": "2019-02-26T12:08:30.156367+00:00",
-                "last_updated": "2019-02-26T12:08:30.156367+00:00",
+                "last_changed": "2019-03-27T23:00:00.377799+00:00",
+                "last_updated": "2019-03-27T23:00:00.377799+00:00",
                 "state": "off"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Bordlampe spisestue",
@@ -551,34 +127,36 @@
                     "supported_features": 0
                 },
                 "context": {
-                    "id": "4c5d84a9dad24373be92657ed2bf34d8",
+                    "id": "221169d2242947fab01dec2b78b2d6d3",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "light.wifi_smart_socket_ps16_3",
-                "last_changed": "2019-02-26T12:08:30.170996+00:00",
-                "last_updated": "2019-02-26T12:08:30.170996+00:00",
+                "last_changed": "2019-03-27T23:00:00.357377+00:00",
+                "last_updated": "2019-03-27T23:00:00.357377+00:00",
                 "state": "off"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Dekkslys veranda nord",
                     "supported_features": 0
                 },
                 "context": {
-                    "id": "1763b61db2f84dcfb3af008c35b181e5",
-                    "user_id": null
+                    "id": "a8e8278d797948e8a4ad10594331bb8d",
+                    "parent_id": null,
+                    "user_id": "937cd9684dd9441dace5bf4b85fa9ac1"
                 },
                 "entity_id": "light.wifi_smart_socket_ps16_4",
-                "last_changed": "2019-02-26T12:08:30.204867+00:00",
-                "last_updated": "2019-02-26T12:08:30.204867+00:00",
+                "last_changed": "2019-03-27T23:26:30.768782+00:00",
+                "last_updated": "2019-03-27T23:26:30.768782+00:00",
                 "state": "off"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Oslo gulvlampe",
@@ -586,30 +164,611 @@
                     "supported_features": 0
                 },
                 "context": {
-                    "id": "5d21aba0d0e64420ab21b8c9e7c846e0",
+                    "id": "221169d2242947fab01dec2b78b2d6d3",
+                    "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "light.sonoff_s20_2",
-                "last_changed": "2019-02-26T12:08:30.219332+00:00",
-                "last_updated": "2019-02-26T12:08:30.219332+00:00",
+                "last_changed": "2019-03-27T23:00:00.350071+00:00",
+                "last_updated": "2019-03-27T23:00:00.350071+00:00",
                 "state": "off"
             }
         },
         {
-            "last_seen": "2019-02-26T12:08:33.717869+00:00",
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
             "state": {
                 "attributes": {
-                    "friendly_name": "H\u00e5ndklet\u00f8rker bad",
-                    "icon": "mdi:power"
+                    "friendly_name": "Rekkverkslys veranda s\u00f8r\u00f8st",
+                    "supported_features": 0
                 },
                 "context": {
-                    "id": "579a7749cc0749eeb09549130aa8fd95",
+                    "id": "499df1e758c84287b4cf5f0b614ad56f",
+                    "parent_id": null,
                     "user_id": null
                 },
-                "entity_id": "switch.sb_handkletorker",
-                "last_changed": "2019-02-26T12:08:30.285059+00:00",
-                "last_updated": "2019-02-26T12:08:30.285059+00:00",
+                "entity_id": "light.wifi_smart_socket_ps16_5",
+                "last_changed": "2019-03-28T10:54:35.565045+00:00",
+                "last_updated": "2019-03-28T10:54:35.565045+00:00",
                 "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Hyllelys spisestue",
+                    "icon": "mdi:led-strip",
+                    "supported_features": 1
+                },
+                "context": {
+                    "id": "1547f0a3eddf47dcb7fbad69a81ac159",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "light.mh_hyllelys",
+                "last_changed": "2019-03-28T13:32:12.754355+00:00",
+                "last_updated": "2019-03-28T13:32:12.754355+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Gulvlampe m/bord",
+                    "icon": "mdi:floor-lamp",
+                    "supported_features": 0
+                },
+                "context": {
+                    "id": "221169d2242947fab01dec2b78b2d6d3",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "light.sb_gulvlampe",
+                "last_changed": "2019-03-27T23:00:00.387844+00:00",
+                "last_updated": "2019-03-27T23:00:00.387844+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "B\u00f8rres Galaxy S9",
+                    "gps_accuracy": 0,
+                    "icon": "mdi:human-male",
+                    "latitude": 58.45,
+                    "longitude": 8.744,
+                    "scanner": "AsusRtDeviceScanner",
+                    "source_type": "router"
+                },
+                "context": {
+                    "id": "90c86c2c6dd3481d89c4cf0672b7a5e8",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.galaxys9_bh",
+                "last_changed": "2019-03-28T12:47:37.524843+00:00",
+                "last_updated": "2019-03-28T12:47:37.524843+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Christines Galaxy S8",
+                    "icon": "mdi:human-female",
+                    "scanner": "AsusRtDeviceScanner",
+                    "source_type": "router"
+                },
+                "context": {
+                    "id": "6d817b88940746b6adbb70f5605ab342",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.galaxys8_cg",
+                "last_changed": "2019-03-28T11:39:00.014422+00:00",
+                "last_updated": "2019-03-28T11:39:00.014422+00:00",
+                "state": "not_home"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "LG Smart TV",
+                    "gps_accuracy": 0,
+                    "icon": "mdi:television",
+                    "latitude": 58.45,
+                    "longitude": 8.744,
+                    "scanner": "AsusRtDeviceScanner",
+                    "source_type": "router"
+                },
+                "context": {
+                    "id": "aae17ae9469b48a59e63c8e49323a41b",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.lgsmarttv",
+                "last_changed": "2019-03-28T12:49:21.511541+00:00",
+                "last_updated": "2019-03-28T12:49:21.511541+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Xbox One X",
+                    "icon": "mdi:xbox",
+                    "source_type": "router"
+                },
+                "context": {
+                    "id": "09c65a9429c04e339ec2c3450baffa61",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.xbox_one_x",
+                "last_changed": "2019-03-27T18:33:33.336405+00:00",
+                "last_updated": "2019-03-27T18:33:33.336405+00:00",
+                "state": "not_home"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Stemningslys av (24:00)",
+                    "id": "lys_av_stemning",
+                    "last_triggered": "2019-03-27T23:00:00.063141+00:00"
+                },
+                "context": {
+                    "id": "7621caf9b0f347238f7ac0d15fc4d10e",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.stemningslys_av_24_00",
+                "last_changed": "2019-03-28T13:15:11.715032+00:00",
+                "last_updated": "2019-03-28T13:15:11.715032+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Varmekabler nattsenking av",
+                    "id": "vk_nattsenk_off",
+                    "last_triggered": "2019-03-28T09:30:00.044357+00:00"
+                },
+                "context": {
+                    "id": "b96bfc7cc6f24642acbf2bccaff5a69d",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.varmekabler_nattsenking_av",
+                "last_changed": "2019-03-28T13:15:11.730646+00:00",
+                "last_updated": "2019-03-28T13:15:11.730646+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Aksjesparekonto daglig",
+                    "id": "ask_daglig",
+                    "last_triggered": "2019-03-28T10:18:56.514694+00:00"
+                },
+                "context": {
+                    "id": "344f06f2ba88472e82160c34aa6db990",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.aksjesparekonto_daglig",
+                "last_changed": "2019-03-28T13:15:11.739555+00:00",
+                "last_updated": "2019-03-28T13:15:11.739555+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning bad p\u00e5 (beveglse)",
+                    "id": "lys_bad_bevegelse",
+                    "last_triggered": "2019-03-28T13:53:41.924197+00:00"
+                },
+                "context": {
+                    "id": "43565981a4e74afabeb8487c2baa51dd",
+                    "parent_id": "8debd841ee61469797aec56a71df59df",
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_bad_pa_beveglse",
+                "last_changed": "2019-03-28T13:15:11.748368+00:00",
+                "last_updated": "2019-03-28T13:53:41.925064+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Innelys av (tomt hus / 3:00)",
+                    "id": "lys_av_borte",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "99745c04dd844bc48733590b69b7e155",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.innelys_av_tomt_hus_3_00",
+                "last_changed": "2019-03-28T13:15:11.769223+00:00",
+                "last_updated": "2019-03-28T13:15:11.769223+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Systemtemperatur h\u00f8y",
+                    "id": "rpi_temp_h",
+                    "last_triggered": "2019-02-26T10:04:47.420605+00:00"
+                },
+                "context": {
+                    "id": "b99e0fe22dcf404b98f76b82ecea9ee7",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.systemtemperatur_hoy",
+                "last_changed": "2019-03-28T13:15:11.790046+00:00",
+                "last_updated": "2019-03-28T13:15:11.790046+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Varmtvannsbereder str\u00f8msparing",
+                    "id": "stromspar_vvb",
+                    "last_triggered": "2019-03-28T13:00:00.058532+00:00"
+                },
+                "context": {
+                    "id": "96cd3bce9c0c45238854452a08c2b58f",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.varmtvannsbereder_stromsparing",
+                "last_changed": "2019-03-28T13:15:11.805258+00:00",
+                "last_updated": "2019-03-28T13:15:11.805258+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning p\u00e5 (solnedgang)",
+                    "id": "lys_paa_solned",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "148b2230a9724408807ad135722866c8",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_pa_solnedgang",
+                "last_changed": "2019-03-28T13:15:11.813260+00:00",
+                "last_updated": "2019-03-28T13:15:11.813260+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning av (soloppgang)",
+                    "id": "lys_av_solopp",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "15234b50bc384ee293cb89ccee82da1e",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_av_soloppgang",
+                "last_changed": "2019-03-28T13:15:11.821592+00:00",
+                "last_updated": "2019-03-28T13:15:11.821592+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning bad av",
+                    "id": "lys_bad_av",
+                    "last_triggered": "2019-03-28T12:05:24.089471+00:00"
+                },
+                "context": {
+                    "id": "1dff9da015444d7589ab8e4449ea3e4d",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_bad_av",
+                "last_changed": "2019-03-28T13:15:11.830918+00:00",
+                "last_updated": "2019-03-28T13:15:11.830918+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Oppdater OpenUV data",
+                    "id": "openuv",
+                    "last_triggered": "2019-03-28T14:00:05.810401+00:00"
+                },
+                "context": {
+                    "id": "cb648d3f570f4b908adaab2360c82013",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.oppdater_openuv_data",
+                "last_changed": "2019-03-28T13:15:11.840688+00:00",
+                "last_updated": "2019-03-28T14:00:05.812019+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Home Assistant oppdatering",
+                    "id": "oppdatering",
+                    "last_triggered": "2019-03-26T22:04:01.828554+00:00"
+                },
+                "context": {
+                    "id": "f6ebc5484b5f44ec9a87d21a392a3283",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.home_assistant_oppdatering",
+                "last_changed": "2019-03-28T13:15:11.850161+00:00",
+                "last_updated": "2019-03-28T13:15:11.850161+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning p\u00e5 (hjemkomst)",
+                    "id": "lys_paa_hjem",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "6b52b87f78744c7383e049fe7ac721ec",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_pa_hjemkomst",
+                "last_changed": "2019-03-28T13:15:11.859622+00:00",
+                "last_updated": "2019-03-28T13:15:11.859622+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Varmekabler nattsenking",
+                    "id": "vk_nattsenk",
+                    "last_triggered": "2019-03-27T22:00:00.048087+00:00"
+                },
+                "context": {
+                    "id": "90112c9e7f794a10b9c7630a3b2c201a",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.varmekabler_nattsenking",
+                "last_changed": "2019-03-28T13:15:11.876369+00:00",
+                "last_updated": "2019-03-28T13:15:11.876369+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning bad dim",
+                    "id": "lys_bad_dim",
+                    "last_triggered": "2019-03-28T14:04:13.121546+00:00"
+                },
+                "context": {
+                    "id": "0c436674e8814a4aa232c6e0a601fd5f",
+                    "parent_id": "0fa1096179c54620935f135b803f323e",
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_bad_dim",
+                "last_changed": "2019-03-28T13:15:11.885943+00:00",
+                "last_updated": "2019-03-28T14:04:13.123010+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "St\u00f8vsug og rullgardiner opp (15 min)",
+                    "id": "borte_15min",
+                    "last_triggered": "2019-03-28T13:15:20.351712+00:00"
+                },
+                "context": {
+                    "id": "3acd48241bee47e191b3b853547db6cd",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.stovsug_og_rullgardiner_opp_15_min",
+                "last_changed": "2019-03-28T13:19:32.786360+00:00",
+                "last_updated": "2019-03-28T13:19:32.786360+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T14:04:52.016338+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Varmtvannsbereder str\u00f8msparing av",
+                    "id": "stromspar_vvb_off",
+                    "last_triggered": "2019-03-28T11:00:00.059494+00:00"
+                },
+                "context": {
+                    "id": "6cd6586f562c4de8a111a0df5ca8c54b",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.varmtvannsbereder_stromsparing_av",
+                "last_changed": "2019-03-28T13:15:11.911394+00:00",
+                "last_updated": "2019-03-28T13:15:11.911394+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T13:11:08.277382+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning p\u00e5 v/solnedgang",
+                    "id": "lys_paa_solned",
+                    "last_triggered": "2019-03-27T17:23:33.223226+00:00"
+                },
+                "context": {
+                    "id": "d044e0ee4ce14c63a497c857aa487585",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_pa_v_solnedgang",
+                "last_changed": "2019-03-27T18:33:47.610724+00:00",
+                "last_updated": "2019-03-27T18:33:47.610724+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T13:11:08.265653+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Rullgardiner soverom opp",
+                    "id": "rullgardiner_sov_opp",
+                    "last_triggered": "2019-03-28T11:54:01.036983+00:00"
+                },
+                "context": {
+                    "id": "b83a00df4e964990a542692f2a8597a6",
+                    "parent_id": "366612a2040e416ab436a89f3471e6fd",
+                    "user_id": null
+                },
+                "entity_id": "automation.rullgardiner_soverom_opp",
+                "last_changed": "2019-03-27T18:33:47.629665+00:00",
+                "last_updated": "2019-03-28T11:54:01.038224+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T13:11:08.300557+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning bad p\u00e5 v/beveglse",
+                    "id": "lys_bad_bevegelse",
+                    "last_triggered": "2019-03-28T12:49:00.783803+00:00"
+                },
+                "context": {
+                    "id": "f83e10a78d2748e9a4234c4a661dc85c",
+                    "parent_id": "022ec8d775a9458cbf30649ab70cc0d5",
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_bad_pa_v_beveglse",
+                "last_changed": "2019-03-27T18:33:47.216789+00:00",
+                "last_updated": "2019-03-28T12:49:00.784628+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T13:11:08.271560+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning av v/soloppgang",
+                    "id": "lys_av_solopp",
+                    "last_triggered": "2019-03-28T05:04:46.717454+00:00"
+                },
+                "context": {
+                    "id": "28cf7c443d444b4781609bc9553588d9",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_av_v_soloppgang",
+                "last_changed": "2019-03-27T18:33:47.242662+00:00",
+                "last_updated": "2019-03-28T05:04:46.718231+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T13:11:08.288725+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Innelys av v/tomt hus og 3:00",
+                    "id": "lys_av_borte",
+                    "last_triggered": "2019-03-28T12:09:01.286567+00:00"
+                },
+                "context": {
+                    "id": "6e46d385b067490c811c2475a07b8654",
+                    "parent_id": "366612a2040e416ab436a89f3471e6fd",
+                    "user_id": null
+                },
+                "entity_id": "automation.innelys_av_v_tomt_hus_og_3_00",
+                "last_changed": "2019-03-27T18:33:47.565177+00:00",
+                "last_updated": "2019-03-28T12:09:01.287399+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-28T13:11:08.329528+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Belysning p\u00e5 v/hjemkomst",
+                    "id": "lys_paa_hjem",
+                    "last_triggered": "2019-03-26T17:51:36.618470+00:00"
+                },
+                "context": {
+                    "id": "bd0a217709fc46bdbc429157e8eb1642",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.belysning_pa_v_hjemkomst",
+                "last_changed": "2019-03-27T18:33:47.588873+00:00",
+                "last_updated": "2019-03-27T18:33:47.588873+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-03-21T22:41:11.016058+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Innelys av v/tomt hus og 4:00",
+                    "id": "lys_av_borte",
+                    "last_triggered": "2019-03-21T21:56:06.485791+00:00"
+                },
+                "context": {
+                    "id": "2122caa5e0e74b0997e4039c66f053ee",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.innelys_av_v_tomt_hus_og_4_00",
+                "last_changed": "2019-03-21T01:09:47.131142+00:00",
+                "last_updated": "2019-03-21T21:56:06.486689+00:00",
+                "state": "on"
             }
         }
     ],

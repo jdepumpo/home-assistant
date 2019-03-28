@@ -8,7 +8,7 @@
                 },
                 {
                     "type": "js",
-                    "url": "/customcards/card-tools.js"
+                    "url": "/customcards/github/thomasloven/card-tools.js?track=true"
                 },
                 {
                     "type": "js",
@@ -33,6 +33,10 @@
                 {
                     "type": "module",
                     "url": "/customcards/mini-media-player-bundle.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/config-template-card.js"
                 }
             ],
             "title": "Sagmesterveien 6",
@@ -251,21 +255,11 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.wifi_smart_socket_ps16_1",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "name": "Portlys",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
                                     "entity": "light.wifi_smart_socket_ps16_4",
                                     "hold_action": {
                                         "action": "more-info"
                                     },
-                                    "name": "Dekkslys",
+                                    "name": "Dekkslys veranda nord",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -275,16 +269,31 @@
                                     "hold_action": {
                                         "action": "more-info"
                                     },
-                                    "name": "Verandarekke",
+                                    "name": "Verandarekke s\u00f8r\u00f8st",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 }
                             ],
                             "id": "utendors",
-                            "show_state": false,
+                            "show_header_toggle": false,
                             "title": "Utend\u00f8rs",
-                            "type": "glance"
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.fibaro_system_fgwpef_wall_plug_gen5_switch"
+                                },
+                                {
+                                    "entity": "vacuum.xiaomi_vacuum_cleaner",
+                                    "name": "Xiaomi Roborock st\u00f8vsuger",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Teknisk",
+                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:home",
@@ -292,6 +301,7 @@
                     "title": "Hjem"
                 },
                 {
+                    "badges": [],
                     "cards": [
                         {
                             "card": {
@@ -324,7 +334,7 @@
                             "card": {
                                 "available_text": "Tilgjengelig",
                                 "check_text": "Sjekk",
-                                "current_text": "N\u00e5v\u00e6rende",
+                                "current_text": "Installert",
                                 "name_text": "Navn",
                                 "title": "Oppdateringer",
                                 "type": "custom:tracker-card",
@@ -452,13 +462,12 @@
                                     },
                                     "head": "sensor.dnb_ask_beholding",
                                     "items": [
-                                        "sensor.dnb_ask_beholding",
                                         "sensor.dnb_health_care_r_kurs",
                                         "sensor.dnb_teknologi_r_kurs",
-                                        "sensor.dnb_global_indeks_1_dag",
                                         "sensor.dnb_health_care_r_1_dag",
-                                        "sensor.dnb_norge_indeks_1_dag",
-                                        "sensor.dnb_teknologi_r_1_dag"
+                                        "sensor.dnb_teknologi_r_1_dag",
+                                        "sensor.dnb_global_indeks_1_dag",
+                                        "sensor.dnb_norge_indeks_1_dag"
                                     ],
                                     "type": "custom:fold-entity-row"
                                 }
@@ -576,6 +585,7 @@
                     ],
                     "icon": "mdi:settings",
                     "id": "avansert",
+                    "panel": false,
                     "title": "Avansert"
                 }
             ]
