@@ -1,28 +1,29 @@
-- name: 'Belysning - alt av'
-  entities:
-    group.all_lights: off
+# - name: 'Belysning - alt av'
+  # entities:
+    # group.all_lights: off
 
 - name: 'Belysning - dempet'
   entities:
     light.fibaro_system_fgd212_dimmer_2_level:
       state: on
-      brightness: 75
+      brightness: 70
     light.fibaro_system_fgd212_dimmer_2_level_3:
       state: on
-      brightness: 75
+      brightness: 70
     light.fibaro_system_fgd212_dimmer_2_level_5:
       state: on
-      brightness: 25
+      brightness: 15
     light.fibaro_system_fgd212_dimmer_2_level_7:
       state: on
-      brightness: 35
+      brightness: 30
     light.mh_hyllelys:
       state: on
-      brightness: 35
-    # light.sb_gulvlampe: on
-    # light.wifi_smart_socket_ps16_2: on
-    # light.wifi_smart_socket_ps16_3: on
-    # light.wifi_smart_socket_ps16_5: on
-    # light.wifi_smart_socket_ps16_6: on
+      brightness: 25
+    light.sb_gulvlampe: on
+    # light.wifi_smart_socket_ps16_1: on
+    light.wifi_smart_socket_ps16_2: on
+    light.wifi_smart_socket_ps16_3: on
+    light.wifi_smart_socket_ps16_5: on
+    light.wifi_smart_socket_ps16_6: on
     # light.sonoff_s20_1: on
-    # light.sonoff_s20_2: on
+    light.sonoff_s20_2: on

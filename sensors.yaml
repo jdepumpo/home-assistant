@@ -41,20 +41,11 @@
 
 - platform: template
   sensors:
-  
-    stromforbruk_t:
-      friendly_name: 'Strømforbruk'
-      unit_of_measurement: "kr/t"
-      value_template: "{{'{0:,.2f}'.format(states('sensor.real_time_consumption_sagmesterveien_6')|float * states('sensor.electricity_price_sagmesterveien_6')|float / 1000 )}}"
-      icon_template: >-
-          {% if states.sensor.electricity_price_sagmesterveien_6.state|float < 0.5 %} mdi:coins
-          {% else %} mdi:cash
-          {% endif %}
- 
+
     dnb_ask_beholding:
       friendly_name: 'Aksjesparekonto'
       unit_of_measurement: "kr"
-      value_template: "{{('{0:,.2f}'.format((7602.003 * (states('sensor.dnb_teknologi_r_kurs')|replace(',','.')|float)) + (7433.745 * (states('sensor.dnb_health_care_r_kurs')|replace(',','.')|float)))|replace(',',' '))}}"
+      value_template: "{{('{0:,.2f}'.format((10956.0810 * (states('sensor.dnb_teknologi_r_kurs')|replace(',','.')|float)) + (4154.6530 * (states('sensor.dnb_health_care_r_kurs')|replace(',','.')|float)))|replace(',',' ')|replace('.',','))}}"
 
     vindstyrke_tekst:
       friendly_name: 'Vindstyrke'
@@ -111,14 +102,18 @@
           mdi:sunglasses
         {% endif %}
         
+    stromforbruk_t:
+      friendly_name: 'Strømforbruk'
+      unit_of_measurement: "kr/t"
+      value_template: "{{'{0:,.2f}'.format(states('sensor.real_time_consumption_sagmesterveien_6')|float * states('sensor.electricity_price_sagmesterveien_6')|float / 1000 )}}"
+      icon_template: >-
+          {% if states.sensor.electricity_price_sagmesterveien_6.state|float < 0.5 %} mdi:coins
+          {% else %} mdi:cash
+          {% endif %}
     # tibber_use:
       # friendly_name: 'Estimert forbruk'
       # unit_of_measurement: "kr/år"
       # value_template: "{{'{:,.2f}'.format(states.sensor.electricity_price_sagmesterveien_6.attributes["estimated_annual_consumption"])}}"
-    # tibber_now:
-      # friendly_name: 'Strømpris nå'
-      # unit_of_measurement: "kr/kWh"
-      # value_template: "{{states('sensor.electricity_price_sagmesterveien_6') | round(2)}}"
     # tibber_min:
       # friendly_name: 'Strømpris lav'
       # unit_of_measurement: "kr/kWh"
@@ -131,6 +126,15 @@
       # friendly_name: 'Strømpris snitt'
       # unit_of_measurement: "kr/kWh"
       # value_template: "{{'%0.2f' % ((float(states.sensor.electricity_price_sagmesterveien_6.attributes["min_price"])+float(states.sensor.electricity_price_sagmesterveien_6.attributes["max_price"]))/2 )}}"
+    # tibber_volt:
+      # friendly_name: 'Spenning'
+      # unit_of_measurement: "V"
+      # value_template: "{{states.sensor.real_time_consumption_sagmesterveien_6.attributes["voltagePhase1"]}}"
+    # tibber_amp:
+      # friendly_name: 'Strømtrekk'
+      # unit_of_measurement: "A"
+      # value_template: "{{states.sensor.real_time_consumption_sagmesterveien_6.attributes["currentPhase1"]}}"
+
     # hulkhaugen84_current:
       # friendly_name_template: '{{ states.sensor.hulkhaugen84.attributes["friendly_name"] }}'
       # value_template:
@@ -176,6 +180,7 @@
           # Borte
         # {% endif %}'
       # entity_picture_template: '{{ states.sensor.mbentzen.attributes["entity_picture"] }}'
+
     # fibaro_battery_bad:
       # friendly_name: 'Multisensor batteri bad'
       # value_template:
@@ -247,3 +252,12 @@
   # unit_of_measurement: "%"
   # scan_interval: 600
   # command_timeout: 30
+
+- platform: rest
+  name: 'Home Assistant versjon'
+  json_attributes:
+   - release_title
+   - release_description
+   - release_notes
+  resource: https://www.home-assistant.io/version.json
+  value_template: '{{ value_json.current_version }}'

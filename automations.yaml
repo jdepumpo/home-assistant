@@ -7,8 +7,6 @@
     for:
       minutes: 30
   action:
-  # - service: media_player.turn_off
-    # entity_id: media_player.google_home_mini
   - service: light.turn_off
     entity_id: light.qubino_zmnhdd1_flush_dimmer_level
   - service: light.turn_off
@@ -25,10 +23,6 @@
     for:
       minutes: 10
   action:
-  # - service: media_player.volume_set
-    # data:
-      # entity_id: media_player.google_home_mini
-      # volume_level: 0.1
   - service: light.turn_off
     entity_id: light.sb_speillys
   - condition: state
@@ -44,9 +38,8 @@
   - service: light.turn_off
     entity_id: light.qubino_zmnhdd1_flush_dimmer_level
 
-    
 - id: lys_bad_bevegelse
-  alias: Belysning bad på v/beveglse
+  alias: Belysning bad på (beveglse)
   trigger:
   - platform: state
     entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
@@ -56,10 +49,6 @@
     entity_id: group.personer
     state: home
   action:
-  # - service: media_player.volume_set
-    # data_template:
-      # entity_id: media_player.google_home_mini
-      # volume_level: '{{states.input_number.radio_volum.state}}'
   - service: switch.turn_on
     entity_id: switch.sb_handkletorker
   - condition: numeric_state
@@ -73,35 +62,33 @@
     entity_id: light.sb_speillys
 
 - id: lys_av_solopp
-  alias: Belysning av v/soloppgang
+  alias: Belysning av (soloppgang)
   trigger:
   - platform: sun
     event: sunrise
   action:
   - service: light.turn_off
     entity_id: group.all_lights
-    
+
 - id: lys_av_borte
-  alias: Innelys av v/tomt hus og 4:00
+  alias: Innelys av (tomt hus / 3:00)
   trigger:
   - platform: state
     entity_id: group.personer
     to: not_home
     for: 0:30:00
   - platform: time
-    at: '04:00:00'
+    at: 03:00:00
   - platform: state
     entity_id: cover.qubino_zmnhod1_flush_shutter_dc_level
-    to: 'closed'
+    to: closed
     for: 0:30:00
   action:
   - service: light.turn_off
     entity_id: light.innelys
-  # - service: light.turn_off
-    # entity_id: light.stemningslys
 
 - id: lys_paa_hjem
-  alias: Belysning på v/hjemkomst
+  alias: Belysning på (hjemkomst)
   trigger:
   - platform: state
     entity_id: group.personer
@@ -111,13 +98,13 @@
     after: sunset
   - condition: time
     after: '15:00:00'
-    before: '01:00:00'
+    before: 01:00:00
   action:
   - service: scene.turn_on
     entity_id: scene.belysning_dempet
-    
+
 - id: lys_paa_solned
-  alias: Belysning på v/solnedgang
+  alias: Belysning på (solnedgang)
   trigger:
   - platform: sun
     event: sunset
@@ -132,20 +119,20 @@
     state: home
   - service: scene.turn_on
     entity_id: scene.belysning_dempet
-    
+
 - id: lys_av_stemning
-  alias: Stemningslys av 24:00
+  alias: Stemningslys av (24:00)
   trigger:
   - platform: time
-    at: '00:00:00'
+    at: 00:00:00
   action:
   - service: light.turn_off
     entity_id: light.stemningslys
   - service: light.turn_off
     entity_id: light.mh_hyllelys
 
-- id: rullgardiner_sov_opp
-  alias: Rullgardiner soverom opp
+- id: borte_15min
+  alias: Støvsug og rullgardiner opp (15 min)
   trigger:
   - platform: state
     entity_id: group.personer
@@ -155,7 +142,12 @@
   action:
   - service: cover.open_cover
     entity_id: cover.qubino_zmnhod1_flush_shutter_dc_level
-    
+  - service: vacuum.xiaomi_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 1
+      zone: [[16824,18519,26424,25969]]
+
 - id: vk_nattsenk
   alias: Varmekabler nattsenking
   trigger:
@@ -165,7 +157,8 @@
     at: '23:00:00'
   condition:
   - condition: template
-    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
+    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature
+      > 15}}'
   action:
   - data:
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
@@ -175,7 +168,7 @@
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
       temperature: 18
     service: climate.set_temperature
-    
+
 - id: vk_nattsenk_off
   alias: Varmekabler nattsenking av
   trigger:
@@ -185,7 +178,8 @@
     at: '10:30:00'
   condition:
   - condition: template
-    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
+    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature
+      > 15}}'
   action:
   - data:
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating
@@ -195,24 +189,25 @@
       entity_id: climate.thermofloor_as_heatit_thermostat_tf_021_heating_2
       temperature: 22
     service: climate.set_temperature
-    
+
 - id: stromspar_vvb
   alias: Varmtvannsbereder strømsparing
   trigger:
   - platform: time
-    at: '05:00:00'
+    at: 05:00:00
   - platform: time
     at: '14:00:00'
   condition:
   - condition: template
-    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
+    value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature
+      > 15}}'
   action:
   - service: switch.turn_off
     entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
   - delay: 00:05:00
   - service: switch.turn_off
     entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-    
+
 - id: stromspar_vvb_off
   alias: Varmtvannsbereder strømsparing av
   trigger:
@@ -222,92 +217,30 @@
     at: '12:00:00'
   condition:
   - condition: template
-    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15 }}'
+    value_template: '{{ states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature
+      > 15 }}'
   action:
   - service: switch.turn_on
     entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
   - delay: 00:05:00
   - service: switch.turn_on
     entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-    
-# - id: stromspar_vvb_tibber
-  # alias: Varmtvannsbereder strømsparing pris
-  # trigger:
-  # - platform: state
-    # entity_id: sensor.electricity_price_sagmesterveien_6
-  # condition:
-  # - condition: template
-    # value_template: '{{states.climate.thermofloor_as_heatit_thermostat_tf_021_heating.attributes.temperature > 15}}'
-  # action:
-  # - service_template: >-
-      # {% if states.sensor.electricity_price_sagmesterveien_6.state|float < states.sensor.electricity_price_sagmesterveien_6.attributes["avg_price"] %}
-        # switch.turn_on
-      # {% else %}
-        # switch.turn_off
-      # {% endif %}
-    # entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-    
-# - id: radio_volum
-  # hide_entity: true
-  # alias: 'Radio volum'
-  # trigger:
-  # - platform: state
-    # entity_id: input_number.radio_volum
-  # action:
-  # - service: media_player.volume_set
-    # data_template:
-      # entity_id: media_player.google_home_mini
-      # volume_level: '{{states.input_number.radio_volum.state}}' 
-
-# - id: radio_kanal
-  # alias: 'Radio kanal'
-  # trigger:
-  # - platform: state
-    # entity_id: input_select.radio_kanal
-  # action:
-  # -  service: media_player.play_media
-     # data_template:
-       # entity_id: media_player.google_home_mini
-       # media_content_id: >
-        # {% if   is_state("input_select.radiokanal", "Kiss N'Dance") %} http://live-bauerno.sharp-stream.com/kiss_no_mp3
-        # {% elif is_state("input_select.radiokanal", "NRJ") %} http://stream.p4.no/nrj_mp3_mq?Nettplayer_P4.no
-        # {% elif is_state("input_select.radiokanal", "NRK mP3") %} http://lyd.nrk.no/nrk_radio_mp3_mp3_m
-        # {% elif is_state("input_select.radiokanal", "NRK P1") %} http://lyd.nrk.no/nrk_radio_p1_ostlandssendingen_mp3_m
-        # {% elif is_state("input_select.radiokanal", "NRK P2") %} http://lyd.nrk.no/nrk_radio_p2_mp3_m
-        # {% elif is_state("input_select.radiokanal", "NRK P3") %} http://lyd.nrk.no/nrk_radio_p3_mp3_m
-        # {% elif is_state("input_select.radiokanal", "NRK P13") %} http://lyd.nrk.no/nrk_radio_p13_mp3_m
-        # {% elif is_state("input_select.radiokanal", "P4 Lyden av Norge") %} http://stream.p4.no/p4_mp3_mq?Nettplayer_P4.no
-        # {% elif is_state("input_select.radiokanal", "P5 Hits") %} http://stream.p4.no/p5oslo_mp3_mq?Nettplayer_Oslo.P5.no
-        # {% elif is_state("input_select.radiokanal", "P6 Rock") %} http://stream.p4.no/p6_mp3_mq?Nettplayer_P6.no
-        # {% elif is_state("input_select.radiokanal", "P7 Klem") %} http://stream.p4.no/p7_mp3_mq?Nettplayer_P4.no
-        # {% elif is_state("input_select.radiokanal", "P8 Pop") %} http://stream.p4.no/p8_mp3_mq?Nettplayer_P4.no
-        # {% elif is_state("input_select.radiokanal", "P9 Retro") %} http://stream.p4.no/p9_mp3_mq?Nettplayer_P9Retro.no
-        # {% elif is_state("input_select.radiokanal", "P10 Country") %} http://stream.p4.no/p10_mp3_mq?Nettplayer_P10Country.no
-        # {% elif is_state("input_select.radiokanal", "P24/7 Mix") %} http://live-bauerno.sharp-stream.com/p247mix_no_mp3
-        # {% elif is_state("input_select.radiokanal", "Radio1") %} http://live-bauerno.sharp-stream.com/radio1_no_mp3
-        # {% elif is_state("input_select.radiokanal", "Radio Norge") %} http://live-bauerno.sharp-stream.com/radionorge_no_mp3
-        # {% elif is_state("input_select.radiokanal", "Radio Norsk Pop") %} http://live-bauerno.sharp-stream.com/norskpop_no_mp3
-        # {% elif is_state("input_select.radiokanal", "Radio Rock") %} http://live-bauerno.sharp-stream.com/radiorock_no_mp3
-        # {% elif is_state("input_select.radiokanal", "Radio Topp 40") %} http://live-bauerno.sharp-stream.com/top40_no_mp3
-        # {% elif is_state("input_select.radiokanal", "Radio Vinyl") %} http://live-bauerno.sharp-stream.com/vinyl_no_mp3
-        # {% endif %}
-       # media_content_type: 'audio/mp4'
 
 - id: oppdatering
   alias: Home Assistant oppdatering
   trigger:
   - platform: state
-    entity_id: updater.updater
+    entity_id: sensor.home_assistant_versjon
   action:
   - service: notify.notify
     data_template:
       title: Home Assistant
-      message: Versjon {{states.updater.updater.state}} er tilgjengelig
+      message: Versjon {{states.sensor.home_assistant_versjon.state}} er tilgjengelig
       target: Galaxy S9
       data:
         url: https://www.home-assistant.io/latest-release-notes/
         tag: ha-update
-        
+
 - id: rpi_temp_h
   alias: Systemtemperatur høy
   trigger:
@@ -331,57 +264,42 @@
 - id: ask_daglig
   alias: Aksjesparekonto daglig
   trigger:
-  - platform: state
-    entity_id: sensor.dnb_teknologi_1_dag
+  - entity_id: sensor.dnb_teknologi_r_1_dag
+    platform: state
   condition:
+  - after: '10:00:00'
+    before: '14:00:00'
     condition: time
-    after: '09:30:00'
-    before: '15:00:00'
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
-  - delay: '00:05'
-  - service: notify.html5_galaxy_s9
-    data_template:
-      title: Aksjesparekonto
-      message: |
-        Beholdning: {{states.sensor.dnb_ask_beholding.state}} kr,
-        DNB Health Care R, 1 dag: {{states.sensor.dnb_health_care_r_1_dag.state}}%,
-        DNB Teknologi R, 1 dag: {{states.sensor.dnb_teknologi_r_1_dag.state}}%,
-      # target: Galaxy S9
+  - delay: 00:05
+  - data_template:
       data:
-        url: http://www.morningstar.no/no/portfoliomanager/portfolio.aspx
         tag: ask-update
+        url: http://www.morningstar.no/no/portfoliomanager/portfolio.aspx
+      message: 'Beholdning: {{states.sensor.dnb_ask_beholding.state}} kr,
 
-      # - condition: or
-        # conditions:
-          # - condition: state
-            # entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-            # state: 'off'
-            # for:
-              # minutes: 20
-          # - condition: and
-            # conditions:
-              # - condition: state
-                # entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-                # state: 'off'
-                # for:
-                  # minutes: 2
-              # - condition: template
-                # value_template: "{{ (as_timestamp(now())-as_timestamp(states.group.bad.last_changed)) <= 300 }}"
+        DNB Health Care R, 1 dag: {{states.sensor.dnb_health_care_r_1_dag.state}}%,
+
+        DNB Teknologi R, 1 dag: {{states.sensor.dnb_teknologi_r_1_dag.state}}%,
+
+        '
+      title: Aksjesparekonto
+    service: notify.html5_galaxy_s9
 
 - id: openuv
   alias: Oppdater OpenUV data
   trigger:
-    - platform: time_pattern
-      minutes: '/90'
+  - platform: time_pattern
+    minutes: /90
   condition:
-    - condition: state
-      entity_id: sun.sun
-      state: above_horizon
+  - condition: state
+    entity_id: sun.sun
+    state: above_horizon
   action:
-    - service: openuv.update_data
+  - service: openuv.update_data

@@ -17,7 +17,8 @@ homeassistant:
   # port: 23
 
 device_tracker:
-  platform: asuswrt
+  platform: asusrt
+  # platform: asuswrt
   host: 192.168.1.1
   username: !secret asuswrt_username
   password: !secret asuswrt_password
@@ -64,6 +65,10 @@ tts:
     language: 'no'
 updater:
   include_used_components: true
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.133
+    token: !secret xiaomi_miio_token
 weather:
   - platform: met
 zwave: !include zwave.yaml
